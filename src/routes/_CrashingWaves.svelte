@@ -7,39 +7,26 @@
 </script>
 
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { cubicIn, cubicOut } from 'svelte/easing';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import { range } from '$lib/utils/range';
-	import { preloadImage } from '$lib/utils/image';
+	import { progressivePreloadSequence } from '$lib/utils/image';
+	import type { Readable } from 'svelte/store';
 
-	let images: Promise<HTMLImageElement[]>;
-
-	onMount(() => {
-		images = Promise.all(range(NUM_FRAMES).map(src).map(preloadImage));
-	});
+	let images: Readable<HTMLImageElement[]> = progressivePreloadSequence(range(NUM_FRAMES).map(src));
 </script>
 
 <ScrollProgress scrollDistance="200vh" let:progress let:outProgress>
 	<div class="fixed inset-0 overflow-hidden">
-		{#if images !== undefined}
-			{#await images}
-				<img
-					src={src(0)}
-					alt="crashing_waves"
-					class="object-cover w-screen h-screen"
-					style:opacity={cubicOut(1 - progress)}
-					style:transform="scale({1 + 0.5 * cubicIn(progress)})"
-				/>
-			{:then images}
-				<img
-					src={images[Math.min(Math.round(progress * NUM_FRAMES), NUM_FRAMES - 1)].src}
-					alt="crashing_waves"
-					class="object-cover w-screen h-screen"
-					style:opacity={cubicOut(1 - progress)}
-					style:transform="scale({1 + 0.5 * cubicIn(progress)})"
-				/>
-			{/await}
+		{#if $images.length !== 0}
+			{@const currentImageIdx = Math.min($images.length - 1, Math.round(progress * $images.length))}
+			<img
+				src={$images[currentImageIdx].src}
+				alt="crashing_waves"
+				class="object-cover w-screen h-screen"
+				style:opacity={cubicOut(1 - progress)}
+				style:transform="scale({1 + 0.5 * cubicIn(progress)})"
+			/>
 		{:else}
 			<img
 				src={src(0)}
