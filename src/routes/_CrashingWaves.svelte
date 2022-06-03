@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-	const NUM_FRAMES = 322;
+	const NUM_FRAMES = 215;
 
 	const src = (index: number) => {
 		return `/crashing_waves/${index.toString().padStart(3, '0')}.jpg`;
