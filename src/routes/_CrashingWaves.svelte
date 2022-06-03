@@ -12,13 +12,11 @@
 <script lang="ts">
 	import { cubicIn, cubicOut } from 'svelte/easing';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
+	import ScrollDownIndicator from '$lib/components/ScrollDownIndicator.svelte';
 	import { range } from '$lib/utils/range';
 	import { progressivePreloadSequence } from '$lib/utils/image';
-	import type { Readable } from 'svelte/store';
 
-	let images: Readable<HTMLImageElement[]> = progressivePreloadSequence(
-		range(NUM_FRAMES).map(getImageSrc),
-	);
+	let images = progressivePreloadSequence(range(NUM_FRAMES).map(getImageSrc));
 </script>
 
 <ScrollProgress scrollDistance="200vh" let:progress let:outProgress>
@@ -33,13 +31,13 @@
 			style:transform="scale({1 + 0.5 * cubicIn(progress)})"
 		/>
 	</div>
-	<div
-		class="fixed top-0 flex flex-col items-center justify-center w-screen h-screen"
-		style:opacity={1 - outProgress}
-	>
+	<div class="fixed inset-0 flex items-center justify-center" style:opacity={1 - outProgress}>
 		<h1 class="text-[6vw] font-bold text-center text-white">
 			Say hello to your next<br />
 			<span class="text-[#B8F2FF]">creative</span> developer
 		</h1>
+	</div>
+	<div class="fixed left-0 right-0 translate-y-[16vw] top-1/2" style:opacity={1 - outProgress}>
+		<ScrollDownIndicator {progress} class="w-1/5 mx-auto" />
 	</div>
 </ScrollProgress>
