@@ -41,7 +41,7 @@
 		class="fixed top-0 flex flex-col items-center justify-center w-screen h-screen"
 		style:opacity={1 - outProgress}
 	>
-		<h1 class="text-4xl font-bold text-center text-white md:text-6xl lg:text-8xl xl:text-9xl">
+		<h1 class="text-[6vw] font-bold text-center text-white">
 			Say hello to your next<br />
 			<span class="text-[#B8F2FF]">creative</span> developer
 		</h1>
