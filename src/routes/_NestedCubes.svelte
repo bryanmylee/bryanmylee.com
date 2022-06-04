@@ -2,7 +2,7 @@
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import * as SC from 'svelte-cubed';
 	import * as THREE from 'three';
-	import { range } from '$lib/utils/range.js';
+	import { range } from '$lib/utils/range';
 
 	let spin: [number, number, number] = [0, 0, 0];
 
