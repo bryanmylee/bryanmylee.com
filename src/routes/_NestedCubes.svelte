@@ -30,7 +30,6 @@
 				/>
 			{/each}
 			<SC.PerspectiveCamera position={[3, 0, 3]} />
-			<SC.OrbitControls enableZoom={false} />
 			<SC.AmbientLight intensity={0.5} />
 		</SC.Canvas>
 	</div>

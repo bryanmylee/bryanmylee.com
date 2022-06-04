@@ -27,10 +27,10 @@
 </script>
 
 <script lang="ts">
-	import { clamp } from '$lib/utils/clamp';
-
 	import { onMount } from 'svelte';
-	import { readable } from 'svelte/store';
+	import { readable, writable } from 'svelte/store';
+	import { clamp } from '$lib/utils/clamp';
+	import { visible } from '$lib/utils/intersection';
 
 	export let scrollDistance: string = '100vh';
 
@@ -49,6 +49,8 @@
 	$: inProgress = clamp(0, 1 + progressRaw, 1);
 	export let outProgress: number = 0;
 	$: outProgress = clamp(0, progressRaw - 1, 1);
+
+	const isVisible = writable(true);
 </script>
 
 <svelte:window />
@@ -58,6 +60,9 @@
 	bind:clientHeight={scrollDistancePx}
 	style:height={scrollDistance}
 	class="relative"
+	use:visible={isVisible}
 >
-	<slot {offsetPx} {offset} {progress} {inProgress} {outProgress} />
+	{#if $isVisible}
+		<slot {offsetPx} {offset} {progress} {inProgress} {outProgress} />
+	{/if}
 </div>
