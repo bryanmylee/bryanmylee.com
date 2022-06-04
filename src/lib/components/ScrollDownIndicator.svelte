@@ -28,7 +28,11 @@
 <style lang="postcss">
 	@keyframes pulse {
 		50% {
-			opacity: 0.25;
+			opacity: 0.1;
+		}
+
+		75% {
+			opacity: 0.1;
 		}
 	}
 	.animate-pulse {

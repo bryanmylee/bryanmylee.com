@@ -25,7 +25,7 @@
 <ScrollProgress let:progress let:outProgress>
 	<div class="sticky top-0 w-screen h-screen">
 		<TransitionOnMount>
-			<div class="absolute inset-0 overflow-hidden" in:fade|local={{ delay: 100, duration: 500 }}>
+			<div class="absolute inset-0 overflow-hidden" in:fade={{ delay: 100, duration: 500 }}>
 				<img
 					src={$images.length === 0
 						? getImageSrc(0)
@@ -36,16 +36,20 @@
 					style:transform="scale({1 + 0.5 * cubicIn(progress)})"
 				/>
 			</div>
-		</TransitionOnMount>
-		<div class="absolute inset-0 flex items-center justify-center" style:opacity={1 - outProgress}>
-			<TransitionOnMount>
+			<div
+				class="absolute inset-0 flex items-center justify-center"
+				style:opacity={1 - outProgress}
+			>
 				<h1 class="text-[8vw] font-bold text-center text-white">
 					{#each 'Meet your next creative developer'.split(' ') as word, wordIdx}
 						{@const isCreative = wordIdx === 3}
 						{#if isCreative}
 							<br />
 						{/if}
-						<span class="inline-block" in:fly={{ y: 20, delay: wordIdx * 100, duration: 500 }}>
+						<span
+							class="inline-block"
+							in:fly={{ y: 20, delay: wordIdx * 125 + 500, duration: 1250, easing: cubicOut }}
+						>
 							{#if isCreative}
 								<GradientSpan color="#85D8FF">{word}</GradientSpan>
 							{:else}
@@ -54,10 +58,14 @@
 						</span>
 					{/each}
 				</h1>
-			</TransitionOnMount>
-		</div>
-		<div class="absolute left-0 right-0 translate-y-[16vw] top-1/2" style:opacity={1 - outProgress}>
-			<ScrollDownIndicator {progress} class="w-4/5 2xl:w-1/2 mx-auto" />
-		</div>
+			</div>
+			<div
+				class="absolute left-0 right-0 translate-y-[16vw] top-1/2"
+				style:opacity={1 - outProgress}
+				in:fade={{ delay: 1750, duration: 1000 }}
+			>
+				<ScrollDownIndicator {progress} class="w-4/5 2xl:w-1/2 mx-auto" />
+			</div>
+		</TransitionOnMount>
 	</div>
 </ScrollProgress>
