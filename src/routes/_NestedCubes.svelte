@@ -16,7 +16,7 @@
 
 <ScrollProgress scrollDistance={300} let:progress>
 	<div class="sticky top-0 w-screen h-screen" style:opacity={clamp(0, progress * 4, 1)}>
-		<SC.Canvas antialias background={new THREE.Color('white')}>
+		<SC.Canvas antialias>
 			{#each range(15).map((x) => x * 0.25) as unit}
 				{@const size = unit + 0.25}
 				{@const color = Math.round((unit / 3.75) * 255)}
@@ -31,7 +31,7 @@
 				/>
 			{/each}
 			<SC.PerspectiveCamera position={[3, 0, 3]} />
-			<SC.AmbientLight intensity={0.5} />
+			<SC.AmbientLight intensity={1} />
 		</SC.Canvas>
 	</div>
 </ScrollProgress>
