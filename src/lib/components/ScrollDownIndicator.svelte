@@ -1,6 +1,7 @@
 <script lang="ts" context="module">
-	const LINE_Y = [40, 28, 20, 15, 12, 11, 11];
+	const WIDTH = 80;
 	const Y_GAP = 15;
+	const LINE_Y = [60, 38, 24, 17, 12, 9, 7, 6, 6, 6, 6, 6];
 </script>
 
 <script lang="ts">
@@ -14,10 +15,10 @@
 	};
 </script>
 
-<svg viewBox="-50 -1 100 {LINE_Y.length * Y_GAP}" class={_class}>
-	<g stroke="white" fill="none" stroke-width="2px">
+<svg viewBox="-{WIDTH} -1 {WIDTH * 2} {LINE_Y.length * Y_GAP}" class={_class}>
+	<g stroke="white" fill="none" stroke-width="1px">
 		{#each LINE_Y as line, index}
-			{@const x = line + Math.max(0, (50 - line) * getActiveWeight(index, progress * 2 - 1))}
+			{@const x = line + Math.max(0, (WIDTH - line) * getActiveWeight(index, progress * 2 - 1))}
 			{@const y = index * Y_GAP}
 			<path d="M-{x} {y} L{x} {y}" class="animate-pulse" style:animation-delay="{index * 100}ms" />
 		{/each}

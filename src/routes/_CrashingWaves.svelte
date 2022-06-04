@@ -38,6 +38,6 @@
 		</h1>
 	</div>
 	<div class="fixed left-0 right-0 translate-y-[16vw] top-1/2" style:opacity={1 - outProgress}>
-		<ScrollDownIndicator {progress} class="w-1/5 mx-auto" />
+		<ScrollDownIndicator {progress} class="w-4/5 2xl:w-1/2 mx-auto" />
 	</div>
 </ScrollProgress>
