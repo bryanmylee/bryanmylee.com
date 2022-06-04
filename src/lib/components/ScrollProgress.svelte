@@ -32,7 +32,7 @@
 	import { clamp } from '$lib/utils/clamp';
 	import { visible } from '$lib/utils/intersection';
 
-	export let scrollDistance: string = '100vh';
+	export let scrollDistance: number = 200;
 
 	let scrollDistancePx: number | undefined;
 	let scrollElement: HTMLDivElement | undefined;
@@ -58,11 +58,11 @@
 <div
 	bind:this={scrollElement}
 	bind:clientHeight={scrollDistancePx}
-	style:height={scrollDistance}
+	style:height="{scrollDistance}vh"
 	class="relative"
 	use:visible={isVisible}
 >
 	{#if $isVisible}
-		<slot {offsetPx} {offset} {progress} {inProgress} {outProgress} />
+		<slot {progress} {inProgress} {outProgress} />
 	{/if}
 </div>

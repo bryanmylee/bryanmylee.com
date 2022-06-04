@@ -3,6 +3,7 @@
 	import * as SC from 'svelte-cubed';
 	import * as THREE from 'three';
 	import { range } from '$lib/utils/range';
+	import { clamp } from 'three/src/math/MathUtils';
 
 	let spin: [number, number, number] = [0, 0, 0];
 
@@ -13,8 +14,8 @@
 	});
 </script>
 
-<ScrollProgress scrollDistance="200vh" let:inProgress>
-	<div class="fixed inset-0" style:opacity={inProgress}>
+<ScrollProgress scrollDistance={300} let:progress>
+	<div class="sticky top-0 w-screen h-screen" style:opacity={clamp(0, progress * 4, 1)}>
 		<SC.Canvas antialias background={new THREE.Color('white')}>
 			{#each range(15).map((x) => x * 0.25) as unit}
 				{@const size = unit + 0.25}
