@@ -13,6 +13,7 @@
 	import { cubicIn, cubicOut } from 'svelte/easing';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import ScrollDownIndicator from '$lib/components/ScrollDownIndicator.svelte';
+	import GradientSpan from '$lib/components/GradientSpan.svelte';
 	import { range } from '$lib/utils/range';
 	import { progressivePreloadSequence } from '$lib/utils/image';
 
@@ -32,9 +33,9 @@
 		/>
 	</div>
 	<div class="fixed inset-0 flex items-center justify-center" style:opacity={1 - outProgress}>
-		<h1 class="text-[6vw] font-bold text-center text-white">
+		<h1 class="text-[7vw] font-bold text-center text-white">
 			Say hello to your next<br />
-			<span class="text-[#B8F2FF]">creative</span> developer
+			<GradientSpan color={['#abf0ff', '#a3a3ff', '#a3fff7']}>creative</GradientSpan> developer
 		</h1>
 	</div>
 	<div class="fixed left-0 right-0 translate-y-[16vw] top-1/2" style:opacity={1 - outProgress}>
