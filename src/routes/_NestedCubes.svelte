@@ -1,9 +1,17 @@
+<script lang="ts" context="module">
+	const DEFAULT_WIDTH = 720;
+	const width = writable(DEFAULT_WIDTH);
+</script>
+
 <script lang="ts">
-	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
+	import { tweened } from 'svelte/motion';
+	import { cubicOut } from 'svelte/easing';
 	import * as SC from 'svelte-cubed';
 	import * as THREE from 'three';
+	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import { range } from '$lib/utils/range';
 	import { clamp } from 'three/src/math/MathUtils';
+	import { writable } from 'svelte/store';
 
 	let spin: [number, number, number] = [0, 0, 0];
 
@@ -12,7 +20,16 @@
 		spin[1] += 0.0025;
 		spin[2] += 0.0005;
 	});
+
+	$: distanceRaw = clamp(3, (1 / ($width / DEFAULT_WIDTH)) * 5, 5);
+	const distance = tweened(distanceRaw, {
+		duration: 1000,
+		easing: cubicOut,
+	});
+	$: $distance = distanceRaw;
 </script>
+
+<svelte:window bind:innerWidth={$width} />
 
 <ScrollProgress scrollDistance={300} let:progress>
 	<div class="sticky top-0 w-screen h-screen" style:opacity={clamp(0, progress * 4, 1)}>
@@ -30,7 +47,7 @@
 					rotation={spin}
 				/>
 			{/each}
-			<SC.PerspectiveCamera position={[3, 0, 3]} />
+			<SC.PerspectiveCamera position={[$distance, 0, $distance]} />
 			<SC.AmbientLight intensity={1} />
 		</SC.Canvas>
 	</div>
