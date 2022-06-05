@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
 	const WIDTH = 80;
 	const Y_GAP = 15;
-	const LINE_Y = [60, 38, 24, 17, 12, 9, 7, 6, 6, 6, 6, 6];
+	const LINE_Y = [60, 38, 20, 12, 7, 4, 3, 2.5, 2, 2, 1, 1];
 </script>
 
 <script lang="ts">
