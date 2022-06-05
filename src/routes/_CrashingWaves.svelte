@@ -41,7 +41,7 @@
 				style:opacity={1 - outProgress}
 			>
 				<h1 class="text-[8vw] font-bold text-center text-white leading-tight">
-					{#each 'Meet your next creative developer'.split(' ') as word, wordIdx}
+					{#each 'Meet your next creative developer.'.split(' ') as word, wordIdx}
 						{@const isCreative = wordIdx === 3}
 						{#if isCreative}
 							<br />
