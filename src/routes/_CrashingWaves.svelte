@@ -2,7 +2,7 @@
 	const NUM_FRAMES = 215;
 
 	const getImageSrc = (index: number) => {
-		return `/crashing_waves/${index.toString().padStart(3, '0')}.jpg`;
+		return `/crashing_waves/${index.toString().padStart(3, '0')}.webp`;
 	};
 
 	const getImageIdx = (progress: number, totalFrames: number) =>
