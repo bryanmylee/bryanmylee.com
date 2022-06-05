@@ -31,8 +31,8 @@
 
 <svelte:window bind:innerWidth={$width} />
 
-<ScrollProgress scrollDistance={300} let:progress>
-	<div class="sticky top-0 w-screen h-screen" style:opacity={clamp(progress * 4, 0, 1)}>
+<ScrollProgress topPadding={100} let:contentProgress let:topProgress>
+	<div class="sticky top-0 w-screen h-screen" style:opacity={topProgress}>
 		<SC.Canvas antialias>
 			{#each range(15).map((x) => x * 0.25) as unit}
 				{@const size = unit + 0.25}
