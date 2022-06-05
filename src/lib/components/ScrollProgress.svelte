@@ -33,22 +33,25 @@
 	import { visible } from '$lib/utils/intersection';
 
 	export let scrollDistance: number = 200;
+	export let inPadding: number = 0;
+	const inRatio = inPadding / (inPadding + scrollDistance);
 
-	let scrollDistancePx: number | undefined;
+	let totalDistancePx: number | undefined;
 	let scrollElement: HTMLDivElement | undefined;
 
 	export let offsetPx: number = 0;
 	$: offsetPx = scrollElement === undefined ? 0 : $scrollOffset - scrollElement.offsetTop;
 	export let offset: number = 0;
-	$: offset = scrollDistancePx === undefined ? 0 : offsetPx / scrollDistancePx;
-	$: progressRaw =
-		scrollDistancePx === undefined ? 0 : offsetPx / (scrollDistancePx - $scrollerSize);
+	$: offset = totalDistancePx === undefined ? 0 : offsetPx / totalDistancePx;
+	$: progressRaw = totalDistancePx === undefined ? 0 : offsetPx / (totalDistancePx - $scrollerSize);
+
 	export let progress: number = 0;
-	$: progress = clamp(0, progressRaw, 1);
 	export let inProgress: number = 0;
-	$: inProgress = clamp(0, 1 + progressRaw, 1);
 	export let outProgress: number = 0;
-	$: outProgress = clamp(0, progressRaw - 1, 1);
+
+	$: progress = clamp(progressRaw, 0, 1);
+	$: inProgress = clamp(1 + progressRaw, 0, 1);
+	$: outProgress = clamp(progressRaw - 1, 0, 1);
 
 	const isVisible = writable(true);
 </script>
@@ -57,8 +60,8 @@
 
 <div
 	bind:this={scrollElement}
-	bind:clientHeight={scrollDistancePx}
-	style:height="{scrollDistance}vh"
+	bind:clientHeight={totalDistancePx}
+	style:height="{scrollDistance + inPadding}vh"
 	class="relative"
 	use:visible={isVisible}
 >

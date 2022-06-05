@@ -21,7 +21,7 @@
 		spin[2] += 0.0005;
 	});
 
-	$: distanceRaw = clamp(3, (1 / ($width / DEFAULT_WIDTH)) * 5, 5);
+	$: distanceRaw = clamp((1 / ($width / DEFAULT_WIDTH)) * 5, 3, 5);
 	const distance = tweened(distanceRaw, {
 		duration: 1000,
 		easing: cubicOut,
@@ -32,7 +32,7 @@
 <svelte:window bind:innerWidth={$width} />
 
 <ScrollProgress scrollDistance={300} let:progress>
-	<div class="sticky top-0 w-screen h-screen" style:opacity={clamp(0, progress * 4, 1)}>
+	<div class="sticky top-0 w-screen h-screen" style:opacity={clamp(progress * 4, 0, 1)}>
 		<SC.Canvas antialias>
 			{#each range(15).map((x) => x * 0.25) as unit}
 				{@const size = unit + 0.25}
