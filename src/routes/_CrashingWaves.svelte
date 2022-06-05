@@ -23,8 +23,8 @@
 </script>
 
 <ScrollProgress let:progress let:outProgress>
-	<div class="sticky top-0 w-screen h-screen">
-		<TransitionOnMount>
+	<TransitionOnMount>
+		<div class="sticky top-0 w-screen h-screen">
 			<div class="absolute inset-0 overflow-hidden" in:fade={{ delay: 100, duration: 500 }}>
 				<img
 					src={$images.length === 0
@@ -36,10 +36,9 @@
 					style:transform="scale({1 + 0.5 * cubicIn(progress)})"
 				/>
 			</div>
-			<div
-				class="absolute inset-0 flex items-center justify-center"
-				style:opacity={1 - outProgress}
-			>
+		</div>
+		<div style:opacity={1 - outProgress}>
+			<div class="absolute top-0 w-screen h-screen flex items-center justify-center">
 				<h1 class="text-[8vw] font-bold text-center text-white leading-tight">
 					{#each 'Meet your next creative developer.'.split(' ') as word, wordIdx}
 						{@const isCreative = wordIdx === 3}
@@ -60,12 +59,12 @@
 				</h1>
 			</div>
 			<div
-				class="absolute left-0 right-0 translate-y-[16vw] top-1/2"
+				class="absolute top-[50vh] h-screen w-screen translate-y-[16vw]"
 				style:opacity={1 - outProgress}
 				in:fade={{ delay: 1750, duration: 1000 }}
 			>
 				<ScrollDownIndicator {progress} class="w-4/5 2xl:w-1/2 mx-auto" />
 			</div>
-		</TransitionOnMount>
-	</div>
+		</div>
+	</TransitionOnMount>
 </ScrollProgress>

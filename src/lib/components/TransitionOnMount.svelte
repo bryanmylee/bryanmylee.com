@@ -11,7 +11,7 @@
 	});
 </script>
 
-<div class:nojs-fade-in={!jsEnabled}>
+<div class="contents" class:nojs-fade-in={!jsEnabled}>
 	{#if mounted}
 		<slot {mounted} />
 	{/if}
