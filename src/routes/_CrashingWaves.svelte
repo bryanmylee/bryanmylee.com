@@ -34,15 +34,15 @@
 				<FractalNoise
 					class="absolute w-screen h-screen"
 					seed={progress * 1000}
-					--brightness="75%"
-					--contrast="175%"
+					--brightness="25%"
+					--contrast="200%"
 				/>
 				<img
 					src={$images.length === 0
 						? getImageSrc(0)
 						: $images[getImageIdx(progress, $images.length)].src}
 					alt="waves crashing against a coast"
-					class="object-cover w-screen h-screen mix-blend-multiply"
+					class="object-cover w-screen h-screen mix-blend-screen"
 					style:transform="scale({1 + 0.5 * cubicIn(progress)})"
 				/>
 			</div>
