@@ -16,6 +16,7 @@
 	import ScrollDownIndicator from '$lib/components/ScrollDownIndicator.svelte';
 	import GradientSpan from '$lib/components/GradientSpan.svelte';
 	import TransitionOnMount from '$lib/components/TransitionOnMount.svelte';
+	import FractalNoise from '$lib/components/FractalNoise.svelte';
 	import { range } from '$lib/utils/range';
 	import { progressivePreloadSequence } from '$lib/utils/image';
 
@@ -25,14 +26,23 @@
 <ScrollProgress scrollDistance={150} let:progress let:outProgress>
 	<TransitionOnMount>
 		<div class="sticky top-0 w-screen h-screen">
-			<div class="absolute inset-0 overflow-hidden" in:fade={{ delay: 100, duration: 500 }}>
+			<div
+				class="absolute inset-0 overflow-hidden"
+				in:fade={{ delay: 100, duration: 500 }}
+				style:opacity={cubicOut(1 - progress)}
+			>
+				<FractalNoise
+					class="absolute w-screen h-screen"
+					seed={progress * 1000}
+					--brightness="75%"
+					--contrast="175%"
+				/>
 				<img
 					src={$images.length === 0
 						? getImageSrc(0)
 						: $images[getImageIdx(progress, $images.length)].src}
-					alt="waves crashing against the coast"
-					class="object-cover w-screen h-screen"
-					style:opacity={cubicOut(1 - progress)}
+					alt="waves crashing against a coast"
+					class="object-cover w-screen h-screen mix-blend-multiply"
 					style:transform="scale({1 + 0.5 * cubicIn(progress)})"
 				/>
 			</div>
