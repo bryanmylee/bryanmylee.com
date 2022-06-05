@@ -10,7 +10,7 @@
 	import * as THREE from 'three';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import { range } from '$lib/utils/range';
-	import { clamp } from 'three/src/math/MathUtils';
+	import { clamp } from '$lib/utils/clamp';
 	import { writable } from 'svelte/store';
 
 	let spin: [number, number, number] = [0, 0, 0];
