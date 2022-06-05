@@ -6,6 +6,7 @@
 	export let scrollDistance = 200;
 	export let topPadding = 0;
 	export let bottomPadding = 0;
+	export let topInset = 0;
 	const totalDistance = topPadding + scrollDistance + bottomPadding;
 	const contentRatio = scrollDistance / totalDistance;
 	const topRatio = topPadding / totalDistance;
@@ -46,6 +47,7 @@
 	bind:this={scrollElement}
 	bind:clientHeight={totalDistancePx}
 	style:height="{scrollDistance + topPadding}vh"
+	style:margin-top="{-topInset}vh"
 	class="relative"
 	use:visible={isVisible}
 >

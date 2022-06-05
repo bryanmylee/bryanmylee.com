@@ -22,7 +22,7 @@
 	let images = progressivePreloadSequence(range(NUM_FRAMES).map(getImageSrc));
 </script>
 
-<ScrollProgress let:progress let:outProgress>
+<ScrollProgress scrollDistance={150} let:progress let:outProgress>
 	<TransitionOnMount>
 		<div class="sticky top-0 w-screen h-screen">
 			<div class="absolute inset-0 overflow-hidden" in:fade={{ delay: 100, duration: 500 }}>

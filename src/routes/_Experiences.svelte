@@ -3,7 +3,7 @@
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 </script>
 
-<ScrollProgress topPadding={100} let:contentProgress let:topProgress>
+<ScrollProgress topInset={75} topPadding={100} let:contentProgress let:topProgress>
 	<div class="sticky top-0 w-screen h-screen" style:opacity={topProgress}>
 		<NestedCubes />
 		<div class="absolute inset-0 flex items-center justify-center">
