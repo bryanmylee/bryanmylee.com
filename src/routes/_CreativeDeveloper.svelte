@@ -5,18 +5,10 @@
 	import ScrollDownIndicator from '$lib/components/ScrollDownIndicator.svelte';
 	import GradientSpan from '$lib/components/GradientSpan.svelte';
 	import TransitionOnMount from '$lib/components/TransitionOnMount.svelte';
-	import CrashingWaves from '$lib/components/CrashingWaves.svelte';
 </script>
 
 <ScrollProgress scrollDistance={150} let:progress let:outProgress>
 	<TransitionOnMount>
-		<div
-			class="sticky top-0 w-screen h-screen"
-			in:fade={{ delay: 100, duration: 500 }}
-			style:opacity={cubicOut(1 - progress)}
-		>
-			<!-- <CrashingWaves {progress} /> -->
-		</div>
 		<div style:opacity={1 - outProgress}>
 			<div class="absolute top-0 w-screen h-screen flex items-center justify-center">
 				<h1 class="text-[8vw] font-bold text-center text-white leading-tight">
