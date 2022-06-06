@@ -26,7 +26,7 @@
 <div class="absolute inset-0 overflow-hidden">
 	<svg viewBox="{SIZE / 2} {SIZE / 2} {SIZE / 8} {SIZE / 8}" width="100%" height="100%">
 		{#each fishes as fish (fish.id)}
-			<circle cx={fish.x} cy={fish.y} r="0.5" fill="#c46c66" />
+			<circle cx={fish.x} cy={fish.y} r="0.5" fill="#C46C66" />
 		{/each}
 	</svg>
 </div>
