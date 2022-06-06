@@ -32,13 +32,14 @@ export class Fish {
 
 	move(deltaTimeMs: number, avoidPoint: Position) {
 		const deltaDistance = deltaTimeMs * this.speedPerMs;
-		const previous = this.target;
 
 		this.target = getSum(this.target, { x: deltaDistance, y: deltaDistance });
+		const beforeMod = this.target;
 		this.target = getMod(this.target, this.max);
+		const hasWrapped = beforeMod.x !== this.target.x || beforeMod.y !== this.target.y;
+
 		const pushedTarget = getPushedTarget(this.target, avoidPoint);
 
-		const hasWrapped = getSqDistance(this.target, previous) > AVOID_RADIUS;
 		this.curr.set(pushedTarget, { duration: hasWrapped ? 0 : MOVE_DURATION });
 	}
 }
