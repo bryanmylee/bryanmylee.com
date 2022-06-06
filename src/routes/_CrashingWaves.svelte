@@ -17,15 +17,15 @@
 	import GradientSpan from '$lib/components/GradientSpan.svelte';
 	import TransitionOnMount from '$lib/components/TransitionOnMount.svelte';
 	import FractalNoise from '$lib/components/FractalNoise.svelte';
-	import { range } from '$lib/utils/range';
-	import { progressivePreloadSequence } from '$lib/utils/image';
+	// import { range } from '$lib/utils/range';
+	// import { progressivePreloadSequence } from '$lib/utils/image';
 
-	let images = progressivePreloadSequence(range(NUM_FRAMES).map(getImageSrc));
+	// let images = progressivePreloadSequence(range(NUM_FRAMES).map(getImageSrc));
 </script>
 
 <ScrollProgress scrollDistance={150} let:progress let:outProgress>
 	<TransitionOnMount>
-		<div class="sticky top-0 w-screen h-screen">
+		<!-- <div class="sticky top-0 w-screen h-screen">
 			<div
 				class="absolute inset-0 overflow-hidden"
 				in:fade={{ delay: 100, duration: 500 }}
@@ -46,7 +46,7 @@
 					style:transform="scale({1 + 0.5 * cubicIn(progress)})"
 				/>
 			</div>
-		</div>
+		</div> -->
 		<div style:opacity={1 - outProgress}>
 			<div class="absolute top-0 w-screen h-screen flex items-center justify-center">
 				<h1 class="text-[8vw] font-bold text-center text-white leading-tight">
