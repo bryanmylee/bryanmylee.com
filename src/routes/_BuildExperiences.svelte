@@ -23,9 +23,9 @@
 <ScrollProgress
 	topInset={75}
 	topPadding={25}
-	scrollDistance={400}
+	scrollDistance={600}
 	let:topProgress
-	sections={[0.3, 0.7]}
+	sections={[0.3, 0.6]}
 	let:sectionIndex
 	let:sectionProgress
 >
