@@ -1,5 +1,4 @@
-import { spring } from 'svelte/motion';
-import type { Writable } from 'svelte/store';
+import { tweened, type Tweened } from 'svelte/motion';
 import type { Position } from '$lib/utils/mouse';
 
 export interface FishProps {
@@ -11,42 +10,36 @@ export interface FishProps {
 }
 
 const AVOID_RADIUS = 24;
+const PUSH_SCALE = 8;
+const MOVE_DURATION = 500;
 
 export class Fish {
 	private static instanceId = 0;
 
 	id: number;
-	curr: Writable<Position>;
+	curr: Tweened<Position>;
 	target: Position;
 	max: Position;
 	speedPerMs: number;
 
 	constructor({ initX, initY, maxX, maxY, speedPerMs }: FishProps) {
 		this.id = Fish.instanceId++;
-		this.curr = spring({
-			x: initX,
-			y: initY,
-		});
-		this.target = {
-			x: initX,
-			y: initY,
-		};
-		this.max = {
-			x: maxX,
-			y: maxY,
-		};
+		this.curr = tweened({ x: initX, y: initY }, { duration: MOVE_DURATION });
+		this.target = { x: initX, y: initY };
+		this.max = { x: maxX, y: maxY };
 		this.speedPerMs = speedPerMs;
 	}
 
 	move(deltaTimeMs: number, avoidPoint: Position) {
 		const deltaDistance = deltaTimeMs * this.speedPerMs;
+		const previous = this.target;
 
 		this.target = getSum(this.target, { x: deltaDistance, y: deltaDistance });
 		this.target = getMod(this.target, this.max);
-
 		const pushedTarget = getPushedTarget(this.target, avoidPoint);
 
-		this.curr.set(pushedTarget);
+		const hasWrapped = getSqDistance(this.target, previous) > AVOID_RADIUS;
+		this.curr.set(pushedTarget, { duration: hasWrapped ? 0 : MOVE_DURATION });
 	}
 }
 
@@ -56,7 +49,7 @@ const getPushedTarget = (target: Position, avoid: Position): Position => {
 		return target;
 	}
 	const diffVec = getDiff(target, avoid);
-	const scaledDiffVec = getScaled(diffVec, 5 / Math.sqrt(sqDistance));
+	const scaledDiffVec = getScaled(diffVec, PUSH_SCALE / Math.sqrt(sqDistance));
 	return getSum(avoid, scaledDiffVec);
 };
 

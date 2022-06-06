@@ -37,7 +37,7 @@
 		fishes = fishes;
 	};
 
-	const mousePoint = spring<Position>({ x: SIZE * 1.5, y: SIZE * 1.5 }, {});
+	const mousePoint = spring<Position>({ x: SIZE * 1.5, y: SIZE * 1.5 });
 </script>
 
 <div class="absolute inset-0 overflow-hidden">
@@ -51,7 +51,7 @@
 		height="100%"
 		use:svgMousePoint={mousePoint}
 	>
-		<circle cx={$mousePoint.x} cy={$mousePoint.y} r={2} fill="#66BEC4" opacity={0.8} />
+		<circle cx={$mousePoint.x} cy={$mousePoint.y} r={3} fill="#66BEC4" opacity={0.8} />
 		{#each fishes as fish (fish.id)}
 			<Subscribe curr={fish.curr} let:curr>
 				<circle cx={curr.x} cy={curr.y} r={1.5} fill="#C46C66" />
