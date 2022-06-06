@@ -39,6 +39,22 @@
 		bottomRatio === 0 ? 1 : clamp((progressRaw - topRatio - contentRatio) / bottomRatio);
 
 	const isVisible = writable(true);
+
+	export let sections: undefined | number[] = undefined;
+	$: [sectionIndex, sectionProgress] = getSection(contentProgress);
+
+	const getSection = (progress: number): [number, number] => {
+		if (sections === undefined) return [0, progress];
+		for (let i = 0; i <= sections.length; i++) {
+			const curr = sections[i] ?? 1;
+			const prev = sections[i - 1] ?? 0;
+			if (progress <= curr) {
+				const sectionProgress = (progress - prev) / (curr - prev);
+				return [i, sectionProgress];
+			}
+		}
+		return [sections.length, 1];
+	};
 </script>
 
 <svelte:window bind:scrollY={scrollOffset} bind:innerHeight={scrollerSize} />
@@ -52,6 +68,15 @@
 	use:visible={isVisible}
 >
 	{#if $isVisible}
-		<slot {progress} {inProgress} {outProgress} {topProgress} {contentProgress} {bottomProgress} />
+		<slot
+			{progress}
+			{inProgress}
+			{outProgress}
+			{topProgress}
+			{contentProgress}
+			{bottomProgress}
+			{sectionIndex}
+			{sectionProgress}
+		/>
 	{/if}
 </div>
