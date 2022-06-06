@@ -21,6 +21,7 @@ specifiers:
   svelte-cubed: ^0.2.1
   svelte-preprocess: ^4.10.5
   svelte-previous: ^2.1.1
+  svelte-subscribe: ^1.0.4
   tailwindcss: ^3.0.23
   three: ^0.141.0
   tslib: ^2.3.1
@@ -47,6 +48,7 @@ devDependencies:
   svelte-cubed: 0.2.1
   svelte-preprocess: 4.10.6_kwmypdju4ysizxi7azib3bf22y
   svelte-previous: 2.1.1
+  svelte-subscribe: 1.0.4
   tailwindcss: 3.0.24
   three: 0.141.0
   tslib: 2.4.0
@@ -2306,6 +2308,10 @@ packages:
 
   /svelte-previous/2.1.1:
     resolution: {integrity: sha512-pkGnudbh59BhtFKA47dwHgKZZZ/kS+VvOhw4uPWWY6k8j65Jwj36Y8vVpla10cP7kQy78rjTKG/6yP/0PUFTgg==}
+    dev: true
+
+  /svelte-subscribe/1.0.4:
+    resolution: {integrity: sha512-Pmf+a0zWxuezigoSJnIyhOIIEArnP++HUzrMozca8LzZZ+sK7z37aKoNj65HR/TGhFZcV6s3bDRxpfiXU7fYOg==}
     dev: true
 
   /svelte/3.48.0:

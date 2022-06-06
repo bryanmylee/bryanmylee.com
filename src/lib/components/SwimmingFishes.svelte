@@ -4,7 +4,8 @@
 </script>
 
 <script lang="ts">
-	import { writable } from 'svelte/store';
+	import { spring } from 'svelte/motion';
+	import { Subscribe } from 'svelte-subscribe';
 	import { Fish } from '$lib/model/Fish';
 	import { frameTime } from '$lib/utils/frame';
 	import { svgMousePoint, type Position } from '$lib/utils/mouse';
@@ -27,12 +28,16 @@
 	);
 
 	const [time, previousTime] = frameTime();
-	$: fishes.forEach((fish) => {
-		fish.move($time - $previousTime);
-	}),
-		(fishes = fishes);
+	$: $time, moveFishes();
 
-	const mousePoint = writable<Position>({ x: 0, y: 0 });
+	const moveFishes = () => {
+		fishes.forEach((fish) => {
+			fish.move($time - $previousTime, $mousePoint);
+		});
+		fishes = fishes;
+	};
+
+	const mousePoint = spring<Position>({ x: SIZE * 1.5, y: SIZE * 1.5 }, {});
 </script>
 
 <div class="absolute inset-0 overflow-hidden">
@@ -46,11 +51,13 @@
 		height="100%"
 		use:svgMousePoint={mousePoint}
 	>
+		<circle cx={$mousePoint.x} cy={$mousePoint.y} r={2} fill="#66BEC4" opacity={0.8} />
 		{#each fishes as fish (fish.id)}
-			<circle cx={fish.x} cy={fish.y} r={1.5} fill="#C46C66" />
+			<Subscribe curr={fish.curr} let:curr>
+				<circle cx={curr.x} cy={curr.y} r={1.5} fill="#C46C66" />
+			</Subscribe>
 		{/each}
 		<!-- The center of the grid is SIZE + 1/2 SIZE -->
 		<circle cx={SIZE * 1.5} cy={SIZE * 1.5} r={progress * SIZE} fill="#FFFFFF" opacity={0.1} />
-		<circle cx={$mousePoint.x} cy={$mousePoint.y} r={2} fill="#FFFFFF" opacity={0.1} />
 	</svg>
 </div>
