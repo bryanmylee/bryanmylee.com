@@ -1,7 +1,7 @@
 <script lang="ts">
-	import CrashingWaves from './_CrashingWaves.svelte';
-	import Experiences from './_Experiences.svelte';
+	import CreativeDeveloper from './_CreativeDeveloper.svelte';
+	import BuildExperiences from './_BuildExperiences.svelte';
 </script>
 
-<CrashingWaves />
-<Experiences />
+<CreativeDeveloper />
+<BuildExperiences />
