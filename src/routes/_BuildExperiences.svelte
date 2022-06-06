@@ -1,5 +1,5 @@
 <script lang="ts">
-	import NestedCubes from './_NestedCubes.svelte';
+	import NestedCubes from '../lib/components/NestedCubes.svelte';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 </script>
 

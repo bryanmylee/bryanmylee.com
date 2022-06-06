@@ -1,52 +1,22 @@
-<script lang="ts" context="module">
-	const NUM_FRAMES = 215;
-
-	const getImageSrc = (index: number) => {
-		return `/crashing_waves/${index.toString().padStart(3, '0')}.webp`;
-	};
-
-	const getImageIdx = (progress: number, totalFrames: number) =>
-		Math.min(totalFrames - 1, Math.round(progress * totalFrames));
-</script>
-
 <script lang="ts">
 	import { fade, fly } from 'svelte/transition';
-	import { cubicIn, cubicOut } from 'svelte/easing';
+	import { cubicOut } from 'svelte/easing';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import ScrollDownIndicator from '$lib/components/ScrollDownIndicator.svelte';
 	import GradientSpan from '$lib/components/GradientSpan.svelte';
 	import TransitionOnMount from '$lib/components/TransitionOnMount.svelte';
-	import FractalNoise from '$lib/components/FractalNoise.svelte';
-	// import { range } from '$lib/utils/range';
-	// import { progressivePreloadSequence } from '$lib/utils/image';
-
-	// let images = progressivePreloadSequence(range(NUM_FRAMES).map(getImageSrc));
+	import CrashingWaves from '$lib/components/CrashingWaves.svelte';
 </script>
 
 <ScrollProgress scrollDistance={150} let:progress let:outProgress>
 	<TransitionOnMount>
-		<!-- <div class="sticky top-0 w-screen h-screen">
-			<div
-				class="absolute inset-0 overflow-hidden"
-				in:fade={{ delay: 100, duration: 500 }}
-				style:opacity={cubicOut(1 - progress)}
-			>
-				<FractalNoise
-					class="absolute w-screen h-screen"
-					seed={progress * 1000}
-					--brightness="25%"
-					--contrast="200%"
-				/>
-				<img
-					src={$images.length === 0
-						? getImageSrc(0)
-						: $images[getImageIdx(progress, $images.length)].src}
-					alt="waves crashing against a coast"
-					class="object-cover w-screen h-screen mix-blend-screen"
-					style:transform="scale({1 + 0.5 * cubicIn(progress)})"
-				/>
-			</div>
-		</div> -->
+		<div
+			class="sticky top-0 w-screen h-screen"
+			in:fade={{ delay: 100, duration: 500 }}
+			style:opacity={cubicOut(1 - progress)}
+		>
+			<!-- <CrashingWaves {progress} /> -->
+		</div>
 		<div style:opacity={1 - outProgress}>
 			<div class="absolute top-0 w-screen h-screen flex items-center justify-center">
 				<h1 class="text-[8vw] font-bold text-center text-white leading-tight">
