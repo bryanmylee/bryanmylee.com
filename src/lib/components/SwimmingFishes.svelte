@@ -17,13 +17,16 @@
 	);
 
 	onMount(() => {
-		setInterval(() => {
-			fishes.forEach((fish) => {
-				fish.next();
-			});
-			fishes = fishes;
-		}, 16.7);
+		onFrame();
 	});
+
+	const onFrame = () => {
+		fishes.forEach((fish) => {
+			fish.next();
+		});
+		fishes = fishes;
+		window.requestAnimationFrame(onFrame);
+	};
 </script>
 
 <div class="absolute inset-0 overflow-hidden">
