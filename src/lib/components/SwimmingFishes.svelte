@@ -10,6 +10,7 @@
 	import { frameTime } from '$lib/utils/frame';
 	import { svgPointer, type Position } from '$lib/utils/pointer';
 	import { range } from '$lib/utils/range';
+	import { isJsEnabled } from '$lib/utils/accessibility';
 
 	export let progress = 0;
 
@@ -38,6 +39,8 @@
 	};
 
 	const pointer = spring<Position>({ x: SIZE * 1.5, y: SIZE * 1.5 });
+
+	const jsEnabled = isJsEnabled();
 </script>
 
 <div class="absolute inset-0 overflow-hidden">
@@ -46,7 +49,9 @@
     Therefore, set min-x and min-y to SIZE, then define width and height as SIZE.
   -->
 	<svg viewBox="{SIZE} {SIZE} {SIZE} {SIZE}" width="100%" height="100%" use:svgPointer={pointer}>
-		<circle cx={$pointer.x} cy={$pointer.y} r={4} fill="#85D8FF" opacity={0.8} />
+		{#if $jsEnabled}
+			<circle cx={$pointer.x} cy={$pointer.y} r={4} fill="#85D8FF" opacity={0.8} />
+		{/if}
 		{#each fishes as fish (fish.id)}
 			<Subscribe curr={fish.curr} let:curr>
 				<circle cx={curr.x} cy={curr.y} r={1.5} fill="#C46C66" />

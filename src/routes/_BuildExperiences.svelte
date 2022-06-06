@@ -13,12 +13,15 @@
 </script>
 
 <script lang="ts">
+	import type { SvelteComponent } from 'svelte';
 	import { fly, fade } from 'svelte/transition';
 	import SwimmingFishes from '$lib/components/SwimmingFishes.svelte';
 	import NestedCubes from '$lib/components/NestedCubes.svelte';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import GradientSpan from '$lib/components/GradientSpan.svelte';
-	import type { SvelteComponent } from 'svelte';
+	import { isJsEnabled } from '$lib/utils/accessibility';
+
+	const jsEnabled = isJsEnabled();
 </script>
 
 <ScrollProgress
