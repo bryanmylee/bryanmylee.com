@@ -41,7 +41,7 @@
 			<h1 class="text-[8vw] font-bold text-center text-white leading-tight">
 				I build
 				{#key word}
-					<span class="inline-block" in:fly={{ y: 20, duration: 500 }}>
+					<span class="inline-block w-[7ch]" in:fly={{ y: 30, duration: 800 }}>
 						<GradientSpan {color}>
 							{word}
 						</GradientSpan>
