@@ -23,7 +23,7 @@ export class Fish {
 	}
 
 	move(deltaTimeMs: number) {
-		this.x = (this.x + deltaTimeMs * 0.01) % this.gridWidth;
-		this.y = (this.y + deltaTimeMs * 0.01) % this.gridHeight;
+		this.x = (this.x + deltaTimeMs * 0.001) % this.gridWidth;
+		this.y = (this.y + deltaTimeMs * 0.001) % this.gridHeight;
 	}
 }
