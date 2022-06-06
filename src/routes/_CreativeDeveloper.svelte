@@ -33,7 +33,7 @@
 			<div
 				class="absolute top-[50vh] h-screen w-screen translate-y-[16vw]"
 				style:opacity={1 - outProgress}
-				in:fade={{ delay: 1750, duration: 1000 }}
+				in:fade={{ delay: 1000, duration: 1000 }}
 			>
 				<ScrollDownIndicator {progress} class="w-4/5 2xl:w-1/2 mx-auto" />
 			</div>

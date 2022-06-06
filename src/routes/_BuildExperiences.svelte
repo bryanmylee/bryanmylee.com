@@ -22,7 +22,7 @@
 </script>
 
 <ScrollProgress
-	topInset={75}
+	topInset={50}
 	topPadding={25}
 	scrollDistance={600}
 	let:topProgress
