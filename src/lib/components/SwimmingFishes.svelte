@@ -5,8 +5,8 @@
 
 <script lang="ts">
 	import { Fish } from '$lib/model/Fish';
+	import { frameTime } from '$lib/utils/frame';
 	import { range } from '$lib/utils/range';
-	import { onMount } from 'svelte';
 
 	let fishes = range(0, SIZE, GAP).flatMap((x) =>
 		range(0, SIZE, GAP).map((y) => {
@@ -16,17 +16,11 @@
 		}),
 	);
 
-	onMount(() => {
-		onFrame();
-	});
-
-	const onFrame = () => {
-		fishes.forEach((fish) => {
-			fish.next();
-		});
-		fishes = fishes;
-		window.requestAnimationFrame(onFrame);
-	};
+	const [time, previousTime] = frameTime();
+	$: fishes.forEach((fish) => {
+		fish.move($time - $previousTime);
+	}),
+		(fishes = fishes);
 </script>
 
 <div class="absolute inset-0 overflow-hidden">

@@ -22,8 +22,8 @@ export class Fish {
 		this.gridHeight = gridHeight;
 	}
 
-	next() {
-		this.x = (this.x + 1) % this.gridWidth;
-		this.y = (this.y + 1) % this.gridHeight;
+	move(deltaTimeMs: number) {
+		this.x = (this.x + deltaTimeMs * 0.01) % this.gridWidth;
+		this.y = (this.y + deltaTimeMs * 0.01) % this.gridHeight;
 	}
 }
