@@ -46,7 +46,7 @@
     Therefore, set min-x and min-y to SIZE, then define width and height as SIZE.
   -->
 	<svg viewBox="{SIZE} {SIZE} {SIZE} {SIZE}" width="100%" height="100%" use:svgPointer={pointer}>
-		<circle cx={$pointer.x} cy={$pointer.y} r={3} fill="#66BEC4" opacity={0.8} />
+		<circle cx={$pointer.x} cy={$pointer.y} r={3} fill="#85D8FF" opacity={0.8} />
 		{#each fishes as fish (fish.id)}
 			<Subscribe curr={fish.curr} let:curr>
 				<circle cx={curr.x} cy={curr.y} r={1.5} fill="#C46C66" />
