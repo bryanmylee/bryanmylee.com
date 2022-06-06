@@ -4,13 +4,15 @@
 </script>
 
 <script lang="ts">
+	import { writable } from 'svelte/store';
 	import { tweened } from 'svelte/motion';
-	import { cubicOut } from 'svelte/easing';
+	import { cubicIn, cubicOut } from 'svelte/easing';
 	import * as SC from 'svelte-cubed';
 	import * as THREE from 'three';
 	import { range } from '$lib/utils/range';
 	import { clamp } from '$lib/utils/clamp';
-	import { writable } from 'svelte/store';
+
+	export let progress = 0;
 
 	let spin: [number, number, number] = [0, 0, 0];
 
@@ -26,6 +28,7 @@
 		easing: cubicOut,
 	});
 	$: $distance = distanceRaw;
+	$: progressDistance = $distance - cubicIn(progress) * 3;
 </script>
 
 <svelte:window bind:innerWidth={$width} />
@@ -44,6 +47,6 @@
 			rotation={spin}
 		/>
 	{/each}
-	<SC.PerspectiveCamera position={[$distance, 0, $distance]} />
+	<SC.PerspectiveCamera position={[progressDistance, 0, progressDistance]} />
 	<SC.AmbientLight intensity={1} />
 </SC.Canvas>
