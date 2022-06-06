@@ -8,7 +8,7 @@
 	import { Subscribe } from 'svelte-subscribe';
 	import { Fish } from '$lib/model/Fish';
 	import { frameTime } from '$lib/utils/frame';
-	import { svgMousePoint, type Position } from '$lib/utils/mouse';
+	import { svgPointer, type Position } from '$lib/utils/pointer';
 	import { range } from '$lib/utils/range';
 
 	export let progress = 0;
@@ -32,12 +32,12 @@
 
 	const moveFishes = () => {
 		fishes.forEach((fish) => {
-			fish.move($time - $previousTime, $mousePoint);
+			fish.move($time - $previousTime, $pointer);
 		});
 		fishes = fishes;
 	};
 
-	const mousePoint = spring<Position>({ x: SIZE * 1.5, y: SIZE * 1.5 });
+	const pointer = spring<Position>({ x: SIZE * 1.5, y: SIZE * 1.5 });
 </script>
 
 <div class="absolute inset-0 overflow-hidden">
@@ -45,13 +45,8 @@
     Tile SIZE squares in a 3x3 grid to cover the screen.
     Therefore, set min-x and min-y to SIZE, then define width and height as SIZE.
   -->
-	<svg
-		viewBox="{SIZE} {SIZE} {SIZE} {SIZE}"
-		width="100%"
-		height="100%"
-		use:svgMousePoint={mousePoint}
-	>
-		<circle cx={$mousePoint.x} cy={$mousePoint.y} r={3} fill="#66BEC4" opacity={0.8} />
+	<svg viewBox="{SIZE} {SIZE} {SIZE} {SIZE}" width="100%" height="100%" use:svgPointer={pointer}>
+		<circle cx={$pointer.x} cy={$pointer.y} r={3} fill="#66BEC4" opacity={0.8} />
 		{#each fishes as fish (fish.id)}
 			<Subscribe curr={fish.curr} let:curr>
 				<circle cx={curr.x} cy={curr.y} r={1.5} fill="#C46C66" />

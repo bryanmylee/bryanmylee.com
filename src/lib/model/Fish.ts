@@ -1,5 +1,5 @@
 import { tweened, type Tweened } from 'svelte/motion';
-import type { Position } from '$lib/utils/mouse';
+import type { Position } from '$lib/utils/pointer';
 
 export interface FishProps {
 	initX: number;

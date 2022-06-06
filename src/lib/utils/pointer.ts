@@ -23,21 +23,28 @@ export const useMousePosition = () => {
 	});
 };
 
-export const svgMousePoint = (svg: SVGSVGElement, position: Writable<Position>) => {
+export const svgPointer = (svg: SVGSVGElement, pointer: Writable<Position>) => {
 	const point = new DOMPoint(0, 0);
-	const handleMousemove = (event: MouseEvent) => {
-		point.x = event.clientX;
-		point.y = event.clientY;
+	const handleMove = (event: MouseEvent | TouchEvent) => {
+		if (event instanceof MouseEvent) {
+			point.x = event.clientX;
+			point.y = event.clientY;
+		} else if (event instanceof TouchEvent) {
+			point.x = event.touches[0].clientX;
+			point.y = event.touches[0].clientY;
+		}
 		const cursorPoint = point.matrixTransform(svg.getScreenCTM()?.inverse());
-		position.set({
+		pointer.set({
 			x: cursorPoint.x,
 			y: cursorPoint.y,
 		});
 	};
-	window.addEventListener('mousemove', handleMousemove);
+	window.addEventListener('mousemove', handleMove);
+	window.addEventListener('touchmove', handleMove);
 	return {
 		destroy() {
-			window.removeEventListener('mousemove', handleMousemove);
+			window.removeEventListener('mousemove', handleMove);
+			window.removeEventListener('touchmove', handleMove);
 		},
 	};
 };
