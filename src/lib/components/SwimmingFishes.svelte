@@ -43,7 +43,7 @@
 	const jsEnabled = isJsEnabled();
 </script>
 
-<div class="absolute inset-0 overflow-hidden">
+<div class="{$jsEnabled ? 'absolute inset-0' : 'sticky top-0 w-screen h-screen'} overflow-hidden">
 	<!--
     Tile SIZE squares in a 3x3 grid to cover the screen.
     Therefore, set min-x and min-y to SIZE, then define width and height as SIZE.

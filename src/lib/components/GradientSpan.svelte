@@ -29,10 +29,8 @@
 	style:--second={colors[1].hex()}
 	style:--secondTo={colorsTo[1].hex()}
 	style:--third={colors[2].hex()}
-	style:--thirdTo={colorsTo[2].hex()}
+	style:--thirdTo={colorsTo[2].hex()}><slot /></span
 >
-	<slot />
-</span>
 
 <style>
 	span {

@@ -11,6 +11,7 @@
 	import * as THREE from 'three';
 	import { range } from '$lib/utils/range';
 	import { clamp } from '$lib/utils/clamp';
+	import { isJsEnabled } from '$lib/utils/accessibility';
 
 	export let progress = 0;
 
@@ -29,24 +30,34 @@
 	});
 	$: $distance = distanceRaw;
 	$: progressDistance = $distance - cubicIn(progress) * 3;
+
+	const jsEnabled = isJsEnabled();
 </script>
 
 <svelte:window bind:innerWidth={$width} />
 
-<SC.Canvas antialias>
-	{#each range(15).map((x) => x * 0.25) as unit}
-		{@const size = unit + 0.25}
-		{@const color = Math.round((unit / 3.75) * 255)}
-		<SC.Mesh
-			geometry={new THREE.BoxGeometry(size, size, size)}
-			material={new THREE.MeshPhongMaterial({
-				color: `rgb(${Math.round(color * 0.6)}, ${Math.round(color * 0.8)}, ${color})`,
-				opacity: 0.1,
-				transparent: true,
-			})}
-			rotation={spin}
-		/>
-	{/each}
-	<SC.PerspectiveCamera position={[progressDistance, 0, progressDistance]} />
-	<SC.AmbientLight intensity={1} />
-</SC.Canvas>
+{#if $jsEnabled}
+	<SC.Canvas antialias>
+		{#each range(15).map((x) => x * 0.25) as unit}
+			{@const size = unit + 0.25}
+			{@const color = Math.round((unit / 3.75) * 255)}
+			<SC.Mesh
+				geometry={new THREE.BoxGeometry(size, size, size)}
+				material={new THREE.MeshPhongMaterial({
+					color: `rgb(${Math.round(color * 0.6)}, ${Math.round(color * 0.8)}, ${color})`,
+					opacity: 0.1,
+					transparent: true,
+				})}
+				rotation={spin}
+			/>
+		{/each}
+		<SC.PerspectiveCamera position={[progressDistance, 0, progressDistance]} />
+		<SC.AmbientLight intensity={1} />
+	</SC.Canvas>
+{:else}
+	<img
+		src="/fallback/NestedCubes.webp"
+		alt="nested cubes"
+		class="w-screen h-screen object-cover sticky top-0"
+	/>
+{/if}
