@@ -6,7 +6,7 @@
 	}
 
 	const ADJECTIVES: Adjective[] = [
-		{ word: 'interactive', color: '#FFB8B8', background: NestedCubes },
+		{ word: 'interactive', color: '#FFB8B8', background: SwimmingFishes },
 		{ word: 'accessible', color: '#B8FFC7', background: NestedCubes },
 		{ word: 'immersive', color: '#CAB8FF', background: NestedCubes },
 	];
@@ -14,6 +14,7 @@
 
 <script lang="ts">
 	import { fly, fade } from 'svelte/transition';
+	import SwimmingFishes from '$lib/components/SwimmingFishes.svelte';
 	import NestedCubes from '$lib/components/NestedCubes.svelte';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import GradientSpan from '$lib/components/GradientSpan.svelte';
