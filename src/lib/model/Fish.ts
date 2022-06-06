@@ -9,9 +9,9 @@ export interface FishProps {
 	speedPerMs: number;
 }
 
-const AVOID_RADIUS = 24;
-const PUSH_SCALE = 8;
-const MOVE_DURATION = 500;
+const AVOID_RADIUS = 32;
+const PUSH_SCALE = 6;
+const MOVE_DURATION = 600;
 
 export class Fish {
 	private static instanceId = 0;
