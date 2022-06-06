@@ -2,8 +2,8 @@ export interface FishProps {
 	initX: number;
 	initY: number;
 	speedPerMs: number;
-	gridWidth?: number;
-	gridHeight?: number;
+	maxX: number;
+	maxY: number;
 }
 
 export class Fish {
@@ -13,20 +13,20 @@ export class Fish {
 	x: number;
 	y: number;
 	speedPerMs: number;
-	gridWidth: number;
-	gridHeight: number;
+	maxX: number;
+	maxY: number;
 
-	constructor({ initX, initY, speedPerMs, gridWidth = 1280, gridHeight = 720 }: FishProps) {
+	constructor({ initX, initY, speedPerMs, maxX, maxY }: FishProps) {
 		this.id = Fish.instanceId++;
 		this.x = initX;
 		this.y = initY;
 		this.speedPerMs = speedPerMs;
-		this.gridWidth = gridWidth;
-		this.gridHeight = gridHeight;
+		this.maxX = maxX;
+		this.maxY = maxY;
 	}
 
 	move(deltaTimeMs: number) {
-		this.x = (this.x + deltaTimeMs * this.speedPerMs) % this.gridWidth;
-		this.y = (this.y + deltaTimeMs * this.speedPerMs) % this.gridHeight;
+		this.x = (this.x + deltaTimeMs * this.speedPerMs) % this.maxX;
+		this.y = (this.y + deltaTimeMs * this.speedPerMs) % this.maxY;
 	}
 }
