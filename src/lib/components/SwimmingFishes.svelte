@@ -14,11 +14,13 @@
 
 	export let progress = 0;
 
+	let id = 0;
 	let fishes = range(0, SIZE * 3, GAP).flatMap((x) =>
 		range(0, SIZE * 3, GAP).map((y) => {
 			const randX = Math.random() * GAP * 0.4;
 			const randY = Math.random() * GAP * 0.4;
 			return new Fish({
+				id: id++,
 				initX: x + randX,
 				initY: y + randY,
 				speedPerMs: 0.005,

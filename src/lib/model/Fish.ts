@@ -2,6 +2,7 @@ import { tweened, type Tweened } from 'svelte/motion';
 import type { Position } from '$lib/utils/pointer';
 
 export interface FishProps {
+	id: number;
 	initX: number;
 	initY: number;
 	maxX: number;
@@ -10,20 +11,19 @@ export interface FishProps {
 }
 
 const AVOID_RADIUS = 32;
+const SQ_AVOID_RADIUS = AVOID_RADIUS * AVOID_RADIUS;
 const PUSH_SCALE = 6;
 const MOVE_DURATION = 600;
 
 export class Fish {
-	private static instanceId = 0;
-
 	id: number;
 	curr: Tweened<Position>;
 	target: Position;
 	max: Position;
 	speedPerMs: number;
 
-	constructor({ initX, initY, maxX, maxY, speedPerMs }: FishProps) {
-		this.id = Fish.instanceId++;
+	constructor({ id, initX, initY, maxX, maxY, speedPerMs }: FishProps) {
+		this.id = id++;
 		this.curr = tweened({ x: initX, y: initY }, { duration: MOVE_DURATION });
 		this.target = { x: initX, y: initY };
 		this.max = { x: maxX, y: maxY };
@@ -34,13 +34,18 @@ export class Fish {
 		const deltaDistance = deltaTimeMs * this.speedPerMs;
 
 		this.target = getSum(this.target, { x: deltaDistance, y: deltaDistance });
-		const beforeMod = this.target;
 		this.target = getMod(this.target, this.max);
-		const hasWrapped = beforeMod.x !== this.target.x || beforeMod.y !== this.target.y;
-
 		const pushedTarget = getPushedTarget(this.target, avoidPoint);
 
-		this.curr.set(pushedTarget, { duration: hasWrapped ? 0 : MOVE_DURATION });
+		this.curr.set(pushedTarget, {
+			interpolate: (from, to) => (t: number) => {
+				if (getSqDistance(from, to) > SQ_AVOID_RADIUS) {
+					return to;
+				}
+				const delta = getDiff(to, from);
+				return getSum(from, getScaled(delta, t));
+			},
+		});
 	}
 }
 
