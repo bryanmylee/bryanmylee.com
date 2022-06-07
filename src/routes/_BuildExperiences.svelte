@@ -37,7 +37,7 @@
 		{@const { word, color, background } = ADJECTIVES[sectionIndex]}
 		<div class="sticky top-0 w-screen h-screen" style:opacity={topProgress}>
 			{#key word}
-				<div class="absolute inset-0" transition:fade>
+				<div class="absolute inset-0" transition:fade={{ duration: 800 }}>
 					<svelte:component this={background} progress={sectionProgress} />
 				</div>
 			{/key}
