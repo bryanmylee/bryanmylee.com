@@ -45,7 +45,7 @@
 		@apply z-[-1] absolute;
 		width: 100vw;
 		height: 100vh;
-		@apply p-4 lg:p-16 grid grid-cols-2 lg:grid-cols-3 gap-16 items-center content-center;
+		@apply p-4 md:p-16 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-16 items-center content-center;
 
 		& img {
 			@apply rounded-2xl;
@@ -71,7 +71,7 @@
 		& .dogs {
 			transform: rotate(calc(15deg + var(--u) * 20deg))
 				translate(calc(var(--u) * 80vh), calc(var(--u) * -20vh));
-			@apply order-4 lg:order-2;
+			@apply order-4 md:order-2;
 		}
 
 		& .cafe {
