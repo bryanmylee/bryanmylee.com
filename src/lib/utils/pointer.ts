@@ -40,10 +40,12 @@ export const svgPointer = (svg: SVGSVGElement, pointer: Writable<Position>) => {
 		});
 	};
 	window.addEventListener('mousemove', handleMove);
+	window.addEventListener('touchstart', handleMove);
 	window.addEventListener('touchmove', handleMove);
 	return {
 		destroy() {
 			window.removeEventListener('mousemove', handleMove);
+			window.removeEventListener('touchstart', handleMove);
 			window.removeEventListener('touchmove', handleMove);
 		},
 	};
