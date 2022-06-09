@@ -26,7 +26,7 @@
 		spin[2] += 0.0005;
 	});
 
-	$: distanceRaw = clamp((1 / ($size / DEFAULT_SIZE)) * 8, 3, 8);
+	$: distanceRaw = clamp((1 / ($size / DEFAULT_SIZE)) * 9, 3, 9);
 	const distance = tweened(distanceRaw, {
 		duration: 1000,
 		easing: cubicOut,
