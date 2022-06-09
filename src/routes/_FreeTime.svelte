@@ -49,6 +49,7 @@
 
 		& img {
 			@apply rounded-2xl;
+			filter: brightness(80%);
 		}
 
 		& .nature {
