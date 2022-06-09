@@ -65,25 +65,25 @@
 
 		& .climb {
 			transform: rotate(calc(-8deg + var(--u) * -20deg))
-				translate(calc(var(--u) * -80vh), calc(var(--u) * 20vh));
+				translate(calc(var(--u) * -100vw), calc(var(--u) * 20vh));
 			@apply order-3;
 		}
 
 		& .dogs {
 			transform: rotate(calc(15deg + var(--u) * 20deg))
-				translate(calc(var(--u) * 80vh), calc(var(--u) * -20vh));
+				translate(calc(var(--u) * 80vw), calc(var(--u) * -40vh));
 			@apply order-4 md:order-2;
 		}
 
 		& .cafe {
 			transform: rotate(calc(-8deg + var(--u) * -20deg))
-				translate(calc(var(--u) * -80vh), calc(-30px + var(--u) * 80vh));
+				translate(calc(var(--u) * -80vw), calc(-30px + var(--u) * 80vh));
 			@apply order-5;
 		}
 
 		& .ocean {
 			transform: rotate(calc(10deg + var(--u) * -20deg))
-				translate(calc(var(--u) * 80vh), calc(var(--u) * 80vh));
+				translate(calc(var(--u) * 80vw), calc(var(--u) * 80vh));
 			@apply order-6;
 		}
 	}
