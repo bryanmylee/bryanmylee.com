@@ -45,7 +45,7 @@
 				</div>
 			{/key}
 			<div class="absolute inset-0 flex items-center justify-center">
-				<h1 class="text-[8vw] font-bold text-center text-white leading-tight drop-shadow-xl">
+				<h1 class="text-[8vw] font-bold text-center text-white leading-tight drop-shadow-2xl">
 					I build
 					{#key word}
 						<span class="inline-block w-[7ch]" in:fly={{ y: 30, duration: 800 }}>
@@ -54,7 +54,7 @@
 							</GradientSpan>
 						</span>
 					{/key}
-					experiences.
+					experiences
 				</h1>
 			</div>
 		</div>
@@ -71,7 +71,7 @@
 					{#each ADJECTIVES as { word, color }}
 						<GradientSpan {color}>{word}</GradientSpan><br />
 					{/each}
-					experiences.
+					experiences
 				</h1>
 			</div>
 		</div>
