@@ -1,14 +1,14 @@
 <script lang="ts" context="module">
 	interface Adjective {
 		word: string;
-		color: string;
+		color: string | [string, string, string];
 		background: typeof SvelteComponent;
 	}
 
 	const ADJECTIVES: Adjective[] = [
 		{ word: 'interactive', color: '#FFB8B8', background: SwimmingFishes },
-		{ word: 'accessible', color: '#B8FFC7', background: NestedCubes },
-		{ word: 'immersive', color: '#CAB8FF', background: NestedCubes },
+		{ word: 'accessible', color: '#B8FFB8', background: Accessibility },
+		{ word: 'immersive', color: '#85D8FF', background: NestedCubes },
 	];
 </script>
 
@@ -16,6 +16,7 @@
 	import type { SvelteComponent } from 'svelte';
 	import { fly, fade } from 'svelte/transition';
 	import SwimmingFishes from '$lib/components/SwimmingFishes.svelte';
+	import Accessibility from '$lib/components/Accessibility.svelte';
 	import NestedCubes from '$lib/components/NestedCubes.svelte';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import GradientSpan from '$lib/components/GradientSpan.svelte';
