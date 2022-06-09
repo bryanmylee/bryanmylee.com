@@ -28,22 +28,24 @@
 <ScrollProgress
 	topInset={50}
 	topPadding={25}
-	scrollDistance={575}
+	bottomPadding={25}
+	scrollDistance={550}
 	let:topProgress
-	sections={[0.25, 0.55]}
+	let:bottomProgress
+	sections={[0.3, 0.6]}
 	let:sectionIndex
 	let:sectionProgress
 >
 	{#if $jsEnabled}
 		{@const { word, color, background } = ADJECTIVES[sectionIndex]}
-		<div class="sticky top-0 w-screen h-screen" style:opacity={topProgress}>
+		<div class="sticky top-0 w-screen h-screen" style:opacity={topProgress * (1 - bottomProgress)}>
 			{#key word}
 				<div class="absolute inset-0" transition:fade={{ duration: 800 }}>
 					<svelte:component this={background} progress={sectionProgress} />
 				</div>
 			{/key}
 			<div class="absolute inset-0 flex items-center justify-center">
-				<h1 class="text-[8vw] font-bold text-center text-white leading-tight">
+				<h1 class="text-[8vw] font-bold text-center text-white leading-tight drop-shadow-xl">
 					I build
 					{#key word}
 						<span class="inline-block w-[7ch]" in:fly={{ y: 30, duration: 800 }}>
