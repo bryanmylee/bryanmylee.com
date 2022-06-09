@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
-	const DEFAULT_WIDTH = 720;
-	const width = writable(DEFAULT_WIDTH);
+	const DEFAULT_SIZE = 720;
+	const size = writable(DEFAULT_SIZE);
 </script>
 
 <script lang="ts">
@@ -13,6 +13,9 @@
 	import { clamp } from '$lib/utils/clamp';
 	import { isJsEnabled } from '$lib/utils/accessibility';
 
+	let innerWidth = DEFAULT_SIZE;
+	let innerHeight = DEFAULT_SIZE;
+	$: $size = Math.min(innerWidth, innerHeight);
 	export let progress = 0;
 
 	let spin: [number, number, number] = [0, 0, 0];
@@ -23,18 +26,18 @@
 		spin[2] += 0.0005;
 	});
 
-	$: distanceRaw = clamp((1 / ($width / DEFAULT_WIDTH)) * 5, 3, 5);
+	$: distanceRaw = clamp((1 / ($size / DEFAULT_SIZE)) * 8, 3, 8);
 	const distance = tweened(distanceRaw, {
 		duration: 1000,
 		easing: cubicOut,
 	});
 	$: $distance = distanceRaw;
-	$: progressDistance = $distance - cubicIn(progress) * 3;
+	$: progressDistance = Math.max($distance - cubicIn(progress) * 8, 0);
 
 	const jsEnabled = isJsEnabled();
 </script>
 
-<svelte:window bind:innerWidth={$width} />
+<svelte:window bind:innerWidth bind:innerHeight />
 
 {#if $jsEnabled}
 	<SC.Canvas antialias>

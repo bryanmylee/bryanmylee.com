@@ -30,7 +30,7 @@
 	topPadding={25}
 	scrollDistance={575}
 	let:topProgress
-	sections={[0.3, 0.6]}
+	sections={[0.25, 0.55]}
 	let:sectionIndex
 	let:sectionProgress
 >
