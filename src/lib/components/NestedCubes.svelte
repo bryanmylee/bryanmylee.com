@@ -6,7 +6,7 @@
 <script lang="ts">
 	import { writable } from 'svelte/store';
 	import { tweened } from 'svelte/motion';
-	import { cubicIn, cubicOut } from 'svelte/easing';
+	import { cubicOut } from 'svelte/easing';
 	import * as SC from 'svelte-cubed';
 	import * as THREE from 'three';
 	import { range } from '$lib/utils/range';
@@ -32,7 +32,7 @@
 		easing: cubicOut,
 	});
 	$: $distance = distanceRaw;
-	$: progressDistance = Math.max($distance - cubicIn(progress) * 8, 0);
+	$: progressDistance = Math.max($distance - progress * 8, 0);
 
 	const jsEnabled = isJsEnabled();
 </script>
