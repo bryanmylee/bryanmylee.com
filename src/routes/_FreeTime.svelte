@@ -11,7 +11,7 @@
 	$: u = 1 - t;
 </script>
 
-<ScrollProgress scrollDistance={150} topInset={75} topPadding={75} bind:topProgress>
+<ScrollProgress scrollDistance={100} topInset={75} topPadding={125} bind:topProgress>
 	<div
 		class="{$jsEnabled
 			? 'fixed'
