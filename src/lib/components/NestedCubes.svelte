@@ -10,7 +10,7 @@
 	import * as SC from 'svelte-cubed';
 	import * as THREE from 'three';
 	import { range } from '$lib/utils/range';
-	import { clamp } from '$lib/utils/clamp';
+	import { clamp } from '$lib/utils/math';
 	import { isJsEnabled } from '$lib/utils/accessibility';
 
 	let innerWidth = DEFAULT_SIZE;

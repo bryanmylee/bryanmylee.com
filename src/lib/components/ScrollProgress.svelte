@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { writable } from 'svelte/store';
-	import { clamp } from '$lib/utils/clamp';
+	import { clamp } from '$lib/utils/math';
 	import { visible } from '$lib/utils/intersection';
 
 	export let scrollDistance = 200;
