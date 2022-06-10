@@ -1,11 +1,11 @@
 <script lang="ts" context="module">
-	interface Adjective {
+	interface Section {
 		word: string;
 		color: string | [string, string, string];
 		background: typeof SvelteComponent;
 	}
 
-	const ADJECTIVES: Adjective[] = [
+	const SECTIONS: Section[] = [
 		{ word: 'interactive', color: '#FFB8B8', background: SwimmingFishes },
 		{ word: 'accessible', color: '#B8FFB8', background: Accessibility },
 		{ word: 'immersive', color: '#85D8FF', background: NestedCubes },
@@ -37,7 +37,7 @@
 	let:sectionProgress
 >
 	{#if $jsEnabled}
-		{@const { word, color, background } = ADJECTIVES[sectionIndex]}
+		{@const { word, color, background } = SECTIONS[sectionIndex]}
 		<div class="sticky top-0 w-screen h-screen" style:opacity={topProgress * (1 - bottomProgress)}>
 			{#key word}
 				<div class="absolute inset-0" transition:fade={{ duration: 800 }}>
@@ -59,7 +59,7 @@
 			</div>
 		</div>
 	{:else}
-		{#each ADJECTIVES as { background }}
+		{#each SECTIONS as { background }}
 			<div class="h-[200vh]">
 				<svelte:component this={background} />
 			</div>
@@ -68,7 +68,7 @@
 			<div class="sticky top-0 w-screen h-screen flex items-center justify-center">
 				<h1 class="text-[8vw] font-bold text-center text-white leading-tight">
 					I build<br />
-					{#each ADJECTIVES as { word, color }}
+					{#each SECTIONS as { word, color }}
 						<GradientSpan {color}>{word}</GradientSpan><br />
 					{/each}
 					experiences
