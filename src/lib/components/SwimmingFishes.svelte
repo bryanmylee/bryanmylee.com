@@ -6,7 +6,7 @@
 <script lang="ts">
 	import { spring } from 'svelte/motion';
 	import { Subscribe } from 'svelte-subscribe';
-	import { Fish } from '$lib/model/Fish';
+	import { Fish } from '$lib/models/Fish';
 	import { frameTime } from '$lib/utils/frame';
 	import { svgPointer, type Position } from '$lib/utils/pointer';
 	import { range } from '$lib/utils/range';

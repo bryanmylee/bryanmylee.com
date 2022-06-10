@@ -50,7 +50,7 @@
 	import Button from '$lib/components/Button.svelte';
 	import WorkCard from '$lib/components/WorkCard.svelte';
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
-	import type { Work } from '$lib/model/Work';
+	import type { Work } from '$lib/models/Work';
 	import { isJsEnabled } from '$lib/utils/accessibility';
 
 	const jsEnabled = isJsEnabled();

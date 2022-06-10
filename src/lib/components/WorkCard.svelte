@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Work } from '$lib/model/Work';
+	import type { Work } from '$lib/models/Work';
 
 	type $$Props = Work;
 
