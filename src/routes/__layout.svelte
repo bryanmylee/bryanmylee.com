@@ -18,6 +18,6 @@
 </svelte:head>
 
 <Nav />
-<main class="relative z-0 {isFullscreen ? '' : 'mt-[5.25rem]'}">
+<main class="relative z-0" class:mt-24={!isFullscreen}>
 	<slot />
 </main>

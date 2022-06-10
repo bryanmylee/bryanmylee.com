@@ -27,7 +27,7 @@
 		</ul>
 		<div class="flex flex-col items-end gap-4 text-right">
 			<input type="checkbox" class="md:hidden peer" />
-			<ul class="flex-col hidden mr-2 gap-y-4 md:flex gap-x-8 md:flex-row peer-checked:flex">
+			<ul class="dropdown">
 				<li><a href="/projects">Projects</a></li>
 				<li><a href="/#work">Work</a></li>
 				<li><a href="/#contact">Contact</a></li>
@@ -38,10 +38,22 @@
 
 <style lang="postcss">
 	nav {
-		@apply fixed inset-0 bottom-auto z-10;
+		@apply fixed inset-0 bottom-auto z-10 h-24;
 		@apply px-8 pt-9;
 		@apply text-xl tracking-tight;
 		color: rgb(var(--textRGB));
+	}
+
+	.dropdown {
+		@apply flex flex-col gap-x-8 md:flex-row;
+		@apply text-lg -m-2 p-4 bg-white shadow-xl rounded-xl;
+		@apply md:text-xl md:m-0 md:p-0 md:bg-transparent md:shadow-none;
+		@apply opacity-0 md:opacity-100 peer-checked:opacity-100;
+		@apply transition-opacity;
+	}
+
+	.dropdown li {
+		@apply hover:bg-gray-100 p-2 rounded-lg;
 	}
 
 	input[type='checkbox'] {
