@@ -6,9 +6,9 @@
 			to: 'Aug 2022',
 			title: 'Enterprise Engineer',
 			details: [
-				'Build database for cold-storage logging',
-				'Design an API to record and read transaction logs',
-				'Implement a web client to access logging data',
+				'Design and deploy a database for cold-storage logging',
+				'Develop an API for recording and reading logs',
+				'Implement a web client for accessing logs',
 			],
 		},
 		{
