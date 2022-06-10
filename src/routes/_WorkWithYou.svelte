@@ -1,11 +1,11 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
-	import { useTheme } from './_context';
+	import { useWhite } from './_context';
 
-	const theme = useTheme();
+	const white = useWhite();
 	let topProgress = 0;
-	$: $theme = topProgress <= 0 ? 'dark' : 'light';
+	$: $white = topProgress;
 </script>
 
 <ScrollProgress scrollDistance={125} topPadding={50} topInset={50} bind:topProgress>

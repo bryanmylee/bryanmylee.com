@@ -1,8 +1,5 @@
 <script lang="ts">
 	import Logo from '$lib/icons/Logo.svelte';
-	import { useTheme } from './_context';
-
-	const theme = useTheme();
 </script>
 
 <nav

@@ -1,4 +1,4 @@
 import { paired } from '$lib/utils/context';
-import { writable } from 'svelte/store';
+import type { Writable } from 'svelte/store';
 
-export const [useTheme, provideTheme] = paired(writable<'light' | 'dark'>('dark'));
+export const [useWhite, provideWhite] = paired<Writable<number>>();

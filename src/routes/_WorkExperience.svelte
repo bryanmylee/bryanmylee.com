@@ -51,6 +51,14 @@
 	import WorkCard from '$lib/components/WorkCard.svelte';
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
 	import type { Work } from '$lib/model/Work';
+	import { onMount } from 'svelte';
+	import { useWhite } from './_context';
+
+	const white = useWhite();
+	onMount(() => {
+		white.set(1);
+		return () => white.set(0);
+	});
 </script>
 
 <section class="-mt-[30vh] bg-gray-50">
