@@ -46,7 +46,7 @@
 
 <style lang="postcss">
 	div {
-		@apply p-2 text-sm font-semibold bg-gray-100 shadow z-10 rounded-lg;
+		@apply p-2 text-xs font-semibold bg-gray-100 shadow z-10 rounded-lg;
 		@apply absolute mb-2 scale-0 -translate-x-1/2 bottom-full left-1/2;
 		@apply group-hover:block group-hover:scale-100;
 		@apply pointer-events-none whitespace-nowrap;
