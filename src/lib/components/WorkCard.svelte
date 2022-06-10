@@ -12,7 +12,7 @@
 
 <div class="p-8 text-black bg-white rounded-xl">
 	<h2 class="text-xl font-bold tracking-tight">{companyName}</h2>
-	<sub>{from} &mdash; {to}</sub>
+	<sub class="text-sm">{from} &mdash; {to}</sub>
 	<hr class="mt-4" />
 	<h3 class="mt-2 font-semibold">{title}</h3>
 	<ul class="mt-2 ml-4 space-y-2 list-disc">
