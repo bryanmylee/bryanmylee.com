@@ -18,8 +18,8 @@
 	<div class="flex flex-col items-end gap-4 text-right">
 		<input type="checkbox" class="md:hidden peer" />
 		<ul class="flex-col hidden mr-2 gap-y-4 md:flex gap-x-8 md:flex-row peer-checked:flex">
-			<li><a href="/projects">Projects</a></li>
-			<li><a href="/projects">Work</a></li>
+			<li><a href="/">Projects</a></li>
+			<li><a href="/">Work</a></li>
 			<li><a href="/#contact">Contact</a></li>
 		</ul>
 	</div>
