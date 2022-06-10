@@ -54,13 +54,14 @@
 </script>
 
 <section class="-mt-[30vh] bg-gray-50 z-10">
+	<h1 id="work" class="sr-only">Work experience</h1>
 	<div class="grid gap-4 p-4 mx-auto layout-container md:grid-cols-2 xl:grid-cols-3">
 		{#each EXPERIENCES as experience}
 			<WorkCard {...experience} />
 		{/each}
 		<div class="flex items-center justify-center min-wh-40">
 			<Button
-				href="/"
+				href="/projects"
 				class="flex items-center gap-1 text-green-800 bg-green-200 hover:bg-green-100 active:opacity-50"
 			>
 				Other projects <ArrowRight class="wh-5" />
