@@ -2,8 +2,12 @@
 	import CreativeDeveloper from './_CreativeDeveloper.svelte';
 	import BuildExperiences from './_BuildExperiences.svelte';
 	import FreeTime from './_FreeTime.svelte';
+	import WorkedOn from './_WorkedOn.svelte';
+	import WorkWithYou from './_WorkWithYou.svelte';
 </script>
 
 <CreativeDeveloper />
 <BuildExperiences />
 <FreeTime />
+<WorkedOn />
+<WorkWithYou />

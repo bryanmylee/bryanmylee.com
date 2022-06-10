@@ -32,7 +32,7 @@
 			<img src="/free-time/ocean.webp" alt="on a rock along the ocean" class="ocean" />
 		</figure>
 		<h1
-			class="text-[8vw] font-bold text-center text-white leading-tight drop-shadow-2xl"
+			class="text-dyn-8 font-bold text-center text-white leading-tight drop-shadow-2xl"
 			style:opacity={tIn * clamp(1 - tOut * 2)}
 			style:transform="scale({lerp(0.95, 1, tIn)}) translate(0, {tOut * -20}vh)"
 		>

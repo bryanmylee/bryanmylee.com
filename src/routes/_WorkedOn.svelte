@@ -6,27 +6,24 @@
 	}
 
 	const SECTIONS: Section[] = [
-		{ word: 'interactive', color: '#FFB8B8', background: SwimmingFishes },
-		{ word: 'accessible', color: '#B8FFB8', background: Accessibility },
-		{ word: 'immersive', color: '#85D8FF', background: NestedCubes },
+		{ word: 'the web', color: '#A3FFFF', background: WebProjects },
+		{ word: 'mobile', color: '#6392EC', background: WebProjects },
+		{ word: 'backend', color: '#FEB2D6', background: WebProjects },
 	];
 </script>
 
 <script lang="ts">
 	import type { SvelteComponent } from 'svelte';
 	import { fly, fade } from 'svelte/transition';
-	import SwimmingFishes from '$lib/components/SwimmingFishes.svelte';
-	import Accessibility from '$lib/components/Accessibility.svelte';
-	import NestedCubes from '$lib/components/NestedCubes.svelte';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import GradientSpan from '$lib/components/GradientSpan.svelte';
 	import { isJsEnabled } from '$lib/utils/accessibility';
+	import WebProjects from '$lib/components/WebProjects.svelte';
 
 	const jsEnabled = isJsEnabled();
 </script>
 
 <ScrollProgress
-	topInset={50}
 	topPadding={25}
 	bottomPadding={25}
 	scrollDistance={550}
@@ -38,7 +35,7 @@
 >
 	{#if $jsEnabled}
 		{@const { word, color, background } = SECTIONS[sectionIndex]}
-		<div class="sticky top-0 w-screen h-screen" style:opacity={topProgress * (1 - bottomProgress)}>
+		<div class="sticky top-0 w-screen h-screen" style:opacity={topProgress}>
 			{#key word}
 				<div class="absolute inset-0" transition:fade={{ duration: 800 }}>
 					<svelte:component this={background} progress={sectionProgress} />
@@ -46,15 +43,14 @@
 			{/key}
 			<div class="absolute inset-0 flex items-center justify-center">
 				<h1 class="text-dyn-8 font-bold text-center text-white leading-tight drop-shadow-2xl">
-					I build
+					I worked on
 					{#key word}
-						<span class="inline-block w-[7ch]" in:fly={{ y: 30, duration: 800 }}>
+						<span class="inline-block w-[6ch] text-left" in:fly={{ y: 30, duration: 800 }}>
 							<GradientSpan {color}>
 								{word}
 							</GradientSpan>
-						</span><br />
+						</span>
 					{/key}
-					experiences
 				</h1>
 			</div>
 		</div>
@@ -67,11 +63,10 @@
 		<div class="absolute inset-0">
 			<div class="sticky top-0 w-screen h-screen flex items-center justify-center">
 				<h1 class="text-dyn-8 font-bold text-center text-white leading-tight">
-					I build<br />
+					I worked on<br />
 					{#each SECTIONS as { word, color }}
 						<GradientSpan {color}>{word}</GradientSpan><br />
 					{/each}
-					experiences
 				</h1>
 			</div>
 		</div>

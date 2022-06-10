@@ -9,7 +9,7 @@ const config = {
 		},
 	},
 
-	plugins: [require('./tailwindcss/size.cjs')],
+	plugins: [require('./tailwindcss/size.cjs'), require('./tailwindcss/dynamicText.cjs')],
 };
 
 module.exports = config;
