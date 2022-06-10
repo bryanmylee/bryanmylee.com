@@ -54,7 +54,7 @@
 </script>
 
 <section class="-mt-[30vh] bg-gray-50">
-	<div class="container grid gap-4 p-16 mx-auto md:grid-cols-2 xl:grid-cols-3">
+	<div class="grid gap-4 p-16 mx-auto layout-container md:grid-cols-2 xl:grid-cols-3">
 		{#each EXPERIENCES as experience}
 			<WorkCard {...experience} />
 		{/each}

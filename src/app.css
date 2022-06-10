@@ -3,6 +3,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+	.layout-container {
+		width: 100%;
+	}
+	@media (min-width: 640px) {
+		.layout-container {
+			max-width: 640px;
+		}
+	}
+	@media (min-width: 768px) {
+		.layout-container {
+			max-width: 768px;
+		}
+	}
+	@media (min-width: 1024px) {
+		.layout-container {
+			max-width: 1024px;
+		}
+	}
+	@media (min-width: 1280px) {
+		.layout-container {
+			max-width: 1280px;
+		}
+	}
+	@media (min-width: 1536px) {
+		.layout-container {
+			max-width: 1536px;
+		}
+	}
+}
+
 @keyframes move-background {
 	0% {
 		background-position: 100% 0%;
