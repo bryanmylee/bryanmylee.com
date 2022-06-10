@@ -12,8 +12,8 @@
 </script>
 
 <nav
+	class:strong-gradient={$white === 1}
 	class:mix-blend-difference={!$jsEnabled}
-	style:background-image="linear-gradient(to bottom, rgb({bgRGB}), rgba({bgRGB}, 0))"
 	style:--bgRGB={bgRGB.join(',')}
 	style:--textRGB={textRGB.join(',')}
 >
@@ -38,10 +38,19 @@
 
 <style lang="postcss">
 	nav {
-		@apply fixed inset-0 bottom-auto z-10 h-24;
-		@apply px-8 pt-9;
+		@apply fixed inset-0 bottom-auto z-10 h-28 px-8 pt-9;
 		@apply text-xl tracking-tight;
 		color: rgb(var(--textRGB));
+		background-image: linear-gradient(to bottom, rgba(var(--bgRGB), 0.5), rgba(var(--bgRGB), 0));
+	}
+
+	nav.strong-gradient {
+		background-image: linear-gradient(
+			to bottom,
+			rgb(var(--bgRGB)),
+			rgba(var(--bgRGB), 0.9) 60%,
+			rgba(var(--bgRGB), 0)
+		);
 	}
 
 	.dropdown {
