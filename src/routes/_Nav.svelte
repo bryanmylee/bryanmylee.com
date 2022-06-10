@@ -17,27 +17,29 @@
 	style:--bgRGB={bgRGB.join(',')}
 	style:--textRGB={textRGB.join(',')}
 >
-	<ul class="flex gap-8">
-		<li>
-			<a href="/" class="flex gap-4 font-semibold">
-				<Logo class="w-6 -translate-y-1" /> Bryan Lee
-			</a>
-		</li>
-	</ul>
-	<div class="flex flex-col items-end gap-4 text-right">
-		<input type="checkbox" class="md:hidden peer" />
-		<ul class="flex-col hidden mr-2 gap-y-4 md:flex gap-x-8 md:flex-row peer-checked:flex">
-			<li><a href="/projects">Projects</a></li>
-			<li><a href="/#work">Work</a></li>
-			<li><a href="/#contact">Contact</a></li>
+	<div class="flex justify-between mx-auto layout-container">
+		<ul class="flex gap-8">
+			<li>
+				<a href="/" class="flex gap-4 font-semibold">
+					<Logo class="w-6 -translate-y-1" /> Bryan Lee
+				</a>
+			</li>
 		</ul>
+		<div class="flex flex-col items-end gap-4 text-right">
+			<input type="checkbox" class="md:hidden peer" />
+			<ul class="flex-col hidden mr-2 gap-y-4 md:flex gap-x-8 md:flex-row peer-checked:flex">
+				<li><a href="/projects">Projects</a></li>
+				<li><a href="/#work">Work</a></li>
+				<li><a href="/#contact">Contact</a></li>
+			</ul>
+		</div>
 	</div>
 </nav>
 
 <style lang="postcss">
 	nav {
 		@apply fixed inset-0 bottom-auto z-10;
-		@apply flex justify-between px-8 pt-9;
+		@apply px-8 pt-9;
 		@apply text-xl tracking-tight;
 		color: rgb(var(--textRGB));
 	}

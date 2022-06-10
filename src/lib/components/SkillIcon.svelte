@@ -1,0 +1,55 @@
+<script lang="ts" context="module">
+	const ID_TO_LABEL = {
+		ansible: 'Ansible',
+		aws: 'AWS',
+		c: 'C',
+		cloudformation: 'CloudFormation',
+		docker: 'Docker',
+		firebase: 'Firebase',
+		flask: 'Flask',
+		graphql: 'GraphQL',
+		java: 'Java',
+		javascript: 'JavaScript',
+		mysql: 'MySQL',
+		nextjs: 'Next.js',
+		nginx: 'NGINX',
+		nodejs: 'Node.js',
+		python: 'Python',
+		rabbitmq: 'RabbitMQ',
+		reactnative: 'React Native',
+		redux: 'Redux',
+		rest: 'REST',
+		scikit: 'scikit-learn',
+		spring: 'Spring',
+		svelte: 'Svelte',
+		sveltekit: 'SvelteKit',
+		swift: 'Swift',
+		tailwindcss: 'TailwindCSS',
+		typescript: 'TypeScript',
+		vim: 'Vim',
+	};
+
+	type Skill = keyof typeof ID_TO_LABEL;
+</script>
+
+<script lang="ts">
+	export let skill: Skill;
+	const name = ID_TO_LABEL[skill];
+</script>
+
+<li class="relative group">
+	<img src="/skills/{skill}.svg" alt={name} class="wh-6 group-hover:scale-105" />
+	<div class="">
+		{name}
+	</div>
+</li>
+
+<style lang="postcss">
+	div {
+		@apply p-2 text-sm font-semibold bg-gray-100 shadow z-10 rounded-lg;
+		@apply absolute mb-2 scale-0 -translate-x-1/2 bottom-full left-1/2;
+		@apply group-hover:block group-hover:scale-100;
+		@apply pointer-events-none whitespace-nowrap;
+		@apply transition-transform;
+	}
+</style>

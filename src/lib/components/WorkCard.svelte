@@ -14,7 +14,7 @@
 	<h2 class="text-xl font-bold tracking-tight">{companyName}</h2>
 	<sub class="text-sm">{from} &mdash; {to}</sub>
 	<hr class="mt-4" />
-	<h3 class="mt-2 font-semibold">{title}</h3>
+	<h3 class="mt-4 font-semibold">{title}</h3>
 	<ul class="mt-2 ml-4 space-y-2 list-disc">
 		{#each details as detail}
 			<li>{detail}</li>

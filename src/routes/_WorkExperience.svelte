@@ -63,10 +63,7 @@
 			<WorkCard {...experience} />
 		{/each}
 		<div class="flex items-center justify-center min-wh-40">
-			<Button
-				href="/projects"
-				class="flex items-center gap-1 text-green-800 bg-green-200 hover:bg-green-100 active:opacity-50"
-			>
+			<Button color="secondary" href="/projects" class="flex items-center gap-1">
 				Other projects <ArrowRight class="wh-5" />
 			</Button>
 		</div>
