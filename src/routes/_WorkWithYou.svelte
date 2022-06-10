@@ -16,7 +16,7 @@
 		class="sticky top-0 w-screen h-screen {$jsEnabled ? '' : 'bg-gray-50'}"
 		style:opacity={$jsEnabled ? topProgress : 1}
 	>
-		<div class="absolute inset-0 flex flex-col items-center justify-center gap-4">
+		<div class="absolute inset-0 flex flex-col items-center justify-center gap-8">
 			<h1 class="font-bold leading-tight text-center text-dyn-6 drop-shadow-2xl" id="contact">
 				And I'd like to work with you.
 			</h1>
