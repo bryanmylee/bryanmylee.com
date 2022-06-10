@@ -13,7 +13,7 @@
 
 <svelte:element
 	this={tag}
-	{...tag === 'button' ? {} : { href, target: '_blank', rel: 'noopener noreferrer' }}
+	{...tag === 'button' ? {} : { href }}
 	class="{_class} button"
 	{...$$restProps}
 	on:click
@@ -22,7 +22,7 @@
 </svelte:element>
 
 <style lang="postcss">
-	.button {
+	:global(:where(.button)) {
 		@apply text-cyan-800 bg-cyan-200 p-4 font-medium rounded-lg;
 		@apply transition-colors;
 		&:hover {

@@ -4,6 +4,7 @@
 	import FreeTime from './_FreeTime.svelte';
 	import WorkedOn from './_WorkedOn.svelte';
 	import WorkWithYou from './_WorkWithYou.svelte';
+	import WorkExperience from './_WorkExperience.svelte';
 </script>
 
 <CreativeDeveloper />
@@ -11,3 +12,4 @@
 <FreeTime />
 <WorkedOn />
 <WorkWithYou />
+<WorkExperience />

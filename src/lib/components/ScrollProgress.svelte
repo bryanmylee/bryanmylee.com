@@ -13,7 +13,7 @@
 	const bottomRatio = bottomPadding / totalDistance;
 
 	let totalDistancePx: number | undefined;
-	let scrollElement: HTMLDivElement | undefined;
+	let scrollElement: HTMLElement | undefined;
 	let scrollOffset = 0;
 	let scrollerSize = 1;
 
@@ -59,7 +59,7 @@
 
 <svelte:window bind:scrollY={scrollOffset} bind:innerHeight={scrollerSize} />
 
-<div
+<section
 	bind:this={scrollElement}
 	bind:clientHeight={totalDistancePx}
 	style:height="{scrollDistance + topPadding}vh"
@@ -79,4 +79,4 @@
 			{sectionProgress}
 		/>
 	{/if}
-</div>
+</section>
