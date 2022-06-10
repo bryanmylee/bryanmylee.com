@@ -43,7 +43,7 @@
 
 	input[type='checkbox'] {
 		@apply appearance-none m-0 relative wh-8 cursor-pointer;
-		background-color: rgb(var(--bgRGB));
+		background-color: transparent;
 	}
 	input[type='checkbox']::before {
 		content: '';
