@@ -16,4 +16,6 @@
 </svelte:head>
 
 <Nav />
-<slot />
+<main class="relative z-0">
+	<slot />
+</main>

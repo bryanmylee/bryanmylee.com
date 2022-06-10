@@ -3,6 +3,9 @@
 	import { clamp } from '$lib/utils/math';
 	import { visible } from '$lib/utils/intersection';
 
+	let _class = '';
+	export { _class as class };
+
 	export let scrollDistance = 200;
 	export let topPadding = 0;
 	export let bottomPadding = 0;
@@ -62,9 +65,9 @@
 <section
 	bind:this={scrollElement}
 	bind:clientHeight={totalDistancePx}
-	style:height="{scrollDistance + topPadding}vh"
+	style:height="{scrollDistance + topPadding + bottomPadding}vh"
 	style:margin-top="{-topInset}vh"
-	class="relative"
+	class="relative z-auto {_class}"
 	use:visible={isVisible}
 >
 	{#if $isVisible}

@@ -51,9 +51,12 @@
 	import WorkCard from '$lib/components/WorkCard.svelte';
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
 	import type { Work } from '$lib/model/Work';
+	import { isJsEnabled } from '$lib/utils/accessibility';
+
+	const jsEnabled = isJsEnabled();
 </script>
 
-<section class="-mt-[30vh] bg-gray-50 z-10">
+<section class="relative mt-[-40vh] {$jsEnabled ? '' : 'bg-gray-50'} z-10">
 	<h1 id="work" class="sr-only">Work experience</h1>
 	<div class="grid gap-4 p-4 mx-auto layout-container md:grid-cols-2 xl:grid-cols-3">
 		{#each EXPERIENCES as experience}
