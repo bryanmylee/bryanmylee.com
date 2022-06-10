@@ -1,10 +1,10 @@
 import { onMount } from 'svelte';
 import type { Writable } from 'svelte/store';
-import { WHITE_LEVELS } from './color';
+import { gray50 } from './color';
 
 export const syncBackgroundWhite = (
 	white: Writable<number>,
-	levels: [number, number, number] = WHITE_LEVELS,
+	levels: [number, number, number] = gray50,
 ) => {
 	onMount(() => {
 		return white.subscribe(($white) => {

@@ -11,7 +11,7 @@
 	const jsEnabled = isJsEnabled();
 </script>
 
-<ScrollProgress scrollDistance={80} topPadding={50} topInset={50} bind:topProgress>
+<ScrollProgress scrollDistance={50} topPadding={80} topInset={50} bind:topProgress>
 	<div class="sticky top-0 w-screen h-screen" style:opacity={$jsEnabled ? topProgress : 1}>
 		<div class="absolute inset-0 {$jsEnabled ? '' : 'bg-gray-50'}" />
 		<div class="absolute inset-0 flex flex-col items-center justify-center gap-8">

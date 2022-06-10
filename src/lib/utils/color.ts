@@ -1,1 +1,3 @@
-export const WHITE_LEVELS: [number, number, number] = [249, 250, 251];
+export type RGB = [number, number, number];
+
+export const gray50: RGB = [249, 250, 251];
