@@ -7,5 +7,5 @@
 	syncBackgroundWhite(white);
 </script>
 
-<div class="fixed inset-0 bg-gray-50 z-[-1]" />
+<!-- <div class="fixed inset-0 bg-gray-50 z-[-1]" /> -->
 <h1>Projects</h1>

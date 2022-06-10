@@ -37,15 +37,18 @@
 		{@const { word, color, background } = SECTIONS[sectionIndex]}
 		<div class="sticky top-0 w-screen h-screen" style:opacity={topProgress}>
 			{#key word}
-				<div class="absolute inset-0" transition:fade={{ duration: 800 }}>
+				<div class="absolute inset-0" transition:fade|local={{ duration: 800 }}>
 					<svelte:component this={background} progress={sectionProgress} />
 				</div>
 			{/key}
 			<div class="absolute inset-0 flex items-center justify-center">
-				<h1 class="text-dyn-8 font-bold text-center text-white leading-tight drop-shadow-2xl">
+				<h1 class="font-bold leading-tight text-center text-white text-dyn-8 drop-shadow-2xl">
 					I worked on
 					{#key word}
-						<span class="inline-block w-[6ch] text-left" in:fly={{ y: 30, duration: 800 }}>
+						<span
+							class="inline-block w-[6ch] whitespace-nowrap text-left"
+							in:fly={{ y: 30, duration: 800 }}
+						>
 							<GradientSpan {color}>
 								{word}
 							</GradientSpan>
@@ -61,8 +64,8 @@
 			</div>
 		{/each}
 		<div class="absolute inset-0">
-			<div class="sticky top-0 w-screen h-screen flex items-center justify-center">
-				<h1 class="text-dyn-8 font-bold text-center text-white leading-tight">
+			<div class="sticky top-0 flex items-center justify-center w-screen h-screen">
+				<h1 class="font-bold leading-tight text-center text-white text-dyn-8">
 					I worked on<br />
 					{#each SECTIONS as { word, color }}
 						<GradientSpan {color}>{word}</GradientSpan><br />

@@ -37,7 +37,7 @@
 <style lang="postcss">
 	nav {
 		@apply fixed inset-0 bottom-auto z-10;
-		@apply flex justify-between p-8 pt-9;
+		@apply flex justify-between px-8 pt-9;
 		@apply text-xl tracking-tight;
 		color: rgb(var(--textRGB));
 	}
