@@ -8,7 +8,7 @@
 
 	const white = writable<number>(0);
 	provideWhite(white);
-	syncBackgroundWhite(white, [249, 250, 251]);
+	syncBackgroundWhite(white);
 </script>
 
 <svelte:head>

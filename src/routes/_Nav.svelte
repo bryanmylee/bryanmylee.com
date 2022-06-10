@@ -1,10 +1,11 @@
 <script lang="ts">
 	import Logo from '$lib/icons/Logo.svelte';
 	import { isJsEnabled } from '$lib/utils/accessibility';
+	import { WHITE_LEVELS } from '$lib/utils/color';
 	import { useWhite } from './_context';
 
 	const white = useWhite();
-	$: bgRGB = [249, 250, 251].map((l) => l * $white);
+	$: bgRGB = WHITE_LEVELS.map((l) => l * $white);
 	$: textRGB = bgRGB.map((l) => 255 - l);
 
 	const jsEnabled = isJsEnabled();
