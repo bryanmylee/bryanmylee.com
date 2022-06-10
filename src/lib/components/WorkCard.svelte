@@ -10,7 +10,7 @@
 	export let details: string[];
 </script>
 
-<div class="p-8 text-black bg-white rounded-xl">
+<div class="z-0 p-8 text-black bg-white rounded-xl">
 	<h2 class="text-xl font-bold tracking-tight">{companyName}</h2>
 	<sub class="text-sm">{from} &mdash; {to}</sub>
 	<hr class="mt-4" />
