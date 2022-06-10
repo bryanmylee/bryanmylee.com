@@ -1,9 +1,20 @@
 <script lang="ts">
 	import Logo from '$lib/icons/Logo.svelte';
+	import { isJsEnabled } from '$lib/utils/accessibility';
+	import { useWhite } from './_context';
+
+	const white = useWhite();
+	$: bgRGB = [249, 250, 251].map((l) => l * $white);
+	$: textRGB = bgRGB.map((l) => 255 - l);
+
+	const jsEnabled = isJsEnabled();
 </script>
 
 <nav
-	class="fixed inset-0 bottom-auto z-10 flex justify-between p-8 mt-1 text-xl tracking-tight text-white mix-blend-difference"
+	class:mix-blend-difference={!$jsEnabled}
+	style:background-image="linear-gradient(to bottom, rgb({bgRGB}), rgba({bgRGB}, 0))"
+	style:--bgRGB={bgRGB.join(',')}
+	style:--textRGB={textRGB.join(',')}
 >
 	<ul class="flex gap-8">
 		<li>
@@ -23,17 +34,27 @@
 </nav>
 
 <style lang="postcss">
+	nav {
+		@apply fixed inset-0 bottom-auto z-10;
+		@apply flex justify-between p-8 pt-9;
+		@apply text-xl tracking-tight;
+		color: rgb(var(--textRGB));
+	}
+
 	input[type='checkbox'] {
-		@apply appearance-none bg-black m-0 relative wh-8 cursor-pointer;
+		@apply appearance-none m-0 relative wh-8 cursor-pointer;
+		background-color: rgb(var(--bgRGB));
 	}
 	input[type='checkbox']::before {
 		content: '';
-		@apply absolute top-2 w-full h-0.5 bg-white;
+		background-color: rgb(var(--textRGB));
+		@apply absolute top-2 w-full h-0.5;
 		@apply transition-transform;
 	}
 	input[type='checkbox']::after {
 		content: '';
-		@apply absolute bottom-2 w-full h-0.5 bg-white;
+		background-color: rgb(var(--textRGB));
+		@apply absolute bottom-2 w-full h-0.5;
 		@apply transition-transform;
 	}
 	input[type='checkbox']:checked::before {
