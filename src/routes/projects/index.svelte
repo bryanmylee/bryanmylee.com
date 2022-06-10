@@ -1,7 +1,5 @@
 <script lang="ts">
-	import Button from '$lib/components/Button.svelte';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
-	import ArrowRight from '$lib/icons/ArrowRight.svelte';
 	import { syncBackgroundWhite } from '$lib/utils/background';
 	import { useWhite } from '../_context';
 
@@ -20,7 +18,7 @@
 			links={[
 				{
 					label: 'GitHub',
-					href: 'https://github.com/bryanmylee/meetwhen.io',
+					href: 'https://github.com/bryanmylee/meetwhen-ui',
 				},
 			]}
 		/>
