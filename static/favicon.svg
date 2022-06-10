@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="-17.5 -10 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+		.top {
+			fill: #A3FFFF;
+		}
+		.left {
+			fill: #6392EC;
+		}
+		.bottom {
+			fill: #FEB2D6;
+		}
+	</style>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M 0 50 L 16.667 16.667 L 25 25 L 0 50 Z" class="top"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M 8.33333 16.6667 L 5.564409999999999e-7 0.00000162913 L -0.00000162913 25 L 8.33333 16.6667 Z" class="left"/>
+  <path d="M 25 0 L 0 0 L 16.667 16.667" class="bottom"/>
+</svg>
