@@ -24,25 +24,17 @@
 			alt="techtris profile page"
 			loading="lazy"
 			style:top="20%"
-			style:right="5%"
+			style:right="8%"
 			class="wide"
 		/>
 	</div>
 	<div class="absolute inset-0" style:transform="translateY({lerp(5, -105, progress)}vh)">
 		<img
-			src="/the-web/meetwhen--home.webp"
-			alt="meetwhen.io home page"
-			loading="lazy"
-			style:top="60%"
-			style:left="20%"
-			class="wide"
-		/>
-		<img
 			src="/the-web/woknroll.webp"
 			alt="wok n roll homepage"
 			loading="lazy"
 			style:top="70%"
-			style:right="10%"
+			style:right="8%"
 			class="tall"
 		/>
 	</div>
@@ -52,7 +44,7 @@
 			alt="meetwhen.io meeting"
 			loading="lazy"
 			style:top="70%"
-			style:right="40%"
+			style:right="53%"
 			class="tall"
 		/>
 		<img
