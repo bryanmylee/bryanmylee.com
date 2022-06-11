@@ -29,6 +29,7 @@
 					<img
 						src="/free-time/nature.webp"
 						alt="a nature reserve"
+						class="aspect-[3/4]"
 						transition:toss={{
 							rotate: '-30deg',
 							x: '-80vw',
@@ -41,6 +42,7 @@
 					<img
 						src="/free-time/concert.webp"
 						alt="a man in a concert"
+						class="aspect-[3/4]"
 						transition:toss={{
 							rotate: '20deg',
 							y: '-80vh',
@@ -52,6 +54,7 @@
 					<img
 						src="/free-time/climb.webp"
 						alt="climbing cliff features"
+						class="aspect-[3/4]"
 						transition:toss={{
 							rotate: '-20deg',
 							x: '-100vw',
@@ -64,6 +67,7 @@
 					<img
 						src="/free-time/dogs.webp"
 						alt="a beagle and a dachshund"
+						class="aspect-square"
 						transition:toss={{
 							rotate: '20deg',
 							x: '80vw',
@@ -76,6 +80,7 @@
 					<img
 						src="/free-time/cafe.webp"
 						alt="a diner"
+						class="aspect-square"
 						transition:toss={{
 							rotate: '-20deg',
 							x: '-80vw',
@@ -88,7 +93,7 @@
 					<img
 						src="/free-time/ocean.webp"
 						alt="on a rock along the ocean"
-						class="ocean"
+						class="aspect-[3/4]"
 						transition:toss={{
 							rotate: '-20deg',
 							x: '80vw',
