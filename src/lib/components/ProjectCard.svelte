@@ -5,7 +5,7 @@
 
 	export let name: string;
 	export let description: string;
-	export let skills: Skill[] = [];
+	export let skills: Skill[] | undefined = undefined;
 	export let links: {
 		label: string;
 		href: string;
@@ -16,12 +16,14 @@
 	<h2 class="text-xl font-bold">{name}</h2>
 	<sub class="text-sm">{description}</sub>
 	<hr class="mt-4" />
-	<ul class="flex gap-2 mt-4">
-		{#each skills as skill}
-			<li><SkillIcon {skill} /></li>
-		{/each}
-	</ul>
-	<div class="mt-2">
+	{#if skills !== undefined}
+		<ul class="flex gap-2 mt-4">
+			{#each skills as skill}
+				<li><SkillIcon {skill} /></li>
+			{/each}
+		</ul>
+	{/if}
+	<div class="mt-4">
 		<slot />
 	</div>
 	<ul class="flex gap-4 mt-4">
