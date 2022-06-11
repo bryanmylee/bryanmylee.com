@@ -7,4 +7,9 @@ export const visible = (node: HTMLElement, isVisible: Writable<boolean>) => {
 		});
 	});
 	observer.observe(node);
+	return {
+		destroy() {
+			observer.unobserve(node);
+		},
+	};
 };
