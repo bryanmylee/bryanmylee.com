@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { clamp } from '$lib/utils/math';
-	import { lerp } from 'three/src/math/MathUtils';
+	import { clamp, lerp } from '$lib/utils/math';
 
 	export let progress = 0;
 </script>
@@ -70,17 +69,10 @@
 <style lang="postcss">
 	.projects {
 		@apply absolute inset-0;
-
-		& div:nth-child(1) {
-			filter: brightness(70%);
-		}
-		& div:nth-child(2) {
-			filter: brightness(85%);
-		}
 	}
 
 	img {
-		@apply absolute bottom-0 rounded-md shadow-2xl;
+		@apply absolute bottom-0 rounded-md;
 		&.wide {
 			width: min(45%, 700px);
 		}

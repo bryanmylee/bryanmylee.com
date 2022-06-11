@@ -2,7 +2,7 @@
 	import { writable } from 'svelte/store';
 	import { clamp } from '$lib/utils/math';
 	import { visible } from '$lib/utils/intersection';
-	import { throttled } from '$lib/utils/store';
+	import { frameSynced } from '$lib/utils/store';
 
 	let _class = '';
 	export { _class as class };
@@ -18,7 +18,7 @@
 
 	let totalDistancePx: number | undefined;
 	let scrollElement: HTMLElement | undefined;
-	const scrollOffset = throttled(0);
+	const scrollOffset = frameSynced(0);
 	let scrollerSize = 1;
 
 	export let offsetPx: number = 0;

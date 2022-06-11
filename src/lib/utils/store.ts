@@ -28,9 +28,31 @@ export const throttled = <T>(
 		}
 	};
 	const throttledSet = (value: T) => throttledUpdate(() => value);
+
 	return {
 		subscribe,
 		update: throttledUpdate,
 		set: throttledSet,
+	};
+};
+
+export const frameSynced = <T>(initValue: T): Writable<T> => {
+	const { subscribe, update } = writable(initValue);
+
+	let currentRequest: number | undefined = undefined;
+	const syncedUpdate = (fn: Updater<T>) => {
+		if (currentRequest !== undefined) {
+			cancelAnimationFrame(currentRequest);
+		}
+		currentRequest = requestAnimationFrame(() => {
+			update(fn);
+		});
+	};
+	const syncedSet = (value: T) => syncedUpdate(() => value);
+
+	return {
+		subscribe,
+		update: syncedUpdate,
+		set: syncedSet,
 	};
 };
