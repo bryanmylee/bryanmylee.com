@@ -13,10 +13,7 @@
 		? 'absolute inset-0'
 		: 'sticky top-0 w-screen h-screen'} flex flex-col justify-center items-center p-24"
 >
-	<div
-		class="absolute w-full -translate-y-1/2 bg-white/10 top-1/2"
-		style:height="{progress * 100}vh"
-	/>
+	<div class="absolute wh-full bg-white/10" style:transform="scaleY({progress})" />
 	<Seeing color="#85D8FF" />
 	<Hearing color="#C46C66" />
 </div>
