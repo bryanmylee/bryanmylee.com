@@ -2,6 +2,7 @@
 	import { writable } from 'svelte/store';
 	import { clamp } from '$lib/utils/math';
 	import { visible } from '$lib/utils/intersection';
+	import { throttled } from '$lib/utils/store';
 
 	let _class = '';
 	export { _class as class };
@@ -17,11 +18,11 @@
 
 	let totalDistancePx: number | undefined;
 	let scrollElement: HTMLElement | undefined;
-	let scrollOffset = 0;
+	const scrollOffset = throttled(0);
 	let scrollerSize = 1;
 
 	export let offsetPx: number = 0;
-	$: offsetPx = scrollElement === undefined ? 0 : scrollOffset - scrollElement.offsetTop;
+	$: offsetPx = scrollElement === undefined ? 0 : $scrollOffset - scrollElement.offsetTop;
 	export let offset: number = 0;
 	$: offset = totalDistancePx === undefined ? 0 : offsetPx / totalDistancePx;
 	$: progressRaw = totalDistancePx === undefined ? 0 : offsetPx / (totalDistancePx - scrollerSize);
@@ -60,7 +61,7 @@
 	};
 </script>
 
-<svelte:window bind:scrollY={scrollOffset} bind:innerHeight={scrollerSize} />
+<svelte:window bind:scrollY={$scrollOffset} bind:innerHeight={scrollerSize} />
 
 <section
 	bind:this={scrollElement}
