@@ -45,7 +45,7 @@
 				</div>
 			{/key}
 			<div class="absolute inset-0 flex items-center justify-center">
-				<h1 class="font-bold leading-tight text-center text-white text-dyn-8 drop-shadow-2xl">
+				<h1 class="font-bold leading-tight text-center text-white text-dyn-8 drop-shadow-xl">
 					I build
 					{#key word}
 						<span class="inline-block w-[7ch]" in:fly={{ y: 30, duration: 800 }}>
