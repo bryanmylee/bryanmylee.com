@@ -55,10 +55,14 @@
 
 	.dropdown {
 		@apply flex flex-col gap-x-8 md:flex-row;
-		@apply text-lg -m-2 p-4 bg-white shadow-xl rounded-xl;
-		@apply md:text-xl md:m-0 md:p-0 md:bg-transparent md:shadow-none;
+		@apply text-lg -m-2 p-4 shadow-xl rounded-xl;
+		@apply md:text-xl md:m-0 md:p-0 md:shadow-none;
 		@apply opacity-0 md:opacity-100 peer-checked:opacity-100;
 		@apply transition-opacity;
+		background: rgb(var(--bgRGB));
+		@media screen and (min-width: 768px) {
+			background: transparent;
+		}
 	}
 
 	.dropdown li a {
