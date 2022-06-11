@@ -16,6 +16,7 @@
 		nodejs: 'Node.js',
 		python: 'Python',
 		rabbitmq: 'RabbitMQ',
+		reactjs: 'React',
 		reactnative: 'React Native',
 		redux: 'Redux',
 		rest: 'REST',
@@ -29,7 +30,7 @@
 		vim: 'Vim',
 	};
 
-	type Skill = keyof typeof ID_TO_LABEL;
+	export type Skill = keyof typeof ID_TO_LABEL;
 </script>
 
 <script lang="ts">
