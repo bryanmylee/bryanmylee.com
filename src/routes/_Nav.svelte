@@ -61,8 +61,8 @@
 		@apply transition-opacity;
 	}
 
-	.dropdown li {
-		@apply hover:bg-gray-100 p-2 rounded-lg;
+	.dropdown li a {
+		@apply inline-block hover:bg-gray-300/20 p-2 rounded-lg;
 	}
 
 	input[type='checkbox'] {
