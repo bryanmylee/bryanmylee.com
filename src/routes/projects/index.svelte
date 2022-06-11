@@ -17,6 +17,10 @@
 			description="A beautiful and mobile-friendly group scheduling application"
 			links={[
 				{
+					label: 'Get started',
+					href: 'https://meetwhen.io',
+				},
+				{
 					label: 'GitHub',
 					href: 'https://github.com/bryanmylee/meetwhen-ui',
 				},

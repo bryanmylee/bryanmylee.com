@@ -37,15 +37,15 @@
 	const name = ID_TO_LABEL[skill];
 </script>
 
-<li class="relative group">
+<div class="relative group">
 	<img src="/skills/{skill}.svg" alt={name} class="wh-6 group-hover:scale-105" />
-	<div class="">
+	<span>
 		{name}
-	</div>
-</li>
+	</span>
+</div>
 
 <style lang="postcss">
-	div {
+	span {
 		@apply p-2 text-xs font-semibold bg-gray-100 shadow z-10 rounded-lg;
 		@apply absolute mb-2 scale-0 -translate-x-1/2 bottom-full left-1/2;
 		@apply group-hover:block group-hover:scale-100;
