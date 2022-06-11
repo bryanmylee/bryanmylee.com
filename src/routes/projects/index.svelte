@@ -14,7 +14,7 @@
 <Section title="Open Source">
 	<ProjectCard
 		name="Svelte Headless Table"
-		description="Unopinionated and extensible data tables for Svelte"
+		description="Unopinionated and extensible data tables for Svelte."
 		links={[
 			{
 				label: 'Documentation',
@@ -28,7 +28,7 @@
 	/>
 	<ProjectCard
 		name="svelte-popperjs"
-		description="Popper for Svelte with actions, no wrapper components or bindings required"
+		description="Popper for Svelte with actions, no wrapper components or bindings required."
 		links={[
 			{
 				label: 'GitHub',
@@ -38,7 +38,7 @@
 	/>
 	<ProjectCard
 		name="svelte-previous"
-		description="A Svelte store that remembers previous values"
+		description="A Svelte store that remembers previous values."
 		links={[
 			{
 				label: 'GitHub',
@@ -48,7 +48,7 @@
 	/>
 	<ProjectCard
 		name="svelte-keyed"
-		description="A writable derived store for objects and arrays"
+		description="A writable derived store for objects and arrays."
 		links={[
 			{
 				label: 'GitHub',
@@ -58,7 +58,7 @@
 	/>
 	<ProjectCard
 		name="svelte-subscribe"
-		description="Subcribe to non top-level stores in your Svelte template"
+		description="Subcribe to non top-level stores in your Svelte template."
 		links={[
 			{
 				label: 'GitHub',
@@ -68,7 +68,7 @@
 	/>
 	<ProjectCard
 		name="vim-colorscheme-icons"
-		description="Colorize vim-devicons with the current colorscheme"
+		description="Colorize vim-devicons with the current colorscheme."
 		links={[
 			{
 				label: 'GitHub',
@@ -78,7 +78,7 @@
 	/>
 	<ProjectCard
 		name="zoo-ids"
-		description="Generate predictable and unique identifiers composed of adjectives and animals in the browser"
+		description="Generate predictable and unique identifiers composed of adjectives and animals in the browser."
 		links={[
 			{
 				label: 'GitHub',
@@ -88,7 +88,7 @@
 	/>
 	<ProjectCard
 		name="tailwindcss-global-dark"
-		description="A TailwindCSS variant for class-based dark mode with CSS Modules"
+		description="A TailwindCSS variant for class-based dark mode with CSS Modules."
 		links={[
 			{
 				label: 'GitHub',
@@ -108,7 +108,7 @@
 	/>
 	<ProjectCard
 		name="tex-er-diagram"
-		description="A LaTeX package for drawing ER diagrams quickly"
+		description="A LaTeX package for drawing entity-relationship diagrams quickly."
 		links={[
 			{
 				label: 'GitHub',
@@ -118,7 +118,7 @@
 	/>
 	<ProjectCard
 		name="sequence-crdt"
-		description="A CRDT for sequential data in C using LSEQ"
+		description="An implementation of a sequential conflict-free replicated data type in C using LSEQ."
 		links={[
 			{
 				label: 'GitHub',
@@ -135,7 +135,7 @@
 <Section title="Applications">
 	<ProjectCard
 		name="meetwhen.io"
-		description="A beautiful and mobile-friendly group scheduling application"
+		description="A beautiful and mobile-friendly group scheduling application."
 		skills={['svelte', 'sveltekit', 'typescript', 'tailwindcss', 'nodejs', 'firebase', 'graphql']}
 		links={[
 			{
@@ -150,7 +150,7 @@
 	/>
 	<ProjectCard
 		name="HelloWorld"
-		description="A mobile AR application that lets you explore the world from your home"
+		description="A mobile AR application that lets you explore the world from your home."
 		skills={['reactjs', 'reactnative']}
 		links={[
 			{
