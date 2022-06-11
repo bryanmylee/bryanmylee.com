@@ -38,7 +38,11 @@
 </script>
 
 <div class="relative group">
-	<img src="/skills/{skill}.svg" alt={name} class="wh-6 group-hover:scale-105" />
+	<img
+		src="/skills/{skill}.svg"
+		alt={name}
+		class="wh-6 group-hover:scale-125 transition-transform"
+	/>
 	<span>
 		{name}
 	</span>
