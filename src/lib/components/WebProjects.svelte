@@ -8,14 +8,14 @@
 	role="group"
 	aria-labelledby="screenshots of web projects"
 	class="projects"
-	style:opacity={clamp(progress * 5)}
+	style:opacity={clamp(1 - 16 * Math.pow(progress - 0.5, 4))}
 >
 	<div class="absolute inset-0" style:transform="translateY({lerp(0, -100, progress)}vh)">
 		<img
 			src="/the-web/kopi_time--listings.webp"
 			alt="kopi time listings page"
 			loading="lazy"
-			style:top="40%"
+			style:top="70%"
 			style:left="5%"
 			class="tall"
 		/>
@@ -23,7 +23,7 @@
 			src="/the-web/techtris.webp"
 			alt="techtris profile page"
 			loading="lazy"
-			style:top="20%"
+			style:top="50%"
 			style:right="8%"
 			class="wide"
 		/>
@@ -33,7 +33,7 @@
 			src="/the-web/woknroll.webp"
 			alt="wok n roll homepage"
 			loading="lazy"
-			style:top="70%"
+			style:top="100%"
 			style:right="8%"
 			class="tall"
 		/>
@@ -43,7 +43,7 @@
 			src="/the-web/meetwhen--meet.webp"
 			alt="meetwhen.io meeting"
 			loading="lazy"
-			style:top="70%"
+			style:top="100%"
 			style:right="53%"
 			class="tall"
 		/>
@@ -51,7 +51,7 @@
 			src="/the-web/kopi_time--inventory.webp"
 			alt="kopie time inventory page"
 			loading="lazy"
-			style:top="30%"
+			style:top="60%"
 			style:left="50%"
 			class="tall"
 		/>
