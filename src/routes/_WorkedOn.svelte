@@ -7,8 +7,8 @@
 
 	const SECTIONS: Section[] = [
 		{ word: 'the web', color: '#A3FFFF', background: WebProjects },
-		{ word: 'mobile', color: '#6392EC', background: WebProjects },
-		{ word: 'backend', color: '#FEB2D6', background: WebProjects },
+		{ word: 'mobile', color: '#6392EC', background: MobileProjects },
+		{ word: 'backend', color: '#FEB2D6', background: MobileProjects },
 	];
 </script>
 
@@ -19,6 +19,7 @@
 	import GradientSpan from '$lib/components/GradientSpan.svelte';
 	import { isJsEnabled } from '$lib/utils/accessibility';
 	import WebProjects from '$lib/components/WebProjects.svelte';
+	import MobileProjects from '$lib/components/MobileProjects.svelte';
 
 	const jsEnabled = isJsEnabled();
 </script>
