@@ -6,10 +6,12 @@
 	export let name: string;
 	export let description: string;
 	export let skills: Skill[] | undefined = undefined;
-	export let links: {
-		label: string;
-		href: string;
-	}[];
+	export let links:
+		| {
+				label: string;
+				href: string;
+		  }[]
+		| undefined = undefined;
 </script>
 
 <div class="p-4 bg-white rounded-xl">
@@ -26,20 +28,22 @@
 	<div class="mt-4">
 		<slot />
 	</div>
-	<ul class="flex gap-4 mt-4">
-		{#each links as { href, label }}
-			<li>
-				<Button
-					{href}
-					target="_blank"
-					rel="noopener noreferrer"
-					size="sm"
-					class="flex items-center gap-1"
-				>
-					{label}
-					<ArrowRight class="wh-5" />
-				</Button>
-			</li>
-		{/each}
-	</ul>
+	{#if links !== undefined}
+		<ul class="flex gap-4 mt-4">
+			{#each links as { href, label }}
+				<li>
+					<Button
+						{href}
+						target="_blank"
+						rel="noopener noreferrer"
+						size="sm"
+						class="flex items-center gap-1"
+					>
+						{label}
+						<ArrowRight class="wh-5" />
+					</Button>
+				</li>
+			{/each}
+		</ul>
+	{/if}
 </div>

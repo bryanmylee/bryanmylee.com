@@ -11,7 +11,7 @@
 
 <div class="fixed inset-0 bg-gray-50 z-[-1]" />
 
-<Section title="Open Source Projects">
+<Section title="Open Source">
 	<ProjectCard
 		name="Svelte Headless Table"
 		description="Unopinionated and extensible data tables for Svelte"
@@ -162,3 +162,150 @@
 		<h3 class="text-gray-600"><strong class="font-mono">CODE_EXP 2021</strong> · 1st Place</h3>
 	</ProjectCard>
 </Section>
+
+<Section title="University">
+	<ProjectCard
+		name="Kopi Time"
+		description="CS302 IT Solution Lifecycle Management"
+		skills={[
+			'typescript',
+			'python',
+			'reactjs',
+			'nextjs',
+			'tailwindcss',
+			'nodejs',
+			'flask',
+			'graphql',
+			'rest',
+			'rabbitmq',
+			'mysql',
+			'nginx',
+			'docker',
+		]}
+		links={[
+			{
+				label: 'Read our report',
+				href: '/projects/cs302-final-report.pdf',
+			},
+		]}
+	>
+		<div class="space-y-2">
+			<p>Kopi Time is a digital marketplace for coffee-related art and collectables.</p>
+			<p>
+				We implemented a reliable and robust microservice architecture to handle market trading
+				functionality, listing expirations, and user notifications.
+			</p>
+		</div>
+	</ProjectCard>
+
+	<ProjectCard
+		name="COMO Club"
+		description="CS301 IT Solution Architecture"
+		skills={[
+			'typescript',
+			'python',
+			'svelte',
+			'sveltekit',
+			'tailwindcss',
+			'flask',
+			'rest',
+			'rabbitmq',
+			'mysql',
+			'nginx',
+			'docker',
+			'cloudformation',
+		]}
+	>
+		<div class="space-y-2">
+			<p>
+				We designed a highly available and maintainable backend architecure for our SMU-X sponsor —
+				COMO Group.
+			</p>
+			<p>
+				Most notably, our architecture fails gracefully when third-party external services are
+				unavailable.
+			</p>
+			<p>
+				We continuously check the health of external services. When an external service fails a
+				healthcheck, we queue all client requests and notify users of the temporary disruption. Once
+				the external service is healthy, we automatically trigger a recovery phase and continue with
+				regular execution.
+			</p>
+		</div>
+	</ProjectCard>
+
+	<ProjectCard
+		name="Optimizing hotel bookings"
+		description="CS421 Introduction to Machine Learning"
+		skills={['python', 'scikit']}
+		links={[
+			{
+				label: 'Data',
+				href: 'https://www.kaggle.com/jessemostipak/hotel-booking-demand',
+			},
+			{
+				label: 'Read our report',
+				href: '/projects/cs421-final-report.pdf',
+			},
+		]}
+	>
+		<div class="space-y-2">
+			<p>
+				We analyzed data on hotel booking demand and explored a variety of machine learning
+				techniques to predict the cancellation of a given hotel booking based on pre-existing
+				features.
+			</p>
+		</div>
+	</ProjectCard>
+
+	<ProjectCard
+		name="Wok N Roll"
+		description="CS206 Software Product Management"
+		skills={['typescript', 'java', 'svelte', 'tailwindcss', 'spring', 'rest']}
+		links={[
+			{
+				label: 'View our slides',
+				href: '/projects/cs206-final-pres.pdf',
+			},
+		]}
+	>
+		<div class="space-y-2">
+			<p>
+				We conducted market research and discovered an unfulfilled niche for a comprehensive
+				database and search engine for hawker food in Singapore.
+			</p>
+			<p>
+				Using this database, we developed a product, risk mitigation strategies, and a feature
+				roadmap for future growth.
+			</p>
+		</div>
+	</ProjectCard>
+
+	<ProjectCard
+		name="Ryver Bank"
+		description="CS203 Collaborative Software Development"
+		skills={['java', 'python', 'spring', 'flask', 'scikit', 'rest', 'mysql', 'docker']}
+		links={[
+			{
+				label: 'View our slides',
+				href: '/projects/cs203-final-pres.pdf',
+			},
+			{
+				label: 'GitHub',
+				href: 'https://github.com/cs203t10-ryverbank',
+			},
+		]}
+	>
+		<div class="space-y-2">
+			<p>We designed a simple trading platform for our SMU-X sponsor — Credit Suisse.</p>
+			<p>
+				Given multiple core functionalities in the requirements, we used microservices to reduce the
+				complexity of each component and enable developers to work semi-independently.
+			</p>
+			<p>We also developed a simple ML-powered stock recommendation engine.</p>
+			<p>For our efforts, we were awarded the <strong>Best Technical Team</strong> achievement.</p>
+		</div>
+	</ProjectCard>
+</Section>
+
+<div class="h-40" />
