@@ -122,9 +122,9 @@
 
 <style lang="postcss">
 	.photos {
-		@apply z-[-1] absolute w-screen h-screen;
-		@apply p-4 md:p-16 gap-4 md:gap-16;
-		@apply grid grid-cols-2 md:grid-cols-3 items-center content-center;
+		@apply absolute z-[-1] h-screen w-screen;
+		@apply gap-4 p-4 md:gap-16 md:p-16;
+		@apply grid grid-cols-2 content-center items-center md:grid-cols-3;
 		@apply grid-flow-row-dense;
 
 		& img {

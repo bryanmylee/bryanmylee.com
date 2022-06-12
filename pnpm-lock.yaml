@@ -16,6 +16,7 @@ specifiers:
   postcss-load-config: ^3.1.4
   prettier: ^2.5.1
   prettier-plugin-svelte: ^2.5.0
+  prettier-plugin-tailwindcss: ^0.1.11
   svelte: ^3.44.0
   svelte-check: ^2.2.6
   svelte-cubed: ^0.2.1
@@ -43,6 +44,7 @@ devDependencies:
   postcss-load-config: 3.1.4_postcss@8.4.14
   prettier: 2.6.2
   prettier-plugin-svelte: 2.7.0_kkjbqzpydplecjtkxrgomroeru
+  prettier-plugin-tailwindcss: 0.1.11_prettier@2.6.2
   svelte: 3.48.0
   svelte-check: 2.7.1_bwfybwdzwmlevsatlte2x4gwcy
   svelte-cubed: 0.2.1
@@ -1907,6 +1909,15 @@ packages:
       svelte: 3.48.0
     dev: true
 
+  /prettier-plugin-tailwindcss/0.1.11_prettier@2.6.2:
+    resolution: {integrity: sha512-a28+1jvpIZQdZ/W97wOXb6VqI762MKE/TxMMuibMEHhyYsSxQA8Ek30KObd5kJI2HF1ldtSYprFayXJXi3pz8Q==}
+    engines: {node: '>=12.17.0'}
+    peerDependencies:
+      prettier: '>=2.2.0'
+    dependencies:
+      prettier: 2.6.2
+    dev: true
+
   /prettier/2.6.2:
     resolution: {integrity: sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==}
     engines: {node: '>=10.13.0'}
@@ -2494,11 +2505,11 @@ packages:
     dev: true
 
   /webidl-conversions/3.0.1:
-    resolution: {integrity: sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE=}
+    resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
     dev: true
 
   /whatwg-url/5.0.0:
-    resolution: {integrity: sha1-lmRU6HZUYuN2RNNib2dCzotwll0=}
+    resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1

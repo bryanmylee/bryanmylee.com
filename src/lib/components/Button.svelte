@@ -31,13 +31,13 @@
 
 <style lang="postcss">
 	.button {
-		@apply p-4 font-medium rounded-lg;
+		@apply rounded-lg p-4 font-medium;
 		@apply transition-colors;
 		&.primary {
-			@apply text-cyan-800 bg-cyan-200 hover:bg-cyan-100 active:bg-cyan-200/30;
+			@apply bg-cyan-200 text-cyan-800 hover:bg-cyan-100 active:bg-cyan-200/30;
 		}
 		&.secondary {
-			@apply text-green-800 bg-green-200 hover:bg-green-100 active:bg-green-200/30;
+			@apply bg-green-200 text-green-800 hover:bg-green-100 active:bg-green-200/30;
 		}
 		&.base {
 			@apply p-4;

@@ -38,7 +38,7 @@
 
 <style lang="postcss">
 	nav {
-		@apply fixed inset-0 bottom-auto z-10 h-28 px-8 pt-9 pointer-events-none;
+		@apply pointer-events-none fixed inset-0 bottom-auto z-10 h-28 px-8 pt-9;
 		@apply text-xl tracking-tight;
 		color: rgb(var(--textRGB));
 		background-image: linear-gradient(to bottom, rgba(var(--bgRGB), 0.5), rgba(var(--bgRGB), 0));
@@ -55,10 +55,10 @@
 
 	.dropdown {
 		@apply flex flex-col gap-x-8 md:flex-row;
-		@apply text-lg -m-2 p-4 shadow-xl rounded-xl;
-		@apply md:text-xl md:m-0 md:p-0 md:shadow-none;
-		@apply opacity-0 md:opacity-100 peer-checked:opacity-100;
-		@apply pointer-events-none md:pointer-events-auto peer-checked:pointer-events-auto;
+		@apply -m-2 rounded-xl p-4 text-lg shadow-xl;
+		@apply md:m-0 md:p-0 md:text-xl md:shadow-none;
+		@apply opacity-0 peer-checked:opacity-100 md:opacity-100;
+		@apply pointer-events-none peer-checked:pointer-events-auto md:pointer-events-auto;
 		@apply transition-opacity;
 		background: rgb(var(--bgRGB));
 		@media screen and (min-width: 768px) {
@@ -67,29 +67,29 @@
 	}
 
 	.dropdown li a {
-		@apply inline-block hover:bg-gray-300/20 p-2 rounded-lg;
+		@apply inline-block rounded-lg p-2 hover:bg-gray-300/20;
 	}
 
 	input[type='checkbox'] {
-		@apply appearance-none m-0 relative wh-8 cursor-pointer;
+		@apply relative m-0 cursor-pointer appearance-none wh-8;
 		background-color: transparent;
 	}
 	input[type='checkbox']::before {
 		content: '';
 		background-color: rgb(var(--textRGB));
-		@apply absolute top-2 w-full h-0.5;
+		@apply absolute top-2 h-0.5 w-full;
 		@apply transition-transform;
 	}
 	input[type='checkbox']::after {
 		content: '';
 		background-color: rgb(var(--textRGB));
-		@apply absolute bottom-2 w-full h-0.5;
+		@apply absolute bottom-2 h-0.5 w-full;
 		@apply transition-transform;
 	}
 	input[type='checkbox']:checked::before {
-		@apply rotate-45 translate-y-[0.4375rem];
+		@apply translate-y-[0.4375rem] rotate-45;
 	}
 	input[type='checkbox']:checked::after {
-		@apply -rotate-45 translate-y-[-0.4375rem];
+		@apply translate-y-[-0.4375rem] -rotate-45;
 	}
 </style>

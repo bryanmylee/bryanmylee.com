@@ -51,8 +51,8 @@
 
 <style lang="postcss">
 	span {
-		@apply p-2 text-xs font-semibold bg-gray-100 shadow z-10 rounded-lg;
-		@apply absolute mb-2 scale-0 -translate-x-1/2 bottom-full left-1/2;
+		@apply z-10 rounded-lg bg-gray-100 p-2 text-xs font-semibold shadow;
+		@apply absolute bottom-full left-1/2 mb-2 -translate-x-1/2 scale-0;
 		@apply group-hover:block group-hover:scale-100;
 		@apply pointer-events-none whitespace-nowrap;
 		@apply transition-transform;
