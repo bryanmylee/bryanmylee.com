@@ -4,7 +4,7 @@
 	import { quintOut } from 'svelte/easing';
 
 	export let color: string;
-	const desat = chroma(color).desaturate(1);
+	const flashColor = chroma(color).desaturate(0.5).hex();
 </script>
 
 <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
@@ -17,7 +17,7 @@
 			d="M 143.906 306.333 C 143.906 306.333 119.626 301.655 120.941 282.822 C 122.256 263.989 141.112 269.132 143.451 254.591 C 145.789 240.048 121.899 236.194 121.589 226.859 C 121.278 217.524 137.186 213.774 137.348 202.385 C 137.508 190.997 145.707 153.968 177.065 153.193 C 208.423 152.419 223.183 173.308 223.681 196.056"
 			in:draw={{ duration: 3000, easing: quintOut }}
 		/>
-		<g style="stroke: {desat.hex()}; opacity: 0.5;">
+		<g style="stroke: {flashColor}">
 			<path
 				d="M 303.31 208.66 C 314.838 218.447 322.153 233.045 322.153 249.351 C 322.153 266.394 314.161 281.571 301.721 291.339"
 				class="animate-pulse"
@@ -36,3 +36,14 @@
 		</g>
 	</g>
 </svg>
+
+<style lang="postcss">
+	@keyframes pulse {
+		50% {
+			filter: brightness(25%);
+		}
+	}
+	.animate-pulse {
+		animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	}
+</style>

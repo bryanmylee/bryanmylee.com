@@ -4,7 +4,7 @@
 	import { quintOut } from 'svelte/easing';
 
 	export let color: string;
-	const desat = chroma(color).desaturate(1);
+	const flashColor = chroma(color).desaturate(0.5).hex();
 </script>
 
 <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
@@ -22,10 +22,7 @@
 			ry="52.056"
 			in:draw={{ duration: 3000, easing: quintOut }}
 		/>
-		<g
-			style="stroke: {desat.hex()}; opacity: 0.5;"
-			transform="matrix(1, 0, 0, 1, 2.004392, 20.333458)"
-		>
+		<g style="stroke: {flashColor}" transform="matrix(1, 0, 0, 1, 2.004392, 20.333458)">
 			<line
 				x1="83.021"
 				y1="223.934"
@@ -40,7 +37,7 @@
 				x2="124.727"
 				y2="152.135"
 				class="animate-pulse"
-				style:animation-delay="100ms"
+				style:animation-delay="200ms"
 			/>
 			<line
 				x1="209.402"
@@ -48,25 +45,7 @@
 				x2="203.462"
 				y2="123.497"
 				class="animate-pulse"
-				style:animation-delay="200ms"
-			/>
-			<line
-				x1="430.74"
-				y1="201.401"
-				x2="413.315"
-				y2="223.934"
-				transform="matrix(-1, 0, 0, -1, 844.054993, 425.335007)"
-				class="animate-pulse"
 				style:animation-delay="300ms"
-			/>
-			<line
-				x1="371.609"
-				y1="152.134"
-				x2="358.682"
-				y2="176.645"
-				transform="matrix(-1, 0, 0, -1, 730.291016, 328.779007)"
-				class="animate-pulse"
-				style:animation-delay="400ms"
 			/>
 			<line
 				x1="296.358"
@@ -75,8 +54,37 @@
 				y2="146.441"
 				transform="matrix(-1, 0, 0, -1, 586.955994, 269.905991)"
 				class="animate-pulse"
+				style:animation-delay="400ms"
+			/>
+			<line
+				x1="371.609"
+				y1="152.134"
+				x2="358.682"
+				y2="176.645"
+				transform="matrix(-1, 0, 0, -1, 730.291016, 328.779007)"
+				class="animate-pulse"
 				style:animation-delay="500ms"
+			/>
+			<line
+				x1="430.74"
+				y1="201.401"
+				x2="413.315"
+				y2="223.934"
+				transform="matrix(-1, 0, 0, -1, 844.054993, 425.335007)"
+				class="animate-pulse"
+				style:animation-delay="600ms"
 			/>
 		</g>
 	</g>
 </svg>
+
+<style lang="postcss">
+	@keyframes pulse {
+		50% {
+			filter: brightness(25%);
+		}
+	}
+	.animate-pulse {
+		animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	}
+</style>
