@@ -13,4 +13,4 @@
 <WorkedOn />
 <WorkWithYou />
 <WorkExperience />
-<div class="h-40" />
+<div class="h-40 w-full bg-gray-50" />
