@@ -10,6 +10,7 @@
 				'Develop an API for recording and reading logs',
 				'Implement a web client for accessing logs',
 			],
+			icon: '/icons/meta.svg',
 		},
 		{
 			companyName: 'Airfoil Studio',
@@ -21,6 +22,7 @@
 				'Implement highly accessible and customized component libraries for client projects',
 				'Rapidly build webpages and applications',
 			],
+			icon: '/icons/airfoil.svg',
 		},
 		{
 			companyName: 'DSO National Laboratories',
@@ -31,6 +33,7 @@
 				'Explore the effectiveness and efficiency of ensemble fuzzing in discovering bugs within JavaScript engines',
 				'Develop an automation pipeline to configure and test fuzzer configurations',
 			],
+			icon: '/icons/dso.png',
 		},
 		{
 			companyName: 'Garuda Robotics',
@@ -42,6 +45,7 @@
 				'Migrate the mapping provider of a drone operator application to OpenStreetMap',
 				'Rearchitect a React application to improve Redux performance and maintainability',
 			],
+			icon: '/icons/garuda.png',
 		},
 	];
 </script>
