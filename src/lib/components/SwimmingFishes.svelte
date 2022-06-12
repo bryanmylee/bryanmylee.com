@@ -56,10 +56,16 @@
 		{/if}
 		{#each fishes as fish (fish.id)}
 			<Subscribe curr={fish.curr} let:curr>
-				<circle cx={curr.x} cy={curr.y} r={1.5} fill="#C46C66" />
+				<circle cx={curr.x} cy={curr.y} r={1.5} fill={fish.isPushed ? '#85D8FF' : '#C46C66'} />
 			</Subscribe>
 		{/each}
 		<!-- The center of the grid is SIZE + 1/2 SIZE -->
 		<circle cx={SIZE * 1.5} cy={SIZE * 1.5} r={progress * SIZE} fill="#FFFFFF" opacity={0.1} />
 	</svg>
 </div>
+
+<style>
+	circle {
+		transition: fill 500ms ease-in-out;
+	}
+</style>

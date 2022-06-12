@@ -10,8 +10,7 @@ export interface FishProps {
 	speedPerMs: number;
 }
 
-const AVOID_RADIUS = 32;
-const SQ_AVOID_RADIUS = AVOID_RADIUS * AVOID_RADIUS;
+const SQ_AVOID_RADIUS = 32;
 const PUSH_SCALE = 6;
 const MOVE_DURATION = 600;
 
@@ -21,6 +20,7 @@ export class Fish {
 	target: Position;
 	max: Position;
 	speedPerMs: number;
+	isPushed = false;
 
 	constructor({ id, initX, initY, maxX, maxY, speedPerMs }: FishProps) {
 		this.id = id++;
@@ -37,9 +37,10 @@ export class Fish {
 		this.target = getMod(this.target, this.max);
 		const pushedTarget = getPushedTarget(this.target, avoidPoint);
 
+		this.isPushed = getSqDistance(this.target, avoidPoint) < SQ_AVOID_RADIUS;
 		this.curr.set(pushedTarget, {
 			interpolate: (from, to) => (t: number) => {
-				if (getSqDistance(from, to) > SQ_AVOID_RADIUS) {
+				if (getSqDistance(from, to) > 100) {
 					return to;
 				}
 				const delta = getDiff(to, from);
@@ -51,7 +52,7 @@ export class Fish {
 
 const getPushedTarget = (target: Position, avoid: Position): Position => {
 	const sqDistance = getSqDistance(target, avoid);
-	if (sqDistance > AVOID_RADIUS) {
+	if (sqDistance > SQ_AVOID_RADIUS) {
 		return target;
 	}
 	const diffVec = getDiff(target, avoid);
