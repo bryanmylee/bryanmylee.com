@@ -12,7 +12,7 @@
 </script>
 
 <div class="p-8 text-black bg-white rounded-xl">
-	<div class="flex justify-between items-center">
+	<div class="flex justify-between items-center gap-4">
 		<div>
 			<h2 class="text-xl font-bold tracking-tight">
 				{companyName}
@@ -20,7 +20,7 @@
 			<sub class="text-sm">{from} &mdash; {to}</sub>
 		</div>
 		{#if icon !== undefined}
-			<img src={icon} alt={companyName} class="wh-12 object-contain" />
+			<img src={icon} alt={companyName} class="wh-10 object-contain" />
 		{/if}
 	</div>
 	<hr class="mt-4" />
