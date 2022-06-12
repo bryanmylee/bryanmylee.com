@@ -59,7 +59,7 @@
 		</div>
 	{:else}
 		{#each SECTIONS as { background }}
-			<div class="h-[200vh]">
+			<div class="h-[200vh] relative">
 				<svelte:component this={background} />
 			</div>
 		{/each}

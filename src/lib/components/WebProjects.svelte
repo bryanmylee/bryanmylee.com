@@ -1,16 +1,21 @@
 <script lang="ts">
+	import { isJsEnabled } from '$lib/utils/accessibility';
+
 	import { clamp, lerp } from '$lib/utils/math';
 
 	export let progress = 0;
+
+	const jsEnabled = isJsEnabled();
+	$: t = $jsEnabled ? progress : 0.5;
 </script>
 
 <figure
 	role="group"
 	aria-labelledby="screenshots of web projects"
-	class="projects"
-	style:opacity={clamp(1 - 16 * Math.pow(progress - 0.5, 4))}
+	class="absolute inset-0 {$jsEnabled ? '' : 'top-1/3 h-screen'}"
+	style:opacity={clamp(1 - 16 * Math.pow(t - 0.5, 4))}
 >
-	<div class="absolute inset-0" style:transform="translateY({lerp(0, -100, progress)}vh)">
+	<div class="absolute inset-0" style:transform="translateY({lerp(0, -100, t)}vh)">
 		<img
 			src="/the-web/kopi_time--listings.webp"
 			alt="kopi time listings page"
@@ -28,7 +33,7 @@
 			class="wide"
 		/>
 	</div>
-	<div class="absolute inset-0" style:transform="translateY({lerp(5, -105, progress)}vh)">
+	<div class="absolute inset-0" style:transform="translateY({lerp(5, -105, t)}vh)">
 		<img
 			src="/the-web/woknroll.webp"
 			alt="wok n roll homepage"
@@ -38,7 +43,7 @@
 			class="tall"
 		/>
 	</div>
-	<div class="absolute inset-0" style:transform="translateY({lerp(10, -110, progress)}vh)">
+	<div class="absolute inset-0" style:transform="translateY({lerp(10, -110, t)}vh)">
 		<img
 			src="/the-web/meetwhen--meet.webp"
 			alt="meetwhen.io meeting"
@@ -59,10 +64,6 @@
 </figure>
 
 <style lang="postcss">
-	.projects {
-		@apply absolute inset-0;
-	}
-
 	img {
 		@apply absolute bottom-0 rounded-md;
 		&.wide {

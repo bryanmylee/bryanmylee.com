@@ -18,7 +18,7 @@
 			? 'fixed'
 			: 'sticky'} top-0 w-screen h-screen flex items-center justify-center"
 	>
-		{#if topProgress > 0.5}
+		{#if !$jsEnabled || topProgress > 0.5}
 			<figure
 				role="group"
 				aria-labelledby="photos taken in my free time"
