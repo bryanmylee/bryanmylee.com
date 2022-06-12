@@ -34,27 +34,16 @@
 </script>
 
 <script lang="ts">
+	import Labelled from './Labelled.svelte';
+
 	export let skill: Skill;
 	const name = ID_TO_LABEL[skill];
 </script>
 
-<div class="relative group">
+<Labelled label={name}>
 	<img
 		src="/skills/{skill}.svg"
 		alt={name}
 		class="wh-6 group-hover:scale-125 transition-transform"
 	/>
-	<span>
-		{name}
-	</span>
-</div>
-
-<style lang="postcss">
-	span {
-		@apply z-10 rounded-lg bg-gray-100 p-2 text-xs font-semibold shadow;
-		@apply absolute bottom-full left-1/2 mb-2 -translate-x-1/2 scale-0;
-		@apply group-hover:block group-hover:scale-100;
-		@apply pointer-events-none whitespace-nowrap;
-		@apply transition-transform;
-	}
-</style>
+</Labelled>
