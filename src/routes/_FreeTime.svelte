@@ -10,7 +10,13 @@
 	const jsEnabled = isJsEnabled();
 </script>
 
-<ScrollProgress scrollDistance={100} topInset={75} topPadding={125} let:topProgress let:outProgress>
+<ScrollProgress
+	scrollDistance={100}
+	topInset={100}
+	topPadding={125}
+	let:topProgress
+	let:outProgress
+>
 	{@const tIn = $jsEnabled ? cubicOut(topProgress) : 1}
 	{@const tOut = cubicIn(outProgress)}
 	<div class="{$jsEnabled ? 'fixed' : 'sticky'} top-0 wh-screen flex items-center justify-center">
