@@ -40,7 +40,7 @@ export class Fish {
 		this.isPushed = getSqDistance(this.target, avoidPoint) < SQ_AVOID_RADIUS;
 		this.curr.set(pushedTarget, {
 			interpolate: (from, to) => (t: number) => {
-				if (getSqDistance(from, to) > 100) {
+				if (getSqDistance(from, to) > 500) {
 					return to;
 				}
 				const delta = getDiff(to, from);
