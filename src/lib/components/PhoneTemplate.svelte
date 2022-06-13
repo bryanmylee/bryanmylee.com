@@ -13,7 +13,7 @@
 
 	let innerWidth = 1000;
 	let innerHeight = 1000;
-	$: targetSize = Math.max(innerWidth, innerHeight) * 4;
+	$: targetSize = Math.max(innerWidth, innerHeight) * 5;
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
