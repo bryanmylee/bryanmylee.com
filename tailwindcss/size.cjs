@@ -10,6 +10,12 @@ const sizePlugin = plugin(({ addUtilities, theme, e }) => {
 			['.' + e(`max-wh-${sizeKey}`), { maxWidth: size, maxHeight: size }],
 		]);
 	addUtilities(Object.fromEntries(utilityEntries));
+	addUtilities({
+		'.wh-screen': {
+			width: '100vw',
+			height: '100vh',
+		},
+	});
 });
 
 module.exports = sizePlugin;

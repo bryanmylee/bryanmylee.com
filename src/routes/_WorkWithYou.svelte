@@ -16,7 +16,7 @@
 </script>
 
 <ScrollProgress scrollDistance={50} topPadding={80} topInset={50} bind:topProgress>
-	<div class="sticky top-0 w-screen h-screen" style:opacity={$jsEnabled ? topProgress : 1}>
+	<div class="sticky top-0 wh-screen" style:opacity={$jsEnabled ? topProgress : 1}>
 		<div class="absolute inset-0 {$jsEnabled ? '' : 'bg-gray-50'}" />
 		<div class="absolute inset-0 bottom-[45vh] flex flex-col items-center justify-end gap-8">
 			<h1

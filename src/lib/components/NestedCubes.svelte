@@ -61,7 +61,7 @@
 	<img
 		src="/fallback/NestedCubes.webp"
 		alt="nested cubes"
-		class="w-screen h-screen object-cover sticky top-0"
+		class="wh-screen object-cover sticky top-0"
 		loading="lazy"
 	/>
 {/if}

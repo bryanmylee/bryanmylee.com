@@ -11,7 +11,7 @@
 <div
 	class="{$jsEnabled
 		? 'absolute inset-0'
-		: 'sticky top-0 w-screen h-screen'} flex flex-col justify-center items-center p-24"
+		: 'sticky top-0 wh-screen'} flex flex-col justify-center items-center p-24"
 >
 	<div class="absolute wh-full bg-white/10" style:transform="scaleY({progress})" />
 	<Seeing color="#85D8FF" />

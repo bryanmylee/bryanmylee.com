@@ -35,7 +35,7 @@
 >
 	{#if $jsEnabled}
 		{@const { word, color, background } = SECTIONS[sectionIndex]}
-		<div class="sticky top-0 w-screen h-screen" style:opacity={topProgress}>
+		<div class="sticky top-0 wh-screen" style:opacity={topProgress}>
 			{#key word}
 				<div class="absolute inset-0" transition:fade|local={{ duration: 800 }}>
 					<svelte:component this={background} progress={sectionProgress} />
@@ -64,7 +64,7 @@
 			</div>
 		{/each}
 		<div class="absolute inset-0">
-			<div class="sticky top-0 flex items-center justify-center w-screen h-screen">
+			<div class="sticky top-0 flex items-center justify-center wh-screen">
 				<h1 class="font-bold leading-tight text-center text-white text-dyn-8">
 					I worked on<br />
 					{#each SECTIONS as { word, color }}

@@ -13,11 +13,7 @@
 <ScrollProgress scrollDistance={100} topInset={75} topPadding={125} let:topProgress let:outProgress>
 	{@const tIn = $jsEnabled ? cubicOut(topProgress) : 1}
 	{@const tOut = cubicIn(outProgress)}
-	<div
-		class="{$jsEnabled
-			? 'fixed'
-			: 'sticky'} top-0 w-screen h-screen flex items-center justify-center"
-	>
+	<div class="{$jsEnabled ? 'fixed' : 'sticky'} top-0 wh-screen flex items-center justify-center">
 		{#if !$jsEnabled || topProgress > 0.5}
 			<figure
 				role="group"
@@ -122,7 +118,7 @@
 
 <style lang="postcss">
 	.photos {
-		@apply absolute z-[-1] h-screen w-screen;
+		@apply absolute z-[-1] wh-screen;
 		@apply gap-4 p-4 md:gap-16 md:p-16;
 		@apply grid grid-cols-2 content-center items-center md:grid-cols-3;
 		@apply grid-flow-row-dense;
