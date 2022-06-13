@@ -8,7 +8,6 @@
 	const SECTIONS: Section[] = [
 		{ word: 'the web', color: '#A3FFFF', background: WebProjects },
 		{ word: 'mobile', color: '#6392EC', background: MobileProjects },
-		{ word: 'backend', color: '#FEB2D6', background: MobileProjects },
 	];
 </script>
 
@@ -27,9 +26,9 @@
 <ScrollProgress
 	topPadding={25}
 	bottomPadding={25}
-	scrollDistance={550}
+	scrollDistance={350}
 	let:topProgress
-	sections={[0.3, 0.6]}
+	sections={[0.5]}
 	let:sectionIndex
 	let:sectionProgress
 >
