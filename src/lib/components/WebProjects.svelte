@@ -65,7 +65,8 @@
 
 <style lang="postcss">
 	img {
-		@apply absolute bottom-0 rounded-md;
+		@apply absolute bottom-0;
+		border-radius: min(1vw, 10px);
 		&.wide {
 			width: min(45%, 700px);
 		}
