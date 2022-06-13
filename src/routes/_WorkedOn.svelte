@@ -14,9 +14,10 @@
 <script lang="ts">
 	import type { SvelteComponent } from 'svelte';
 	import { fly, fade } from 'svelte/transition';
+	import { isJsEnabled } from '$lib/utils/accessibility';
+	import { clamp } from '$lib/utils/math';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import GradientSpan from '$lib/components/GradientSpan.svelte';
-	import { isJsEnabled } from '$lib/utils/accessibility';
 	import WebProjects from '$lib/components/WebProjects.svelte';
 	import MobileProjects from '$lib/components/MobileProjects.svelte';
 	import { useWhite } from './_context';
@@ -25,7 +26,7 @@
 
 	const white = useWhite();
 	let contentProgress = 0;
-	$: fadeOutProgress = contentProgress < 0.5 ? 0 : (contentProgress - 0.9) / (1 - 0.95);
+	$: fadeOutProgress = contentProgress < 0.5 ? 0 : clamp((contentProgress - 0.9) / (1 - 0.95));
 	$: $white = fadeOutProgress;
 </script>
 
