@@ -1,23 +1,19 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
-	import LinkIcon from '$lib/components/Labelled.svelte';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import Labelled from '$lib/components/Labelled.svelte';
 	import GitHub from '$lib/icons/GitHub.svelte';
 	import { isJsEnabled } from '$lib/utils/accessibility';
-	import { useWhite } from './_context';
 	import LinkedIn from '$lib/icons/LinkedIn.svelte';
 
-	const white = useWhite();
 	let topProgress = 0;
-	$: $white = topProgress;
 
 	const jsEnabled = isJsEnabled();
 </script>
 
-<ScrollProgress scrollDistance={50} topPadding={80} topInset={50} bind:topProgress>
+<ScrollProgress scrollDistance={40} topPadding={90} topInset={100} bind:topProgress>
 	<div class="sticky top-0 wh-screen" style:opacity={$jsEnabled ? topProgress : 1}>
-		<div class="absolute inset-0 {$jsEnabled ? '' : 'bg-gray-50'}" />
+		<div class="absolute inset-0 bg-gray-50" />
 		<div class="absolute inset-0 bottom-[45vh] flex flex-col items-center justify-end gap-8">
 			<h1
 				id="contact"

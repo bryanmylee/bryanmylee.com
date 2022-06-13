@@ -19,8 +19,14 @@
 	import { isJsEnabled } from '$lib/utils/accessibility';
 	import WebProjects from '$lib/components/WebProjects.svelte';
 	import MobileProjects from '$lib/components/MobileProjects.svelte';
+	import { useWhite } from './_context';
 
 	const jsEnabled = isJsEnabled();
+
+	const white = useWhite();
+	let contentProgress = 0;
+	$: fadeOutProgress = contentProgress < 0.5 ? 0 : (contentProgress - 0.9) / (1 - 0.95);
+	$: $white = fadeOutProgress;
 </script>
 
 <ScrollProgress
@@ -28,6 +34,7 @@
 	bottomPadding={25}
 	scrollDistance={350}
 	let:topProgress
+	bind:contentProgress
 	sections={[0.5]}
 	let:sectionIndex
 	let:sectionProgress
@@ -40,7 +47,10 @@
 					<svelte:component this={background} progress={sectionProgress} />
 				</div>
 			{/key}
-			<div class="absolute inset-0 flex items-center justify-center">
+			<div
+				class="absolute inset-0 flex items-center justify-center"
+				style:opacity={1 - fadeOutProgress}
+			>
 				<h1 class="font-bold leading-tight text-center text-white text-dyn-8 drop-shadow-xl">
 					I worked on
 					{#key word}
