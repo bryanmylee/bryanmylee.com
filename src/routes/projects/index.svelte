@@ -295,9 +295,31 @@
 	</ProjectCard>
 
 	<ProjectCard
+		name="Simulation of voting fairness within the Group Representation Constituencies system of Singapore"
+		description="CS426 Agent-based Modelling and Simulation"
+		links={[
+			{
+				label: 'GitHub',
+				href: 'https://github.com/bryanmylee/smu-cs426-project',
+			},
+			{
+				label: 'Read our report',
+				href: '/projects/cs426-final-report.pdf',
+			},
+		]}
+	>
+		<div class="space-y-2">
+			<p>
+				We modelled various gerrymandering and Group Representation Constituency allocation
+				strategies using an agent-based simulation to explore the impacts of voter flexibility and
+				distribution on the fairness of representation.
+			</p>
+		</div>
+	</ProjectCard>
+
+	<ProjectCard
 		name="Network and link layer emulation"
 		description="CS441 Network Security"
-		skills={['python']}
 		links={[
 			{
 				label: 'GitHub',
