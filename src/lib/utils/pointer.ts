@@ -50,3 +50,21 @@ export const svgPointer = (svg: SVGSVGElement, pointer: Writable<Position>) => {
 		},
 	};
 };
+
+export const clickOutside = (node: HTMLElement, callback: (event: MouseEvent) => void) => {
+	const handleClick = (event: MouseEvent) => {
+		const { target } = event;
+		if (!(target instanceof Node)) {
+			return;
+		}
+		if (!node.contains(target)) {
+			callback(event);
+		}
+	};
+	window.addEventListener('click', handleClick);
+	return {
+		destroy() {
+			node.removeEventListener('click', handleClick);
+		},
+	};
+};

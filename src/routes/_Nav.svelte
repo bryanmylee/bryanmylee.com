@@ -2,6 +2,7 @@
 	import Logo from '$lib/icons/Logo.svelte';
 	import { isJsEnabled } from '$lib/utils/accessibility';
 	import { gray50 } from '$lib/utils/color';
+	import { clickOutside } from '$lib/utils/pointer';
 	import { useWhite } from './_context';
 
 	const white = useWhite();
@@ -9,6 +10,7 @@
 	$: textRGB = bgRGB.map((l) => 255 - l);
 
 	const jsEnabled = isJsEnabled();
+	let showDropdown = false;
 </script>
 
 <nav
@@ -26,8 +28,12 @@
 			</li>
 		</ul>
 		<div class="flex flex-col items-end gap-4 text-right">
-			<input type="checkbox" class="md:hidden peer pointer-events-auto" />
-			<ul class="dropdown">
+			<input
+				type="checkbox"
+				class="md:hidden peer pointer-events-auto"
+				bind:checked={showDropdown}
+			/>
+			<ul class="dropdown" use:clickOutside={() => (showDropdown = false)}>
 				<li><a href="/projects">Projects</a></li>
 				<li><a href="/#work">Work</a></li>
 				<li><a href="/#contact">Contact</a></li>
