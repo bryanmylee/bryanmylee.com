@@ -4,5 +4,5 @@ export interface Work {
 	to: string;
 	title: string;
 	details: string[];
-	icon?: string;
+	homepage?: string;
 }
