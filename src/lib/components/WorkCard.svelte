@@ -13,7 +13,7 @@
 </script>
 
 <div class="p-8 text-black bg-white rounded-xl">
-	<h2 class="text-xl font-bold tracking-tight flex justify-between">
+	<h2 class="text-xl font-bold tracking-tight flex justify-between items-center">
 		<span>{companyName}</span>
 		{#if homepage !== undefined}
 			<a href={homepage} target="_blank" rel="noopener noreferrer">
