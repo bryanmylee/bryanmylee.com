@@ -295,7 +295,7 @@
 	</ProjectCard>
 
 	<ProjectCard
-		name="Simulation of voting fairness within the Group Representation Constituency system of Singapore"
+		name="Simulation of Voting Fairness Within the Group Representation Constituency System of Singapore"
 		description="CS426 Agent-based Modelling and Simulation"
 		links={[
 			{
@@ -318,7 +318,7 @@
 	</ProjectCard>
 
 	<ProjectCard
-		name="Network and link layer emulation"
+		name="Network and Link Layer Emulation"
 		description="CS441 Network Security"
 		links={[
 			{
@@ -346,7 +346,7 @@
 	</ProjectCard>
 
 	<ProjectCard
-		name="Optimizing hotel bookings"
+		name="Optimizing Hotel Bookings"
 		description="CS421 Introduction to Machine Learning"
 		skills={['python', 'scikit']}
 		links={[
