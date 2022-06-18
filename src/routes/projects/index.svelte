@@ -295,7 +295,7 @@
 	</ProjectCard>
 
 	<ProjectCard
-		name="Simulation of Voting Fairness Within the Group Representation Constituency System of Singapore"
+		name="Simulation of Voting Fairness within the Group Representation Constituency System of Singapore"
 		description="CS426 Agent-based Modelling and Simulation"
 		links={[
 			{
