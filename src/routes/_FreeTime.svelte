@@ -3,7 +3,7 @@
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import { toss } from '$lib/transitions/toss';
 	import { isJsEnabled } from '$lib/utils/accessibility';
-	import { clamp, lerp } from '$lib/utils/math';
+	import { clamp } from '$lib/utils/math';
 
 	const duration = 600;
 
@@ -11,16 +11,17 @@
 </script>
 
 <ScrollProgress
+	name="free time"
 	scrollDistance={100}
 	topInset={100}
-	topPadding={125}
+	topPadding={100}
 	let:topProgress
 	let:outProgress
 >
 	{@const tIn = $jsEnabled ? cubicOut(topProgress) : 1}
 	{@const tOut = cubicIn(outProgress)}
-	<div class="{$jsEnabled ? 'fixed' : 'sticky'} top-0 wh-screen flex items-center justify-center">
-		{#if !$jsEnabled || topProgress > 0.5}
+	<div class="sticky top-0 wh-screen flex items-center justify-center">
+		{#if !$jsEnabled || topProgress > 0.25}
 			<figure
 				role="group"
 				aria-labelledby="photos taken in my free time"
@@ -38,6 +39,7 @@
 							x: '-80vw',
 							y: '-80vh',
 							duration,
+							delay: 50,
 						}}
 					/>
 				</div>
@@ -51,6 +53,7 @@
 							rotate: '20deg',
 							y: '-80vh',
 							duration,
+							delay: 150,
 						}}
 					/>
 				</div>
@@ -65,6 +68,7 @@
 							x: '-100vw',
 							y: '20vh',
 							duration,
+							delay: 100,
 						}}
 					/>
 				</div>
@@ -79,6 +83,7 @@
 							x: '80vw',
 							y: '-40vh',
 							duration,
+							delay: 200,
 						}}
 					/>
 				</div>
@@ -107,6 +112,7 @@
 							x: '80vw',
 							y: '80vh',
 							duration,
+							delay: 250,
 						}}
 					/>
 				</div>
@@ -115,7 +121,6 @@
 		<h1
 			class="font-bold leading-tight text-center text-white text-dyn-8 drop-shadow-xl"
 			style:opacity={tIn * clamp(1 - tOut * 2)}
-			style:transform="scale({lerp(0.95, 1, tIn)}) translate(0, {tOut * -20}vh)"
 		>
 			And still manage<br />to make free time.
 		</h1>
