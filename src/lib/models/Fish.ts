@@ -30,14 +30,14 @@ export class Fish {
 		this.speedPerMs = speedPerMs;
 	}
 
-	move(deltaTimeMs: number, avoidPoint: Position) {
+	move(deltaTimeMs: number, avoidPoint: Position, isActive: boolean) {
 		const deltaDistance = deltaTimeMs * this.speedPerMs;
 
 		this.target = getSum(this.target, { x: deltaDistance, y: deltaDistance });
 		this.target = getMod(this.target, this.max);
-		const pushedTarget = getPushedTarget(this.target, avoidPoint);
+		const pushedTarget = isActive ? getPushedTarget(this.target, avoidPoint) : this.target;
 
-		this.isPushed = getSqDistance(this.target, avoidPoint) < SQ_AVOID_RADIUS;
+		this.isPushed = isActive && getSqDistance(this.target, avoidPoint) < SQ_AVOID_RADIUS;
 		this.curr.set(pushedTarget, {
 			interpolate: (from, to) => (t: number) => {
 				if (getSqDistance(from, to) > 500) {

@@ -23,9 +23,19 @@ export const useMousePosition = () => {
 	});
 };
 
-export const svgPointer = (svg: SVGSVGElement, pointer: Writable<Position>) => {
+export interface SVGPointerProps {
+	pointer: Writable<Position>;
+	active: Writable<boolean>;
+}
+
+export const svgPointer = (svg: SVGSVGElement, { pointer, active }: SVGPointerProps) => {
+	let activated = false;
 	const point = new DOMPoint(0, 0);
 	const handleMove = (event: MouseEvent | TouchEvent) => {
+		if (!activated) {
+			active.set(true);
+			activated = true;
+		}
 		if (event instanceof MouseEvent) {
 			point.x = event.clientX;
 			point.y = event.clientY;
