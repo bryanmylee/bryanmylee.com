@@ -12,6 +12,7 @@
 	import { range } from '$lib/utils/range';
 	import { clamp } from '$lib/utils/math';
 	import { isJsEnabled } from '$lib/utils/accessibility';
+	import { frameTime } from '$lib/utils/frame';
 
 	let innerWidth = DEFAULT_SIZE;
 	let innerHeight = DEFAULT_SIZE;
@@ -20,11 +21,13 @@
 
 	let spin: [number, number, number] = [0, 0, 0];
 
-	SC.onFrame(() => {
+	const [time] = frameTime();
+	$: $time, onFrame();
+	const onFrame = () => {
 		spin[0] += 0.0025;
 		spin[1] += 0.0025;
 		spin[2] += 0.0005;
-	});
+	};
 
 	$: distanceRaw = clamp((1 / ($size / DEFAULT_SIZE)) * 9, 3, 9);
 	const distance = tweened(distanceRaw, {

@@ -8,7 +8,6 @@ export const syncBackgroundWhite = (
 ) => {
 	onMount(() => {
 		return white.subscribe(($white) => {
-			console.log($white);
 			document.body.style.backgroundColor = `rgb(${levels.map((l) => l * $white).join(',')})`;
 		});
 	});

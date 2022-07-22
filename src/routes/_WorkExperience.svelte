@@ -6,9 +6,10 @@
 			to: 'Aug 2022',
 			title: 'Enterprise Engineer',
 			details: [
-				'Develop and deploy a database for cold-storage logging',
-				'Design an interface for creating, storing, and querying logs',
-				'Build a web client to manage and explore logging information',
+				'Develop and deploy a database for critical transaction logging',
+				'Design internal APIs for creating, storing, and querying logs',
+				'Build a web client to manage and explore logging data',
+				'Improve internal tooling via cross-team contributions',
 			],
 			homepage: 'https://meta.com/',
 		},
