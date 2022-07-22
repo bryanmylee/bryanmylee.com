@@ -20,17 +20,17 @@
 		<g style="stroke: {flashColor}">
 			<path
 				d="M 303.31 208.66 C 314.838 218.447 322.153 233.045 322.153 249.351 C 322.153 266.394 314.161 281.571 301.721 291.339"
-				class="animate-pulse"
+				class="animate-flash"
 				style:animation-delay="100ms"
 			/>
 			<path
 				d="M 338.447 174.319 C 357.696 193.165 369.64 219.441 369.64 248.507 C 369.64 279.142 356.371 306.678 335.267 325.681"
-				class="animate-pulse"
+				class="animate-flash"
 				style:animation-delay="300ms"
 			/>
 			<path
 				d="M 370.785 141.577 C 398.691 168.795 416.019 206.808 416.019 248.869 C 416.019 292.108 397.707 331.07 368.415 358.423"
-				class="animate-pulse"
+				class="animate-flash"
 				style:animation-delay="500ms"
 			/>
 		</g>

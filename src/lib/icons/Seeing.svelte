@@ -28,7 +28,7 @@
 				y1="223.934"
 				x2="65.596"
 				y2="201.4"
-				class="animate-pulse"
+				class="animate-flash"
 				style:animation-delay="100ms"
 			/>
 			<line
@@ -36,7 +36,7 @@
 				y1="176.646"
 				x2="124.727"
 				y2="152.135"
-				class="animate-pulse"
+				class="animate-flash"
 				style:animation-delay="200ms"
 			/>
 			<line
@@ -44,7 +44,7 @@
 				y1="146.441"
 				x2="203.462"
 				y2="123.497"
-				class="animate-pulse"
+				class="animate-flash"
 				style:animation-delay="300ms"
 			/>
 			<line
@@ -53,7 +53,7 @@
 				x2="290.598"
 				y2="146.441"
 				transform="matrix(-1, 0, 0, -1, 586.955994, 269.905991)"
-				class="animate-pulse"
+				class="animate-flash"
 				style:animation-delay="400ms"
 			/>
 			<line
@@ -62,7 +62,7 @@
 				x2="358.682"
 				y2="176.645"
 				transform="matrix(-1, 0, 0, -1, 730.291016, 328.779007)"
-				class="animate-pulse"
+				class="animate-flash"
 				style:animation-delay="500ms"
 			/>
 			<line
@@ -71,7 +71,7 @@
 				x2="413.315"
 				y2="223.934"
 				transform="matrix(-1, 0, 0, -1, 844.054993, 425.335007)"
-				class="animate-pulse"
+				class="animate-flash"
 				style:animation-delay="600ms"
 			/>
 		</g>
