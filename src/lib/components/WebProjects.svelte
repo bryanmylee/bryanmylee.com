@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { isJsEnabled } from '$lib/utils/accessibility';
 
-	import { clamp, lerp } from '$lib/utils/math';
+	import { clamp } from '$lib/utils/math';
 
 	export let progress = 0;
 
@@ -9,18 +9,17 @@
 	$: t = $jsEnabled ? progress : 0.5;
 </script>
 
-<figure
-	role="group"
-	aria-labelledby="screenshots of web projects"
-	class="absolute inset-0 {$jsEnabled ? '' : 'top-1/3 h-screen'}"
-	style:opacity={clamp(1 - 16 * Math.pow(t - 0.5, 4))}
->
-	<div class="absolute inset-0" style:transform="translateY({lerp(0, -100, t)}vh)">
+<div>
+	<figure
+		role="group"
+		aria-labelledby="screenshots of web projects"
+		style:opacity={clamp(1 - 16 * Math.pow(t - 0.5, 4))}
+	>
 		<img
 			src="/the-web/kopi_time--listings.webp"
 			alt="kopi time listings page"
 			loading="lazy"
-			style:top="70%"
+			style:top="35%"
 			style:left="5%"
 			class="tall"
 		/>
@@ -28,27 +27,23 @@
 			src="/the-web/techtris.webp"
 			alt="techtris profile page"
 			loading="lazy"
-			style:top="50%"
-			style:right="8%"
+			style:top="25%"
+			style:left="8%"
 			class="wide"
 		/>
-	</div>
-	<div class="absolute inset-0" style:transform="translateY({lerp(5, -105, t)}vh)">
 		<img
 			src="/the-web/woknroll.webp"
 			alt="wok n roll homepage"
 			loading="lazy"
-			style:top="100%"
+			style:top="60%"
 			style:right="8%"
 			class="tall"
 		/>
-	</div>
-	<div class="absolute inset-0" style:transform="translateY({lerp(10, -110, t)}vh)">
 		<img
 			src="/the-web/meetwhen--meet.webp"
 			alt="meetwhen.io meeting"
 			loading="lazy"
-			style:top="100%"
+			style:top="55%"
 			style:right="53%"
 			class="tall"
 		/>
@@ -56,22 +51,30 @@
 			src="/the-web/kopi_time--inventory.webp"
 			alt="kopie time inventory page"
 			loading="lazy"
-			style:top="60%"
+			style:top="30%"
 			style:left="50%"
 			class="tall"
 		/>
-	</div>
-</figure>
+		<img
+			src="/the-web/meetwhen--home.webp"
+			alt="meetwhen.io homepage"
+			loading="lazy"
+			style:top="50%"
+			style:left="53%"
+			class="wide"
+		/>
+	</figure>
+</div>
 
 <style lang="postcss">
 	img {
-		@apply absolute bottom-0;
+		@apply absolute bottom-0 drop-shadow-2xl;
 		border-radius: min(1vw, 10px);
 		&.wide {
-			width: min(45%, 700px);
+			width: min(40%, 700px);
 		}
 		&.tall {
-			width: min(40%, 600px);
+			width: min(35%, 600px);
 		}
 	}
 </style>

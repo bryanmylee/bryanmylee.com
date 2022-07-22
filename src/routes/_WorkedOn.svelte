@@ -42,12 +42,12 @@
 >
 	{#if $jsEnabled}
 		{@const { word, color, background } = SECTIONS[sectionIndex]}
+		{#key word}
+			<div transition:fade|local={{ duration: 800 }} class="absolute left-0 right-0 h-[200vh]">
+				<svelte:component this={background} progress={sectionProgress} />
+			</div>
+		{/key}
 		<div class="sticky top-0 wh-screen" style:opacity={topProgress}>
-			{#key word}
-				<div class="absolute inset-0" transition:fade|local={{ duration: 800 }}>
-					<svelte:component this={background} progress={sectionProgress} />
-				</div>
-			{/key}
 			<div
 				class="absolute inset-0 flex items-center justify-center"
 				style:opacity={1 - fadeOutProgress}

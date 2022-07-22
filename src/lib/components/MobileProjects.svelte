@@ -9,6 +9,6 @@
 	const jsEnabled = isJsEnabled();
 </script>
 
-<div class="wh-screen sticky top-0" style:opacity={!$jsEnabled ? 1 : opacity}>
+<div class={$jsEnabled ? 'fixed inset-0' : ''} style:opacity={!$jsEnabled ? 1 : opacity}>
 	<PhoneTemplate {progress} class="wh-full" />
 </div>
