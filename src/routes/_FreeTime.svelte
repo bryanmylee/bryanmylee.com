@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition';
 	import { cubicIn, cubicOut } from 'svelte/easing';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import { toss } from '$lib/transitions/toss';
@@ -11,7 +12,6 @@
 </script>
 
 <ScrollProgress
-	name="free time"
 	scrollDistance={100}
 	topInset={100}
 	topPadding={100}
@@ -22,19 +22,15 @@
 	{@const tOut = cubicIn(outProgress)}
 	<div class="sticky top-0 wh-screen flex items-center justify-center">
 		{#if !$jsEnabled || topProgress > 0.25}
-			<figure
-				role="group"
-				aria-labelledby="photos taken in my free time"
-				class="photos"
-				style:opacity={clamp(1 - tOut * 2)}
-			>
+			<figure role="group" aria-labelledby="photos taken in my free time" class="photos">
 				<div style:transform="rotate(-14deg) translate(-30px, 0)" class="order-1">
 					<img
 						src="/free-time/nature.webp"
 						alt="a nature reserve"
 						loading="lazy"
 						class="aspect-[3/4]"
-						transition:toss={{
+						out:fade
+						in:toss={{
 							rotate: '-30deg',
 							x: '-80vw',
 							y: '-80vh',
@@ -49,7 +45,8 @@
 						alt="a man in a concert"
 						loading="lazy"
 						class="aspect-[3/4]"
-						transition:toss={{
+						out:fade
+						in:toss={{
 							rotate: '20deg',
 							y: '-80vh',
 							duration,
@@ -63,7 +60,8 @@
 						alt="climbing cliff features"
 						loading="lazy"
 						class="aspect-[3/4]"
-						transition:toss={{
+						out:fade
+						in:toss={{
 							rotate: '-20deg',
 							x: '-100vw',
 							y: '20vh',
@@ -78,7 +76,8 @@
 						alt="a beagle and a dachshund"
 						loading="lazy"
 						class="aspect-square"
-						transition:toss={{
+						out:fade
+						in:toss={{
 							rotate: '20deg',
 							x: '80vw',
 							y: '-40vh',
@@ -93,7 +92,8 @@
 						alt="a diner"
 						loading="lazy"
 						class="aspect-square"
-						transition:toss={{
+						out:fade
+						in:toss={{
 							rotate: '-20deg',
 							x: '-80vw',
 							y: '80vh',
@@ -107,7 +107,8 @@
 						alt="on a rock along the ocean"
 						loading="lazy"
 						class="aspect-[3/4]"
-						transition:toss={{
+						out:fade
+						in:toss={{
 							rotate: '-20deg',
 							x: '80vw',
 							y: '80vh',
@@ -129,7 +130,7 @@
 
 <style lang="postcss">
 	.photos {
-		@apply absolute z-[-1] wh-screen;
+		@apply absolute z-[-1] wh-screen overflow-x-clip;
 		@apply gap-4 p-4 md:gap-16 md:p-16;
 		@apply grid grid-cols-2 content-center items-center md:grid-cols-3;
 		@apply grid-flow-row-dense;
