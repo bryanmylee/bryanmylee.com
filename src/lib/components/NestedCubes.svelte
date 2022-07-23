@@ -5,14 +5,13 @@
 
 <script lang="ts">
 	import { writable } from 'svelte/store';
-	import { tweened } from 'svelte/motion';
-	import { cubicOut } from 'svelte/easing';
 	import * as SC from 'svelte-cubed';
 	import * as THREE from 'three';
 	import { range } from '$lib/utils/range';
 	import { clamp } from '$lib/utils/math';
 	import { isJsEnabled } from '$lib/utils/accessibility';
 	import { frameTime } from '$lib/utils/frame';
+	import { cubicIn, cubicOut } from 'svelte/easing';
 
 	let innerWidth = DEFAULT_SIZE;
 	let innerHeight = DEFAULT_SIZE;
@@ -25,17 +24,12 @@
 	$: $time, onFrame();
 	const onFrame = () => {
 		spin[0] += 0.0025;
-		spin[1] += 0.0025;
+		spin[1] += 0.002;
 		spin[2] += 0.0005;
 	};
 
-	$: distanceRaw = clamp((1 / ($size / DEFAULT_SIZE)) * 9, 3, 9);
-	const distance = tweened(distanceRaw, {
-		duration: 1000,
-		easing: cubicOut,
-	});
-	$: $distance = distanceRaw;
-	$: progressDistance = Math.max($distance - progress * 8, 0);
+	$: distance = clamp((1 / ($size / DEFAULT_SIZE)) * 9, 3, 9);
+	$: progressDistance = Math.max(distance - cubicIn(progress) * 8, 0);
 
 	const jsEnabled = isJsEnabled();
 </script>
