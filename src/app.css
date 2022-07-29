@@ -32,6 +32,14 @@
 			max-width: 1536px;
 		}
 	}
+	
+	.no-scrollbar {
+		&::-webkit-scrollbar {
+			display: none; /* Chrome, Safari, Opera */
+		}
+		-ms-overflow-style: none; /* IE, Edge */
+		scrollbar-width: none; /* Firefox */
+	}
 }
 
 @keyframes move-background {

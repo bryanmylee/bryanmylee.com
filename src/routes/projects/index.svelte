@@ -132,11 +132,17 @@
 	/>
 </Section>
 
-<Section title="Applications">
+<Section title="Applications" wide>
 	<ProjectCard
 		name="meetwhen.io"
 		description="A beautiful and mobile-friendly group scheduling application."
 		skills={['svelte', 'sveltekit', 'typescript', 'tailwindcss', 'nodejs', 'firebase', 'graphql']}
+		images={[
+			'/projects/meetwhen/meeting_light.webp',
+			'/projects/meetwhen/meeting_wide_dark.webp',
+			'/projects/meetwhen/profile_light.webp',
+			'/projects/meetwhen/new_dark.webp',
+		]}
 		links={[
 			{
 				label: 'Get started',
@@ -295,7 +301,7 @@
 	</ProjectCard>
 
 	<ProjectCard
-		name="Simulation of Voting Fairness within the Group Representation Constituency System of Singapore"
+		name="Simulation of Voting Fairness in Singapore"
 		description="CS426 Agent-based Modelling and Simulation"
 		links={[
 			{
