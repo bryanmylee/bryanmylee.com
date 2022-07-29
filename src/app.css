@@ -40,6 +40,15 @@
 		-ms-overflow-style: none; /* IE, Edge */
 		scrollbar-width: none; /* Firefox */
 	}
+	
+	.overflow-x-clip {
+		@supports not (overflow: clip) {
+			overflow: hidden;
+		}
+		@supports (overflow: clip) {
+			overflow-x: clip;
+		}
+	}
 }
 
 @keyframes move-background {
