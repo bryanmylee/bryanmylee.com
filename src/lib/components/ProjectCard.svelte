@@ -4,25 +4,41 @@
 	import Button from './Button.svelte';
 	import SkillIcon, { type Skill } from './SkillIcon.svelte';
 
+	interface Image {
+		src: string;
+		alt: string;
+		width: number;
+		height: number;
+	}
+
+	interface Link {
+		label: string;
+		href: string;
+	}
+
 	export let name: string;
 	export let description: string;
-	export let images: string[] | undefined = undefined;
+	export let images: Image[] | undefined = undefined;
 	export let skills: Skill[] | undefined = undefined;
-	export let links:
-		| {
-				label: string;
-				href: string;
-		  }[]
-		| undefined = undefined;
+	export let links: Link[] | undefined = undefined;
 </script>
 
-<div class="p-4 bg-white rounded-xl">
+<div class="p-4 bg-white rounded-xl w-full min-w-0">
 	<h2 class="text-xl font-bold">{name}</h2>
 	<sub class="text-sm">{description}</sub>
 	{#if images !== undefined}
 		<InfiniteAutoScroller speed={50} as="ul" class="flex gap-4 mt-4">
-			{#each images as image}
-				<img src={image} alt={image} class="rounded-lg h-[500px]" />
+			{#each images as { src, alt, width, height }}
+				{@const HEIGHT = 500}
+				{@const WIDTH = (HEIGHT / height) * width}
+				<img
+					{src}
+					{alt}
+					class="rounded-lg object-cover"
+					style:width="{WIDTH}px"
+					style:min-width="{WIDTH}px"
+					style:height="{HEIGHT}px"
+				/>
 			{/each}
 		</InfiniteAutoScroller>
 	{/if}

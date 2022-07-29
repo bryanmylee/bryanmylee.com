@@ -138,10 +138,30 @@
 		description="A beautiful and mobile-friendly group scheduling application."
 		skills={['svelte', 'sveltekit', 'typescript', 'tailwindcss', 'nodejs', 'firebase', 'graphql']}
 		images={[
-			'/projects/meetwhen/meeting_light.webp',
-			'/projects/meetwhen/meeting_wide_dark.webp',
-			'/projects/meetwhen/profile_light.webp',
-			'/projects/meetwhen/new_dark.webp',
+			{
+				src: '/projects/meetwhen/meeting_light.webp',
+				alt: 'meetwhen meeting',
+				width: 994,
+				height: 1623,
+			},
+			{
+				src: '/projects/meetwhen/meeting_wide_dark.webp',
+				alt: 'meetwhen meeting wide layout',
+				width: 1992,
+				height: 1617,
+			},
+			{
+				src: '/projects/meetwhen/profile_light.webp',
+				alt: 'meetwhen profile page',
+				width: 994,
+				height: 1622,
+			},
+			{
+				src: '/projects/meetwhen/new_dark.webp',
+				alt: 'meetwhen create new meeting page',
+				width: 994,
+				height: 1618,
+			},
 		]}
 		links={[
 			{
