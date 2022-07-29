@@ -3,12 +3,12 @@
 	import { cubicIn, cubicOut } from 'svelte/easing';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import { toss } from '$lib/transitions/toss';
-	import { isJsEnabled } from '$lib/utils/accessibility';
+	import { useJsEnabled } from '$lib/utils/accessibility';
 	import { clamp } from '$lib/utils/math';
 
 	const duration = 600;
 
-	const jsEnabled = isJsEnabled();
+	const jsEnabled = useJsEnabled();
 </script>
 
 <ScrollProgress

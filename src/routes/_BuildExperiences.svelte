@@ -20,9 +20,9 @@
 	import NestedCubes from '$lib/components/NestedCubes.svelte';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import GradientSpan from '$lib/components/GradientSpan.svelte';
-	import { isJsEnabled } from '$lib/utils/accessibility';
+	import { useJsEnabled } from '$lib/utils/accessibility';
 
-	const jsEnabled = isJsEnabled();
+	const jsEnabled = useJsEnabled();
 </script>
 
 <ScrollProgress

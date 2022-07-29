@@ -12,7 +12,7 @@
 	import { frameTime } from '$lib/utils/frame';
 	import { svgPointer, type Position } from '$lib/utils/pointer';
 	import { range } from '$lib/utils/range';
-	import { isJsEnabled } from '$lib/utils/accessibility';
+	import { useJsEnabled } from '$lib/utils/accessibility';
 
 	export let progress = 0;
 
@@ -44,7 +44,7 @@
 		fishes = fishes;
 	};
 
-	const jsEnabled = isJsEnabled();
+	const jsEnabled = useJsEnabled();
 </script>
 
 <div class="{$jsEnabled ? 'absolute inset-0' : 'sticky top-0 wh-screen'} overflow-hidden">

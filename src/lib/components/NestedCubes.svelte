@@ -9,7 +9,7 @@
 	import * as THREE from 'three';
 	import { range } from '$lib/utils/range';
 	import { clamp } from '$lib/utils/math';
-	import { isJsEnabled } from '$lib/utils/accessibility';
+	import { useJsEnabled } from '$lib/utils/accessibility';
 	import { frameTime } from '$lib/utils/frame';
 	import { cubicIn, cubicOut } from 'svelte/easing';
 
@@ -31,7 +31,7 @@
 	$: distance = clamp((1 / ($size / DEFAULT_SIZE)) * 9, 3, 9);
 	$: progressDistance = Math.max(distance - cubicIn(progress) * 8, 0);
 
-	const jsEnabled = isJsEnabled();
+	const jsEnabled = useJsEnabled();
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />

@@ -56,9 +56,9 @@
 	import WorkCard from '$lib/components/WorkCard.svelte';
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
 	import type { Work } from '$lib/models/Work';
-	import { isJsEnabled } from '$lib/utils/accessibility';
+	import { useJsEnabled } from '$lib/utils/accessibility';
 
-	const jsEnabled = isJsEnabled();
+	const jsEnabled = useJsEnabled();
 </script>
 
 <section class="relative mt-[-40vh] {$jsEnabled ? '' : 'bg-gray-50'} z-10">

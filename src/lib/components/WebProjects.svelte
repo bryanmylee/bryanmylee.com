@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { isJsEnabled } from '$lib/utils/accessibility';
+	import { useJsEnabled } from '$lib/utils/accessibility';
 
 	import { clamp } from '$lib/utils/math';
 
 	export let progress = 0;
 
-	const jsEnabled = isJsEnabled();
+	const jsEnabled = useJsEnabled();
 	$: t = $jsEnabled ? progress : 0.5;
 </script>
 

@@ -3,12 +3,12 @@
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import Labelled from '$lib/components/Labelled.svelte';
 	import GitHub from '$lib/icons/GitHub.svelte';
-	import { isJsEnabled } from '$lib/utils/accessibility';
+	import { useJsEnabled } from '$lib/utils/accessibility';
 	import LinkedIn from '$lib/icons/LinkedIn.svelte';
 
 	let topProgress = 0;
 
-	const jsEnabled = isJsEnabled();
+	const jsEnabled = useJsEnabled();
 </script>
 
 <ScrollProgress scrollDistance={40} topPadding={90} topInset={100} bind:topProgress>

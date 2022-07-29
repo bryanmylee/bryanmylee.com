@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Logo from '$lib/icons/Logo.svelte';
-	import { isJsEnabled } from '$lib/utils/accessibility';
+	import { useJsEnabled } from '$lib/utils/accessibility';
 	import { gray50 } from '$lib/utils/color';
 	import { clickOutside } from '$lib/utils/pointer';
 	import { useWhite } from './_context';
@@ -9,7 +9,7 @@
 	$: bgRGB = gray50.map((l) => l * $white);
 	$: textRGB = bgRGB.map((l) => 255 - l);
 
-	const jsEnabled = isJsEnabled();
+	const jsEnabled = useJsEnabled();
 	let showDropdown = false;
 </script>
 

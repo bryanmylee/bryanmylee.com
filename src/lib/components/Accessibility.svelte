@@ -1,11 +1,11 @@
 <script lang="ts">
 	import Hearing from '$lib/icons/Hearing.svelte';
 	import Seeing from '$lib/icons/Seeing.svelte';
-	import { isJsEnabled } from '$lib/utils/accessibility';
+	import { useJsEnabled } from '$lib/utils/accessibility';
 
 	export let progress = 0;
 
-	const jsEnabled = isJsEnabled();
+	const jsEnabled = useJsEnabled();
 </script>
 
 <div

@@ -1,7 +1,7 @@
 import { onMount } from 'svelte';
 import { readable } from 'svelte/store';
 
-export const isJsEnabled = () => {
+export const useJsEnabled = () => {
 	return readable(false, (set) => {
 		onMount(() => set(true));
 	});
