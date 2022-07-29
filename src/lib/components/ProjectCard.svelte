@@ -27,14 +27,14 @@
 	<h2 class="text-xl font-bold">{name}</h2>
 	<sub class="text-sm">{description}</sub>
 	{#if images !== undefined}
-		<InfiniteAutoScroller speed={50} as="ul" class="flex gap-4 mt-4">
+		<InfiniteAutoScroller speed={50} as="ul" class="flex gap-4 mt-4 p-4 pt-0">
 			{#each images as { src, alt, width, height }}
 				{@const HEIGHT = 500}
 				{@const WIDTH = (HEIGHT / height) * width}
 				<img
 					{src}
 					{alt}
-					class="rounded-lg object-cover"
+					class="rounded-lg shadow-md border"
 					style:width="{WIDTH}px"
 					style:min-width="{WIDTH}px"
 					style:height="{HEIGHT}px"
