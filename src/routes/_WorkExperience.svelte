@@ -67,9 +67,9 @@
 		{#each EXPERIENCES as experience}
 			<WorkCard {...experience} />
 		{/each}
-		<div class="flex items-center justify-center min-wh-40">
+		<div class="flex items-center justify-center min-wh-40 md:col-span-2 xl:col-span-1">
 			<Button color="secondary" href="/projects" class="flex items-center gap-1">
-				Other projects <ArrowRight class="wh-5" />
+				Projects <ArrowRight class="wh-5" />
 			</Button>
 		</div>
 	</div>
