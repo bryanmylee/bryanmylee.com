@@ -15,8 +15,8 @@
 		if (element === undefined) {
 			return;
 		}
-		const { padding } = getComputedStyle(element);
-		const width = element.scrollWidth - parseFloat(padding);
+		const { paddingLeft } = getComputedStyle(element);
+		const width = element.scrollWidth - parseFloat(paddingLeft);
 		element.scrollLeft = Math.ceil(width / 3);
 	});
 
@@ -25,8 +25,8 @@
 		if (!(element instanceof HTMLElement)) {
 			return;
 		}
-		const { padding } = getComputedStyle(element);
-		const width = element.scrollWidth - parseInt(padding);
+		const { paddingLeft } = getComputedStyle(element);
+		const width = element.scrollWidth - parseInt(paddingLeft);
 		if (element.scrollLeft > (width * 2) / 3) {
 			element.scrollLeft -= width / 3;
 		} else if (element.scrollLeft < width / 3) {
