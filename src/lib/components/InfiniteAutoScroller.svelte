@@ -38,8 +38,8 @@
 	const autoScroll = (time: number) => {
 		const deltaTime = (time - previousTime) / 1000;
 		const deltaPx = speed * deltaTime;
-		// Scroll updates smaller than 0.5px do not have an effect.
-		if (deltaPx < 0.5) {
+		// Scroll updates smaller than 1px are inconsistent on different browsers.
+		if (deltaPx < 1) {
 			requestAnimationFrame(autoScroll);
 			return;
 		}
