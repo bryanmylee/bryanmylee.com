@@ -3,7 +3,7 @@
 	export let wide = false;
 </script>
 
-<section class="p-4 mx-auto layout-container">
+<section class="p-4 mx-auto tw-container">
 	<h1 id={title.replaceAll(/\s+/g, '-').toLowerCase()} class="mb-4 ml-3 mt-4 text-3xl font-bold">
 		{title}
 	</h1>

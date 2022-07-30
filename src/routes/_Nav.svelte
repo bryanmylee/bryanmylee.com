@@ -19,7 +19,7 @@
 	style:--bgRGB={bgRGB.join(',')}
 	style:--textRGB={textRGB.join(',')}
 >
-	<div class="flex justify-between mx-auto layout-container">
+	<div class="flex justify-between mx-auto tw-container">
 		<ul class="flex gap-8 pointer-events-auto translate-y-2">
 			<li>
 				<a href="/#" class="flex gap-4 font-semibold">
