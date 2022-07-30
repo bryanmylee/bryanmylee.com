@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { useJsEnabled } from '$lib/utils/accessibility';
 
 	export let as: string;
@@ -31,18 +31,19 @@
 	let repeatCount = 1;
 	const updateRepeatCount = (container: HTMLElement, elements: HTMLElement) => {
 		updateChildrenWidth(container, elements);
-		repeatCount = Math.ceil(container.clientWidth / childrenWidth);
+		repeatCount = Math.ceil(container.clientWidth / childrenWidth) + 1;
 	};
 
 	const handleResize = () => {
 		updateRepeatCount(scrollContainer!, scrollElements!);
 	};
 
-	onMount(() => {
+	onMount(async () => {
 		if (scrollContainer === undefined || scrollElements === undefined) {
 			return;
 		}
 		updateRepeatCount(scrollContainer, scrollElements);
+		await tick();
 		scrollContainer.scrollLeft = childrenWidth;
 	});
 
@@ -52,17 +53,24 @@
 		}
 		if (scrollContainer.scrollLeft < childrenWidth * 0.5) {
 			scrollContainer.scrollLeft += childrenWidth;
-		} else if (scrollContainer.scrollLeft >= childrenWidth * 1.5) {
+		} else if (scrollContainer.scrollLeft > childrenWidth * 2.5) {
 			scrollContainer.scrollLeft -= childrenWidth;
 		}
 	};
+
+	onMount(() => {
+		if (speed === 0) {
+			return;
+		}
+		requestAnimationFrame(autoScroll);
+	});
 
 	let previousTime = 0;
 	const autoScroll = (time: number) => {
 		const deltaTime = (time - previousTime) / 1000;
 		const deltaPx = speed * deltaTime;
 		// Scroll updates smaller than 1px are inconsistent on different browsers.
-		if (deltaPx < 1) {
+		if (Math.abs(deltaPx) < 1) {
 			requestAnimationFrame(autoScroll);
 			return;
 		}
@@ -70,12 +78,6 @@
 		previousTime = time;
 		requestAnimationFrame(autoScroll);
 	};
-	onMount(() => {
-		if (speed === 0) {
-			return;
-		}
-		requestAnimationFrame(autoScroll);
-	});
 </script>
 
 <svelte:window on:resize={handleResize} />

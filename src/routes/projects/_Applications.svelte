@@ -63,6 +63,7 @@
 				height: 1792,
 			},
 		]}
+		reverseImages
 		links={[
 			{
 				label: 'Read about us',
