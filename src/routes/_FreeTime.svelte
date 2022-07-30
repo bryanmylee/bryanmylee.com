@@ -136,8 +136,7 @@
 		@apply grid-flow-row-dense;
 
 		& img {
-			@apply rounded-2xl;
-			filter: brightness(80%);
+			@apply rounded-2xl brightness-75;
 		}
 	}
 </style>

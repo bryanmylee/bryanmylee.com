@@ -47,26 +47,28 @@
 				<svelte:component this={background} progress={sectionProgress} />
 			</div>
 		{/key}
-		<div class="sticky top-0 wh-screen" style:opacity={topProgress}>
-			<div
-				class="absolute inset-0 flex items-center justify-center"
-				style:opacity={1 - fadeOutProgress}
-			>
-				<h1 class="font-bold leading-tight text-center text-white text-dyn-8 drop-shadow-xl">
-					I worked on
-					{#key word}
-						<span
-							class="inline-block w-[6ch] whitespace-nowrap text-left"
-							in:fly={{ y: 30, duration: 800 }}
-						>
-							<GradientSpan {color}>
-								{word}
-							</GradientSpan>
-						</span>
-					{/key}
-				</h1>
+		{#if topProgress > 0}
+			<div class="sticky top-0 wh-screen" in:fade>
+				<div
+					class="absolute inset-0 flex items-center justify-center"
+					style:opacity={1 - fadeOutProgress}
+				>
+					<h1 class="font-bold leading-tight text-center text-white text-dyn-8 drop-shadow-xl">
+						I worked on
+						{#key word}
+							<span
+								class="inline-block w-[6ch] whitespace-nowrap text-left"
+								in:fly={{ y: 30, duration: 800 }}
+							>
+								<GradientSpan {color}>
+									{word}
+								</GradientSpan>
+							</span>
+						{/key}
+					</h1>
+				</div>
 			</div>
-		</div>
+		{/if}
 	{:else}
 		{#each SECTIONS as { background }}
 			<div class="h-[200vh] relative">

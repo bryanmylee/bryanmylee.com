@@ -1,20 +1,5 @@
-<script lang="ts">
-	import { useJsEnabled } from '$lib/utils/accessibility';
-
-	import { clamp } from '$lib/utils/math';
-
-	export let progress = 0;
-
-	const jsEnabled = useJsEnabled();
-	$: t = $jsEnabled ? progress : 0.5;
-</script>
-
 <div>
-	<figure
-		role="group"
-		aria-labelledby="screenshots of web projects"
-		style:opacity={clamp(1 - 16 * Math.pow(t - 0.5, 4))}
-	>
+	<figure role="group" aria-labelledby="screenshots of web projects">
 		<img
 			src="/the-web/kopi_time--listings.webp"
 			alt="kopi time listings page"
@@ -68,7 +53,7 @@
 
 <style lang="postcss">
 	img {
-		@apply absolute bottom-0 drop-shadow-2xl;
+		@apply absolute bottom-0 drop-shadow-2xl brightness-75;
 		border-radius: min(1vw, 10px);
 		&.wide {
 			width: min(40%, 700px);
