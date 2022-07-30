@@ -44,7 +44,19 @@
 				href: 'https://github.com/bryanmylee/meetwhen-ui',
 			},
 		]}
-	/>
+	>
+		<div class="space-y-2">
+			<p>
+				<strong>meetwhen.io</strong> helps you schedule meetings and hangouts around the world.
+				Quickly create and join meets with <em>no sign up required</em>, or sign in with an account
+				to keep track of your previous and upcoming meets!
+			</p>
+			<p>
+				You can also add relevant links and details for easy access later and see when your friends
+				are the most available.
+			</p>
+		</div>
+	</ProjectCard>
 	<ProjectCard
 		name="HelloWorld"
 		description="A mobile AR application that lets you explore the world from your home."
@@ -63,7 +75,6 @@
 				height: 1792,
 			},
 		]}
-		reverseImages
 		links={[
 			{
 				label: 'Read about us',
@@ -71,6 +82,17 @@
 			},
 		]}
 	>
-		<h3 class="text-gray-600"><strong class="font-mono">CODE_EXP 2021</strong> · 1st Place</h3>
+		<div class="space-y-2">
+			<h3 class="text-gray-600"><strong class="font-mono">CODE_EXP 2021</strong> · 1st Place</h3>
+			<p>
+				<strong>HelloWorld</strong> is a quick hackathon project that provides a taste of tourism when
+				travel was restricted during the pandemic.
+			</p>
+			<p>
+				You can decorate your personal spaces with virtual landmarks and attractions to immerse
+				yourself in the cultural icons of your favorite destinations. Once you've built your world,
+				hop onto the Discover page to learn more about each landmark.
+			</p>
+		</div>
 	</ProjectCard>
 </Section>
