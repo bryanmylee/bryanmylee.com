@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, tick } from 'svelte';
+	import { onMount } from 'svelte';
 	import { useJsEnabled } from '$lib/utils/accessibility';
 
 	export let as: string;
@@ -9,28 +9,51 @@
 
 	const jsEnabled = useJsEnabled();
 
-	let element: HTMLElement | undefined;
-	onMount(async () => {
-		await tick();
-		if (element === undefined) {
+	let scrollContainer: HTMLElement | undefined;
+	let scrollElements: HTMLElement | undefined;
+
+	let childrenWidth = 0;
+	const updateChildrenWidth = (container: HTMLElement, elements: HTMLElement) => {
+		const containerStyle = getComputedStyle(container);
+		const gap = parseInt(containerStyle.rowGap);
+		let width = 0;
+		for (let i = 0; i < elements.children.length; i++) {
+			const child = elements.children.item(i);
+			if (child === null) {
+				continue;
+			}
+			const { borderLeft, borderRight } = getComputedStyle(child);
+			width += child.clientWidth + gap + parseInt(borderLeft) + parseInt(borderRight);
+		}
+		childrenWidth = width;
+	};
+
+	let repeatCount = 1;
+	const updateRepeatCount = (container: HTMLElement, elements: HTMLElement) => {
+		updateChildrenWidth(container, elements);
+		repeatCount = Math.ceil(container.clientWidth / childrenWidth);
+	};
+
+	const handleResize = () => {
+		updateRepeatCount(scrollContainer!, scrollElements!);
+	};
+
+	onMount(() => {
+		if (scrollContainer === undefined || scrollElements === undefined) {
 			return;
 		}
-		const { paddingLeft } = getComputedStyle(element);
-		const width = element.scrollWidth - parseFloat(paddingLeft);
-		element.scrollLeft = Math.ceil(width / 3);
+		updateRepeatCount(scrollContainer, scrollElements);
+		scrollContainer.scrollLeft = childrenWidth;
 	});
 
-	const handleScroll = (event: UIEvent) => {
-		const element = event.target;
-		if (!(element instanceof HTMLElement)) {
+	const handleScroll = () => {
+		if (scrollContainer === undefined || scrollElements === undefined) {
 			return;
 		}
-		const { paddingLeft } = getComputedStyle(element);
-		const width = element.scrollWidth - parseInt(paddingLeft);
-		if (element.scrollLeft > (width * 2) / 3) {
-			element.scrollLeft -= width / 3;
-		} else if (element.scrollLeft < width / 3) {
-			element.scrollLeft += width / 3;
+		if (scrollContainer.scrollLeft < childrenWidth * 0.5) {
+			scrollContainer.scrollLeft += childrenWidth;
+		} else if (scrollContainer.scrollLeft >= childrenWidth * 1.5) {
+			scrollContainer.scrollLeft -= childrenWidth;
 		}
 	};
 
@@ -43,7 +66,7 @@
 			requestAnimationFrame(autoScroll);
 			return;
 		}
-		element!.scrollLeft += deltaPx;
+		scrollContainer!.scrollLeft += deltaPx;
 		previousTime = time;
 		requestAnimationFrame(autoScroll);
 	};
@@ -55,17 +78,24 @@
 	});
 </script>
 
+<svelte:window on:resize={handleResize} />
+
 <svelte:element
 	this={as}
-	bind:this={element}
+	bind:this={scrollContainer}
 	class="{className} overflow-x-auto"
 	class:no-scrollbar={$jsEnabled}
 	on:scroll={handleScroll}
 >
-	<slot />
-	<!-- repeat scroll content twice for padding -->
 	{#if $jsEnabled}
 		<slot />
+	{/if}
+	<div bind:this={scrollElements} class="contents">
 		<slot />
+	</div>
+	{#if $jsEnabled}
+		{#each { length: repeatCount } as _}
+			<slot />
+		{/each}
 	{/if}
 </svelte:element>

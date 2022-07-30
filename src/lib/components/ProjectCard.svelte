@@ -27,7 +27,7 @@
 	<h2 class="text-xl font-bold">{name}</h2>
 	<sub class="text-sm">{description}</sub>
 	{#if images !== undefined}
-		<InfiniteAutoScroller speed={50} as="ul" class="flex gap-4 mt-4 p-4 pt-0">
+		<InfiniteAutoScroller speed={50} as="ul" class="mt-4 pb-4 flex gap-4">
 			{#each images as { src, alt, width, height }}
 				{@const HEIGHT = 500}
 				{@const WIDTH = (HEIGHT / height) * width}
