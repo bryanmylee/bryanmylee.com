@@ -49,6 +49,20 @@
 		name="HelloWorld"
 		description="A mobile AR application that lets you explore the world from your home."
 		skills={['reactjs', 'reactnative']}
+		images={[
+			{
+				src: '/projects/helloworld/ar_portrait.webp',
+				alt: 'helloworld ar demo',
+				width: 828,
+				height: 1792,
+			},
+			{
+				src: '/projects/helloworld/map.webp',
+				alt: 'helloworld map overview',
+				width: 828,
+				height: 1792,
+			},
+		]}
 		links={[
 			{
 				label: 'Read about us',
