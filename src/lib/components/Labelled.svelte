@@ -1,17 +1,17 @@
 <script lang="ts">
 	export let label: string;
-	export let as = 'a';
+	export let as = 'span';
 </script>
 
 <svelte:element this={as} class="relative group" {...$$restProps}>
 	<slot />
-	<span>
+	<span class="label">
 		{label}
 	</span>
 </svelte:element>
 
 <style lang="postcss">
-	span {
+	.label {
 		@apply z-10 rounded-lg bg-gray-100 p-2 text-xs font-semibold shadow;
 		@apply absolute bottom-full left-1/2 mb-2 -translate-x-1/2 scale-0;
 		@apply group-hover:block group-hover:scale-100;
