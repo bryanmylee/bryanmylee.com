@@ -54,9 +54,8 @@
   -->
 	<svg
 		viewBox="{SIZE} {SIZE} {SIZE} {SIZE}"
-		width="100%"
-		height="100%"
 		use:svgPointer={{ pointer, active }}
+		style:filter="url('#fluid')"
 	>
 		{#if $jsEnabled && $active}
 			<circle
@@ -80,12 +79,29 @@
 				/>
 			</Subscribe>
 		{/each}
+		<defs>
+			<filter id="fluid">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+				<feColorMatrix
+					in="blur"
+					mode="matrix"
+					values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+					result="fluid"
+				/>
+			</filter>
+		</defs>
+	</svg>
+	<svg viewBox="{SIZE} {SIZE} {SIZE} {SIZE}">
 		<!-- The center of the grid is SIZE + 1/2 SIZE -->
 		<circle cx={SIZE * 1.5} cy={SIZE * 1.5} r={progress * SIZE} fill="#FFFFFF" opacity={0.1} />
 	</svg>
 </div>
 
-<style>
+<style lang="postcss">
+	svg {
+		@apply wh-full absolute inset-0;
+	}
+
 	.fish {
 		transition: fill 500ms ease-in-out;
 	}
