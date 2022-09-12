@@ -52,11 +52,7 @@
     Tile SIZE squares in a 3x3 grid to cover the screen.
     Therefore, set min-x and min-y to SIZE, then define width and height as SIZE.
   -->
-	<svg
-		viewBox="{SIZE} {SIZE} {SIZE} {SIZE}"
-		use:svgPointer={{ pointer, active }}
-		style:filter="url('#fluid')"
-	>
+	<svg viewBox="{SIZE} {SIZE} {SIZE} {SIZE}" use:svgPointer={{ pointer, active }}>
 		{#if $jsEnabled && $active}
 			<circle
 				in:fade
