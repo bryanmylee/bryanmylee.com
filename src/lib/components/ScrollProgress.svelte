@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { writable } from 'svelte/store';
 	import { clamp } from '$lib/utils/math';
-	import { visible } from '$lib/utils/intersection';
+	import { intersection } from '$lib/utils/intersection';
 	import { frameSynced } from '$lib/utils/store';
 
 	let _class = '';
@@ -42,7 +42,7 @@
 	$: bottomProgress =
 		bottomRatio === 0 ? 1 : clamp((progressRaw - topRatio - contentRatio) / bottomRatio);
 
-	const isVisible = writable(true);
+	const visible = writable(true);
 
 	export let sections: undefined | number[] = undefined;
 	$: [sectionIndex, sectionProgress] = getSection(contentProgress);
@@ -69,9 +69,9 @@
 	style:height="{scrollDistance + topPadding + bottomPadding}vh"
 	style:margin-top="{-topInset}vh"
 	class="relative z-auto {_class}"
-	use:visible={isVisible}
+	use:intersection={visible}
 >
-	{#if $isVisible}
+	{#if $visible}
 		<slot
 			{progress}
 			{inProgress}
