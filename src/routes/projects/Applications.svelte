@@ -1,11 +1,12 @@
 <script lang="ts">
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import ExampleImage from './ExampleImage.svelte';
+	import ImageLayout from './ImageLayout.svelte';
 	import Section from './Section.svelte';
 </script>
 
 <Section title="Applications" wide>
-	<div class="flex flex-col items-center gap-4 mb-8 lg:flex-row">
+	<div class="flex flex-col items-center gap-4 mx-auto mb-8 lg:flex-row">
 		<ProjectCard
 			name="meetwhen.io"
 			description="A beautiful and mobile-friendly group scheduling application."
@@ -32,7 +33,7 @@
 				are the most available.
 			</p>
 		</ProjectCard>
-		<div class="z-[-1] flex-1 grid grid-cols-2 gap-4 lg:-ml-52 xl:grid-cols-3 xl:-ml-96 w-full">
+		<ImageLayout xl right>
 			<ExampleImage
 				src="/projects/meetwhen/meeting_light.webp"
 				alt="meetwhen meeting"
@@ -53,9 +54,9 @@
 					height={1618}
 				/>
 			</div>
-		</div>
+		</ImageLayout>
 	</div>
-	<div class="flex flex-col items-center gap-4 mb-8 lg:flex-row-reverse">
+	<div class="flex flex-col items-center gap-4 mx-auto mb-8 lg:flex-row-reverse">
 		<ProjectCard
 			name="HelloWorld"
 			description="A mobile AR application that lets you explore the world from your home."
@@ -81,7 +82,7 @@
 				</p>
 			</div>
 		</ProjectCard>
-		<div class="z-[-1] flex-1 grid grid-cols-2 gap-4 lg:-mr-52 xl:mr-0 w-full">
+		<ImageLayout>
 			<ExampleImage
 				src="/projects/helloworld/ar_portrait.webp"
 				alt="helloworld ar demo"
@@ -94,6 +95,6 @@
 				width={828}
 				height={1792}
 			/>
-		</div>
+		</ImageLayout>
 	</div>
 </Section>
