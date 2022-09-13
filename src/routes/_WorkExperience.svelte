@@ -9,7 +9,7 @@
 				'Develop and deploy a database for critical transaction logging',
 				'Design internal APIs for creating, storing, and querying logs',
 				'Build a web client to manage and explore logging data',
-				'Improve internal tooling via cross-team contributions',
+				'Handle complex pagination and data fetching while maintaining interactivity',
 			],
 			homepage: 'https://meta.com/',
 		},
@@ -21,7 +21,7 @@
 			details: [
 				'Advise clients on web and React Native development',
 				'Implement highly accessible and customized component libraries for client projects',
-				'Rapidly build webpages and applications',
+				'Rapidly build beautiful webpages and applications',
 			],
 			homepage: 'https://www.airfoil.studio/',
 		},
