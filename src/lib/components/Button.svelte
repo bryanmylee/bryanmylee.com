@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { twMerge } from 'tailwind-merge';
+
 	type Color = 'primary' | 'secondary';
 	type Size = 'base' | 'sm';
 
@@ -9,8 +11,8 @@
 		size?: Size;
 	}
 
-	let _class = '';
-	export { _class as class };
+	let className = '';
+	export { className as class };
 
 	export let href: string | undefined = undefined;
 	const tag = href === undefined ? 'button' : 'a';
@@ -22,7 +24,7 @@
 <svelte:element
 	this={tag}
 	{...tag === 'button' ? {} : { href }}
-	class="{_class} {color} {size} button"
+	class={twMerge(className, color, size, 'button')}
 	{...$$restProps}
 	on:click
 >

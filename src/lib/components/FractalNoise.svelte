@@ -1,13 +1,13 @@
 <script lang="ts">
-	let _class = '';
-	export { _class as class };
+	let className = '';
+	export { className as class };
 
 	export let baseFrequency = 0.65;
 	export let numOctaves = 3;
 	export let seed: string | number | undefined = undefined;
 </script>
 
-<svg class={_class}>
+<svg class={className}>
 	<filter id="noiseFilter">
 		<feTurbulence type="fractalNoise" {baseFrequency} {numOctaves} {seed} stitchTiles="stitch" />
 	</filter>

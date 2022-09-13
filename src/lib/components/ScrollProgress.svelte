@@ -11,9 +11,10 @@
 	import { clamp } from '$lib/utils/math';
 	import { intersection } from '$lib/utils/intersection';
 	import { frameSynced } from '$lib/utils/store';
+	import { twMerge } from 'tailwind-merge';
 
-	let _class = '';
-	export { _class as class };
+	let className = '';
+	export { className as class };
 
 	export let scrollDistance = 200;
 	export let topPadding = 0;
@@ -98,7 +99,7 @@
 	bind:clientHeight={totalDistancePx}
 	style:height="{scrollDistance + topPadding + bottomPadding}vh"
 	style:margin-top="{-topInset}vh"
-	class="relative z-auto {_class}"
+	class={twMerge('relative z-auto', className)}
 	use:intersection={visible}
 >
 	{#if $visible}

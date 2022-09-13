@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
+	import { twMerge } from 'tailwind-merge';
 	import Button from './Button.svelte';
 	import SkillIcon, { type Skill } from './SkillIcon.svelte';
 
@@ -16,7 +17,7 @@
 	export { className as class };
 </script>
 
-<div class="p-4 bg-white rounded-xl w-full min-w-0 max-w-[60ch] {className}">
+<div class={twMerge('p-4 bg-white rounded-xl w-full min-w-0 max-w-[60ch]', className)}>
 	<h2 class="text-xl font-bold">{name}</h2>
 	<sub class="text-sm">{description}</sub>
 	<hr class="my-4" />

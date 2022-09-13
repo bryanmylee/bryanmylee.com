@@ -5,8 +5,8 @@
 </script>
 
 <script lang="ts">
-	let _class = '';
-	export { _class as class };
+	let className = '';
+	export { className as class };
 
 	export let progress = 0;
 	const getActiveWeight = (index: number, progress: number): number => {
@@ -15,7 +15,7 @@
 	};
 </script>
 
-<svg viewBox="-{WIDTH} -1 {WIDTH * 2} {LINE_Y.length * Y_GAP}" class={_class}>
+<svg viewBox="-{WIDTH} -1 {WIDTH * 2} {LINE_Y.length * Y_GAP}" class={className}>
 	<g stroke="white" fill="none" stroke-width="1px">
 		{#each LINE_Y as line, index}
 			{@const x = line + Math.max(0, (WIDTH - line) * getActiveWeight(index, progress * 2 - 1))}

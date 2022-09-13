@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
 	import { useJsEnabled } from '$lib/utils/accessibility';
+	import { twMerge } from 'tailwind-merge';
 
 	export let as: string;
 	let className = '';
@@ -85,7 +86,7 @@
 <svelte:element
 	this={as}
 	bind:this={scrollContainer}
-	class="{className} overflow-x-auto"
+	class={twMerge(className, 'overflow-x-auto')}
 	class:no-scrollbar={$jsEnabled}
 	on:scroll={handleScroll}
 >
