@@ -11,7 +11,6 @@
 </script>
 
 <script lang="ts">
-	import type { SvelteComponent } from 'svelte';
 	import { fly, fade } from 'svelte/transition';
 	import { useJsEnabled } from '$lib/utils/accessibility';
 	import { clamp, interpolate } from '$lib/utils/math';

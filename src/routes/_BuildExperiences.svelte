@@ -12,7 +12,6 @@
 </script>
 
 <script lang="ts">
-	import type { SvelteComponent } from 'svelte';
 	import { fly, fade } from 'svelte/transition';
 	import SwimmingFishes from '$lib/components/SwimmingFishes.svelte';
 	import Accessibility from '$lib/components/Accessibility.svelte';
