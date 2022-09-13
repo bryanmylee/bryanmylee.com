@@ -60,7 +60,7 @@
 	}
 
 	.dropdown {
-		@apply flex flex-col gap-x-8 md:flex-row;
+		@apply flex flex-col gap-x-8 gap-y-4 md:flex-row;
 		@apply -m-2 rounded-xl p-4 text-lg shadow-xl;
 		@apply md:m-0 md:p-0 md:text-xl md:shadow-none;
 		@apply opacity-0 peer-checked:opacity-100 md:opacity-100;
