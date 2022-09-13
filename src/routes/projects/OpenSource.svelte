@@ -1,6 +1,6 @@
 <script lang="ts">
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
-	import Section from './_Section.svelte';
+	import Section from './Section.svelte';
 </script>
 
 <Section title="Open Source">

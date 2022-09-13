@@ -18,7 +18,7 @@
 	import GradientSpan from '$lib/components/GradientSpan.svelte';
 	import WebProjects from '$lib/components/WebProjects.svelte';
 	import MobileProjects from '$lib/components/MobileProjects.svelte';
-	import { useWhite } from './_context';
+	import { useWhite } from './context';
 
 	const jsEnabled = useJsEnabled();
 

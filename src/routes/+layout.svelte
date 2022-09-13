@@ -3,8 +3,8 @@
 	import { page } from '$app/stores';
 	import { syncBackgroundWhite } from '$lib/utils/background';
 	import '../app.css';
-	import { provideWhite } from './_context';
-	import Nav from './_Nav.svelte';
+	import { provideWhite } from './context';
+	import Nav from './Nav.svelte';
 
 	const white = writable<number>(0);
 	provideWhite(white);

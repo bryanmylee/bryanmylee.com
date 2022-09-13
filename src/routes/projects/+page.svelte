@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { syncBackgroundWhite } from '$lib/utils/background';
-	import { useWhite } from '../_context';
-	import Applications from './_Applications.svelte';
-	import OpenSource from './_OpenSource.svelte';
-	import University from './_University.svelte';
+	import { useWhite } from '../context';
+	import Applications from './Applications.svelte';
+	import OpenSource from './OpenSource.svelte';
+	import University from './University.svelte';
 
 	const white = useWhite();
 	white.set(1);

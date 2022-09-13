@@ -1,10 +1,10 @@
 <script lang="ts">
-	import CreativeDeveloper from './_CreativeDeveloper.svelte';
-	import BuildExperiences from './_BuildExperiences.svelte';
-	import FreeTime from './_FreeTime.svelte';
-	import WorkedOn from './_WorkedOn.svelte';
-	import WorkWithYou from './_WorkWithYou.svelte';
-	import WorkExperience from './_WorkExperience.svelte';
+	import CreativeDeveloper from './CreativeDeveloper.svelte';
+	import BuildExperiences from './BuildExperiences.svelte';
+	import FreeTime from './FreeTime.svelte';
+	import WorkedOn from './WorkedOn.svelte';
+	import WorkWithYou from './WorkWithYou.svelte';
+	import WorkExperience from './WorkExperience.svelte';
 </script>
 
 <CreativeDeveloper />

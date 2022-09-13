@@ -3,7 +3,7 @@
 	import { useJsEnabled } from '$lib/utils/accessibility';
 	import { gray50 } from '$lib/utils/color';
 	import { clickOutside } from '$lib/utils/pointer';
-	import { useWhite } from './_context';
+	import { useWhite } from './context';
 
 	const white = useWhite();
 	$: bgRGB = gray50.map((l) => l * $white);
