@@ -7,7 +7,7 @@
 	<h1 id={title.replaceAll(/\s+/g, '-').toLowerCase()} class="my-8 text-3xl font-bold text-center">
 		{title}
 	</h1>
-	<div class="grid {wide ? 'xl:grid-cols-2' : 'md:grid-cols-2 xl:grid-cols-3'} gap-4 items-start">
+	<div class="{wide ? 'flex flex-col' : 'grid md:grid-cols-2 xl:grid-cols-3'} gap-4 items-start">
 		<slot />
 	</div>
 </section>
