@@ -2,12 +2,11 @@
 	interface Content {
 		word: string;
 		color: string | [string, string, string];
-		background: typeof SvelteComponent;
 	}
 
 	const CONTENT: Content[] = [
-		{ word: 'the web', color: '#A3FFFF', background: WebProjects },
-		{ word: 'mobile', color: '#6392EC', background: MobileProjects },
+		{ word: 'the web', color: '#A3FFFF' },
+		{ word: 'mobile', color: '#6392EC' },
 	];
 </script>
 
@@ -15,7 +14,7 @@
 	import type { SvelteComponent } from 'svelte';
 	import { fly, fade } from 'svelte/transition';
 	import { useJsEnabled } from '$lib/utils/accessibility';
-	import { clamp } from '$lib/utils/math';
+	import { clamp, interpolate } from '$lib/utils/math';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import GradientSpan from '$lib/components/GradientSpan.svelte';
 	import WebProjects from '$lib/components/WebProjects.svelte';
@@ -43,10 +42,18 @@
 	{@const { word, color } = CONTENT[activeSectionIndex]}
 	{#if $jsEnabled}
 		{#each sections as { progress, stage }, index}
-			{@const { background } = CONTENT[index]}
-			<div class="absolute left-0 right-0 h-[200vh]" style:opacity={stage === 'active' ? 1 : 0}>
-				<svelte:component this={background} {progress} />
-			</div>
+			{#if index === 0}
+				<div class="absolute left-0 right-0 h-[200vh]">
+					<WebProjects />
+				</div>
+			{:else if index === 1}
+				<div
+					class="absolute left-0 right-0 h-[200vh]"
+					style:opacity={stage === 'active' ? interpolate([0, 0.2, 1], [0, 1, 1], progress) : 0}
+				>
+					<MobileProjects {progress} />
+				</div>
+			{/if}
 		{/each}
 		{#if topProgress > 0}
 			<div class="sticky top-0 wh-screen" in:fade>
@@ -71,11 +78,12 @@
 			</div>
 		{/if}
 	{:else}
-		{#each CONTENT as { background }}
-			<div class="h-[200vh] relative">
-				<svelte:component this={background} />
-			</div>
-		{/each}
+		<div class="h-[200vh] relative">
+			<WebProjects />
+		</div>
+		<div class="h-[200vh] relative">
+			<MobileProjects />
+		</div>
 		<div class="absolute inset-0">
 			<div class="sticky top-0 flex items-center justify-center wh-screen">
 				<h1 class="font-bold leading-tight text-center text-white text-dyn-8">
