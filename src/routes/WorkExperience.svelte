@@ -62,7 +62,7 @@
 </script>
 
 <section class="relative mt-[-40vh] {$jsEnabled ? '' : 'bg-gray-50'} z-10">
-	<h1 id="work" class="sr-only scroll-mt-24">Work experience</h1>
+	<h1 id="work" class="text-3xl font-bold text-center my-8 scroll-mt-24">Work Experience</h1>
 	<div class="grid gap-4 p-4 mx-auto tw-container md:grid-cols-2 xl:grid-cols-3">
 		{#each EXPERIENCES as experience}
 			<WorkCard {...experience} />
