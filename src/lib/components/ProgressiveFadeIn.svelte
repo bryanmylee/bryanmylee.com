@@ -1,17 +1,17 @@
 <script lang="ts">
+	import { useJsEnabled } from '$lib/utils/accessibility';
 	import { onMount, tick } from 'svelte';
 
-	let jsEnabled = false;
+	let jsEnabled = useJsEnabled();
 	let mounted = true;
 	onMount(async () => {
-		jsEnabled = true;
 		mounted = false;
 		await tick();
 		mounted = true;
 	});
 </script>
 
-<div class="contents" class:nojs-fade-in={!jsEnabled}>
+<div class:nojs-fade-in={!$jsEnabled}>
 	{#if mounted}
 		<slot {mounted} />
 	{/if}

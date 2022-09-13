@@ -4,11 +4,11 @@
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import ScrollDownIndicator from '$lib/components/ScrollDownIndicator.svelte';
 	import GradientSpan from '$lib/components/GradientSpan.svelte';
-	import TransitionOnMount from '$lib/components/TransitionOnMount.svelte';
+	import ProgressiveFadeIn from '$lib/components/ProgressiveFadeIn.svelte';
 </script>
 
 <ScrollProgress scrollDistance={150} let:progress let:outProgress>
-	<TransitionOnMount>
+	<ProgressiveFadeIn>
 		<div style:opacity={1 - outProgress}>
 			<div class="absolute top-0 wh-screen flex items-center justify-center">
 				<h1 class="text-dyn-8 font-bold text-center text-white leading-tight">
@@ -37,5 +37,5 @@
 				<ScrollDownIndicator {progress} class="w-4/5 2xl:w-1/2 mx-auto" />
 			</div>
 		</div>
-	</TransitionOnMount>
+	</ProgressiveFadeIn>
 </ScrollProgress>
