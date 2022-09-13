@@ -2,13 +2,12 @@
 	interface Content {
 		word: string;
 		color: string | [string, string, string];
-		background: typeof SvelteComponent;
 	}
 
 	const CONTENT: Content[] = [
-		{ word: 'interactive', color: '#FFB8B8', background: SwimmingFishes },
-		{ word: 'accessible', color: '#B8FFB8', background: Accessibility },
-		{ word: 'immersive', color: '#85D8FF', background: NestedCubes },
+		{ word: 'interactive', color: '#FFB8B8' },
+		{ word: 'accessible', color: '#B8FFB8' },
+		{ word: 'immersive', color: '#85D8FF' },
 	];
 </script>
 
@@ -21,6 +20,7 @@
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import GradientSpan from '$lib/components/GradientSpan.svelte';
 	import { useJsEnabled } from '$lib/utils/accessibility';
+	import { interpolate } from '$lib/utils/math';
 
 	const jsEnabled = useJsEnabled();
 </script>
@@ -40,10 +40,25 @@
 	{#if $jsEnabled}
 		<div class="sticky top-0 wh-screen" style:opacity={topProgress * (1 - bottomProgress)}>
 			{#each sections as { progress, stage }, index}
-				{@const { background } = CONTENT[index]}
-				<div class="absolute inset-0" style:opacity={stage === 'active' ? 1 : 0}>
-					<svelte:component this={background} {progress} />
-				</div>
+				{#if index === 0 && stage !== 'inactive'}
+					<div
+						class="absolute inset-0"
+						style:opacity={stage === 'active' ? interpolate([0, 0.8, 1], [1, 1, 0], progress) : 0}
+					>
+						<SwimmingFishes {progress} />
+					</div>
+				{:else if index === 1 && stage === 'active'}
+					<div class="absolute inset-0" out:fade|local>
+						<Accessibility {progress} />
+					</div>
+				{:else if index === 2}
+					<div
+						class="absolute inset-0"
+						style:opacity={stage === 'active' ? interpolate([0, 0.2, 1], [0, 1, 1], progress) : 0}
+					>
+						<NestedCubes {progress} />
+					</div>
+				{/if}
 			{/each}
 			<div class="absolute inset-0 flex items-center justify-center">
 				<h1 class="font-bold leading-tight text-center text-white text-dyn-8 drop-shadow-xl">
@@ -60,11 +75,15 @@
 			</div>
 		</div>
 	{:else}
-		{#each CONTENT as { background }}
-			<div class="h-[200vh]">
-				<svelte:component this={background} />
-			</div>
-		{/each}
+		<div class="h-[200vh]">
+			<SwimmingFishes />
+		</div>
+		<div class="h-[200vh]">
+			<Accessibility />
+		</div>
+		<div class="h-[200vh]">
+			<NestedCubes />
+		</div>
 		<div class="absolute inset-0">
 			<div class="sticky top-0 flex items-center justify-center wh-screen">
 				<h1 class="font-bold leading-tight text-center text-white text-dyn-8">

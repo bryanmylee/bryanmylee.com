@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-	type SectionStage = 'pending' | 'active' | 'inactive';
+	type SectionStage = 'entering' | 'exiting' | 'active' | 'inactive';
 	interface Section {
 		progress: number;
 		stage: SectionStage;
@@ -78,8 +78,10 @@
 			let stage: SectionStage;
 			if (sectionProgress >= 0 && sectionProgress <= 1) {
 				stage = 'active';
-			} else if (sectionProgress >= -sectionMargin && sectionProgress <= 1 + sectionMargin) {
-				stage = 'pending';
+			} else if (sectionProgress >= -sectionMargin && sectionProgress < 0) {
+				stage = 'entering';
+			} else if (sectionProgress >= 1 && sectionProgress <= 1 + sectionMargin) {
+				stage = 'exiting';
 			} else {
 				stage = 'inactive';
 			}

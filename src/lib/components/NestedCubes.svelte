@@ -29,7 +29,7 @@
 	};
 
 	$: distance = clamp((1 / ($size / DEFAULT_SIZE)) * 9, 3, 9);
-	$: progressDistance = Math.max(distance - cubicIn(progress) * 8, 0);
+	$: progressDistance = Math.max(distance - progress * 8, 0);
 
 	const jsEnabled = useJsEnabled();
 </script>
