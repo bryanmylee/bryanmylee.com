@@ -5,7 +5,7 @@
 	import Section from './Section.svelte';
 </script>
 
-<Section title="Applications" singleColumn>
+<Section title="Projects" singleColumn>
 	<div class="flex flex-col items-center gap-4 mx-auto mb-8 lg:flex-row">
 		<ProjectCard
 			name="meetwhen.io"

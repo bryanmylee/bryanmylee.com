@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { syncBackgroundWhite } from '$lib/utils/background';
 	import { useWhite } from '../context';
-	import Applications from './Applications.svelte';
+	import Projects from './Projects.svelte';
 	import OpenSource from './OpenSource.svelte';
 	import University from './University.svelte';
 
@@ -14,11 +14,11 @@
 
 <div class="contents projects">
 	<OpenSource />
-	<Applications />
+	<Projects />
 	<University />
 </div>
 
-<div class="h-40 w-full bg-gray-50" />
+<div class="w-full h-40 bg-gray-50" />
 
 <style lang="postcss">
 	.projects :global(p a) {
