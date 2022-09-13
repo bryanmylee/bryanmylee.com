@@ -32,7 +32,7 @@
 			max-width: 1536px;
 		}
 	}
-	
+
 	.no-scrollbar {
 		&::-webkit-scrollbar {
 			display: none; /* Chrome, Safari, Opera */
@@ -40,7 +40,7 @@
 		-ms-overflow-style: none; /* IE, Edge */
 		scrollbar-width: none; /* Firefox */
 	}
-	
+
 	.overflow-x-clip {
 		@supports not (overflow: clip) {
 			overflow: hidden;
@@ -70,10 +70,10 @@
 }
 
 @keyframes flash {
-  50% {
-    opacity: .25;
-  }
+	50% {
+		opacity: 0.25;
+	}
 }
 .animate-flash {
-  animation: flash 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	animation: flash 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
