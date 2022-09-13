@@ -69,18 +69,16 @@
 			]}
 			class="lg:shadow-lg"
 		>
-			<div class="space-y-2">
-				<h3 class="text-gray-600"><strong class="font-mono">CODE_EXP 2021</strong> · 1st Place</h3>
-				<p>
-					<strong>HelloWorld</strong> is a quick hackathon project that provides a taste of tourism when
-					travel was restricted during the pandemic.
-				</p>
-				<p>
-					You can decorate your personal spaces with virtual landmarks and attractions to immerse
-					yourself in the cultural icons of your favorite destinations. Once you've built your
-					world, hop onto the Discover page to learn more about each landmark.
-				</p>
-			</div>
+			<h3 class="text-gray-600"><strong class="font-mono">CODE_EXP 2021</strong> · 1st Place</h3>
+			<p>
+				<strong>HelloWorld</strong> is a quick hackathon project that provides a taste of tourism when
+				travel was restricted during the pandemic.
+			</p>
+			<p>
+				You can decorate your personal spaces with virtual landmarks and attractions to immerse
+				yourself in the cultural icons of your favorite destinations. Once you've built your world,
+				hop onto the Discover page to learn more about each landmark.
+			</p>
 		</ProjectCard>
 		<ImageLayout>
 			<ExampleImage
@@ -94,6 +92,38 @@
 				alt="helloworld map overview"
 				width={828}
 				height={1792}
+			/>
+		</ImageLayout>
+	</div>
+	<div class="flex flex-col items-center gap-4 mx-auto mb-8 lg:flex-row">
+		<ProjectCard
+			name="Techtris"
+			description="A simple showcase site."
+			skills={['svelte', 'sveltekit', 'typescript', 'tailwindcss', 'nodejs']}
+			links={[
+				{
+					label: 'Check it out',
+					href: 'https://teamtechtris.github.io',
+				},
+			]}
+			class="lg:w-fit lg:shadow-lg"
+		>
+			<p>
+				<strong>Techtris</strong> was created by a small group of friends who wanted to work together
+				on hobby projects, hackathons, and group assignments.
+			</p>
+			<p>
+				The showcase site was primarily built to develop a simple understanding of <a
+					href="https://threejs.org/">Three.js</a
+				>.
+			</p>
+		</ProjectCard>
+		<ImageLayout right singleColumn>
+			<ExampleImage
+				src="/the-web/techtris.webp"
+				alt="helloworld ar demo"
+				width={1080}
+				height={714}
 			/>
 		</ImageLayout>
 	</div>

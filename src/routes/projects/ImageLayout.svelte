@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 	export let right = false;
+	export let singleColumn = false;
 	export let xl = false;
 </script>
 
@@ -13,7 +14,8 @@
 			: xl
 			? 'lg:-mr-52 xl:-mr-96'
 			: 'lg:-mr-52 xl:mr-0',
-		xl ? 'xl:grid-cols-3' : '',
+		xl && !singleColumn ? 'xl:grid-cols-3' : '',
+		singleColumn ? 'grid-cols-1' : '',
 	)}"
 >
 	<slot />
