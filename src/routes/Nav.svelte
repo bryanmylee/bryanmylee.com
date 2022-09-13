@@ -34,9 +34,9 @@
 				bind:checked={showDropdown}
 			/>
 			<ul class="dropdown" use:clickOutside={() => (showDropdown = false)}>
-				<li><a href="/projects">Projects</a></li>
-				<li><a href="/#work">Work</a></li>
-				<li><a href="/#contact">Contact</a></li>
+				<li class="dropdown--item"><a href="/projects">Projects</a></li>
+				<li class="dropdown--item"><a href="/#work">Work</a></li>
+				<li class="dropdown--item"><a href="/#contact">Contact</a></li>
 			</ul>
 		</div>
 	</div>
@@ -60,7 +60,7 @@
 	}
 
 	.dropdown {
-		@apply flex flex-col gap-x-8 gap-y-4 md:flex-row;
+		@apply flex flex-col gap-x-8 md:flex-row;
 		@apply -m-2 rounded-xl p-4 text-lg shadow-xl;
 		@apply md:m-0 md:p-0 md:text-xl md:shadow-none;
 		@apply opacity-0 peer-checked:opacity-100 md:opacity-100;
@@ -72,7 +72,7 @@
 		}
 	}
 
-	.dropdown li a {
+	.dropdown--item a {
 		@apply inline-block rounded-lg p-2 hover:bg-gray-300/20;
 	}
 
