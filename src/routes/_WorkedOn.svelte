@@ -1,11 +1,11 @@
 <script lang="ts" context="module">
-	interface Section {
+	interface Content {
 		word: string;
 		color: string | [string, string, string];
 		background: typeof SvelteComponent;
 	}
 
-	const SECTIONS: Section[] = [
+	const CONTENT: Content[] = [
 		{ word: 'the web', color: '#A3FFFF', background: WebProjects },
 		{ word: 'mobile', color: '#6392EC', background: MobileProjects },
 	];
@@ -36,17 +36,18 @@
 	scrollDistance={350}
 	let:topProgress
 	bind:contentProgress
-	sections={[0.5]}
-	let:sectionIndex
-	let:sectionProgress
+	sectionThresholds={[0.5]}
+	let:sections
+	let:activeSectionIndex
 >
+	{@const { word, color } = CONTENT[activeSectionIndex]}
 	{#if $jsEnabled}
-		{@const { word, color, background } = SECTIONS[sectionIndex]}
-		{#key word}
-			<div transition:fade|local={{ duration: 800 }} class="absolute left-0 right-0 h-[200vh]">
-				<svelte:component this={background} progress={sectionProgress} />
+		{#each sections as { progress, stage }, index}
+			{@const { background } = CONTENT[index]}
+			<div class="absolute left-0 right-0 h-[200vh]" style:opacity={stage === 'active' ? 1 : 0}>
+				<svelte:component this={background} {progress} />
 			</div>
-		{/key}
+		{/each}
 		{#if topProgress > 0}
 			<div class="sticky top-0 wh-screen" in:fade>
 				<div
@@ -70,7 +71,7 @@
 			</div>
 		{/if}
 	{:else}
-		{#each SECTIONS as { background }}
+		{#each CONTENT as { background }}
 			<div class="h-[200vh] relative">
 				<svelte:component this={background} />
 			</div>
@@ -79,7 +80,7 @@
 			<div class="sticky top-0 flex items-center justify-center wh-screen">
 				<h1 class="font-bold leading-tight text-center text-white text-dyn-8">
 					I worked on<br />
-					{#each SECTIONS as { word, color }}
+					{#each CONTENT as { word, color }}
 						<GradientSpan {color}>{word}</GradientSpan><br />
 					{/each}
 				</h1>

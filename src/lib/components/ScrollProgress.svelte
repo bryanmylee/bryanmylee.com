@@ -1,3 +1,11 @@
+<script lang="ts" context="module">
+	type SectionStage = 'pending' | 'active' | 'inactive';
+	interface Section {
+		progress: number;
+		stage: SectionStage;
+	}
+</script>
+
 <script lang="ts">
 	import { writable } from 'svelte/store';
 	import { clamp } from '$lib/utils/math';
@@ -44,20 +52,40 @@
 
 	const visible = writable(true);
 
-	export let sections: undefined | number[] = undefined;
-	$: [sectionIndex, sectionProgress] = getSection(contentProgress);
+	/**
+	 * How much progress before/after a section should be considered the 'almost'
+	 * stage.
+	 */
+	export let sectionMargin = 0.1;
+	/**
+	 * The thresholds between sections. Given `n` values, there will be `n+1`
+	 * sections, with one section ending on each threshold and a last section
+	 * ending at `1.0`.
+	 */
+	export let sectionThresholds: undefined | number[] = undefined;
+	$: sections = getSections(contentProgress);
+	$: activeSectionIndex = sections.findIndex((s) => s.stage === 'active');
 
-	const getSection = (progress: number): [number, number] => {
-		if (sections === undefined) return [0, progress];
-		for (let i = 0; i <= sections.length; i++) {
-			const curr = sections[i] ?? 1;
-			const prev = sections[i - 1] ?? 0;
-			if (progress <= curr) {
-				const sectionProgress = (progress - prev) / (curr - prev);
-				return [i, sectionProgress];
-			}
+	const getSections = (progress: number): Section[] => {
+		if (sectionThresholds === undefined || sectionThresholds.length === 0) {
+			return [];
 		}
-		return [sections.length, 1];
+		const sections: Section[] = [];
+		for (let i = 0; i <= sectionThresholds.length; i++) {
+			const currThreshold = sectionThresholds[i] ?? 1;
+			const prevThreshold = sectionThresholds[i - 1] ?? 0;
+			const sectionProgress = (progress - prevThreshold) / (currThreshold - prevThreshold);
+			let stage: SectionStage;
+			if (sectionProgress >= 0 && sectionProgress <= 1) {
+				stage = 'active';
+			} else if (sectionProgress >= -sectionMargin && sectionProgress <= 1 + sectionMargin) {
+				stage = 'pending';
+			} else {
+				stage = 'inactive';
+			}
+			sections.push({ progress: sectionProgress, stage });
+		}
+		return sections;
 	};
 </script>
 
@@ -79,8 +107,8 @@
 			{topProgress}
 			{contentProgress}
 			{bottomProgress}
-			{sectionIndex}
-			{sectionProgress}
+			{sections}
+			{activeSectionIndex}
 		/>
 	{/if}
 </section>
