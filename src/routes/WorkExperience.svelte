@@ -9,7 +9,7 @@
 				'Develop and deploy a database for critical transaction logging',
 				'Design internal APIs for creating, storing, and querying logs',
 				'Build a web client to manage and explore logging data',
-				'Handle complex pagination and data fetching while maintaining interactivity',
+				'Handle complex pagination and data fetching requirements while maintaining interactivity',
 			],
 			homepage: 'https://meta.com/',
 		},
