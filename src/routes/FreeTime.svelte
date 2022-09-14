@@ -23,11 +23,15 @@
 	{@const tOut = cubicIn(outProgress)}
 	<div class="sticky top-0 flex items-center justify-center wh-screen">
 		{#if !$jsEnabled || topProgress > 0.25}
-			<figure role="group" aria-labelledby="photos taken in my free time" class="photos">
+			<figure
+				role="group"
+				aria-label="six photos taken in my free time sliding into the screen"
+				class="photos"
+			>
 				<div style:transform="rotate(-14deg) translate(-30px, 0)" class="order-1">
 					<FreeTimeImage
 						src="/free-time/nature.webp"
-						alt="a nature reserve"
+						alt="my partner in a nature reserve"
 						rotate="-30deg"
 						dx="-80vw"
 						dy="-80vh"
@@ -37,7 +41,7 @@
 				<div style:transform="rotate(7deg)" class="order-2">
 					<FreeTimeImage
 						src="/free-time/concert.webp"
-						alt="a man in a concert"
+						alt="a side profile silhouette of an artist holding a microphone in a concert"
 						rotate="20deg"
 						dy="-80vh"
 						delay={150}
@@ -46,7 +50,7 @@
 				<div style:transform="rotate(-8deg)" class="order-3">
 					<FreeTimeImage
 						src="/free-time/climb.webp"
-						alt="a man climbing a cliff"
+						alt="me bouldering a cliff feature"
 						rotate="-20deg"
 						dx="-100vw"
 						dy="20vh"
@@ -56,7 +60,7 @@
 				<div style:transform="rotate(15deg)" class="order-4 w-full md:order-2">
 					<FreeTimeImage
 						src="/free-time/dogs.webp"
-						alt="a beagle and a dachshund dog staring at the camera"
+						alt="my beagle and dachshund staring at the camera"
 						aspect="1/1"
 						rotate="20deg"
 						dx="80vw"
@@ -67,7 +71,7 @@
 				<div style:transform="rotate(-8deg) translate(0, -30px)" class="order-5">
 					<FreeTimeImage
 						src="/free-time/cafe.webp"
-						alt="a diner"
+						alt="my partner and I in the mirror of a diner"
 						aspect="1/1"
 						rotate="-20deg"
 						dx="-80vw"
@@ -78,7 +82,7 @@
 				<div style:transform="rotate(10deg)" class="order-6">
 					<FreeTimeImage
 						src="/free-time/ocean.webp"
-						alt="a rock along a dramatic ocean coast"
+						alt="my partner walking along a rock feature alongside the ocean"
 						rotate="-20deg"
 						dx="80vw"
 						dy="80vh"
@@ -98,7 +102,7 @@
 
 <style lang="postcss">
 	.photos {
-		@apply absolute z-[-1] wh-screen overflow-x-clip;
+		@apply absolute z-[-1] overflow-x-clip wh-screen;
 		@apply gap-4 p-4 md:gap-16 md:p-16;
 		@apply grid grid-cols-2 content-center items-center md:grid-cols-3;
 		@apply grid-flow-row-dense;

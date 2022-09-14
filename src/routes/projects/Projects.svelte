@@ -36,20 +36,20 @@
 		<ImageLayout xl right>
 			<ExampleImage
 				src="/projects/meetwhen/meeting_light.webp"
-				alt="meetwhen meeting"
+				alt="a screenshot of a scheduling application I built called meetwhen"
 				width={994}
 				height={1623}
 			/>
 			<ExampleImage
 				src="/projects/meetwhen/new_dark.webp"
-				alt="meetwhen create new meeting page"
+				alt="a screenshot of the event creation interface for a scheduling application I built called meetwhen"
 				width={994}
 				height={1622}
 			/>
 			<div class="hidden xl:block">
 				<ExampleImage
 					src="/projects/meetwhen/profile_light.webp"
-					alt="meetwhen profile page"
+					alt="a screenshot of a user's profile for a scheduling application I built called meetwhen"
 					width={994}
 					height={1618}
 				/>
@@ -83,13 +83,13 @@
 		<ImageLayout>
 			<ExampleImage
 				src="/projects/helloworld/ar_portrait.webp"
-				alt="helloworld ar demo"
+				alt="a screenshot of an augmented reality application I built called HelloWorld"
 				width={828}
 				height={1792}
 			/>
 			<ExampleImage
 				src="/projects/helloworld/map.webp"
-				alt="helloworld map overview"
+				alt="a screenshot of the discover page, which includes a map, for an augmented reality application I built called HelloWorld"
 				width={828}
 				height={1792}
 			/>
@@ -121,7 +121,7 @@
 		<ImageLayout right singleColumn>
 			<ExampleImage
 				src="/the-web/techtris.webp"
-				alt="helloworld ar demo"
+				alt="a screenshot of a showcase website"
 				width={1080}
 				height={714}
 			/>

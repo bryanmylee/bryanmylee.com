@@ -1,8 +1,8 @@
 <div>
-	<figure role="group" aria-labelledby="screenshots of web projects">
+	<figure role="group" aria-label="six screenshots of my web projects scrolling up the screen">
 		<img
 			src="/the-web/kopi_time--listings.webp"
-			alt="kopi time listings page"
+			alt="a screenshot of a listings page in a mock asset trading app I built called Kopi Time"
 			loading="lazy"
 			style:top="35%"
 			style:left="5%"
@@ -10,7 +10,7 @@
 		/>
 		<img
 			src="/the-web/techtris.webp"
-			alt="techtris profile page"
+			alt="a screenshot of a showcase website"
 			loading="lazy"
 			style:top="25%"
 			style:left="8%"
@@ -18,7 +18,7 @@
 		/>
 		<img
 			src="/the-web/woknroll.webp"
-			alt="wok n roll homepage"
+			alt="a screenshot of the homepage for a food search engine I built called Wok N Roll"
 			loading="lazy"
 			style:top="60%"
 			style:right="8%"
@@ -26,7 +26,7 @@
 		/>
 		<img
 			src="/the-web/meetwhen--meet.webp"
-			alt="meetwhen.io meeting"
+			alt="a screenshot of a scheduling application I built called meetwhen"
 			loading="lazy"
 			style:top="55%"
 			style:right="53%"
@@ -34,7 +34,7 @@
 		/>
 		<img
 			src="/the-web/kopi_time--inventory.webp"
-			alt="kopie time inventory page"
+			alt="a screenshot of the inventory page in a mock asset trading app I built called Kopi Time"
 			loading="lazy"
 			style:top="30%"
 			style:left="50%"
@@ -42,7 +42,7 @@
 		/>
 		<img
 			src="/the-web/meetwhen--home.webp"
-			alt="meetwhen.io homepage"
+			alt="a screenshot of the homepage for a scheduling application I built called meetwhen"
 			loading="lazy"
 			style:top="50%"
 			style:left="53%"
@@ -53,7 +53,7 @@
 
 <style lang="postcss">
 	img {
-		@apply absolute bottom-0 drop-shadow-2xl brightness-75;
+		@apply absolute bottom-0 brightness-75 drop-shadow-2xl;
 		border-radius: min(1vw, 10px);
 		&.wide {
 			width: min(40%, 700px);

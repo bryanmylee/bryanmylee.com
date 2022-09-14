@@ -57,7 +57,7 @@
 {:else}
 	<img
 		src="/fallback/NestedCubes.webp"
-		alt="nested cubes"
+		alt="a series of blue cubes nested within each other"
 		class="wh-screen object-cover sticky top-0"
 		loading="lazy"
 	/>
