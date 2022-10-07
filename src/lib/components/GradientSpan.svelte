@@ -21,9 +21,13 @@
 	export let color: ColorInput | [ColorInput, ColorInput, ColorInput];
 	const colors = Array.isArray(color) ? color.map((c) => chroma(c)) : getColors(color);
 	const colorsTo = colors.map((color) => getShifted(color, 30).darken(3).alpha(0));
+
+	let className = '';
+	export { className as class };
 </script>
 
 <span
+	class={className}
 	style:--first={colors[0].hex()}
 	style:--firstTo={colorsTo[0].hex()}
 	style:--second={colors[1].hex()}
