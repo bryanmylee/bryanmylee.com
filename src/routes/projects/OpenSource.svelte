@@ -5,6 +5,21 @@
 
 <Section title="Open Source">
 	<ProjectCard
+		name="Ally UI"
+		description="An open-source widget library for building high-quality, accessible web applications on all UI frameworks.
+		"
+		links={[
+			{
+				label: 'Documentation',
+				href: 'https://ally-ui.com',
+			},
+			{
+				label: 'GitHub',
+				href: 'https://github.com/ally-ui/ally-ui',
+			},
+		]}
+	/>
+	<ProjectCard
 		name="Svelte Headless Table"
 		description="Unopinionated and extensible data tables for Svelte."
 		links={[
