@@ -59,6 +59,16 @@
 		]}
 	/>
 	<ProjectCard
+		name="svelte-render"
+		description="Manage complex Svelte behaviors outside of templates with full type safety."
+		links={[
+			{
+				label: 'GitHub',
+				href: 'https://github.com/bryanmylee/svelte-render',
+			},
+		]}
+	/>
+	<ProjectCard
 		name="vim-colorscheme-icons"
 		description="Colorize vim-devicons with the current colorscheme."
 		links={[
