@@ -16,13 +16,13 @@
 		<p>This policy is effective as of 13 Oct 2022.</p>
 		<h3>Collection and storage</h3>
 		<p>
-			Wave provides an optional function to sync timers across devices. This requires the storage of
-			the account information used to log in to Wave. Wave currently supports Google sign-in and
-			only has access to the email and display name of the account.
+			Wave provides an optional function to sync timers across devices. This requires storage of the
+			account information used to log in to Wave. Wave currently supports Google sign-in and only
+			has access to the email and display name of the account.
 		</p>
 		<p>
-			Wave sends push notifications when timers are done. This requires the collection and storage
-			of an anonymized list of device tokens provided by Firebase.
+			Wave sends push notifications when timers are completed. This requires the collection and
+			storage of the anonymized device token provided by Firebase.
 		</p>
 		<p>
 			Wave does not collect any analytics data, perform any user tracking, or use any cookies
