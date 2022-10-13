@@ -8,6 +8,20 @@
 <Section title="Projects" singleColumn>
 	<div class="flex flex-col items-center gap-4 mx-auto mb-8 lg:flex-row">
 		<ProjectCard
+			name="Wave"
+			description="A simple and beautiful pomodoro app to keep you on track with the ability to sync across multiple devices."
+			skills={['reactjs', 'reactnative', 'firebase']}
+			links={[
+				{
+					label: 'Privacy Policy',
+					href: '/projects/wave#privacy',
+				},
+			]}
+			class="lg:shadow-lg"
+		/>
+	</div>
+	<div class="flex flex-col items-center gap-4 mx-auto mb-8 lg:flex-row">
+		<ProjectCard
 			name="meetwhen.io"
 			description="A beautiful and mobile-friendly group scheduling application."
 			skills={['svelte', 'sveltekit', 'typescript', 'tailwindcss', 'nodejs', 'firebase', 'graphql']}

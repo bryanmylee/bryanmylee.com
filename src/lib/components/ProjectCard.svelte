@@ -28,7 +28,7 @@
 			{/each}
 		</ul>
 	{/if}
-	<div class="my-4 space-y-4">
+	<div class="mt-4 space-y-4">
 		<slot />
 	</div>
 	{#if links !== undefined}

@@ -11,7 +11,11 @@ const config = {
 	corePlugins: {
 		container: false,
 	},
-	plugins: [require('./tailwindcss/size.cjs'), require('./tailwindcss/dynamicText.cjs')],
+	plugins: [
+		require('./tailwindcss/size.cjs'),
+		require('./tailwindcss/dynamicText.cjs'),
+		require('@tailwindcss/typography'),
+	],
 };
 
 module.exports = config;
