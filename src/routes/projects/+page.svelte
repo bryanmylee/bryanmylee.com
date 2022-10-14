@@ -21,6 +21,9 @@
 <div class="w-full h-40 bg-gray-50" />
 
 <style lang="postcss">
+	.projects :global(p) {
+		@apply leading-7 text-gray-700;
+	}
 	.projects :global(p a) {
 		@apply text-cyan-500 underline underline-offset-1;
 		@apply hover:text-cyan-400;
