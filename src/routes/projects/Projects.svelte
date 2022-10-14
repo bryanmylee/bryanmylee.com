@@ -6,19 +6,58 @@
 </script>
 
 <Section title="Projects" singleColumn>
-	<div class="flex flex-col items-center gap-4 mx-auto mb-8 lg:flex-row">
+	<div class="flex flex-col items-center gap-4 mx-auto mb-8 lg:flex-row-reverse">
 		<ProjectCard
 			name="Wave"
-			description="A simple and beautiful pomodoro app to keep you on track with the ability to sync across multiple devices."
+			description="A simple and beautiful pomodoro app to keep you focused."
 			skills={['reactjs', 'reactnative', 'firebase']}
 			links={[
+				{
+					label: 'View on App Store',
+					href: 'https://apps.apple.com/us/app/wave-focus/id6443842392',
+				},
+				{
+					label: 'View on Google Play',
+					href: 'https://play.google.com/store/apps/details?id=com.bryanmylee.wavefocus',
+				},
 				{
 					label: 'Privacy Policy',
 					href: '/projects/wavefocus#privacy',
 				},
 			]}
 			class="lg:shadow-lg"
-		/>
+		>
+			<p>
+				Wave is a simple pomodoro timer to help you stay focused while working. It alternates
+				between a 25 minute focus mode and a 5 minute break mode while displaying beautiful
+				animations. Keep your timer in sync with multiple devices and stay on top of your timers
+				with alert notifications!
+			</p>
+			<p>
+				Wave for iOS and Android is built with React Native and Reanimated for its powerful and
+				performant animation capabilities.
+			</p>
+			<p>
+				On the backend, Wave uses Firebase Firestore for its data storage and synchronization
+				features. A Google Cloud Function is triggered whenever a user starts or stops a timer. It
+				schedules a task with Google Cloud Tasks to send a push notification with Firebase Cloud
+				Messaging whenever a timer is completed.
+			</p>
+		</ProjectCard>
+		<ImageLayout>
+			<ExampleImage
+				src="/projects/wavefocus/iphone-6.5-dark-focus.webp"
+				alt="a dark mode screenshot of my pomodoro app in its focus stage"
+				width={963}
+				height={2084}
+			/>
+			<ExampleImage
+				src="/projects/wavefocus/iphone-6.5-light-relax-paused.webp"
+				alt="a screenshot of my pomodoro app in its relaxed stage"
+				width={963}
+				height={2084}
+			/>
+		</ImageLayout>
 	</div>
 	<div class="flex flex-col items-center gap-4 mx-auto mb-8 lg:flex-row">
 		<ProjectCard
