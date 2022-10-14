@@ -46,7 +46,7 @@
 		</ProjectCard>
 		<ImageLayout class="grid-cols-1 lg:-mr-52">
 			<ExampleImage
-				src="/projects/wavefocus/android_feature.png"
+				src="/projects/wavefocus/android_feature.webp"
 				alt="a banner with multiple android phones using my pomodor app"
 				width={2040}
 				height={1000}
