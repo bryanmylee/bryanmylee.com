@@ -13,8 +13,8 @@
 <div class="fixed inset-0 bg-gray-50 z-[-1]" />
 
 <div class="contents projects">
-	<OpenSource />
 	<Projects />
+	<OpenSource />
 	<University />
 </div>
 
