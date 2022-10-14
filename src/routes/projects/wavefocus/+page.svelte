@@ -17,8 +17,8 @@
 		<h3>Collection and storage</h3>
 		<p>
 			Wave provides an optional function to sync timers across devices. This requires storage of the
-			account information used to log in to Wave. Wave currently supports Google sign-in and only
-			has access to the email and display name of the account.
+			account information used to log in to Wave. Wave currently supports Google Sign-in and Sign in
+			with Apple, and only has access to the email and display name of the account.
 		</p>
 		<p>
 			Wave sends push notifications when timers are completed. This requires the collection and

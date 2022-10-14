@@ -14,7 +14,7 @@
 			links={[
 				{
 					label: 'Privacy Policy',
-					href: '/projects/wave#privacy',
+					href: '/projects/wavefocus#privacy',
 				},
 			]}
 			class="lg:shadow-lg"
