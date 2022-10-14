@@ -32,7 +32,7 @@
 		<slot />
 	</div>
 	{#if links !== undefined}
-		<ul class="flex gap-4 mt-4">
+		<ul class="flex gap-4 mt-4 flex-wrap">
 			{#each links as { href, label }}
 				<li>
 					<Button
