@@ -1,12 +1,14 @@
 <script lang="ts" context="module">
 	const ID_TO_LABEL = {
+		azure: 'Microsoft Azure',
 		ansible: 'Ansible',
-		aws: 'AWS',
+		aws: 'Amazon Web Services',
 		c: 'C',
 		cloudformation: 'CloudFormation',
 		docker: 'Docker',
 		firebase: 'Firebase',
 		flask: 'Flask',
+		gcp: 'Google Cloud Platform',
 		graphql: 'GraphQL',
 		java: 'Java',
 		javascript: 'JavaScript',

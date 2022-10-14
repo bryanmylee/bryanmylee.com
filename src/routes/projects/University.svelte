@@ -5,7 +5,26 @@
 
 <Section title="University">
 	<ProjectCard
-		name="Kopi Time"
+		name="Advanced Threat Detection for GovTech Commercial Cloud"
+		description="CS480 Final Year Project"
+		skills={['aws', 'azure', 'gcp']}
+	>
+		<div class="space-y-2">
+			<p>
+				For our Final Year Project, we developed pipelines for efficiently building and deploying AI
+				models on AWS, Azure, and GCP.
+			</p>
+			<p>
+				This involved an analysis and exploration of the many services provided by the different
+				cloud providers to meet the functional requirements for the pipelines. In the process, we
+				designed and trained basic machine learning models using the pipelines developed.
+			</p>
+			<p>We concluded the project with a detailed comparison of the cloud providers.</p>
+		</div>
+	</ProjectCard>
+
+	<ProjectCard
+		name="Kopi Time – Microservice Orchestration"
 		description="CS302 IT Solution Lifecycle Management"
 		skills={[
 			'typescript',
@@ -50,7 +69,7 @@
 	</ProjectCard>
 
 	<ProjectCard
-		name="COMO Club"
+		name="COMO Club – Cloud Architecture"
 		description="CS301 IT Solution Architecture"
 		skills={[
 			'typescript',
@@ -86,7 +105,7 @@
 	</ProjectCard>
 
 	<ProjectCard
-		name="Wok N Roll"
+		name="Wok N Roll – Product Development and Management"
 		description="CS206 Software Product Management"
 		skills={['typescript', 'java', 'svelte', 'tailwindcss', 'spring', 'rest']}
 		links={[
@@ -109,7 +128,7 @@
 	</ProjectCard>
 
 	<ProjectCard
-		name="Ryver Bank"
+		name="Ryver Bank – API Development"
 		description="CS203 Collaborative Software Development"
 		skills={['java', 'python', 'spring', 'flask', 'scikit', 'rest', 'mysql', 'docker']}
 		links={[
