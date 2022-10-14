@@ -44,18 +44,12 @@
 				Messaging whenever a timer is completed.
 			</p>
 		</ProjectCard>
-		<ImageLayout>
+		<ImageLayout class="grid-cols-1 lg:-mr-52">
 			<ExampleImage
-				src="/projects/wavefocus/iphone-6.5-dark-focus.webp"
-				alt="a dark mode screenshot of my pomodoro app in its focus stage"
-				width={963}
-				height={2084}
-			/>
-			<ExampleImage
-				src="/projects/wavefocus/iphone-6.5-light-relax-paused.webp"
-				alt="a screenshot of my pomodoro app in its relaxed stage"
-				width={963}
-				height={2084}
+				src="/projects/wavefocus/android_feature.png"
+				alt="a banner with multiple android phones using my pomodor app"
+				width={2040}
+				height={1000}
 			/>
 		</ImageLayout>
 	</div>
@@ -86,7 +80,7 @@
 				are the most available.
 			</p>
 		</ProjectCard>
-		<ImageLayout xl right>
+		<ImageLayout class="grid-cols-2 lg:-ml-52 xl:-ml-96 xl:grid-cols-3">
 			<ExampleImage
 				src="/projects/meetwhen/meeting_light.webp"
 				alt="a screenshot of a scheduling application I built called meetwhen"
@@ -133,7 +127,7 @@
 				hop onto the Discover page to learn more about each landmark.
 			</p>
 		</ProjectCard>
-		<ImageLayout>
+		<ImageLayout class="grid-cols-2">
 			<ExampleImage
 				src="/projects/helloworld/ar_portrait.webp"
 				alt="a screenshot of an augmented reality application I built called HelloWorld"
@@ -171,7 +165,7 @@
 				>.
 			</p>
 		</ProjectCard>
-		<ImageLayout right singleColumn>
+		<ImageLayout class="grid-cols-1 lg:-ml-52 xl:ml-0">
 			<ExampleImage
 				src="/the-web/techtris.webp"
 				alt="a screenshot of a showcase website"
