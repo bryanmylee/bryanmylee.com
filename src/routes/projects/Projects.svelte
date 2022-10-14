@@ -28,10 +28,9 @@
 			class="lg:shadow-lg"
 		>
 			<p>
-				Wave is a simple pomodoro timer to help you stay focused while working. It alternates
-				between a 25 minute focus mode and a 5 minute break mode while displaying beautiful
-				animations. Keep your timer in sync with multiple devices and stay on top of your timers
-				with alert notifications!
+				<strong>Wave</strong> is a simple pomodoro timer to help you stay focused while working. It alternates
+				between a 25 minute focus mode and a 5 minute break mode while displaying beautiful animations.
+				Keep your timer in sync with multiple devices and stay on top of your timers with alert notifications!
 			</p>
 			<p>
 				Wave for iOS and Android is built with React Native and Reanimated for its powerful and
