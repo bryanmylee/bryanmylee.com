@@ -11,15 +11,14 @@
 	>
 		<div class="space-y-2">
 			<p>
-				For our Final Year Project, we developed pipelines for efficiently building and deploying AI
-				models on AWS, Azure, and GCP.
+				For our Final Year Project, we developed pipelines for efficiently ingesting data logs,
+				building machine learning models, and deploying those models on AWS, Azure, and GCP.
 			</p>
 			<p>
 				This involved an analysis and exploration of the many services provided by the different
 				cloud providers to meet the functional requirements for the pipelines. In the process, we
 				designed and trained basic machine learning models using the pipelines developed.
 			</p>
-			<p>We concluded the project with a detailed comparison of the cloud providers.</p>
 		</div>
 	</ProjectCard>
 

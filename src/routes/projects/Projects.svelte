@@ -40,7 +40,7 @@
 				On the backend, Wave uses Firebase Firestore for its data storage and synchronization
 				features. A Google Cloud Function is triggered whenever a user starts or stops a timer. It
 				schedules a task with Google Cloud Tasks to send a push notification with Firebase Cloud
-				Messaging whenever a timer is completed.
+				Messaging whenever the timer is completed.
 			</p>
 		</ProjectCard>
 		<ImageLayout class="grid-cols-1 lg:-mr-52">
