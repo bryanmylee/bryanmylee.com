@@ -24,7 +24,7 @@
 	</ProjectCard>
 
 	<ProjectCard
-		name="Kopi Time – Microservice Orchestration"
+		name="Kopi Time, Microservice Orchestration"
 		description="CS302 IT Solution Lifecycle Management"
 		skills={[
 			'typescript',
@@ -42,6 +42,10 @@
 			'docker',
 		]}
 		links={[
+			{
+				label: 'GitHub',
+				href: 'https://github.com/TeamTechtris/smu-cs302-saga-engine',
+			},
 			{
 				label: 'Read our report',
 				href: '/projects/cs302-final-report.pdf',
@@ -69,7 +73,7 @@
 	</ProjectCard>
 
 	<ProjectCard
-		name="COMO Club – Cloud Architecture"
+		name="COMO Club, Cloud Architecture"
 		description="CS301 IT Solution Architecture"
 		skills={[
 			'typescript',
@@ -105,7 +109,7 @@
 	</ProjectCard>
 
 	<ProjectCard
-		name="Wok N Roll – Product Development and Management"
+		name="Wok N Roll, Product Development and Management"
 		description="CS206 Software Product Management"
 		skills={['typescript', 'java', 'svelte', 'tailwindcss', 'spring', 'rest']}
 		links={[
@@ -128,7 +132,7 @@
 	</ProjectCard>
 
 	<ProjectCard
-		name="Ryver Bank – API Development"
+		name="Ryver Bank, API Development"
 		description="CS203 Collaborative Software Development"
 		skills={['java', 'python', 'spring', 'flask', 'scikit', 'rest', 'mysql', 'docker']}
 		links={[
