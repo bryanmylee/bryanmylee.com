@@ -22,7 +22,7 @@
 				},
 				{
 					label: 'Privacy Policy',
-					href: '/projects/wavefocus#privacy',
+					href: '/projects/wavefocus',
 				},
 			]}
 			class="lg:shadow-lg"
