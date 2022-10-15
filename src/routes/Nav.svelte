@@ -60,8 +60,8 @@
 	}
 
 	.dropdown {
-		@apply flex flex-col gap-x-8 md:flex-row;
-		@apply -m-2 rounded-xl p-4 text-lg shadow-xl;
+		@apply flex flex-col gap-x-4 md:flex-row;
+		@apply -m-2 rounded-xl p-3.5 text-lg shadow-xl;
 		@apply md:m-0 md:p-0 md:text-xl md:shadow-none;
 		@apply opacity-0 peer-checked:opacity-100 md:opacity-100;
 		@apply pointer-events-none peer-checked:pointer-events-auto md:pointer-events-auto;
@@ -73,7 +73,7 @@
 	}
 
 	.dropdown--item a {
-		@apply inline-block rounded-lg p-2 hover:bg-gray-300/20;
+		@apply inline-block rounded-lg px-3.5 py-2 hover:bg-gray-300/20;
 	}
 
 	input[type='checkbox'] {
