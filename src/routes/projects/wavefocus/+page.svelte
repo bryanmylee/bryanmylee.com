@@ -33,6 +33,10 @@
 			All information related to user accounts (email, display name, device tokens) is retained for
 			up to one year after inactivity before being automatically deleted.
 		</p>
+		<p>
+			All information related to user behavior (focus activity) is retained for two days before
+			being automatically deleted.
+		</p>
 		<h3>Access and correction</h3>
 		<p>
 			You may request access to any personal information that Wave may have collected about you. You
