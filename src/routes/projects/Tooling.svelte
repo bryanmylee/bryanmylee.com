@@ -3,7 +3,7 @@
 	import Section from './Section.svelte';
 </script>
 
-<Section title="Open Source">
+<Section title="Tooling">
 	<ProjectCard
 		name="Ally UI"
 		description="An open-source widget library for building high-quality, accessible web applications on all UI frameworks.

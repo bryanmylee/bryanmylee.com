@@ -5,7 +5,31 @@
 	import Section from './Section.svelte';
 </script>
 
-<Section title="Projects" singleColumn>
+<Section title="Applications" singleColumn>
+	<div class="flex flex-col items-center gap-4 mx-auto mb-8 lg:flex-row-reverse">
+		<ProjectCard
+			name="Perfect Clear"
+			description="A real-time Tetris perfect clear solver."
+			skills={['rust', 'wasm', 'typescript']}
+			links={[
+				{
+					label: 'GitHub',
+					href: 'https://github.com/bryanmylee/perfect-clear',
+				},
+			]}
+			class="lg:shadow-lg"
+		>
+			<p>
+				An interactive and real-time <a href="https://tetris.fandom.com/wiki/Perfect_Clear_Guide"
+					>perfect clear</a
+				> solver for Tetris.
+			</p>
+			<p>
+				The solver algorithm is written in Rust and uses multiple heuristics to achieve acceptable
+				performance. It is then compiled to WebAssembly for native performance in the browser.
+			</p>
+		</ProjectCard>
+	</div>
 	<div class="flex flex-col items-center gap-4 mx-auto mb-8 lg:flex-row-reverse">
 		<ProjectCard
 			name="Wave"

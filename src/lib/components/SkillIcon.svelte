@@ -22,6 +22,7 @@
 		reactnative: 'React Native',
 		redux: 'Redux',
 		rest: 'REST',
+		rust: 'Rust',
 		scikit: 'scikit-learn',
 		spring: 'Spring',
 		svelte: 'Svelte',
@@ -29,6 +30,7 @@
 		swift: 'Swift',
 		tailwindcss: 'TailwindCSS',
 		typescript: 'TypeScript',
+		wasm: 'WebAssembly',
 		vim: 'Vim',
 	};
 

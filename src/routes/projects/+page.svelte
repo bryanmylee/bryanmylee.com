@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { syncBackgroundWhite } from '$lib/utils/background';
 	import { useWhite } from '../context';
-	import Projects from './Projects.svelte';
-	import OpenSource from './OpenSource.svelte';
+	import Applications from './Applications.svelte';
+	import Tooling from './Tooling.svelte';
 	import University from './University.svelte';
 
 	const white = useWhite();
@@ -13,8 +13,9 @@
 <div class="fixed inset-0 bg-gray-50 z-[-1]" />
 
 <div class="contents projects">
-	<Projects />
-	<OpenSource />
+	<h1 id="projects" class="text-3xl font-bold text-center">Projects</h1>
+	<Applications />
+	<Tooling />
 	<University />
 </div>
 
