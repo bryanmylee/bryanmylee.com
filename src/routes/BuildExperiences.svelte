@@ -17,7 +17,7 @@
 	let:bottomProgress
 >
 	{#if $jsEnabled}
-		<div class="sticky top-0 wh-screen" style:opacity={topProgress * (1 - bottomProgress)}>
+		<div class="sticky top-0 h-screen" style:opacity={topProgress * (1 - bottomProgress)}>
 			<NestedCubes {progress} />
 		</div>
 	{:else}

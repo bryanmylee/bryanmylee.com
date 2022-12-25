@@ -55,7 +55,7 @@
 			{/if}
 		{/each}
 		{#if topProgress > 0}
-			<div class="sticky top-0 wh-screen" in:fade>
+			<div class="sticky top-0 h-screen" in:fade>
 				<div
 					class="absolute inset-0 flex items-center justify-center"
 					style:opacity={1 - fadeOutProgress}

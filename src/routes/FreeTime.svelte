@@ -21,7 +21,7 @@
 >
 	{@const tIn = $jsEnabled ? cubicOut(topProgress) : 1}
 	{@const tOut = cubicIn(outProgress)}
-	<div class="sticky top-0 flex items-center justify-center wh-screen">
+	<div class="sticky top-0 flex items-center justify-center h-screen">
 		{#if !$jsEnabled || topProgress > 0.25}
 			<figure
 				role="group"
@@ -102,7 +102,7 @@
 
 <style lang="postcss">
 	.photos {
-		@apply absolute z-[-1] overflow-x-clip wh-screen;
+		@apply absolute z-[-1] h-screen overflow-x-clip;
 		@apply gap-4 p-4 md:gap-16 md:p-16;
 		@apply grid grid-cols-2 content-center items-center md:grid-cols-3;
 		@apply grid-flow-row-dense;
