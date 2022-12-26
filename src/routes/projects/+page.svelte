@@ -1,16 +1,8 @@
 <script lang="ts">
-	import { syncBackgroundWhite } from '$lib/utils/background';
-	import { useWhite } from '../context';
 	import Applications from './Applications.svelte';
 	import Tooling from './Tooling.svelte';
 	import University from './University.svelte';
-
-	const white = useWhite();
-	white.set(1);
-	syncBackgroundWhite(white);
 </script>
-
-<div class="fixed inset-0 bg-gray-50 z-[-1]" />
 
 <div class="contents projects">
 	<h1 id="projects" class="text-3xl font-bold text-center">Projects</h1>
