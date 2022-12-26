@@ -1,4 +1,5 @@
 <script lang="ts">
+	import NotionBlock from '$lib/components/NotionBlock.svelte';
 	import { metadataFromProperties } from '../metadataFromProperties';
 	import type { PageData } from './$types';
 
@@ -23,31 +24,13 @@
 	</p>
 
 	{#each content as block}
-		{#if 'heading_1' in block}
-			<h2>
-				{#each block.heading_1.rich_text as text}
-					{text.plain_text}
-				{/each}
-			</h2>
-		{:else if 'heading_2' in block}
-			<h3>
-				{#each block.heading_2.rich_text as text}
-					{text.plain_text}
-				{/each}
-			</h3>
-		{:else if 'heading_3' in block}
-			<h4>
-				{#each block.heading_3.rich_text as text}
-					{text.plain_text}
-				{/each}
-			</h4>
-		{:else if 'paragraph' in block}
-			<p>
-				{#each block.paragraph.rich_text as text}
-					<!-- TODO Handle annotations and hrefs -->
-					{text.plain_text}
-				{/each}
-			</p>
-		{/if}
+		<NotionBlock {block} />
 	{/each}
 </article>
+
+<style lang="postcss">
+	article :global(p a) {
+		@apply text-cyan-500 underline underline-offset-1;
+		@apply hover:text-cyan-400;
+	}
+</style>
