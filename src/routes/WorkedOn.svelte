@@ -84,7 +84,7 @@
 			<MobileProjects />
 		</div>
 		<div class="absolute inset-0">
-			<div class="sticky top-0 flex items-center justify-center wh-screen">
+			<div class="sticky top-0 flex items-center justify-center h-screen">
 				<h1 class="font-bold leading-tight text-center text-white text-dyn-8">
 					I worked on<br />
 					{#each CONTENT as { word, color }}

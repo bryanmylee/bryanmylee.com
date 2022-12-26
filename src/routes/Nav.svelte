@@ -19,7 +19,7 @@
 	style:--bgRGB={bgRGB.join(',')}
 	style:--textRGB={textRGB.join(',')}
 >
-	<div class="flex justify-between mx-auto tw-container">
+	<div class="flex justify-between items-start mx-auto tw-container h-12">
 		<ul class="flex gap-8 pointer-events-auto translate-y-2">
 			<li>
 				<a href="/#" class="flex gap-4 font-semibold">
@@ -34,6 +34,7 @@
 				bind:checked={showDropdown}
 			/>
 			<ul class="dropdown" use:clickOutside={() => (showDropdown = false)}>
+				<li class="dropdown--item"><a href="/blog">Blog</a></li>
 				<li class="dropdown--item"><a href="/projects">Projects</a></li>
 				<li class="dropdown--item"><a href="/#work">Work</a></li>
 				<li class="dropdown--item"><a href="/#contact">Contact</a></li>
