@@ -16,13 +16,13 @@
 
 <a
 	href="/blog/{slugText}-{slugId}"
-	class="block bg-white rounded-xl p-4 hover:shadow-lg transition-shadow"
+	class="block bg-white rounded-xl p-4 hover:shadow-lg transition-shadow prose"
 >
-	<h2 class="font-semibold text-lg">{title}</h2>
-	<p class="leading-none">
+	<h2>{title}</h2>
+	<p class="leading-none -mt-4">
 		<sub class="text-sm text-gray-700">{subtitle}</sub>
 	</p>
-	<p>
+	<p class="leading-none -mt-3">
 		<sub class="text-xs text-gray-500 font-medium">{formattedDate}</sub>
 	</p>
 </a>
