@@ -16,7 +16,7 @@
 
 <a
 	href="/blog/{slugText}-{slugId}"
-	class="block bg-white rounded-xl p-4 hover:shadow-lg transition-shadow prose"
+	class="block bg-white rounded-xl p-4 hover:shadow-lg transition-shadow prose prose-h2:text-xl"
 >
 	<h2>{title}</h2>
 	<p class="leading-none -mt-4">
