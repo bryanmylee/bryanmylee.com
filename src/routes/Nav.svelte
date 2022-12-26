@@ -1,12 +1,12 @@
 <script lang="ts">
 	import Logo from '$lib/icons/Logo.svelte';
 	import { useJsEnabled } from '$lib/utils/accessibility';
-	import { gray50 } from '$lib/utils/color';
+	import { GRAY_50 } from '$lib/utils/color';
 	import { clickOutside } from '$lib/utils/pointer';
 	import { useWhite } from './context';
 
 	const white = useWhite();
-	$: bgRGB = gray50.map((l) => l * $white);
+	$: bgRGB = GRAY_50.map((l) => l * $white);
 	$: textRGB = bgRGB.map((l) => 255 - l);
 
 	const jsEnabled = useJsEnabled();

@@ -1,3 +1,3 @@
 export type RGB = [number, number, number];
 
-export const gray50: RGB = [249, 250, 251];
+export const GRAY_50: RGB = [249, 250, 251];
