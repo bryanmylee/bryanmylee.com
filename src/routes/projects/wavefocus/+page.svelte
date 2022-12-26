@@ -10,8 +10,15 @@
 <div class="fixed inset-0 bg-gray-50 z-[-1]" />
 
 <article class="max-w-[65ch] mx-auto p-4">
-	<div class="px-6 py-4 bg-white rounded-xl prose">
-		<h1 class="mt-8">Wave</h1>
+	<div class="px-6 py-8 bg-white rounded-xl prose">
+		<div class="flex items-center gap-8">
+			<img
+				src="/projects/wavefocus/icon.webp"
+				alt="WaveFocus icon"
+				class="rounded-3xl wh-24 !m-0"
+			/>
+			<h1 class="!mb-0">Wave</h1>
+		</div>
 		<h2 id="privacy" class="scroll-mt-28">Privacy Policy</h2>
 		<p>This policy is effective as of 13 Oct 2022.</p>
 		<h3>Collection and storage</h3>
