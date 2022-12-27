@@ -10,6 +10,9 @@
 	<p class="px-4 text-sm">
 		I write about my technical process and other thoughts in between projects.
 	</p>
+</div>
+
+<div class="mx-auto max-w-[65ch] px-8">
 	<ul>
 		{#each data.results as post}
 			{#if 'properties' in post}
