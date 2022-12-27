@@ -9,9 +9,14 @@
 		await tick();
 		mounted = true;
 	});
+
+	let className = '';
+	export { className as class };
+
+	export let delay = 500;
 </script>
 
-<div class:nojs-fade-in={!$jsEnabled}>
+<div style:--delay="{delay}ms" class:nojs-fade-in={!$jsEnabled} class={className}>
 	{#if mounted}
 		<slot {mounted} />
 	{/if}
@@ -20,7 +25,7 @@
 <style lang="postcss">
 	.nojs-fade-in {
 		opacity: 0;
-		animation: 500ms ease-out 500ms normal forwards 1 fade-in;
+		animation: 500ms ease-out var(--delay) normal forwards 1 fade-in;
 	}
 
 	@keyframes fade-in {

@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 
-	type Color = 'primary' | 'secondary';
+	type Variant = 'primary' | 'secondary' | 'white';
 	type Size = 'base' | 'sm';
 
 	interface $$Props extends Omit<svelte.JSX.HTMLAttributes<HTMLButtonElement>, 'size'> {
 		class?: string;
 		href?: string;
-		color?: Color;
+		variant?: Variant;
 		size?: Size;
 	}
 
@@ -17,14 +17,14 @@
 	export let href: string | undefined = undefined;
 	const tag = href === undefined ? 'button' : 'a';
 
-	export let color: Color = 'primary';
+	export let variant: Variant = 'primary';
 	export let size: Size = 'base';
 </script>
 
 <svelte:element
 	this={tag}
 	{...tag === 'button' ? {} : { href }}
-	class={twMerge(className, color, size, 'button')}
+	class={twMerge(className, variant, size, 'button')}
 	{...$$restProps}
 	on:click
 >
@@ -34,12 +34,15 @@
 <style lang="postcss">
 	.button {
 		@apply rounded-lg p-4 font-medium;
-		@apply transition-colors;
+		@apply transition-all;
 		&.primary {
 			@apply bg-cyan-200 text-cyan-800 hover:bg-cyan-100 active:bg-cyan-200/30;
 		}
 		&.secondary {
 			@apply bg-green-200 text-green-800 hover:bg-green-100 active:bg-green-200/30;
+		}
+		&.white {
+			@apply bg-transparent text-white ring-2 ring-white hover:ring-4 active:opacity-50;
 		}
 		&.base {
 			@apply p-4;
