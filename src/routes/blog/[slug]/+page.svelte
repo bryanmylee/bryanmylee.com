@@ -14,21 +14,23 @@
 	<title>{title} | Bryan Lee</title>
 </svelte:head>
 
-<article class="prose p-8 max-w-[65ch] mx-auto prose-h1:text-3xl">
-	<p>
-		<sub class="text-sm text-gray-500 font-medium">{formattedDate}</sub>
-	</p>
+<div class="prose px-4 max-w-[65ch] mx-auto prose-h1:text-3xl">
+	<article class="px-4 py-32 -mt-24 bg-white">
+		<p>
+			<sub class="text-sm text-gray-500 font-medium">{formattedDate}</sub>
+		</p>
 
-	<h1>{title}</h1>
+		<h1>{title}</h1>
 
-	<p class="leading-none -mt-4">
-		<sub class="text-base text-gray-700">{subtitle}</sub>
-	</p>
+		<p class="leading-none -mt-4">
+			<sub class="text-base text-gray-700">{subtitle}</sub>
+		</p>
 
-	{#each content as block}
-		<NotionBlock {block} />
-	{/each}
-</article>
+		{#each content as block}
+			<NotionBlock {block} />
+		{/each}
+	</article>
+</div>
 
 <style lang="postcss">
 	article :global(p a) {

@@ -9,8 +9,8 @@
 
 <div class="fixed inset-0 bg-gray-50 z-[-1]" />
 
-<article class="max-w-[65ch] mx-auto p-4">
-	<div class="px-6 py-8 bg-white rounded-xl prose">
+<article class="max-w-[65ch] mx-auto px-4">
+	<div class="px-4 -my-24 py-32 bg-white rounded-xl prose">
 		<div class="flex items-center gap-8">
 			<img
 				src="/projects/wavefocus/icon.webp"
@@ -54,8 +54,6 @@
 		</p>
 	</div>
 </article>
-
-<div class="w-full h-40 bg-gray-50" />
 
 <style lang="postcss">
 	article :global(p a) {
