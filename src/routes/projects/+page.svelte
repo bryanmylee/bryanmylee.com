@@ -5,9 +5,9 @@
 	export let data: PageData;
 </script>
 
-<header class="mx-auto max-w-[65ch] p-8 space-y-4">
+<header class="mx-auto lg:max-w-7xl max-w-[65ch] p-8 space-y-4">
 	<h1 id="projects" class="text-3xl font-bold px-4">Projects</h1>
-	<p class="px-4 text-sm">
+	<p class="px-4 text-sm max-w-[calc(65ch-4rem)]">
 		A list of my technical projects ranging from applications, open source tooling, and experiments
 		explored in University.
 	</p>
