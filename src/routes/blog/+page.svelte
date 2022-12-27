@@ -12,7 +12,7 @@
 	</p>
 </header>
 
-<div class="mx-auto px-4 max-w-[65ch]">
+<div class="mx-auto px-4 mt-4 max-w-[65ch]">
 	<ul>
 		{#each data.results as post}
 			{#if 'properties' in post}

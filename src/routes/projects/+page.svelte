@@ -14,7 +14,9 @@
 </header>
 
 <!-- Instead of placing "max-w-[65ch]" here, apply it to each individual ProjectItem for more flexibility -->
-<div class="mx-auto px-4 [&_p]:leading-7 [&_p]:text-gray-800 space-y-8 lg:max-w-6xl xl:max-w-7xl">
+<div
+	class="mx-auto px-4 mt-4 [&_p]:leading-7 [&_p]:text-gray-800 space-y-8 lg:max-w-6xl xl:max-w-7xl"
+>
 	{#each data.content as { html, metadata }}
 		<ProjectItem {html} {metadata} />
 	{/each}
