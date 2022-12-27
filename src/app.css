@@ -3,6 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--user-font-scale: 1rem - 16px;
+}
+
+body,
+.prose {
+	font-size: 1rem;
+	font-size: clamp(0.9rem, 0.75rem + 0.375vw + var(--user-font-scale), 1rem);
+}
+
 @layer utilities {
 	.tw-container {
 		width: 100%;
