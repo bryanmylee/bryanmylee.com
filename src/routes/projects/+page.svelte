@@ -18,6 +18,6 @@
 	{#each data.content as { html, metadata }}
 		<ProjectItem {html} {metadata} />
 	{/each}
-</div>
 
-<div class="w-full h-40 bg-gray-50" />
+	<div class="w-full h-40 bg-gray-50" />
+</div>

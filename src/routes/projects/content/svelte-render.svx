@@ -1,0 +1,7 @@
+---
+title: svelte-render
+subtitle: Manage complex Svelte behaviors outside of templates with full type safety.
+links:
+  - label: GitHub
+    href: https://github.com/bryanmylee/svelte-render
+---

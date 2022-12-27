@@ -1,0 +1,14 @@
+---
+title: Svelte Headless Table
+subtitle: Unopinionated and extensible data tables for Svelte.
+links:
+  - label: Documentation
+    href: https://svelte-headless-table.bryanmylee.com/
+  - label: GitHub
+    href: https://github.com/bryanmylee/svelte-headless-table
+images:
+  - src: /projects/svelte-headless-table/svelte-headless-table.webp
+    alt: a screenshot of the documentation page for Svelte Headless Table
+    width: 1221
+    height:  714
+---

@@ -1,0 +1,7 @@
+---
+title: svelte-keyed
+subtitle: A writable derived store for objects and arrays.
+links:
+  - label: GitHub
+    href: https://github.com/bryanmylee/svelte-keyed
+---

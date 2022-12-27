@@ -26,7 +26,25 @@ export interface Image {
 	height: number;
 }
 
-const CONTENT_NAMES = ['perfect-clear', 'wavefocus', 'meetwhen', 'helloworld', 'techtris'];
+const CONTENT_NAMES = [
+	'perfect-clear',
+	'wavefocus',
+	'meetwhen',
+	'helloworld',
+	'techtris',
+	'ally-ui',
+	'svelte-headless-table',
+	'svelte-popperjs',
+	'svelte-previous',
+	'svelte-keyed',
+	'svelte-subscribe',
+	'svelte-render',
+	'vim-colorscheme-icons',
+	'tailwindcss-global-dark',
+	'tailwindcss-extrude',
+	'tex-er-diagram',
+	'sequence-crdt',
+];
 
 export const load: PageServerLoad = async () => {
 	const contentImports = await Promise.all(

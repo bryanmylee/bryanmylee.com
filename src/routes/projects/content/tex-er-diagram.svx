@@ -1,0 +1,7 @@
+---
+title: tex-er-diagram
+subtitle: A LaTeX package for drawing entity-relationship diagrams quickly.
+links:
+  - label: GitHub
+    href: https://github.com/bryanmylee/tex-er-diagram
+---

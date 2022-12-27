@@ -1,0 +1,14 @@
+---
+title: Ally UI
+subtitle: An open-source widget library for building high-quality, accessible web applications on all UI frameworks.
+links:
+  - label: Documentation
+    href: https://ally-ui.com
+  - label: GitHub
+    href: https://github.com/ally-ui/ally-ui
+images:
+  - src: /projects/ally-ui/ally-ui-dark.webp
+    alt: a screenshot of the documentation page for Ally UI
+    width: 1221
+    height: 755
+---

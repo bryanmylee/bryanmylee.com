@@ -1,0 +1,7 @@
+---
+title: vim-colorscheme-icons
+subtitle: Colorize vim-devicons with the current colorscheme.
+links:
+  - label: GitHub
+    href: https://github.com/bryanmylee/vim-colorscheme-icons
+---

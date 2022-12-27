@@ -1,0 +1,7 @@
+---
+title: svelte-popperjs
+subtitle: Popper for Svelte with actions, no wrapper components or bindings required.
+links:
+  - label: GitHub
+    href: https://github.com/bryanmylee/svelte-popperjs
+---

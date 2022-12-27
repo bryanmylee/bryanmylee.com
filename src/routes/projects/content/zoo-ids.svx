@@ -1,0 +1,7 @@
+---
+title: zoo-ids
+subtitle: Generate predictable and unique identifiers composed of adjectives and animals in the browser.
+links:
+  - label: GitHub
+    href: https://github.com/bryanmylee/zoo-ids
+---

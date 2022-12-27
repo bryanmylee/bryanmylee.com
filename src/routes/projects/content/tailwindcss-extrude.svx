@@ -1,0 +1,7 @@
+---
+title: tailwindcss-extrude
+subtitle: Extrude your elements for a retro look!
+links:
+  - label: GitHub
+    href: https://github.com/bryanmylee/tailwindcss-extrude
+---

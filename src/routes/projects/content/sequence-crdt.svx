@@ -1,0 +1,9 @@
+---
+title: sequence-crdt
+subtitle: An implementation of a sequential conflict-free replicated data type in C using LSEQ.
+links:
+  - label: GitHub
+    href: https://github.com/bryanmylee/sequence-crdt
+  - label: Read the paper
+    href: https://hal.archives-ouvertes.fr/hal-00921633/document
+---

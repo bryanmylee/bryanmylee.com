@@ -1,0 +1,7 @@
+---
+title: svelte-subscribe
+subtitle: Subcribe to non top-level stores in your Svelte template.
+links:
+  - label: GitHub
+    href: https://github.com/bryanmylee/svelte-subscribe
+---
