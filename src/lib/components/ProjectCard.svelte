@@ -17,7 +17,7 @@
 	export { className as class };
 </script>
 
-<div class={twMerge('p-4 bg-white rounded-xl w-full min-w-0 max-w-[60ch]', className)}>
+<div class={twMerge('p-4 bg-white rounded-xl w-full min-w-0 max-w-[65ch]', className)}>
 	<h2 class="text-xl font-bold">{name}</h2>
 	<sub class="text-sm">{description}</sub>
 	<hr class="my-4" />

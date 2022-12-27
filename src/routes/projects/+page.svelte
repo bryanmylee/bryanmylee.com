@@ -4,8 +4,14 @@
 	import University from './University.svelte';
 </script>
 
+<div class="mx-auto max-w-[65ch] p-8 space-y-4">
+	<h1 id="projects" class="text-3xl font-bold px-4">Projects</h1>
+	<p class="px-4 text-sm">
+		A list of my technical projects ranging from applications, open source tooling, and experiments
+		explored in University.
+	</p>
+</div>
 <div class="contents projects">
-	<h1 id="projects" class="text-3xl font-bold text-center">Projects</h1>
 	<Applications />
 	<Tooling />
 	<University />
