@@ -7,8 +7,8 @@ const config = {
 				sans: ['Inter', 'sans-serif'],
 			},
 			screens: {
-				'-sm': { max: '767px' },
-				'-md': { max: '1023px' },
+				'-md': { max: '767px' },
+				'-lg': { max: '1023px' },
 			},
 		},
 	},

@@ -13,7 +13,8 @@
 	</p>
 </div>
 
-<div class="mx-auto max-w-[65ch] px-8 [&_p]:leading-7 [&_p]:text-gray-800 space-y-8">
+<!-- Instead of placing "max-w-[65ch]" here, apply it to each individual ProjectItem for more flexibility -->
+<div class="mx-auto px-8 [&_p]:leading-7 [&_p]:text-gray-800 space-y-8 lg:max-w-7xl">
 	{#each data.content as { html, metadata }}
 		<ProjectItem {html} {metadata} />
 	{/each}
