@@ -1,43 +1,5 @@
-<script lang="ts" context="module">
-	const ID_TO_LABEL = {
-		azure: 'Microsoft Azure',
-		ansible: 'Ansible',
-		aws: 'Amazon Web Services',
-		c: 'C',
-		cloudformation: 'CloudFormation',
-		docker: 'Docker',
-		firebase: 'Firebase',
-		flask: 'Flask',
-		gcp: 'Google Cloud Platform',
-		graphql: 'GraphQL',
-		java: 'Java',
-		javascript: 'JavaScript',
-		mysql: 'MySQL',
-		nextjs: 'Next.js',
-		nginx: 'NGINX',
-		nodejs: 'Node.js',
-		python: 'Python',
-		rabbitmq: 'RabbitMQ',
-		reactjs: 'React',
-		reactnative: 'React Native',
-		redux: 'Redux',
-		rest: 'REST',
-		rust: 'Rust',
-		scikit: 'scikit-learn',
-		spring: 'Spring',
-		svelte: 'Svelte',
-		sveltekit: 'SvelteKit',
-		swift: 'Swift',
-		tailwindcss: 'TailwindCSS',
-		typescript: 'TypeScript',
-		wasm: 'WebAssembly',
-		vim: 'Vim',
-	};
-
-	export type Skill = keyof typeof ID_TO_LABEL;
-</script>
-
 <script lang="ts">
+	import { ID_TO_LABEL, type Skill } from '../skill';
 	import Labelled from './Labelled.svelte';
 
 	export let skill: Skill;

@@ -1,0 +1,12 @@
+---
+title: Perfect Clear
+subtitle: A real-time Tetris perfect clear solver.
+skills: [rust, wasm, typescript]
+links:
+  - label: GitHub
+    href: https://github.com/bryanmylee/perfect-clear
+---
+
+An interactive and real-time [perfect clear](https://tetris.fandom.com/wiki/Perfect_Clear_Guide) solver for Tetris.
+
+The solver algorithm is written in Rust and uses multiple heuristics to achieve acceptable performance. It is then compiled to WebAssembly for native performance in the browser.

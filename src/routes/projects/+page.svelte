@@ -1,7 +1,8 @@
 <script lang="ts">
-	import Applications from './Applications.svelte';
-	import Tooling from './Tooling.svelte';
-	import University from './University.svelte';
+	import type { PageData } from './$types';
+	import ProjectItem from './ProjectItem.svelte';
+
+	export let data: PageData;
 </script>
 
 <div class="mx-auto max-w-[65ch] p-8 space-y-4">
@@ -11,20 +12,11 @@
 		explored in University.
 	</p>
 </div>
-<div class="contents projects">
-	<Applications />
-	<Tooling />
-	<University />
+
+<div class="mx-auto max-w-[65ch] px-8 [&_p]:leading-7 [&_p]:text-gray-800 space-y-8">
+	{#each data.content as { html, metadata }}
+		<ProjectItem {html} {metadata} />
+	{/each}
 </div>
 
 <div class="w-full h-40 bg-gray-50" />
-
-<style lang="postcss">
-	.projects :global(p) {
-		@apply leading-7 text-gray-700;
-	}
-	.projects :global(p a) {
-		@apply text-cyan-500 underline underline-offset-1;
-		@apply hover:text-cyan-400;
-	}
-</style>
