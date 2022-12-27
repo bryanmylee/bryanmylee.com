@@ -1,8 +1,10 @@
 <script lang="ts">
-	type $$Props = svelteHTML.SVGAttributes;
+	type $$Props = svelteHTML.HTMLAttributes;
 </script>
 
-<svg viewBox="0 0 25 50" fill="none" xmlns="http://www.w3.org/2000/svg" {...$$restProps}>
+<img src="/icon.png" alt="Bryan Lee's icon" {...$$restProps} />
+
+<!-- <svg viewBox="0 0 25 50" fill="none" xmlns="http://www.w3.org/2000/svg" {...$$restProps}>
 	<path
 		fill-rule="evenodd"
 		clip-rule="evenodd"
@@ -21,4 +23,4 @@
 		d="M 0 0 L 25 0 L 16.667 16.667"
 		fill="currentColor"
 	/>
-</svg>
+</svg> -->

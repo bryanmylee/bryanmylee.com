@@ -23,7 +23,7 @@
 		<ul class="flex gap-8 pointer-events-auto translate-y-2">
 			<li>
 				<a href="/#" class="flex gap-4 font-semibold">
-					<Logo class="w-6 h-12 -translate-y-1" /> Bryan Lee
+					<Logo class="wh-12 -mx-3 -translate-y-1" /> Bryan Lee
 				</a>
 			</li>
 		</ul>
