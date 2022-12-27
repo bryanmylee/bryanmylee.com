@@ -74,7 +74,27 @@ export const clickOutside = (node: HTMLElement, callback: (event: MouseEvent) =>
 	window.addEventListener('click', handleClick);
 	return {
 		destroy() {
-			node.removeEventListener('click', handleClick);
+			window.removeEventListener('click', handleClick);
+		},
+	};
+};
+
+export const interactOutside = (node: HTMLElement, callback: (event: Event) => void) => {
+	const click = clickOutside(node, callback);
+	const handleTouch = (event: TouchEvent) => {
+		const { target } = event;
+		if (!(target instanceof Node)) {
+			return;
+		}
+		if (!node.contains(target)) {
+			callback(event);
+		}
+	};
+	window.addEventListener('touchstart', handleTouch);
+	return {
+		destroy() {
+			click.destroy();
+			window.removeEventListener('touchstart', handleTouch);
 		},
 	};
 };

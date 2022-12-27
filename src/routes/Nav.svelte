@@ -1,8 +1,9 @@
 <script lang="ts">
+	import { afterNavigate } from '$app/navigation';
 	import Logo from '$lib/icons/Logo.svelte';
 	import { useJsEnabled } from '$lib/utils/accessibility';
 	import { GRAY_50 } from '$lib/utils/color';
-	import { clickOutside } from '$lib/utils/pointer';
+	import { interactOutside } from '$lib/utils/pointer';
 	import { useWhite } from './context';
 
 	const white = useWhite();
@@ -11,6 +12,10 @@
 
 	const jsEnabled = useJsEnabled();
 	let showDropdown = false;
+
+	afterNavigate(function closeDropdown() {
+		showDropdown = false;
+	});
 </script>
 
 <nav
@@ -33,7 +38,7 @@
 				class="md:hidden peer pointer-events-auto"
 				bind:checked={showDropdown}
 			/>
-			<ul class="dropdown" use:clickOutside={() => (showDropdown = false)}>
+			<ul class="dropdown" use:interactOutside={() => (showDropdown = false)}>
 				<li class="dropdown--item"><a href="/projects">Projects</a></li>
 				<li class="dropdown--item"><a href="/blog">Blog</a></li>
 				<li class="dropdown--item"><a href="/#work">Work</a></li>
