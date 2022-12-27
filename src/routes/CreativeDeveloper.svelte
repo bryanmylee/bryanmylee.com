@@ -39,7 +39,7 @@
 			</div>
 		</div>
 	</ProgressiveFadeIn>
-	<ProgressiveFadeIn delay={4000} class="sticky top-full p-8 -translate-y-full w-full text-white">
+	<!-- <ProgressiveFadeIn delay={4000} class="sticky top-full p-8 -translate-y-full w-full text-white">
 		<div style:opacity={1 - progress * 1.5}>
 			<div in:fade={{ delay: 4000, duration: 1000 }} class="flex items-center gap-4 flex-wrap">
 				<span class="font-medium"> Skip to </span>
@@ -49,5 +49,5 @@
 				<Button variant="white" size="sm" href="/#contact">Contact</Button>
 			</div>
 		</div>
-	</ProgressiveFadeIn>
+	</ProgressiveFadeIn> -->
 </ScrollProgress>
