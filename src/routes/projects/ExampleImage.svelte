@@ -9,4 +9,10 @@
 	export { className as class };
 </script>
 
-<img {src} {alt} class={twMerge('border shadow-md rounded-xl', className)} {width} {height} />
+<img
+	{src}
+	{alt}
+	class={twMerge('ring-1 ring-white shadow-md rounded-xl', className)}
+	{width}
+	{height}
+/>
