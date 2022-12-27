@@ -26,7 +26,7 @@ export interface Image {
 	height: number;
 }
 
-const CONTENT_NAMES = ['perfect-clear', 'wavefocus'];
+const CONTENT_NAMES = ['perfect-clear', 'wavefocus', 'meetwhen', 'helloworld', 'techtris'];
 
 export const load: PageServerLoad = async () => {
 	const contentImports = await Promise.all(

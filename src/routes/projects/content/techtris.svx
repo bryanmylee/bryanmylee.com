@@ -1,0 +1,17 @@
+---
+title: Techtris
+subtitle: A simple showcase site.
+skills: [svelte, sveltekit, typescript, tailwindcss, nodejs]
+links:
+  - label: Check it out
+    href: https://teamtechtris.github.io
+images:
+  - src: /the-web/techtris.webp
+    alt: a screenshot of a showcase website
+    width: 1080
+    height: 714
+---
+
+**Techtris** was created by a small group of friends who wanted to work together on hobby projects, hackathons, and group assignments.
+
+The showcase site was primarily built to develop a simple understanding of [Three.js](https://threejs.org/).

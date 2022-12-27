@@ -1,0 +1,27 @@
+---
+title: meetwhen.io
+subtitle: A beautiful and mobile-friendly group scheduling application.
+skills: [svelte, sveltekit, typescript, tailwindcss, nodejs, firebase, graphql]
+links:
+  - label: Get started
+    href: https://meetwhen.io
+  - label: GitHub
+    href: https://github.com/bryanmylee/meetwhen-ui
+images:
+  - src: /projects/meetwhen/meeting_light.webp
+    alt: a screenshot of a scheduling application I built called meetwhen
+    width: 994
+    height: 1623
+  - src: /projects/meetwhen/new_dark.webp
+    alt: a screenshot of the event creation interface for a scheduling application I built called meetwhen
+    width: 994
+    height: 1622
+  - src: /projects/meetwhen/profile_light.webp
+    alt: a screenshot of a user's profile for a scheduling application I built called meetwhen
+    width: 994
+    height: 1618
+---
+
+**meetwhen.io** helps you schedule meetings and hangouts around the world. Quickly create and join meets with no sign up required, or sign in with an account to keep track of your previous and upcoming meets!
+
+You can also add relevant links and details for easy access later and see when your friends are the most available.

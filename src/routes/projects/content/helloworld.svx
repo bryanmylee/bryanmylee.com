@@ -1,0 +1,23 @@
+---
+title: HelloWorld
+subtitle: A mobile AR application that lets you explore the world from your home.
+skills: [reactjs, reactnative]
+links:
+  - label: Read about us
+    href: https://news.smu.edu.sg/news/2021/07/02/smus-computing-and-information-systems-team-emerged-champions-dsta-hackathon
+images:
+  - src: /projects/helloworld/ar_portrait.webp
+    alt: a screenshot of an augmented reality application I built called HelloWorld
+    width: 828
+    height: 1792
+  - src: /projects/helloworld/map.webp
+    alt: a screenshot of the discover page, which includes a map, for an augmented reality application I built called HelloWorld
+    width: 828
+    height: 1792
+---
+
+### **CODE_EXP 2021** · 1st Place
+
+**HelloWorld** is a quick hackathon project that provides a taste of tourism when travel was restricted during the pandemic.
+
+You can decorate your personal spaces with virtual landmarks and attractions to immerse yourself in the cultural icons of your favorite destinations. Once you've built your world, hop onto the Discover page to learn more about each landmark.
