@@ -14,10 +14,15 @@
 		{#each WORK_EXPERIENCE as experience}
 			<WorkCard {...experience} />
 		{/each}
-		<div class="flex items-center justify-center min-wh-40 md:col-span-2 xl:col-span-1">
-			<Button color="secondary" href="/projects" class="flex items-center gap-1">
-				Projects <ArrowRight class="wh-5" />
-			</Button>
+		<div class="flex justify-center items-center w-full md:col-span-2 xl:col-span-1 min-wh-40">
+			<div class="w-min flex flex-col gap-4 items-stretch mx-auto">
+				<Button color="secondary" href="/projects" class="flex justify-center items-center gap-2">
+					Projects <ArrowRight class="wh-5" />
+				</Button>
+				<Button color="primary" href="/blog" class="flex justify-center items-center gap-2">
+					Blog <ArrowRight class="wh-5" />
+				</Button>
+			</div>
 		</div>
 	</div>
 </section>
