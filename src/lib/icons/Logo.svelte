@@ -1,3 +1,7 @@
+<script lang="ts">
+	type $$Props = svelteHTML.SVGAttributes;
+</script>
+
 <svg viewBox="0 0 25 50" fill="none" xmlns="http://www.w3.org/2000/svg" {...$$restProps}>
 	<path
 		fill-rule="evenodd"

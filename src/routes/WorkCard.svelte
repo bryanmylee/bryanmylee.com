@@ -1,6 +1,6 @@
 <script lang="ts">
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
-	import type { Work } from '$lib/models/Work';
+	import type { Work } from '$lib/work';
 
 	type $$Props = Work;
 

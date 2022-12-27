@@ -11,7 +11,6 @@
 	import { clamp } from '$lib/utils/math';
 	import { useJsEnabled } from '$lib/utils/accessibility';
 	import { frameTime } from '$lib/utils/frame';
-	import { cubicIn, cubicOut } from 'svelte/easing';
 
 	let innerWidth = DEFAULT_SIZE;
 	let innerHeight = DEFAULT_SIZE;

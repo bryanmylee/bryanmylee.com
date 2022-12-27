@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { ID_TO_LABEL, type Skill } from '../skill';
+	import { SKILL_ID_TO_LABEL, type Skill } from '../skill';
 	import Labelled from './Labelled.svelte';
 
 	export let skill: Skill;
-	const name = ID_TO_LABEL[skill];
+	const name = SKILL_ID_TO_LABEL[skill];
 </script>
 
 <Labelled label={name}>

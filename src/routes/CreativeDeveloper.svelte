@@ -2,9 +2,9 @@
 	import { fade, fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
-	import ScrollDownIndicator from '$lib/components/ScrollDownIndicator.svelte';
 	import GradientSpan from '$lib/components/GradientSpan.svelte';
 	import ProgressiveFadeIn from '$lib/components/ProgressiveFadeIn.svelte';
+	import ScrollDownIndicator from './ScrollDownIndicator.svelte';
 </script>
 
 <ScrollProgress scrollDistance={150} let:progress let:outProgress>

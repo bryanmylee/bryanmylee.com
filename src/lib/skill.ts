@@ -1,4 +1,4 @@
-export const ID_TO_LABEL = {
+export const SKILL_ID_TO_LABEL = {
 	azure: 'Microsoft Azure',
 	ansible: 'Ansible',
 	aws: 'Amazon Web Services',
@@ -33,4 +33,4 @@ export const ID_TO_LABEL = {
 	vim: 'Vim',
 };
 
-export type Skill = keyof typeof ID_TO_LABEL;
+export type Skill = keyof typeof SKILL_ID_TO_LABEL;

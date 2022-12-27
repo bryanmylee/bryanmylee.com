@@ -1,6 +1,5 @@
 <script>
 	import { useJsEnabled } from '$lib/utils/accessibility';
-
 	import PhoneTemplate from './PhoneTemplate.svelte';
 
 	export let progress = 0;

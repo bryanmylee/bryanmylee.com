@@ -16,8 +16,8 @@
 	import { clamp, interpolate } from '$lib/utils/math';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import GradientSpan from '$lib/components/GradientSpan.svelte';
-	import WebProjects from '$lib/components/WebProjects.svelte';
-	import MobileProjects from '$lib/components/MobileProjects.svelte';
+	import WebProjects from './WebProjects.svelte';
+	import MobileProjects from './MobileProjects.svelte';
 	import { useWhite } from './context';
 
 	const jsEnabled = useJsEnabled();
