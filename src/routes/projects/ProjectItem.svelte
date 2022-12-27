@@ -14,7 +14,6 @@
 			? 0
 			: Math.max(...metadata.images.map((image) => parseInt(image.height)));
 	const imagesAspectRatio = imagesWidth / imagesHeight;
-	console.log(metadata.title, imagesAspectRatio, imagesWidth, imagesHeight);
 </script>
 
 <!-- Applying max-w constraints here instead of /projects/+page.svelte for more dynamic layouts -->
@@ -27,7 +26,7 @@
 	{#if metadata.images !== undefined}
 		<ImageLayout
 			images={metadata.images}
-			class="-lg:max-w-[65ch] {imagesAspectRatio > 1.8
+			class="-lg:max-w-[calc(65ch-4rem)] {imagesAspectRatio > 1.8
 				? 'lg:-ml-96'
 				: imagesAspectRatio > 1.5
 				? 'lg:-ml-64'

@@ -5,14 +5,14 @@
 	export let data: PageData;
 </script>
 
-<div class="mx-auto max-w-[65ch] p-8 space-y-4">
+<header class="mx-auto p-8 max-w-[65ch] space-y-4">
 	<h1 id="projects" class="text-3xl font-bold px-4">Blog</h1>
 	<p class="px-4 text-sm">
 		I write about my technical process and other thoughts in between projects.
 	</p>
-</div>
+</header>
 
-<div class="mx-auto max-w-[65ch] px-8">
+<div class="mx-auto px-8 max-w-[65ch]">
 	<ul>
 		{#each data.results as post}
 			{#if 'properties' in post}
