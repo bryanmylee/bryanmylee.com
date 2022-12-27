@@ -3,8 +3,8 @@
 
 	export let src: string;
 	export let alt: string;
-	export let width: number;
-	export let height: number;
+	export let width: string;
+	export let height: string;
 	let className = '';
 	export { className as class };
 </script>

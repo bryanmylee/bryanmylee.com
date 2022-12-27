@@ -1,0 +1,12 @@
+---
+title: Optimizing Hotel Bookings
+subtitle: CS421 Introduction to Machine Learning
+skills: [python, scikit]
+links:
+  - label: Data
+    href: https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand
+  - label: Read our report
+    href: /projects/cs421-final-report.pdf
+---
+
+We analyzed data on hotel booking demand and explored a variety of machine learning techniques to predict the cancellation of a given hotel booking based on pre-existing features.

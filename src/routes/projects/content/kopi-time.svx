@@ -1,0 +1,21 @@
+---
+title: Kopi Time, Microservice Orchestration
+subtitle: CS302 IT Solution Lifecycle Management
+skills: [typescript, python, reactjs, nextjs, tailwindcss, nodejs, flask, graphql, rest, rabbitmq, mysql, nginx, docker]
+links:
+  - label: GitHub
+    href: https://github.com/TeamTechtris/smu-cs302-saga-engine
+  - label: Read our report
+    href: /projects/cs302-final-report.pdf
+images:
+  - src: /projects/cs302-kopi-time--profile.webp
+    alt: a screenshot of the profile screen on Kopi Time
+    width: 937
+    height: 560
+---
+
+Kopi Time is a digital marketplace for coffee-related art and collectables.
+
+We implemented a reliable and robust microservice architecture to handle market trading functionality, listing expirations, and user notifications.
+
+Most notably, we developed a framework-agnostic implementation of the saga pattern we named the Saga Engine to orchestrate transactions and compensating actions across multiple microservices.

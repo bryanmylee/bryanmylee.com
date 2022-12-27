@@ -1,0 +1,13 @@
+---
+title: Network and Link Layer Emulation
+subtitle: CS441 Network Security
+links:
+  - label: GitHub
+    href: https://github.com/bryanmylee/smu-cs441-network-emulation
+  - label: Read our report
+    href: /projects/cs441-final-report.pdf
+---
+
+We emulated a simplified version of the MAC and IP protocol on top of network sockets for our physical layer.
+
+With the emulated network, the project requires a study and implementation of IP spoofing, IP filtering, and packet sniffing. Our group went beyond the requirements to implement private and public network separation, a simple public routing protocol, the ARP protocol, and IP traceback.

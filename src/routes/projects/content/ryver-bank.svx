@@ -1,0 +1,18 @@
+---
+title: Ryver Bank, API Development
+subtitle: CS203 Collaborative Software Development
+skills: [java, python, spring, flask, scikit, rest, mysql, docker]
+links:
+  - label: View our slides
+    href: /projects/cs203-final-pres.pdf
+  - label: GitHub
+    href: https://github.com/cs203t10-ryverbank
+---
+
+We designed a simple trading platform for our SMU-X sponsor -- Credit Suisse.
+
+Given multiple core functionalities in the requirements, we used microservices to reduce the complexity of each component and enable developers to work semi-independently.
+
+We also developed a simple machine-learning-powered stock recommendation engine.
+
+For our efforts, we were awarded the **Best Technical Team achievement**.

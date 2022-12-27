@@ -1,0 +1,16 @@
+---
+title: Simulation of Voting Fairness in Singapore
+subtitle: CS426 Agent-based Modelling and Simulation
+links:
+  - label: GitHub
+    href: https://github.com/bryanmylee/smu-cs426-project
+  - label: Read our report
+    href: /projects/cs426-final-report.pdf
+images:
+  - src: /projects/cs426-map.webp
+    alt: a simulated environment replicating Singapore's constituencies
+    width: 875 
+    height: 550
+---
+
+We modelled various gerrymandering and Group Representation Constituency allocation strategies using an agent-based simulation to explore the impacts of voter flexibility and distribution on the fairness of representation.

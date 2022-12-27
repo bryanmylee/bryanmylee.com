@@ -7,10 +7,14 @@
 
 	export let metadata: Metadata;
 
-	const imagesWidth = metadata.images?.map((image) => image.width).reduce((a, b) => a + b) ?? 0;
+	const imagesWidth =
+		metadata.images?.map((image) => parseInt(image.width)).reduce((a, b) => a + b) ?? 0;
 	const imagesHeight =
-		metadata.images === undefined ? 0 : Math.max(...metadata.images.map((image) => image.height));
+		metadata.images === undefined
+			? 0
+			: Math.max(...metadata.images.map((image) => parseInt(image.height)));
 	const imagesAspectRatio = imagesWidth / imagesHeight;
+	console.log(metadata.title, imagesAspectRatio, imagesWidth, imagesHeight);
 </script>
 
 <!-- Applying max-w constraints here instead of /projects/+page.svelte for more dynamic layouts -->

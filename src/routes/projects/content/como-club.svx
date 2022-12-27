@@ -1,0 +1,11 @@
+---
+title: COMO Club, Cloud Architecture
+subtitle: CS301 IT Solution Architecture
+skills: [typescript, python, svelte, sveltekit, tailwindcss, flask, rest, rabbitmq, mysql, nginx, docker, cloudformation]
+---
+
+We designed a highly available and maintainable backend architecure for our SMU-X sponsor -- COMO Group.
+
+Most notably, our architecture fails gracefully when third-party external services are unavailable.
+
+To do so, we continuously check the health of external services. When an external service fails a healthcheck, we queue all client requests and notify users of the temporary disruption. Once the external service is healthy, we automatically trigger a recovery phase and continue with regular execution.

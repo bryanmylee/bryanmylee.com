@@ -22,8 +22,8 @@ export interface Link {
 export interface Image {
 	src: string;
 	alt: string;
-	width: number;
-	height: number;
+	width: string;
+	height: string;
 }
 
 const CONTENT_NAMES = [
@@ -44,6 +44,14 @@ const CONTENT_NAMES = [
 	'tailwindcss-extrude',
 	'tex-er-diagram',
 	'sequence-crdt',
+	'govtech',
+	'kopi-time',
+	'como-club',
+	'woknroll',
+	'ryver-bank',
+	'voting',
+	'network-emulation',
+	'hotel-bookings',
 ];
 
 export const load: PageServerLoad = async () => {
