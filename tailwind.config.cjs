@@ -6,6 +6,10 @@ const config = {
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
 			},
+			screens: {
+				'-sm': { max: '767px' },
+				'-md': { max: '1023px' },
+			},
 		},
 	},
 	corePlugins: {
