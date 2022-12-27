@@ -45,8 +45,8 @@
 				<span class="font-medium"> Skip to </span>
 				<Button variant="white" size="sm" href="/projects">Projects</Button>
 				<Button variant="white" size="sm" href="/blog">Blog</Button>
-				<Button variant="white" size="sm" href="/#work">Work</Button>
-				<Button variant="white" size="sm" href="/#contact">Contact</Button>
+				<!-- <Button variant="white" size="sm" href="/#work">Work</Button>
+				<Button variant="white" size="sm" href="/#contact">Contact</Button> -->
 			</div>
 		</div>
 	</ProgressiveFadeIn>
