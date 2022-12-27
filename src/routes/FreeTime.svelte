@@ -102,7 +102,7 @@
 
 <style lang="postcss">
 	.photos {
-		@apply absolute z-[-1] h-screen overflow-x-clip;
+		@apply absolute z-[-1] h-screen w-full overflow-x-clip;
 		@apply gap-4 p-4 md:gap-16 md:p-16;
 		@apply grid grid-cols-2 content-center items-center md:grid-cols-3;
 		@apply grid-flow-row-dense;
