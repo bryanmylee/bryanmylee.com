@@ -23,8 +23,14 @@
 </div>
 
 <style lang="postcss">
-	article :global(p a) {
-		@apply text-cyan-500 underline underline-offset-1;
-		@apply hover:text-cyan-400;
+	article {
+		:global(p a) {
+			@apply text-cyan-500 underline underline-offset-1;
+			@apply hover:text-cyan-400;
+		}
+
+		:global(figure img) {
+			@apply mx-auto w-full rounded-lg;
+		}
 	}
 </style>

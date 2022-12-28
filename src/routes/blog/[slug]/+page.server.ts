@@ -16,12 +16,14 @@ export const load: PageServerLoad = async ({ params }) => {
 		});
 	}
 	const { title, subtitle, formattedDate } = metadataFromProperties(page.properties);
-	const { html } = await notionPageToHtml.convert(page.url, {
+	let { html } = await notionPageToHtml.convert(page.url, {
 		excludeCSS: true,
 		excludeMetadata: true,
 		excludeTitleFromHead: true,
 		bodyContentOnly: true,
 	});
+	// Strip width inline-styles from all elements.
+	html = html.replaceAll(/width: \d+px;/g, '');
 	return {
 		title,
 		subtitle,
