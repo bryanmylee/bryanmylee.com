@@ -65,6 +65,9 @@ export const load: PageServerLoad = async () => {
 	})) as ContentItem[];
 
 	return {
+		title: 'Projects',
+		subtitle:
+			'A list of my technical projects ranging from applications, open source tooling, and experiments in University.',
 		content: contentItems,
 	};
 };

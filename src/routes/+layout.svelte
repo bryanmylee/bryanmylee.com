@@ -14,7 +14,8 @@
 </script>
 
 <svelte:head>
-	<title>Bryan Lee</title>
+	<title>{$page.data.title ? $page.data.title + ' | ' : ''}Bryan Lee</title>
+	<meta name="description" content={$page.data.subtitle ?? 'Meet your next creative developer.'} />
 </svelte:head>
 
 <Nav />

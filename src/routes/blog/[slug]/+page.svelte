@@ -1,11 +1,9 @@
 <script lang="ts">
-	import { metadataFromProperties } from '../metadataFromProperties';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 
-	const { page, html } = data;
-	const { title, subtitle, formattedDate } = metadataFromProperties(page.properties!);
+	const { title, subtitle, formattedDate, html } = data;
 </script>
 
 <div class="prose px-4 max-w-[65ch] mx-auto prose-h1:text-3xl">

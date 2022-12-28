@@ -3,6 +3,7 @@ import notionPageToHtml from 'notion-page-to-html';
 import { Client } from '@notionhq/client';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
+import { metadataFromProperties } from '../metadataFromProperties';
 
 export const load: PageServerLoad = async ({ params }) => {
 	const tokens = params.slug.split('-');
@@ -14,6 +15,7 @@ export const load: PageServerLoad = async ({ params }) => {
 			message: 'Could not load page properties',
 		});
 	}
+	const { title, subtitle, formattedDate } = metadataFromProperties(page.properties);
 	const { html } = await notionPageToHtml.convert(page.url, {
 		excludeCSS: true,
 		excludeMetadata: true,
@@ -21,7 +23,9 @@ export const load: PageServerLoad = async ({ params }) => {
 		bodyContentOnly: true,
 	});
 	return {
-		page,
+		title,
+		subtitle,
+		formattedDate,
 		html,
 	};
 };
