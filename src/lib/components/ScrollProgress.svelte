@@ -30,16 +30,18 @@
 	const scrollOffset = frameSynced(0);
 	let scrollerSize = 1;
 
-	// We shouldn't read scrollElement.offsetTop naively as it may be updated
-	// after scrollElement is set.
-	let offsetTop = 0;
-	$: if (scrollElement !== undefined) {
-		setTimeout(() => {
-			offsetTop = scrollElement?.offsetTop ?? 0;
-		}, 0);
-	}
 	export let offsetPx: number = 0;
-	$: offsetPx = scrollElement === undefined ? 0 : $scrollOffset - offsetTop;
+	$: offsetPx = scrollElement === undefined ? 0 : $scrollOffset - scrollElement.offsetTop;
+	// We shouldn't read `scrollElement.offsetTop` naively as it may be updated
+	// after `scrollElement` is set. Instead, schedule a task to update `offsetPx`
+	// asynchronously after `scrollElement` is set.
+	$: if (scrollElement !== undefined) updateOffsetPx();
+	const updateOffsetPx = () => {
+		setTimeout(() => {
+			offsetPx = scrollElement === undefined ? 0 : $scrollOffset - scrollElement.offsetTop;
+		}, 0);
+	};
+
 	export let offset: number = 0;
 	$: offset = totalDistancePx === undefined ? 0 : offsetPx / totalDistancePx;
 	$: progressRaw = totalDistancePx === undefined ? 0 : offsetPx / (totalDistancePx - scrollerSize);
