@@ -32,4 +32,21 @@
 			<NotionRichText {text} />
 		{/each}
 	</p>
+{:else if 'image' in block}
+	<figure>
+		{#if block.image.type === 'file'}
+			<!-- svelte-ignore a11y-missing-attribute -->
+			<img src={block.image.file.url} class="w-full rounded-lg" />
+		{:else if block.image.type === 'external'}
+			<!-- svelte-ignore a11y-missing-attribute -->
+			<img src={block.image.external.url} class="w-full rounded-lg" />
+		{/if}
+		{#if block.image.caption.length > 0}
+			<caption class="block text-gray-400 text-sm mt-2">
+				{#each block.image.caption as text}
+					<NotionRichText {text} />
+				{/each}
+			</caption>
+		{/if}
+	</figure>
 {/if}
