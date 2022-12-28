@@ -1,5 +1,4 @@
 import { NOTION_API_KEY } from '$env/static/private';
-import notionPageToHtml from 'notion-page-to-html';
 import { Client } from '@notionhq/client';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
@@ -9,25 +8,22 @@ export const load: PageServerLoad = async ({ params }) => {
 	const tokens = params.slug.split('-');
 	const id = tokens[tokens.length - 1];
 	const notion = new Client({ auth: NOTION_API_KEY });
-	const page = await notion.pages.retrieve({ page_id: id });
+	const [page, pageBlocks] = await Promise.all([
+		notion.pages.retrieve({ page_id: id }),
+		notion.blocks.children.list({
+			block_id: id,
+		}),
+	]);
 	if (!('properties' in page)) {
 		throw error(500, {
 			message: 'Could not load page properties',
 		});
 	}
 	const { title, subtitle, formattedDate } = metadataFromProperties(page.properties);
-	let { html } = await notionPageToHtml.convert(page.url, {
-		excludeCSS: true,
-		excludeMetadata: true,
-		excludeTitleFromHead: true,
-		bodyContentOnly: true,
-	});
-	// Strip width inline-styles from all elements.
-	html = html.replaceAll(/width: \d+px;/g, '');
 	return {
 		title,
 		subtitle,
 		formattedDate,
-		html,
+		content: pageBlocks.results,
 	};
 };

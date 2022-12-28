@@ -1,9 +1,10 @@
 <script lang="ts">
+	import NotionBlock from '$lib/components/notion/NotionBlock.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 
-	const { title, subtitle, formattedDate, html } = data;
+	const { title, subtitle, formattedDate, content } = data;
 </script>
 
 <div class="prose px-4 max-w-[65ch] mx-auto prose-h1:text-3xl">
@@ -18,7 +19,9 @@
 			<sub class="text-base text-gray-700">{subtitle}</sub>
 		</p>
 
-		{@html html}
+		{#each content as block}
+			<NotionBlock {block} />
+		{/each}
 	</article>
 </div>
 
