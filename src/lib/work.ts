@@ -24,7 +24,7 @@ export const WORK_EXPERIENCE: Work[] = [
 	{
 		companyName: 'Airfoil Studio',
 		from: 'Nov 2021',
-		to: 'present',
+		to: 'Apr 2022',
 		title: 'Software Engineer',
 		details: [
 			'Advise clients on web and React Native development',
