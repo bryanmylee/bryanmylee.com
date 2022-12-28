@@ -60,7 +60,7 @@
 					class="absolute inset-0 flex items-center justify-center"
 					style:opacity={1 - fadeOutProgress}
 				>
-					<h1 class="font-bold leading-tight text-center text-white text-dyn-8 drop-shadow-xl">
+					<p class="font-bold leading-tight text-center text-white text-dyn-8 drop-shadow-xl">
 						I worked on
 						{#key word}
 							<span
@@ -72,7 +72,7 @@
 								</GradientSpan>
 							</span>
 						{/key}
-					</h1>
+					</p>
 				</div>
 			</div>
 		{/if}
@@ -85,12 +85,12 @@
 		</div>
 		<div class="absolute inset-0">
 			<div class="sticky top-0 flex items-center justify-center h-screen">
-				<h1 class="font-bold leading-tight text-center text-white text-dyn-8">
+				<p class="font-bold leading-tight text-center text-white text-dyn-8">
 					I worked on<br />
 					{#each CONTENT as { word, color }}
 						<GradientSpan {color}>{word}</GradientSpan><br />
 					{/each}
-				</h1>
+				</p>
 			</div>
 		</div>
 	{/if}

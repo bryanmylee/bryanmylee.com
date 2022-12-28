@@ -91,12 +91,12 @@
 				</div>
 			</figure>
 		{/if}
-		<h1
+		<p
 			class="font-bold leading-tight text-center text-white text-dyn-8 drop-shadow-xl"
 			style:opacity={tIn * clamp(1 - tOut * 2)}
 		>
 			And still manage<br />to make free time.
-		</h1>
+		</p>
 	</div>
 </ScrollProgress>
 

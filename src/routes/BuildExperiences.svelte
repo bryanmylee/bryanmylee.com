@@ -29,11 +29,11 @@
 		class="absolute inset-0 flex items-center justify-center"
 		style:transform={$jsEnabled ? '' : 'translateY(-50vh)'}
 	>
-		<h1 class="font-bold leading-tight text-center text-white text-dyn-8 drop-shadow-xl">
+		<p class="font-bold leading-tight text-center text-white text-dyn-8 drop-shadow-xl">
 			I build
 			<GradientSpan class="inline-block" color="#85D8FF">immersive</GradientSpan>
 			<br />
 			experiences
-		</h1>
+		</p>
 	</div>
 </ScrollProgress>

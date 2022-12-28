@@ -12,7 +12,7 @@
 	<ProgressiveFadeIn>
 		<div style:opacity={1 - outProgress}>
 			<div class="absolute top-0 h-screen w-full flex items-center justify-center">
-				<h1 class="text-dyn-8 font-bold text-center text-white leading-tight">
+				<p class="text-dyn-8 font-bold text-center text-white leading-tight">
 					{#each 'Meet your next creative developer.'.split(' ') as word, wordIdx}
 						{@const isCreative = wordIdx === 3}
 						{#if isCreative}
@@ -29,7 +29,7 @@
 							{/if}
 						</span>
 					{/each}
-				</h1>
+				</p>
 			</div>
 			<div
 				class="absolute top-[50vh] h-screen w-full translate-y-[16vw]"
