@@ -31,7 +31,7 @@
 <ScrollProgress
 	topPadding={25}
 	bottomPadding={25}
-	scrollDistance={350}
+	scrollDistance={300}
 	let:topProgress
 	bind:contentProgress
 	sectionThresholds={[0.5]}
@@ -77,7 +77,7 @@
 			</div>
 		{/if}
 	{:else}
-		<div class="h-[200vh] relative">
+		<div class="h-[125vh] relative">
 			<WebProjects />
 		</div>
 		<div class="h-[200vh] relative">
@@ -87,9 +87,9 @@
 			<div class="sticky top-0 flex items-center justify-center h-screen">
 				<p class="font-bold leading-tight text-center text-white text-dyn-8">
 					I worked on<br />
-					{#each CONTENT as { word, color }}
-						<GradientSpan {color}>{word}</GradientSpan><br />
-					{/each}
+					<GradientSpan color={CONTENT[0].color}>{CONTENT[0].word}</GradientSpan><br />
+					&
+					<GradientSpan color={CONTENT[1].color}>{CONTENT[1].word}</GradientSpan><br />
 				</p>
 			</div>
 		</div>

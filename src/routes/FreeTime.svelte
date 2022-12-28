@@ -1,24 +1,14 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
 	import { cubicIn, cubicOut } from 'svelte/easing';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
-	import { toss } from '$lib/transitions/toss';
 	import { useJsEnabled } from '$lib/utils/accessibility';
 	import { clamp } from '$lib/utils/math';
 	import FreeTimeImage from './FreeTimeImage.svelte';
 
-	const duration = 600;
-
 	const jsEnabled = useJsEnabled();
 </script>
 
-<ScrollProgress
-	scrollDistance={100}
-	topInset={100}
-	topPadding={100}
-	let:topProgress
-	let:outProgress
->
+<ScrollProgress scrollDistance={75} topInset={100} topPadding={100} let:topProgress let:outProgress>
 	{@const tIn = $jsEnabled ? cubicOut(topProgress) : 1}
 	{@const tOut = cubicIn(outProgress)}
 	<div class="sticky top-0 flex items-center justify-center h-screen">
