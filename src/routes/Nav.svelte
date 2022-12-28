@@ -67,8 +67,8 @@
 
 	.dropdown {
 		@apply flex flex-col gap-x-4 md:flex-row;
-		@apply -m-2 rounded-xl p-3.5 text-lg shadow-xl;
-		@apply md:m-0 md:p-0 md:text-xl md:shadow-none;
+		@apply -m-2 rounded-xl p-3.5 text-base shadow-xl;
+		@apply md:m-0 md:p-0 md:text-lg md:shadow-none;
 		@apply opacity-0 peer-checked:opacity-100 md:opacity-100;
 		@apply pointer-events-none peer-checked:pointer-events-auto md:pointer-events-auto;
 		@apply transition-opacity;
