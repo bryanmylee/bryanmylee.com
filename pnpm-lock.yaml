@@ -17,6 +17,7 @@ specifiers:
   eslint-plugin-svelte3: ^4.0.0
   highlight.js: ^11.7.0
   mdsvex: ^0.10.6
+  oxide.ts: ^1.1.0
   postcss: ^8.4.12
   postcss-load-config: ^3.1.4
   prettier: ^2.5.1
@@ -52,6 +53,7 @@ devDependencies:
   eslint-plugin-svelte3: 4.0.0_q2sjwxtrhe5mfmf4iw5qhpivz4
   highlight.js: 11.7.0
   mdsvex: 0.10.6_svelte@3.55.0
+  oxide.ts: 1.1.0
   postcss: 8.4.14
   postcss-load-config: 3.1.4_postcss@8.4.14
   prettier: 2.6.2
@@ -1528,6 +1530,10 @@ packages:
       prelude-ls: 1.2.1
       type-check: 0.4.0
       word-wrap: 1.2.3
+    dev: true
+
+  /oxide.ts/1.1.0:
+    resolution: {integrity: sha512-+MkqFRQVHEe/x4/cJ6KuYz2m2VpnoBi7aKLbttGYTxmpNZalQ2RbKH2HxyfsTqXJhjh9DYxulPWfQV/hWMmzCg==}
     dev: true
 
   /parent-module/1.0.1:
