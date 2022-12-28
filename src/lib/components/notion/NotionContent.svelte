@@ -1,38 +1,33 @@
 <script lang="ts">
-	import type {
-		BlockObjectResponse,
-		PartialBlockObjectResponse,
-	} from '@notionhq/client/build/src/api-endpoints';
+	import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 	import NotionBlock from './NotionBlock.svelte';
-
-	type FlatContent = BlockObjectResponse | PartialBlockObjectResponse;
 
 	type NumberedList = {
 		nested: 'numbered_list';
-		children: FlatContent[];
+		children: BlockObjectResponse[];
 	};
 
 	type BulletedList = {
 		nested: 'bulleted_list';
-		children: FlatContent[];
+		children: BlockObjectResponse[];
 	};
 
 	type NestedContent = NumberedList | BulletedList;
 
-	export let content: FlatContent[];
+	export let content: BlockObjectResponse[];
 
-	const getEndIdx = (content: FlatContent[], type: string, fromIdx: number): number => {
+	const getEndIdx = (content: BlockObjectResponse[], type: string, fromIdx: number): number => {
 		let endIdx = fromIdx;
-		while (type in content[endIdx]) {
+		while (content[endIdx].type === type) {
 			endIdx++;
 		}
 		return endIdx;
 	};
 
-	const nestedContent: (FlatContent | NestedContent)[] = [];
+	const nestedContent: (BlockObjectResponse | NestedContent)[] = [];
 	for (let idx = 0; idx < content.length; ) {
 		const block = content[idx];
-		if ('numbered_list_item' in block) {
+		if (block.type === 'numbered_list_item') {
 			const endIdx = getEndIdx(content, 'numbered_list_item', idx);
 			let listItems = content.slice(idx, endIdx);
 			nestedContent.push({
@@ -40,7 +35,7 @@
 				children: listItems,
 			});
 			idx = endIdx;
-		} else if ('bulleted_list_item' in block) {
+		} else if (block.type === 'bulleted_list_item') {
 			const endIdx = getEndIdx(content, 'bulleted_list_item', idx);
 			let listItems = content.slice(idx, endIdx);
 			nestedContent.push({
