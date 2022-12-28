@@ -9,7 +9,7 @@
 </script>
 
 <ScrollProgress scrollDistance={150} let:progress let:outProgress>
-	<ProgressiveFadeIn>
+	<ProgressiveFadeIn delay={2000}>
 		<div style:opacity={1 - outProgress}>
 			<div class="absolute top-0 h-screen w-full flex items-center justify-center">
 				<p class="text-dyn-8 font-bold text-center text-white leading-tight">
