@@ -32,6 +32,18 @@
 			<NotionRichText {text} />
 		{/each}
 	</p>
+{:else if 'numbered_list_item' in block}
+	<li>
+		{#each block.numbered_list_item.rich_text as text}
+			<NotionRichText {text} />
+		{/each}
+	</li>
+{:else if 'bulleted_list_item' in block}
+	<li>
+		{#each block.bulleted_list_item.rich_text as text}
+			<NotionRichText {text} />
+		{/each}
+	</li>
 {:else if 'image' in block}
 	<figure>
 		{#if block.image.type === 'file'}
@@ -42,11 +54,11 @@
 			<img src={block.image.external.url} class="w-full rounded-lg" />
 		{/if}
 		{#if block.image.caption.length > 0}
-			<caption class="block text-gray-400 text-sm mt-2">
+			<figcaption class="block text-gray-400 text-sm mt-2">
 				{#each block.image.caption as text}
 					<NotionRichText {text} />
 				{/each}
-			</caption>
+			</figcaption>
 		{/if}
 	</figure>
 {/if}

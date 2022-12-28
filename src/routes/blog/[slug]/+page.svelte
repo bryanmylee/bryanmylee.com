@@ -1,5 +1,5 @@
 <script lang="ts">
-	import NotionBlock from '$lib/components/notion/NotionBlock.svelte';
+	import NotionContent from '$lib/components/notion/NotionContent.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -19,9 +19,7 @@
 			<sub class="text-base text-gray-700">{subtitle}</sub>
 		</p>
 
-		{#each content as block}
-			<NotionBlock {block} />
-		{/each}
+		<NotionContent {content} />
 	</article>
 </div>
 
