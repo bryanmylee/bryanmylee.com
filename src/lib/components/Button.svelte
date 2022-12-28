@@ -4,7 +4,7 @@
 	type Variant = 'primary' | 'secondary' | 'white';
 	type Size = 'base' | 'sm';
 
-	interface $$Props extends Omit<svelte.JSX.HTMLAttributes<HTMLButtonElement>, 'size'> {
+	interface $$Props extends Omit<svelteHTML.HTMLAttributes<HTMLButtonElement>, 'size'> {
 		class?: string;
 		href?: string;
 		variant?: Variant;
