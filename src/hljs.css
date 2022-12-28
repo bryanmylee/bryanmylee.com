@@ -1,0 +1,32 @@
+.hljs {
+	&-keyword {
+		@apply text-sky-300;
+	}
+	&-type {
+		@apply text-sky-300;
+	}
+	&-built_in {
+		@apply text-purple-300;
+	}
+	&-literal {
+		@apply text-purple-300;
+	}
+	&-title {
+		@apply text-rose-400;
+	}
+	&-string {
+		@apply text-green-300;
+	}
+	&-number {
+		@apply text-green-300;
+	}
+	&-comment {
+		@apply opacity-50;
+	}
+	&-attr {
+		@apply font-bold;
+	}
+	&-params {
+		@apply italic;
+	}
+}

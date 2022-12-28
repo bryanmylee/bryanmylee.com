@@ -3,6 +3,7 @@
 	import { page } from '$app/stores';
 	import { syncBackgroundWhite } from '$lib/utils/background';
 	import '../app.css';
+	import '../hljs.css';
 	import { provideWhite } from './context';
 	import Nav from './Nav.svelte';
 

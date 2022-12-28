@@ -53,7 +53,6 @@
 			idx++;
 		}
 	}
-	console.log(nestedContent);
 </script>
 
 {#each nestedContent as block}

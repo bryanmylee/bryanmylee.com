@@ -15,6 +15,7 @@ specifiers:
   eslint: ^8.12.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^4.0.0
+  highlight.js: ^11.7.0
   mdsvex: ^0.10.6
   postcss: ^8.4.12
   postcss-load-config: ^3.1.4
@@ -49,6 +50,7 @@ devDependencies:
   eslint: 8.16.0
   eslint-config-prettier: 8.5.0_eslint@8.16.0
   eslint-plugin-svelte3: 4.0.0_q2sjwxtrhe5mfmf4iw5qhpivz4
+  highlight.js: 11.7.0
   mdsvex: 0.10.6_svelte@3.55.0
   postcss: 8.4.14
   postcss-load-config: 3.1.4_postcss@8.4.14
@@ -1246,6 +1248,11 @@ packages:
     resolution: {integrity: sha512-w+Rw20Q/iWp2Bcnr6uTrYU6/ftZLbHKhvc8nM26VIWpDqDMlku2iXUVTeOlsdoih/UKQhY7PHQ+vZ0Aqq8bxtQ==}
     dependencies:
       '@types/hast': 2.3.4
+    dev: true
+
+  /highlight.js/11.7.0:
+    resolution: {integrity: sha512-1rRqesRFhMO/PRF+G86evnyJkCgaZFOI+Z6kdj15TA18funfoqJXvgPCLSf0SWq3SRfg1j3HlDs8o4s3EGq1oQ==}
+    engines: {node: '>=12.0.0'}
     dev: true
 
   /ignore/5.2.0:
