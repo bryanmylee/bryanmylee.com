@@ -8,4 +8,4 @@
 	});
 </script>
 
-<pre><code>{@html value}</code></pre>
+<pre class="text-xs"><code>{@html value}</code></pre>
