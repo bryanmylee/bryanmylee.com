@@ -1,18 +1,12 @@
 <script lang="ts">
-	import NotionBlock from '$lib/components/NotionBlock.svelte';
 	import { metadataFromProperties } from '../metadataFromProperties';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 
-	const { page, content } = data;
-
+	const { page, html } = data;
 	const { title, subtitle, formattedDate } = metadataFromProperties(page.properties!);
 </script>
-
-<svelte:head>
-	<title>{title} | Bryan Lee</title>
-</svelte:head>
 
 <div class="prose px-4 max-w-[65ch] mx-auto prose-h1:text-3xl">
 	<article class="px-4 py-32 -mt-24 bg-white">
@@ -26,9 +20,7 @@
 			<sub class="text-base text-gray-700">{subtitle}</sub>
 		</p>
 
-		{#each content as block}
-			<NotionBlock {block} />
-		{/each}
+		{@html html}
 	</article>
 </div>
 

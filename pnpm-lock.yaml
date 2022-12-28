@@ -16,6 +16,7 @@ specifiers:
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^4.0.0
   mdsvex: ^0.10.6
+  notion-page-to-html: ^1.2.0
   postcss: ^8.4.12
   postcss-load-config: ^3.1.4
   prettier: ^2.5.1
@@ -50,6 +51,7 @@ devDependencies:
   eslint-config-prettier: 8.5.0_eslint@8.16.0
   eslint-plugin-svelte3: 4.0.0_q2sjwxtrhe5mfmf4iw5qhpivz4
   mdsvex: 0.10.6_svelte@3.55.0
+  notion-page-to-html: 1.2.0
   postcss: 8.4.14
   postcss-load-config: 3.1.4_postcss@8.4.14
   prettier: 2.6.2
@@ -1498,6 +1500,10 @@ packages:
   /normalize-range/0.1.2:
     resolution: {integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /notion-page-to-html/1.2.0:
+    resolution: {integrity: sha512-AOWjFABQlN2R3i5hcj1b6QFk5ctINFrKiu1vUcUEyundvRSHxRYAIoPXTJ1gx7S4Yfdh+2NcwEm1119k9awEeA==}
     dev: true
 
   /object-hash/3.0.0:
