@@ -5,6 +5,9 @@
 	&-type {
 		@apply text-sky-300;
 	}
+	&-name {
+		@apply text-sky-300;
+	}
 	&-built_in {
 		@apply text-purple-300;
 	}
