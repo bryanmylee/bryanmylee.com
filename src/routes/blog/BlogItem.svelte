@@ -5,11 +5,12 @@
 	export let post: PageObjectResponse;
 	const { title, subtitle, formattedDate } = metadataFromProperties(post.properties);
 
-	const slugText = title
-		.split(' ')
-		.slice(0, 5)
-		.map((token) => token.toLowerCase())
-		.join('-');
+	const slugText =
+		title
+			.match(/\w+/g)
+			?.slice(0, 5)
+			?.map((token) => token.toLowerCase())
+			?.join('-') ?? '';
 
 	const slugId = post.id.split('-').join('');
 </script>
