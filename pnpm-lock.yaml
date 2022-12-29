@@ -17,7 +17,6 @@ specifiers:
   eslint-plugin-svelte3: ^4.0.0
   highlight.js: ^11.7.0
   highlightjs-svelte: ^1.0.6
-  highlightjs-vue: ^1.0.0
   mdsvex: ^0.10.6
   oxide.ts: ^1.1.0
   postcss: ^8.4.12
@@ -55,7 +54,6 @@ devDependencies:
   eslint-plugin-svelte3: 4.0.0_q2sjwxtrhe5mfmf4iw5qhpivz4
   highlight.js: 11.7.0
   highlightjs-svelte: 1.0.6
-  highlightjs-vue: 1.0.0
   mdsvex: 0.10.6_svelte@3.55.0
   oxide.ts: 1.1.0
   postcss: 8.4.14
@@ -1263,10 +1261,6 @@ packages:
 
   /highlightjs-svelte/1.0.6:
     resolution: {integrity: sha512-aXuBPz8df3sOXg90q8rRcBLyxIR8ozPU39a6tJ2rpJUjjd9brRIr55aC0IccW4gsPhQxZ+B3rFugdXsg9/ckDw==}
-    dev: true
-
-  /highlightjs-vue/1.0.0:
-    resolution: {integrity: sha512-PDEfEF102G23vHmPhLyPboFCD+BkMGu+GuJe2d9/eH4FsCwvgBpnc9n0pGE+ffKdph38s6foEZiEjdgHdzp+IA==}
     dev: true
 
   /ignore/5.2.0:
