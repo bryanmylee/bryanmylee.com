@@ -11,10 +11,10 @@
 </header>
 
 <div class="mx-auto px-4 mt-4 max-w-[65ch]">
-	<ul>
+	<ul class="space-y-4">
 		{#each data.page.results as post}
 			{#if 'properties' in post}
-				<li class="contents">
+				<li>
 					<BlogItem {post} />
 				</li>
 			{/if}
