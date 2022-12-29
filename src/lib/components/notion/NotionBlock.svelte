@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+	import NotionCallout from './NotionCallout.svelte';
 	import NotionCodeBlock from './NotionCodeBlock.svelte';
 	import NotionHeading from './NotionHeading.svelte';
 	import NotionImageBlock from './NotionImageBlock.svelte';
@@ -18,6 +19,8 @@
 	<blockquote>
 		<NotionRichTextArray richText={block.quote.rich_text} />
 	</blockquote>
+{:else if block.type === 'callout'}
+	<NotionCallout {block} />
 {:else if block.type === 'code'}
 	<NotionCodeBlock {block} />
 {:else if block.type === 'numbered_list_item'}
