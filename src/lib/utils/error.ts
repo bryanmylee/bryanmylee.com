@@ -1,4 +1,4 @@
-import { Ok, Err, Result } from 'oxide.ts';
+import { Ok, Err, type Result } from 'oxide.ts';
 
 export const tryResult = <T>(fn: () => T): Result<T, unknown> => {
 	try {
