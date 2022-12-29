@@ -10,3 +10,5 @@ declare namespace App {
 }
 
 declare module '*.svx';
+declare module 'highlightjs-svelte';
+declare module 'highlightjs-vue/dist/highlightjs-vue.esm';

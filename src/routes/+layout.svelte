@@ -4,6 +4,7 @@
 	import { syncBackgroundWhite } from '$lib/utils/background';
 	import '../app.css';
 	import '../hljs.css';
+	import '../hljs';
 	import { provideWhite } from './context';
 	import Nav from './Nav.svelte';
 
