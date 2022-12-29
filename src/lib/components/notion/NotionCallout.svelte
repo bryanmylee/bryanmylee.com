@@ -8,7 +8,7 @@
 
 <div class="flex items-start bg-gray-50 rounded-lg p-4">
 	{#if icon?.type === 'emoji'}
-		<span class="mr-4">{icon.emoji}</span>
+		<span class="mr-4 text-lg">{icon.emoji}</span>
 	{/if}
 	<p class="m-0">
 		<NotionRichTextArray richText={block.callout.rich_text} />
