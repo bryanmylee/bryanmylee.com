@@ -13,6 +13,10 @@ body,
 	font-size: clamp(0.9rem, 0.75rem + 0.375vw + var(--user-font-scale), 1rem);
 }
 
+pre {
+	tab-size: 2;
+}
+
 @layer utilities {
 	.tw-container {
 		width: 100%;
