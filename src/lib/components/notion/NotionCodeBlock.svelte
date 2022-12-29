@@ -8,11 +8,7 @@
 	const { properties } = splitCaptionProperties(block.code.caption);
 	const language = properties.lang ?? block.code.language;
 	const plainCode = block.code.rich_text[0].plain_text;
-	const hljsResult = tryResult(() =>
-		hljs.highlight(plainCode, {
-			language,
-		}),
-	);
+	const hljsResult = tryResult(() => hljs.highlight(plainCode, { language }));
 </script>
 
 <!-- prettier-ignore -->
