@@ -1,12 +1,22 @@
 <script lang="ts">
 	import NotionContent from '$lib/components/notion/NotionContent.svelte';
 	import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+	import { useLogger } from '../../context';
+	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 
-	const { title, subtitle, formattedDate } = data;
+	const { id, title, subtitle, formattedDate } = data;
 	const content = data.content.filter((block) => 'type' in block) as BlockObjectResponse[];
+
+	const logger = useLogger();
+	onMount(() => {
+		$logger?.log('blog_view', {
+			title,
+			blog_id: id,
+		});
+	});
 </script>
 
 <div class="prose px-4 max-w-[65ch] mx-auto prose-h1:text-3xl">

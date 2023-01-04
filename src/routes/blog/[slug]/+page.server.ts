@@ -46,6 +46,7 @@ export const load: PageServerLoad = async ({ params }) => {
 	const { title, subtitle, formattedDate } = metadataFromProperties(page.properties);
 
 	return {
+		id,
 		title,
 		subtitle,
 		formattedDate,
