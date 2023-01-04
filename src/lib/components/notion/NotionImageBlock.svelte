@@ -7,7 +7,6 @@
 
 	const src = block.image.type === 'file' ? block.image.file.url : block.image.external.url;
 	const { caption, properties } = splitCaptionProperties(block.image.caption);
-	console.log(properties);
 	const [width, height] = properties.size?.split('x') ?? '';
 </script>
 
