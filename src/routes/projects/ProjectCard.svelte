@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
+	import LinkedHeading from '$lib/components/LinkedHeading.svelte';
 	import SkillIcon from '$lib/components/SkillIcon.svelte';
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -14,7 +15,7 @@
 </script>
 
 <div class={twMerge('p-4 bg-white rounded-xl w-full min-w-0 max-w-[calc(65ch-4rem)]', className)}>
-	<h2 class="text-xl font-bold">{metadata.title}</h2>
+	<LinkedHeading depth={2} text={metadata.title} class="text-xl font-bold" />
 	<sub class="text-sm">{metadata.subtitle}</sub>
 	<hr class="my-4" />
 	{#if metadata.skills !== undefined}
