@@ -9,6 +9,8 @@ links:
     href: https://play.google.com/store/apps/details?id=com.bryanmylee.wavefocus
   - label: Privacy Policy
     href: /projects/wavefocus
+  - label: Read about its cloud architecture
+    href: /blog/serverless-scheduled-push-notifications-with-163ece2f7f2c42edbcbfac027c15dabf
 images:
   - src: /projects/wavefocus/android_feature.webp
     alt: a banner with multiple android phones using my pomodor app
@@ -21,7 +23,3 @@ images:
 Wave also keeps your timer in sync with multiple devices and lets you stay on top of your timers with alert notifications!
 
 All your activity is anonymised and no longer stored after two days. Instead, Wave uses a data-minimal algorithm to provide recommendations for the best hours of the day when you are the most productive without compromising your privacy.
-
-Wave for iOS and Android is built with React Native and Reanimated for its powerful and performant animation capabilities.
-
-On the backend, Wave uses Firebase Firestore for its data storage and synchronization features. A Google Cloud Function is triggered whenever a user starts or stops a timer. It schedules a task with Google Cloud Tasks to send a push notification with Firebase Cloud Messaging whenever the timer is completed.
