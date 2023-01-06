@@ -34,11 +34,20 @@
 		</ul>
 		<div class="flex flex-col items-end gap-4 text-right">
 			<input
+				id="dropdown-trigger"
 				type="checkbox"
 				class="md:hidden peer pointer-events-auto"
 				bind:checked={showDropdown}
 			/>
-			<ul class="dropdown" use:interactOutside={() => (showDropdown = false)}>
+			<ul
+				class="dropdown"
+				use:interactOutside={(ev) => {
+					if (ev.target instanceof HTMLElement && ev.target.id === 'dropdown-trigger') {
+						return;
+					}
+					showDropdown = false;
+				}}
+			>
 				<li class="dropdown--item"><a href="/projects">Projects</a></li>
 				<li class="dropdown--item"><a href="/blog">Blog</a></li>
 				<li class="dropdown--item"><a href="/#work">Work</a></li>
