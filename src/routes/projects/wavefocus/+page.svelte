@@ -11,11 +11,11 @@
 
 <article class="max-w-[65ch] mx-auto px-4">
 	<div class="px-4 -my-24 py-32 bg-white rounded-xl prose">
-		<div class="flex items-center gap-8">
+		<div class="flex items-center gap-4">
 			<img
 				src="/projects/wavefocus/icon.webp"
 				alt="WaveFocus icon"
-				class="rounded-3xl wh-24 !m-0"
+				class="rounded-2xl wh-16 !m-0"
 			/>
 			<h1 class="!mb-0">Wave</h1>
 		</div>
