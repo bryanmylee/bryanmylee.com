@@ -1,12 +1,14 @@
 ---
 title: Wave
 subtitle: A simple and beautiful pomodoro app to keep you focused.
-skills: [reactjs, reactnative, firebase]
+skills: [reactjs, reactnative, chrome, firebase]
 links:
   - label: View on App Store
     href: https://apps.apple.com/us/app/wave-focus/id6443842392
   - label: View on Google Play
     href: https://play.google.com/store/apps/details?id=com.bryanmylee.wavefocus
+  - label: View on Chrome Web Store
+    href: https://chrome.google.com/webstore/detail/wave/gngngaicofikeadhhdegplnfmmilenne/related
   - label: Privacy Policy
     href: /projects/wavefocus
   - label: Read about its cloud architecture
