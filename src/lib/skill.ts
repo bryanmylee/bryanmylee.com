@@ -29,6 +29,7 @@ export const SKILL_ID_TO_LABEL = {
 	sveltekit: 'SvelteKit',
 	swift: 'Swift',
 	tailwindcss: 'TailwindCSS',
+	tensorflow: 'TensorFlow',
 	typescript: 'TypeScript',
 	wasm: 'WebAssembly',
 	vim: 'Vim',
