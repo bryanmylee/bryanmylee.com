@@ -27,6 +27,7 @@ export interface Image {
 }
 
 const CONTENT_NAMES = [
+	'audio-thumbnail-generator',
 	'perfect-clear',
 	'wavefocus',
 	'meetwhen',

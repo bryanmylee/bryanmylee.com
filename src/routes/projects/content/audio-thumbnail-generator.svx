@@ -1,0 +1,25 @@
+---
+title: Audio Thumbnail Generator
+subtitle: CS424 Image Perception
+skills: [nextjs, flask, tensorflow]
+links:
+  - label: Get started
+    href: https://audio-diffusion.vercel.app
+  - label: GitHub
+    href: https://github.com/bryanmylee/audio-diffusion
+  - label: View our slides
+    href: /projects/audio-thumbnail-generator/cs424-final-presentation.pdf
+images:
+  - src: /projects/audio-thumbnail-generator/siren_big.webp
+    alt: a screenshot of a generated thumbnail for an audio clip of a siren
+    width: 913
+    height: 803
+  - src: /projects/audio-thumbnail-generator/jackhammer_big.webp
+    alt: a screenshot of a generated thumbnail for an audio clip of a jackhammer
+    width: 913
+    height: 803
+---
+
+As part of our final project, we built a prototype application to generate  helps you schedule meetings and hangouts around the world. Quickly create and join meets with no sign up required, or sign in with an account to keep track of your previous and upcoming meets!
+
+You can also add relevant links and details for easy access later and see when your friends are the most available.
