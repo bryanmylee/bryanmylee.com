@@ -1,0 +1,17 @@
+---
+title: Leptos Llama
+subtitle: A generative AI chatbot built with server-side and front-end Rust
+skills: [rust]
+links:
+  - label: GitHub
+    href: https://github.com/bryanmylee/rust-leptos-llama
+images:
+  - src: /projects/rust-leptos-llama/leptos.webp
+    alt: a screenshot of a chat with the chatbot
+    width: 1334
+    height: 972
+---
+
+I explored building a full-stack application purely in Rust.
+
+The front-end is built with [Leptos](https://github.com/leptos-rs/leptos) and the server-side capabilities are powered by [Actix Web](https://github.com/actix/actix-web). The backend uses [Rustformers LLM](https://github.com/rustformers/llm) to run a large language model on-machine for the AI responses.

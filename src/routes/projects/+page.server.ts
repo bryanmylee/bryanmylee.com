@@ -27,6 +27,8 @@ export interface Image {
 }
 
 const CONTENT_NAMES = [
+	'svelte-headless-table',
+	'rust-leptos-llama',
 	'audio-thumbnail-generator',
 	'perfect-clear',
 	'wavefocus',
@@ -34,7 +36,6 @@ const CONTENT_NAMES = [
 	'helloworld',
 	'techtris',
 	'ally-ui',
-	'svelte-headless-table',
 	'svelte-popperjs',
 	'svelte-previous',
 	'svelte-keyed',
