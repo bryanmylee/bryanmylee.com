@@ -7,6 +7,11 @@ links:
     href: https://github.com/bryanmylee/perfect-clear
   - label: Read the implementation blog post
     href: /blog/solving-perfect-clears-with-rust-a0ac1bfe35f041498e9d205740030c0c
+images:
+  - src: /projects/perfect-clear/perfect-clear.gif
+    alt: a game of tetris where a perfect clear is achieved
+    width: 480
+    height: 447
 ---
 
 An interactive and real-time [perfect clear](https://tetris.fandom.com/wiki/Perfect_Clear_Guide) solver for Tetris.
