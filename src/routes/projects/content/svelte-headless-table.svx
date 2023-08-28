@@ -12,3 +12,7 @@ images:
     width: 1221
     height:  714
 ---
+
+Build and design powerful datagrid experiences while retaining 100% control over styles and markup.
+
+Svelte Headless Table is designed to work **seamlessly** with Svelte. If you love Svelte, you will love Svelte Headless Table.
