@@ -31,6 +31,7 @@
 	{...tag === 'button' ? {} : { href }}
 	class={twMerge(className, variant, size, 'button')}
 	{...$$restProps}
+	role={tag === 'a' ? 'link' : 'button'}
 	on:click
 >
 	<slot />
