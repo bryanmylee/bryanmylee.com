@@ -37,3 +37,7 @@ export const toss = (
       opacity: ${target_opacity - delta_opacity * u};`,
 	};
 };
+
+export const tossCss = ({ x, y, rotate }: TossParams, t: number) => `
+	transform: translate(calc(${1 - t} * ${x}), calc(${1 - t} * ${y})) rotate(calc(${1 - t} * ${rotate}));
+	opacity: ${t};`;

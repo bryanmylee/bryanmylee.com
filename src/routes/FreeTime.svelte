@@ -8,7 +8,7 @@
 	const jsEnabled = useJsEnabled();
 </script>
 
-<ScrollProgress scrollDistance={75} topInset={100} topPadding={100} let:topProgress let:outProgress>
+<ScrollProgress scrollDistance={75} topInset={100} topPadding={100} let:topProgress let:outProgress let:progress>
 	{@const tIn = $jsEnabled ? cubicOut(topProgress) : 1}
 	{@const tOut = cubicIn(outProgress)}
 	<div class="sticky top-0 flex items-center justify-center h-screen">
@@ -26,6 +26,7 @@
 						dx="-80vw"
 						dy="-80vh"
 						delay={50}
+						{progress}
 					/>
 				</div>
 				<div style:transform="rotate(7deg)" class="order-2">
@@ -33,8 +34,10 @@
 						src="/free-time/concert.webp"
 						alt="a side profile silhouette of an artist holding a microphone in a concert"
 						rotate="20deg"
+						dx="0vw"
 						dy="-80vh"
 						delay={150}
+						{progress}
 					/>
 				</div>
 				<div style:transform="rotate(-8deg)" class="order-3">
@@ -45,6 +48,7 @@
 						dx="-100vw"
 						dy="20vh"
 						delay={100}
+						{progress}
 					/>
 				</div>
 				<div style:transform="rotate(15deg)" class="order-4 w-full md:order-2">
@@ -56,6 +60,7 @@
 						dx="80vw"
 						dy="-40vh"
 						delay={200}
+						{progress}
 					/>
 				</div>
 				<div style:transform="rotate(-8deg) translate(0, -30px)" class="order-5">
@@ -67,6 +72,7 @@
 						dx="-80vw"
 						dy="80vh"
 						delay={0}
+						{progress}
 					/>
 				</div>
 				<div style:transform="rotate(10deg)" class="order-6">
@@ -77,6 +83,7 @@
 						dx="80vw"
 						dy="80vh"
 						delay={250}
+						{progress}
 					/>
 				</div>
 			</figure>
