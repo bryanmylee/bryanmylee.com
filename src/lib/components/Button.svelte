@@ -1,17 +1,22 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
+	import type { HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
 
 	type Variant = 'primary' | 'secondary' | 'white';
 	type Size = 'base' | 'sm';
-
-	interface $$Props extends Omit<svelteHTML.HTMLAttributes<HTMLButtonElement>, 'size'> {
-		class?: string;
-		href?: string;
+	
+	type BaseProps = {
 		variant?: Variant;
 		size?: Size;
-	}
+	};
 
-	let className = '';
+	type $$Props = BaseProps & ({
+		href: string
+	} & HTMLAnchorAttributes | {
+		href?: undefined
+	} & HTMLButtonAttributes);
+
+	let className: string | undefined | null = '';
 	export { className as class };
 
 	export let href: string | undefined = undefined;
