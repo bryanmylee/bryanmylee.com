@@ -1,0 +1,17 @@
+---
+title: Microcontroller Pomodoro Timer
+subtitle: A hardware pomodoro timer built on the ESP32 Development Board
+skills: [cpp]
+links:
+  - label: GitHub
+    href: https://github.com/bryanmylee/wavefocus/tree/main/iot
+images:
+  - src: /projects/wavefocus/iot-timer.webp
+    alt: a photo of the microcontroller with the current timer time.
+    width: 1008
+    height: 756
+---
+
+A self-led experiment with microcontroller development using the Arduino framework on an ESP32.
+
+I focused on understanding how to read circuit diagrams, how hardware components interface with the microcontroller via its pins, and how hardware interrupts are handled for subsystems like the hardware timer.

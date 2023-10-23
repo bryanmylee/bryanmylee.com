@@ -3,6 +3,7 @@ export const SKILL_ID_TO_LABEL = {
 	ansible: 'Ansible',
 	aws: 'Amazon Web Services',
 	c: 'C',
+	cpp: 'C++',
 	chrome: 'Chrome',
 	cloudformation: 'CloudFormation',
 	docker: 'Docker',

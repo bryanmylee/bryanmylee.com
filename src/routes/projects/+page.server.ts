@@ -31,6 +31,7 @@ const CONTENT_NAMES = [
 	'rust-leptos-llama',
 	'audio-thumbnail-generator',
 	'perfect-clear',
+	'iot-timer',
 	'wavefocus',
 	'meetwhen',
 	'helloworld',
