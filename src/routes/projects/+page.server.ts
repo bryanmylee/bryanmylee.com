@@ -31,6 +31,8 @@ const CONTENT_NAMES = [
 	'rust-leptos-llama',
 	'audio-thumbnail-generator',
 	'perfect-clear',
+	'slipbox',
+	'threejs-journey',
 	'iot-timer',
 	'wavefocus',
 	'meetwhen',

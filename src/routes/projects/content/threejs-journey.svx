@@ -1,0 +1,9 @@
+---
+title: ThreeJS Journey
+subtitle: Learning WebGL and 3D rendering on the web 
+images:
+  - src: /projects/threejs-journey.webp
+    alt: A screenshot of my ThreeJS Journey project
+    width: 1116
+    height: 885
+---
