@@ -35,7 +35,7 @@
 			Wave does not collect any analytics data, perform any user tracking, or use any cookies
 			explicitly. However, it makes use of Google Firebase for authentication and storage.
 		</p>
-		<h3>Retention</h3>
+		<h3>Retention and deletion</h3>
 		<p>
 			All information related to user accounts (email, display name, device tokens) is retained for
 			up to one year after inactivity before being automatically deleted.
@@ -43,6 +43,9 @@
 		<p>
 			All information related to user behavior (focus activity) is retained for two days before
 			being automatically deleted.
+		</p>
+		<p>
+			If you wish to have your information removed immediately, please contact <a href="mailto:bryanmylee@gmail.com">bryanmylee@gmail.com</a>.
 		</p>
 		<h3>Access and correction</h3>
 		<p>
