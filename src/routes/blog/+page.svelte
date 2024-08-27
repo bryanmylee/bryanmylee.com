@@ -6,7 +6,7 @@
 </script>
 
 <header class="mx-auto p-4 max-w-[65ch] space-y-4">
-	<h1 id="blog" class="text-3xl font-bold px-4">Blog</h1>
+	<h1 id="blog" class="text-3xl font-bold px-4">{data.title}</h1>
 	<p class="px-4 text-sm">{data.subtitle}</p>
 </header>
 
