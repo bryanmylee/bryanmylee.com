@@ -12,6 +12,8 @@
 
 	const jsEnabled = useJsEnabled();
 	let showDropdown = false;
+	
+	export let showBlogLink = false;
 
 	afterNavigate(function closeDropdown() {
 		showDropdown = false;
@@ -25,12 +27,22 @@
 	style:--textRGB={textRGB.join(',')}
 >
 	<div class="flex justify-between items-start mx-auto tw-container h-12">
-		<ul class="flex gap-8 pointer-events-auto translate-y-2">
+		<ul class="flex pointer-events-auto translate-y-2">
 			<li>
-				<a href="/#" class="flex gap-4 font-semibold">
+				<a href="/#" class="flex gap-4 font-semibold hover:opacity-50">
 					<Logo class="wh-12 -mx-3 -translate-y-1" /> Bryan Lee
 				</a>
 			</li>
+			{#if showBlogLink}
+				<li class="flex">
+					<span class="w-2" />
+					/
+					<span class="w-2" />
+					<a href="/blog" class="flex gap-4 hover:opacity-50">
+						Blog
+					</a>
+				</li>
+			{/if}
 		</ul>
 		<div class="flex flex-col items-end gap-4 text-right">
 			<input

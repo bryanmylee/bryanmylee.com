@@ -15,6 +15,7 @@
 	syncBackgroundWhite(white);
 
 	$: isFullscreen = $page.url.pathname === '/';
+	$: isBlogPost = $page.route.id === "/blog/[slug]"
 
 	const loggerStore = writable<Logger | undefined>(undefined);
 	provideLogger(loggerStore);
@@ -30,7 +31,7 @@
 	<meta name="description" content={$page.data.subtitle ?? 'Meet your next creative developer.'} />
 </svelte:head>
 
-<Nav />
+<Nav showBlogLink={isBlogPost} />
 <main class="relative z-0" class:mt-24={!isFullscreen}>
 	<slot />
 </main>
