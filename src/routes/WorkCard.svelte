@@ -10,9 +10,10 @@
 	export let title: string;
 	export let details: string[];
 	export let homepage: string | undefined = undefined;
+	export let wideLayout: boolean | undefined = false;
 </script>
 
-<div class="p-8 text-black bg-white rounded-xl">
+<div class="p-8 text-black bg-white rounded-xl {wideLayout ? 'md:col-span-2' : ''}">
 	<h2 class="text-xl font-bold tracking-tight flex justify-between items-center">
 		<span>{companyName}</span>
 		{#if homepage !== undefined}
