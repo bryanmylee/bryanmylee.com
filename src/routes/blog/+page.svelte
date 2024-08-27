@@ -12,7 +12,7 @@
 
 <div class="mx-auto px-4 mt-4 max-w-[65ch]">
 	<ul class="space-y-4">
-		{#each data.page.results as post}
+		{#each data.pagesResponse.results as post}
 			{#if 'properties' in post}
 				<li>
 					<BlogItem {post} />
