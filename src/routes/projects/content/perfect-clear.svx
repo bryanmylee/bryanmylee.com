@@ -6,7 +6,7 @@ links:
   - label: GitHub
     href: https://github.com/bryanmylee/perfect-clear
   - label: Read the implementation blog post
-    href: /blog/solving-perfect-clears-with-rust-a0ac1bfe35f041498e9d205740030c0c
+    href: /blog/solving-perfect-clears
 images:
   - src: /projects/perfect-clear/perfect-clear.gif
     alt: a game of tetris where a perfect clear is achieved
