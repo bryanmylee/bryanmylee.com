@@ -33,8 +33,8 @@ export const toss = (
 		duration,
 		easing,
 		css: (t, u) => `
-      transform: ${transform} translate(calc(${u} * ${x}), calc(${u} * ${y})) rotate(calc(${u} * ${rotate}));
-      opacity: ${target_opacity - delta_opacity * u};`,
+			transform: ${transform} translate(calc(${u} * ${x}), calc(${u} * ${y})) rotate(calc(${u} * ${rotate}));
+			opacity: ${target_opacity - delta_opacity * u};`,
 	};
 };
 

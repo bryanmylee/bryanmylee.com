@@ -39,8 +39,8 @@ export const load: PageServerLoad = async ({ params }) => {
 
 	if (!('properties' in page)) {
 		error(500, {
-        			message: 'Could not load page properties',
-        		});
+			message: 'Could not load page properties',
+		});
 	}
 
 	const { title, subtitle, formattedDate } = metadataFromProperties(page.properties);
