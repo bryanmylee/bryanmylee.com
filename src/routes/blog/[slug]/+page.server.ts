@@ -24,23 +24,23 @@ export const load: PageServerLoad = async ({ params }) => {
 		if (isNotionClientError(err)) {
 			switch (err.code) {
 				case APIErrorCode.ValidationError:
-					throw error(400, err.message);
+					error(400, err.message);
 				case APIErrorCode.ObjectNotFound:
-					throw error(404, err.message);
+					error(404, err.message);
 				default:
-					throw error(500, err.message);
+					error(500, err.message);
 			}
 		} else if (err instanceof Error) {
-			throw error(500, err.message);
+			error(500, err.message);
 		}
 	}
 
 	const [page, content] = data.unwrap();
 
 	if (!('properties' in page)) {
-		throw error(500, {
-			message: 'Could not load page properties',
-		});
+		error(500, {
+        			message: 'Could not load page properties',
+        		});
 	}
 
 	const { title, subtitle, formattedDate } = metadataFromProperties(page.properties);
