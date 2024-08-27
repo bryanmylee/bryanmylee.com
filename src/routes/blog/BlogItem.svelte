@@ -3,20 +3,11 @@
 	import { metadataFromProperties } from './metadataFromProperties';
 
 	export let post: PageObjectResponse;
-	const { title, subtitle, formattedDate } = metadataFromProperties(post.properties);
-
-	const slugText =
-		title
-			.match(/\w+/g)
-			?.slice(0, 5)
-			?.map((token) => token.toLowerCase())
-			?.join('-') ?? '';
-
-	const slugId = post.id.split('-').join('');
+	const { title, subtitle, slug, formattedDate } = metadataFromProperties(post.properties);
 </script>
 
 <a
-	href="/blog/{slugText}-{slugId}"
+	href="/blog/{slug}"
 	class="block bg-white rounded-xl p-4 hover:shadow-lg transition-shadow prose prose-h2:text-xl"
 >
 	<h2 class="!text-lg">{title}</h2>

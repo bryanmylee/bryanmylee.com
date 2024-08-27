@@ -1,4 +1,4 @@
-import { NOTION_API_KEY } from '$env/static/private';
+import { NOTION_API_KEY, NOTION_DATABASE_ID } from '$env/static/private';
 import { APIErrorCode, Client, isNotionClientError } from '@notionhq/client';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
@@ -11,16 +11,27 @@ import type {
 } from '@notionhq/client/build/src/api-endpoints';
 
 export const load: PageServerLoad = async ({ params }) => {
+	const slug = params.slug;
 	const notion = new Client({ auth: NOTION_API_KEY });
-	const tokens = params.slug.split('-');
-	const id = tokens[tokens.length - 1];
+	const pageResponse = await notion.databases.query({
+		database_id: NOTION_DATABASE_ID,
+		filter: {
+			property: "Slug",
+			rich_text: { equals: slug }
+		}
+	});
+	if (pageResponse.results.length === 0) {
+		throw error(404, "Page not found");
+	}
+	
+	const pageId = pageResponse.results[0].id;
 
-	const data = await asyncTryResult(() => {
-		return Promise.all([notion.pages.retrieve({ page_id: id }), loadAllBlockResults(notion, id)]);
+	const pageData = await asyncTryResult(() => {
+		return Promise.all([notion.pages.retrieve({ page_id: pageId }), loadAllBlockResults(notion, pageId)]);
 	});
 
-	if (data.isErr()) {
-		const err = data.unwrapErr();
+	if (pageData.isErr()) {
+		const err = pageData.unwrapErr();
 		if (isNotionClientError(err)) {
 			switch (err.code) {
 				case APIErrorCode.ValidationError:
@@ -35,7 +46,7 @@ export const load: PageServerLoad = async ({ params }) => {
 		}
 	}
 
-	const [page, content] = data.unwrap();
+	const [page, content] = pageData.unwrap();
 
 	if (!('properties' in page)) {
 		error(500, {
@@ -46,7 +57,8 @@ export const load: PageServerLoad = async ({ params }) => {
 	const { title, subtitle, formattedDate } = metadataFromProperties(page.properties);
 
 	return {
-		id,
+		pageId,
+		slug,
 		title,
 		subtitle,
 		formattedDate,

@@ -6,13 +6,14 @@
 
 	export let data: PageData;
 
-	const { id, title, subtitle, formattedDate } = data;
+	const { pageId, slug, title, subtitle, formattedDate } = data;
 	const content = data.content.filter((block) => 'type' in block) as BlockObjectResponse[];
 
 	const logger = useLogger();
 	$: $logger?.log('blog_view', {
 		title,
-		blog_id: id,
+		blog_id: pageId,
+		blog_slug: slug,
 	});
 </script>
 
