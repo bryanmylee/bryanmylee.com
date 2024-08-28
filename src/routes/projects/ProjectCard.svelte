@@ -14,7 +14,7 @@
 	export { className as class };
 </script>
 
-<div class={twMerge('w-full min-w-0 max-w-[calc(65ch-4rem)] rounded-xl bg-white p-4', className)}>
+<div class={twMerge('w-full min-w-0 max-w-[calc(65ch-4rem)] rounded-xl bg-white p-4 text-gray-800', className)}>
 	<LinkedHeading depth={2} text={metadata.title} class="text-xl font-bold" />
 	<sub class="text-sm">{metadata.subtitle}</sub>
 	<hr class="my-4" />
@@ -25,7 +25,7 @@
 			{/each}
 		</ul>
 	{/if}
-	<div class="content mt-4 space-y-4">
+	<div class="content mt-4 space-y-4 [&_p]:leading-7">
 		{@html html}
 	</div>
 	{#if metadata.links !== undefined}

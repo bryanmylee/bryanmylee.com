@@ -5,7 +5,7 @@
 </script>
 
 <section class="mx-auto flex h-[calc(100vh-7rem)] items-center justify-center p-4">
-	<div class="space-y-4">
+	<div class="flex flex-col gap-4">
 		<p class="font-mono text-7xl font-semibold tabular-nums">{$page.status}</p>
 		<h1 class="text-xl">This is not the page you are looking for.</h1>
 		<Button variant="primary" href="/blog" class="inline-flex items-center justify-center gap-2">
