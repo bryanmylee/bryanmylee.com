@@ -14,7 +14,12 @@
 	export { className as class };
 </script>
 
-<div class={twMerge('w-full min-w-0 max-w-[calc(65ch-4rem)] rounded-xl bg-white p-4 text-gray-800', className)}>
+<div
+	class={twMerge(
+		'w-full min-w-0 max-w-[calc(65ch-4rem)] rounded-xl bg-white p-4 text-gray-800',
+		className,
+	)}
+>
 	<LinkedHeading depth={2} text={metadata.title} class="text-xl font-bold" />
 	<sub class="text-sm">{metadata.subtitle}</sub>
 	<hr class="my-4" />

@@ -25,7 +25,7 @@
 	<sub class="text-sm">{from} &mdash; {to}</sub>
 	<hr class="mt-4" />
 	<h3 class="mt-4 font-semibold">{title}</h3>
-	<ul class="ml-4 mt-2 list-disc leading-7 space-y-4">
+	<ul class="ml-4 mt-2 list-disc space-y-4 leading-7">
 		{#each details as detail}
 			<li>{detail}</li>
 		{/each}

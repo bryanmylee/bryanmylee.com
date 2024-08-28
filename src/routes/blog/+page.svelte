@@ -5,7 +5,7 @@
 	export let data: PageData;
 </script>
 
-<header class="mx-auto max-w-[65ch] flex flex-col gap-4 p-4">
+<header class="mx-auto flex max-w-[65ch] flex-col gap-4 p-4">
 	<h1 id="blog" class="px-4 text-3xl font-bold">{data.title}</h1>
 	<p class="px-4 text-sm">{data.subtitle}</p>
 </header>

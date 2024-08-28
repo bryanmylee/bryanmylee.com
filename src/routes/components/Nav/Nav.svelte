@@ -12,10 +12,9 @@
 
 	const jsEnabled = useJsEnabled();
 
-	$: useGradientBg = $page.route.id !== "/";
-	$: useDifferenceBg = !$jsEnabled && $page.route.id === "/";
+	$: useGradientBg = $page.route.id !== '/';
+	$: useDifferenceBg = !$jsEnabled && $page.route.id === '/';
 	$: showBlogLink = $page.route.id === '/blog/[slug]';
-
 </script>
 
 <nav
@@ -36,11 +35,11 @@
 					<span class="w-2" />
 					/
 					<span class="w-2" />
-					<a href="/blog" class="flex gap-4 hover:opacity-50"> Blog </a>
+					<a href="/blog" class="flex gap-4 hover:opacity-50">Blog</a>
 				</li>
 			{/if}
 		</ul>
-    <NavLinks />
+		<NavLinks />
 	</div>
 </nav>
 

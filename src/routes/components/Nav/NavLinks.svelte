@@ -9,25 +9,25 @@
 </script>
 
 <div class="flex flex-col items-end gap-4 text-right">
-  <input
-    type="checkbox"
-    class="dropdown--trigger peer pointer-events-auto md:hidden"
-    bind:checked={showDropdown}
-  />
-  <ul
-    class="dropdown"
-    use:interactOutside={(ev) => {
-      if (ev.target instanceof HTMLElement && ev.target.classList.contains('dropdown-trigger')) {
-        return;
-      }
-      showDropdown = false;
-    }}
-  >
-    <li class="dropdown--item"><a href="/projects">Projects</a></li>
-    <li class="dropdown--item"><a href="/blog">Blog</a></li>
-    <li class="dropdown--item"><a href="/#work">Work</a></li>
-    <li class="dropdown--item"><a href="/#contact">Contact</a></li>
-  </ul>
+	<input
+		type="checkbox"
+		class="dropdown--trigger peer pointer-events-auto md:hidden"
+		bind:checked={showDropdown}
+	/>
+	<ul
+		class="dropdown"
+		use:interactOutside={(ev) => {
+			if (ev.target instanceof HTMLElement && ev.target.classList.contains('dropdown-trigger')) {
+				return;
+			}
+			showDropdown = false;
+		}}
+	>
+		<li class="dropdown--item"><a href="/projects">Projects</a></li>
+		<li class="dropdown--item"><a href="/blog">Blog</a></li>
+		<li class="dropdown--item"><a href="/#work">Work</a></li>
+		<li class="dropdown--item"><a href="/#contact">Contact</a></li>
+	</ul>
 </div>
 
 <style lang="postcss">

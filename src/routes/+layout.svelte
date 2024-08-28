@@ -17,7 +17,7 @@
 	const dark = useDarkMode(theme);
 	$: console.log({ $dark, $theme });
 
-	const bgPaperRatio = writable<number>($page.route.id === "/" ? 0 : 1);
+	const bgPaperRatio = writable<number>($page.route.id === '/' ? 0 : 1);
 	provideBgPaperRatio(bgPaperRatio);
 	syncBackgroundWhite(bgPaperRatio);
 
