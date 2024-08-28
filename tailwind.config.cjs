@@ -1,4 +1,4 @@
-const SHADES = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
+const SHADES = [0, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950, 1000];
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -7,9 +7,6 @@ const config = {
 	theme: {
 		extend: {
 			colors: {
-				paper: Object.fromEntries(
-					SHADES.map((shade) => [shade, `rgb(var(--paper-${shade}) / <alpha-value>)`]),
-				),
 				ink: Object.fromEntries(
 					SHADES.map((shade) => [shade, `rgb(var(--ink-${shade}) / <alpha-value>)`]),
 				),

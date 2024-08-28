@@ -5,5 +5,5 @@ import type { Readable, Writable } from 'svelte/store';
 
 export const [useTheme, provideTheme] = paired<Writable<Theme>>();
 export const [useIsDark, provideIsDark] = paired<Readable<boolean>>();
-export const [useBgPaperRatio, provideBgPaperRatio] = paired<Writable<number>>();
+export const [useBgInkRatio, provideBgInkRatio] = paired<Writable<number>>();
 export const [useLogger, provideLogger] = paired<Readable<Logger | undefined>>();

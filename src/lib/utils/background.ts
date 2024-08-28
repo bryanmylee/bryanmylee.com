@@ -1,11 +1,14 @@
 import { onMount } from 'svelte';
-import type { Readable } from 'svelte/store';
-import { GRAY_50 } from './color';
+import { derived, type Readable } from 'svelte/store';
+import { getInk } from './color';
 
-export const syncBgPaperRatio = (bgPaperRatio: Readable<number>) => {
+export const syncBgInkRatio = (isDark: Readable<boolean>, bgInkRatio: Readable<number>) => {
 	onMount(() => {
-		return bgPaperRatio.subscribe(($ratio) => {
-			document.body.style.backgroundColor = `rgb(${GRAY_50.map((l) => l * $ratio).join(',')})`;
+		return derived([isDark, bgInkRatio], (pair) => pair).subscribe(([$isDark, $bgInkRatio]) => {
+			const adjustedRgb = getInk($isDark)[50]
+				.map((l) => l * $bgInkRatio)
+				.join(',');
+			document.body.style.backgroundColor = `rgb(${adjustedRgb})`;
 		});
 	});
 };

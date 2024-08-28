@@ -2,13 +2,14 @@
 	import { page } from '$app/stores';
 	import Logo from '$lib/icons/Logo.svelte';
 	import { useJsEnabled } from '$lib/utils/accessibility';
-	import { GRAY_50 } from '$lib/utils/color';
-	import { useBgPaperRatio } from '../../context';
+	import { getInk } from '$lib/utils/color';
+	import { useBgInkRatio, useIsDark } from '../../context';
 	import NavLinksMenu from './NavLinksMenu.svelte';
 	import NavThemeMenu from './NavThemeMenu.svelte';
 
-	const bgPaperRatio = useBgPaperRatio();
-	$: bg_rgb = GRAY_50.map((l) => l * $bgPaperRatio);
+	const isDark = useIsDark();
+	const bgInkRatio = useBgInkRatio();
+	$: bg_rgb = getInk($isDark)[50].map((l) => l * $bgInkRatio);
 	$: text_rgb = bg_rgb.map((l) => 255 - l);
 
 	const jsEnabled = useJsEnabled();

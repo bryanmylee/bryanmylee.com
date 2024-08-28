@@ -1,10 +1,11 @@
 <script lang="ts">
-	import { syncBgPaperRatio } from '$lib/utils/background';
-	import { useBgPaperRatio } from '../../context';
+	import { syncBgInkRatio } from '$lib/utils/background';
+	import { useBgInkRatio, useIsDark } from '../../context';
 
-	const bgPaperRatio = useBgPaperRatio();
-	bgPaperRatio.set(1);
-	syncBgPaperRatio(bgPaperRatio);
+	const isDark = useIsDark();
+	const bgInkRatio = useBgInkRatio();
+	bgInkRatio.set(1);
+	syncBgInkRatio(isDark, bgInkRatio);
 </script>
 
 <div class="fixed inset-0 z-[-1] bg-gray-50" />
