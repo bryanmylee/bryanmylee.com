@@ -32,7 +32,6 @@
 						rotate="-30deg"
 						dx="-80vw"
 						dy="-80vh"
-						delay={50}
 						{progress}
 					/>
 				</div>
@@ -43,7 +42,6 @@
 						rotate="20deg"
 						dx="0vw"
 						dy="-80vh"
-						delay={150}
 						{progress}
 					/>
 				</div>
@@ -54,7 +52,6 @@
 						rotate="-20deg"
 						dx="-100vw"
 						dy="20vh"
-						delay={100}
 						{progress}
 					/>
 				</div>
@@ -66,7 +63,6 @@
 						rotate="20deg"
 						dx="80vw"
 						dy="-40vh"
-						delay={200}
 						{progress}
 					/>
 				</div>
@@ -78,7 +74,6 @@
 						rotate="-20deg"
 						dx="-80vw"
 						dy="80vh"
-						delay={0}
 						{progress}
 					/>
 				</div>
@@ -89,7 +84,6 @@
 						rotate="-20deg"
 						dx="80vw"
 						dy="80vh"
-						delay={250}
 						{progress}
 					/>
 				</div>

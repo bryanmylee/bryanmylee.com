@@ -5,7 +5,6 @@
 	import GradientSpan from '$lib/components/GradientSpan.svelte';
 	import ProgressiveFadeIn from '$lib/components/ProgressiveFadeIn.svelte';
 	import ScrollDownIndicator from './ScrollDownIndicator.svelte';
-	import Button from '$lib/components/Button.svelte';
 </script>
 
 <ScrollProgress scrollDistance={150} let:progress let:outProgress>
