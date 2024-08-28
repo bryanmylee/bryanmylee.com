@@ -8,13 +8,13 @@
 
 <a
 	href="/blog/{slug}"
-	class="prose block rounded-xl bg-white p-4 transition-shadow hover:shadow-lg prose-h2:text-xl"
+	class="bg-paper-raised prose block rounded-xl p-4 transition-shadow hover:shadow-lg prose-h2:text-xl"
 >
-	<h2 class="!text-lg">{title}</h2>
+	<h2 class="text-ink !text-lg">{title}</h2>
 	<p class="-mt-4 leading-none">
-		<sub class="text-sm text-gray-700">{subtitle}</sub>
+		<sub class="text-sm text-ink-700">{subtitle}</sub>
 	</p>
 	<p class="-mt-3 leading-none">
-		<sub class="text-xs font-medium text-gray-500">{formattedDate}</sub>
+		<sub class="text-xs font-medium text-ink-500">{formattedDate}</sub>
 	</p>
 </a>

@@ -12,7 +12,7 @@
 <img
 	{src}
 	{alt}
-	class={twMerge('rounded-xl shadow-md ring-1 ring-white', className)}
+	class={twMerge('ring-paper-raised rounded-xl shadow-md ring-1', className)}
 	{width}
 	{height}
 />
