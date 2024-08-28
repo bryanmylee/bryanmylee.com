@@ -6,14 +6,17 @@
 	import '../app.css';
 	import '../hljs.css';
 	import '../hljs';
-	import { provideLogger, provideBgPaperRatio } from './context';
+	import { provideLogger, provideBgPaperRatio, provideTheme } from './context';
 	import Nav from './components/Nav';
 	import { onMount } from 'svelte';
 	import type { LayoutData } from './$types';
 	import { useDarkMode } from '$lib/utils/darkMode';
 
 	export let data: LayoutData;
+
 	const theme = writable(data.initialTheme);
+	provideTheme(theme);
+
 	const dark = useDarkMode(theme);
 	$: console.log({ $dark, $theme });
 

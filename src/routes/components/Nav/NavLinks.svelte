@@ -38,8 +38,8 @@
 		@apply opacity-0 peer-checked:opacity-100 md:opacity-100;
 		@apply pointer-events-none peer-checked:pointer-events-auto md:pointer-events-auto;
 		@apply transition-opacity;
-		background: rgb(var(--bg_rgb));
-		@media screen and (min-width: 768px) {
+		background: rgb(var(--bg-rgb));
+		@media screen(md) {
 			background: transparent;
 		}
 	}
@@ -54,13 +54,13 @@
 	}
 	.dropdown--trigger::before {
 		content: '';
-		background-color: rgb(var(--text_rgb));
+		background-color: rgb(var(--text-rgb));
 		@apply absolute top-2 h-0.5 w-full;
 		@apply transition-transform;
 	}
 	.dropdown--trigger::after {
 		content: '';
-		background-color: rgb(var(--text_rgb));
+		background-color: rgb(var(--text-rgb));
 		@apply absolute bottom-2 h-0.5 w-full;
 		@apply transition-transform;
 	}
