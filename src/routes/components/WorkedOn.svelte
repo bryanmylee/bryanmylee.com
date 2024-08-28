@@ -18,14 +18,14 @@
 	import GradientSpan from '$lib/components/GradientSpan.svelte';
 	import WebProjects from './WebProjects.svelte';
 	import MobileProjects from './MobileProjects.svelte';
-	import { useWhite } from '../context';
+	import { useBgPaperRatio } from '../context';
 
 	const jsEnabled = useJsEnabled();
 
-	const white = useWhite();
+	const bgPaperRatio = useBgPaperRatio();
 	let contentProgress = 0;
 	$: fadeOutProgress = contentProgress < 0.5 ? 0 : clamp((contentProgress - 0.9) / (1 - 0.95));
-	$: $white = fadeOutProgress;
+	$: $bgPaperRatio = fadeOutProgress;
 </script>
 
 <ScrollProgress

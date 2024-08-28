@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { syncBackgroundWhite } from '$lib/utils/background';
-	import { useWhite } from '../context';
+	import { useBgPaperRatio } from '../context';
 
-	const white = useWhite();
+	const white = useBgPaperRatio();
 	white.set(1);
 	syncBackgroundWhite(white);
 </script>

@@ -3,9 +3,9 @@
 	import Button from '$lib/components/Button.svelte';
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
 	import { syncBackgroundWhite } from '$lib/utils/background';
-	import { useWhite } from './context';
+	import { useBgPaperRatio } from './context';
 
-	const white = useWhite();
+	const white = useBgPaperRatio();
 	white.set(1);
 	syncBackgroundWhite(white);
 </script>

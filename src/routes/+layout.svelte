@@ -6,7 +6,7 @@
 	import '../app.css';
 	import '../hljs.css';
 	import '../hljs';
-	import { provideLogger, provideWhite } from './context';
+	import { provideLogger, provideBgPaperRatio } from './context';
 	import Nav from './Nav.svelte';
 	import { onMount } from 'svelte';
 	import type { LayoutData } from './$types';
@@ -17,9 +17,9 @@
 	const dark = useDarkMode(theme);
 	$: console.log({ $dark, $theme });
 
-	const white = writable<number>(0);
-	provideWhite(white);
-	syncBackgroundWhite(white);
+	const bgPaperRatio = writable<number>($page.route.id === "/" ? 0 : 1);
+	provideBgPaperRatio(bgPaperRatio);
+	syncBackgroundWhite(bgPaperRatio);
 
 	$: isFullscreen = $page.url.pathname === '/';
 

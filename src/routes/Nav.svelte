@@ -5,15 +5,17 @@
 	import { useJsEnabled } from '$lib/utils/accessibility';
 	import { GRAY_50 } from '$lib/utils/color';
 	import { interactOutside } from '$lib/utils/pointer';
-	import { useWhite } from './context';
+	import { useBgPaperRatio } from './context';
 
-	const white = useWhite();
-	$: bgRGB = GRAY_50.map((l) => l * $white);
-	$: textRGB = bgRGB.map((l) => 255 - l);
+	const bgPaperRatio = useBgPaperRatio();
+	$: bg_rgb = GRAY_50.map((l) => l * $bgPaperRatio);
+	$: text_rgb = bg_rgb.map((l) => 255 - l);
 
 	const jsEnabled = useJsEnabled();
 	let showDropdown = false;
 
+	$: useGradientBg = $page.route.id !== "/";
+	$: useDifferenceBg = !$jsEnabled && $page.route.id === "/";
 	$: showBlogLink = $page.route.id === '/blog/[slug]';
 
 	afterNavigate(function closeDropdown() {
@@ -22,10 +24,10 @@
 </script>
 
 <nav
-	class:strong-gradient={$white === 1}
-	class:mix-blend-difference={!$jsEnabled}
-	style:--bgRGB={bgRGB.join(',')}
-	style:--textRGB={textRGB.join(',')}
+	class:strong-gradient={useGradientBg}
+	class:mix-blend-difference={useDifferenceBg}
+	style:--bg_rgb={bg_rgb.join(',')}
+	style:--text_rgb={text_rgb.join(',')}
 >
 	<div class="tw-container mx-auto flex h-12 items-start justify-between">
 		<ul class="pointer-events-auto flex translate-y-2">
@@ -72,16 +74,19 @@
 	nav {
 		@apply pointer-events-none fixed inset-0 bottom-auto z-10 h-28 px-8 pt-9;
 		@apply text-xl tracking-tight;
-		color: rgb(var(--textRGB));
-		background-image: linear-gradient(to bottom, rgba(var(--bgRGB), 0.5), rgba(var(--bgRGB), 0));
+		color: rgb(var(--text_rgb));
 	}
 
 	nav.strong-gradient {
 		background-image: linear-gradient(
 			to bottom,
-			rgb(var(--bgRGB)),
-			rgba(var(--bgRGB), 0.9) 60%,
-			rgba(var(--bgRGB), 0)
+			rgba(var(--bg_rgb), 1) 0%,
+			rgba(var(--bg_rgb), 0.3) 50%,
+			rgba(var(--bg_rgb), 0.15) 65%,
+			rgba(var(--bg_rgb), 0.075) 75.5%,
+			rgba(var(--bg_rgb), 0.037) 82.85%,
+			rgba(var(--bg_rgb), 0.019) 88%,
+			rgba(var(--bg_rgb), 0) 100%
 		);
 	}
 
@@ -92,7 +97,7 @@
 		@apply opacity-0 peer-checked:opacity-100 md:opacity-100;
 		@apply pointer-events-none peer-checked:pointer-events-auto md:pointer-events-auto;
 		@apply transition-opacity;
-		background: rgb(var(--bgRGB));
+		background: rgb(var(--bg_rgb));
 		@media screen and (min-width: 768px) {
 			background: transparent;
 		}
@@ -108,13 +113,13 @@
 	}
 	input[type='checkbox']::before {
 		content: '';
-		background-color: rgb(var(--textRGB));
+		background-color: rgb(var(--text_rgb));
 		@apply absolute top-2 h-0.5 w-full;
 		@apply transition-transform;
 	}
 	input[type='checkbox']::after {
 		content: '';
-		background-color: rgb(var(--textRGB));
+		background-color: rgb(var(--text_rgb));
 		@apply absolute bottom-2 h-0.5 w-full;
 		@apply transition-transform;
 	}
