@@ -13,17 +13,16 @@
 	export let duration = 600;
 
 	export let progress: number;
-	$: tossStyle = tossCss({
-		x: dx,
-		y: dy,
-		rotate,
-	}, progress);
+	$: tossStyle = tossCss(
+		{
+			x: dx,
+			y: dy,
+			rotate,
+		},
+		progress,
+	);
 </script>
 
-<div
-	style:aspect-ratio={aspect}
-	class="w-full"
-	style={tossStyle}
->
+<div style:aspect-ratio={aspect} class="w-full" style={tossStyle}>
 	<img {src} {alt} loading="lazy" class="h-full rounded-2xl brightness-75" />
 </div>

@@ -7,15 +7,15 @@
 	syncBackgroundWhite(white);
 </script>
 
-<div class="fixed inset-0 bg-gray-50 z-[-1]" />
+<div class="fixed inset-0 z-[-1] bg-gray-50" />
 
-<article class="max-w-[65ch] mx-auto px-4">
-	<div class="px-4 -my-24 py-32 bg-white rounded-xl prose">
+<article class="mx-auto max-w-[65ch] px-4">
+	<div class="prose -my-24 rounded-xl bg-white px-4 py-32">
 		<div class="flex items-center gap-4">
 			<img
 				src="/projects/wavefocus/icon.webp"
 				alt="WaveFocus icon"
-				class="rounded-2xl wh-16 !m-0"
+				class="!m-0 rounded-2xl wh-16"
 			/>
 			<h1 class="!mb-0">Wave</h1>
 		</div>
@@ -45,7 +45,9 @@
 			being automatically deleted.
 		</p>
 		<p>
-			If you wish to have your information removed immediately, please contact <a href="mailto:bryanmylee@gmail.com">bryanmylee@gmail.com</a>.
+			If you wish to have your information removed immediately, please contact <a
+				href="mailto:bryanmylee@gmail.com">bryanmylee@gmail.com</a
+			>.
 		</p>
 		<h3>Access and correction</h3>
 		<p>

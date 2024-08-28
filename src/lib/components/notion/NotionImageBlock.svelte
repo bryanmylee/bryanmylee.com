@@ -14,7 +14,7 @@
 	<!-- svelte-ignore a11y-missing-attribute -->
 	<img {src} class="w-full rounded-lg" {...{ width, height }} />
 	{#if caption.length > 0}
-		<figcaption class="block text-gray-400 text-sm mt-2">
+		<figcaption class="mt-2 block text-sm text-gray-400">
 			<NotionRichTextArray richText={caption} />
 		</figcaption>
 	{/if}

@@ -17,15 +17,15 @@
 	});
 </script>
 
-<div class="prose px-4 max-w-[65ch] mx-auto prose-h1:text-3xl">
-	<article class="px-4 py-32 -mt-24 bg-white">
+<div class="prose mx-auto max-w-[65ch] px-4 prose-h1:text-3xl">
+	<article class="-mt-24 bg-white px-4 py-32">
 		<p>
-			<sub class="text-sm text-gray-500 font-medium">{formattedDate}</sub>
+			<sub class="text-sm font-medium text-gray-500">{formattedDate}</sub>
 		</p>
 
 		<h1>{title}</h1>
 
-		<p class="leading-none -mt-4">
+		<p class="-mt-4 leading-none">
 			<sub class="text-base text-gray-700">{subtitle}</sub>
 		</p>
 

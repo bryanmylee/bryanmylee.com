@@ -13,8 +13,8 @@
 	export let wideLayout: boolean | undefined = false;
 </script>
 
-<div class="p-8 text-black bg-white rounded-xl {wideLayout ? 'md:col-span-2' : ''}">
-	<h2 class="text-xl font-bold tracking-tight flex justify-between items-center">
+<div class="rounded-xl bg-white p-8 text-black {wideLayout ? 'md:col-span-2' : ''}">
+	<h2 class="flex items-center justify-between text-xl font-bold tracking-tight">
 		<span>{companyName}</span>
 		{#if homepage !== undefined}
 			<a href={homepage} target="_blank" rel="noopener noreferrer">
@@ -25,7 +25,7 @@
 	<sub class="text-sm">{from} &mdash; {to}</sub>
 	<hr class="mt-4" />
 	<h3 class="mt-4 font-semibold">{title}</h3>
-	<ul class="mt-2 ml-4 space-y-2 list-disc">
+	<ul class="ml-4 mt-2 list-disc space-y-2">
 		{#each details as detail}
 			<li>{detail}</li>
 		{/each}

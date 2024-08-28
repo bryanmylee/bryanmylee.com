@@ -14,12 +14,12 @@
 	export { className as class };
 </script>
 
-<div class={twMerge('p-4 bg-white rounded-xl w-full min-w-0 max-w-[calc(65ch-4rem)]', className)}>
+<div class={twMerge('w-full min-w-0 max-w-[calc(65ch-4rem)] rounded-xl bg-white p-4', className)}>
 	<LinkedHeading depth={2} text={metadata.title} class="text-xl font-bold" />
 	<sub class="text-sm">{metadata.subtitle}</sub>
 	<hr class="my-4" />
 	{#if metadata.skills !== undefined}
-		<ul class="flex gap-2 my-4">
+		<ul class="my-4 flex gap-2">
 			{#each metadata.skills as skill}
 				<li><SkillIcon {skill} /></li>
 			{/each}
@@ -29,7 +29,7 @@
 		{@html html}
 	</div>
 	{#if metadata.links !== undefined}
-		<ul class="flex gap-4 mt-4 flex-wrap">
+		<ul class="mt-4 flex flex-wrap gap-4">
 			{#each metadata.links as { href, label }}
 				<li>
 					<Button

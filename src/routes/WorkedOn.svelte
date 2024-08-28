@@ -60,7 +60,7 @@
 					class="absolute inset-0 flex items-center justify-center"
 					style:opacity={1 - fadeOutProgress}
 				>
-					<p class="font-bold leading-tight text-center text-white text-dyn-8 drop-shadow-xl">
+					<p class="text-center font-bold leading-tight text-white drop-shadow-xl text-dyn-8">
 						I worked on
 						{#key word}
 							<span
@@ -77,15 +77,15 @@
 			</div>
 		{/if}
 	{:else}
-		<div class="h-[125vh] relative">
+		<div class="relative h-[125vh]">
 			<WebProjects />
 		</div>
-		<div class="h-[200vh] relative">
+		<div class="relative h-[200vh]">
 			<MobileProjects />
 		</div>
 		<div class="absolute inset-0">
-			<div class="sticky top-0 flex items-center justify-center h-screen">
-				<p class="font-bold leading-tight text-center text-white text-dyn-8">
+			<div class="sticky top-0 flex h-screen items-center justify-center">
+				<p class="text-center font-bold leading-tight text-white text-dyn-8">
 					I worked on<br />
 					<GradientSpan color={CONTENT[0].color}>{CONTENT[0].word}</GradientSpan><br />
 					&

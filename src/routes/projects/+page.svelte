@@ -5,18 +5,18 @@
 	export let data: PageData;
 </script>
 
-<header class="mx-auto lg:max-w-6xl xl:max-w-7xl max-w-[65ch] p-4 space-y-4">
-	<h1 id="projects" class="text-3xl font-bold px-4">{data.title}</h1>
-	<p class="px-4 text-sm max-w-[calc(65ch-4rem)]">{data.subtitle}</p>
+<header class="mx-auto max-w-[65ch] space-y-4 p-4 lg:max-w-6xl xl:max-w-7xl">
+	<h1 id="projects" class="px-4 text-3xl font-bold">{data.title}</h1>
+	<p class="max-w-[calc(65ch-4rem)] px-4 text-sm">{data.subtitle}</p>
 </header>
 
 <!-- Instead of placing "max-w-[65ch]" here, apply it to each individual ProjectItem for more flexibility -->
 <div
-	class="mx-auto px-4 mt-4 [&_p]:leading-7 [&_p]:text-gray-800 space-y-8 lg:max-w-6xl xl:max-w-7xl"
+	class="mx-auto mt-4 space-y-8 px-4 lg:max-w-6xl xl:max-w-7xl [&_p]:leading-7 [&_p]:text-gray-800"
 >
 	{#each data.content as { html, metadata }}
 		<ProjectItem {html} {metadata} />
 	{/each}
 
-	<div class="w-full h-40 bg-gray-50" />
+	<div class="h-40 w-full bg-gray-50" />
 </div>

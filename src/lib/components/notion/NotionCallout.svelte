@@ -6,7 +6,7 @@
 	const { icon } = block.callout;
 </script>
 
-<div class="flex items-start bg-gray-50 rounded-lg p-4">
+<div class="flex items-start rounded-lg bg-gray-50 p-4">
 	{#if icon?.type === 'emoji'}
 		<span class="mr-4 text-lg">{icon.emoji}</span>
 	{/if}

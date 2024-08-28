@@ -11,8 +11,8 @@
 <ScrollProgress scrollDistance={150} let:progress let:outProgress>
 	<ProgressiveFadeIn delay={2000}>
 		<div style:opacity={1 - outProgress}>
-			<div class="absolute top-0 h-screen w-full flex items-center justify-center">
-				<p class="text-dyn-8 font-bold text-center text-white leading-tight">
+			<div class="absolute top-0 flex h-screen w-full items-center justify-center">
+				<p class="text-center font-bold leading-tight text-white text-dyn-8">
 					{#each 'Meet your next creative developer.'.split(' ') as word, wordIdx}
 						{@const isCreative = wordIdx === 3}
 						{#if isCreative}
@@ -35,7 +35,7 @@
 				class="absolute top-[50vh] h-screen w-full translate-y-[16vw]"
 				in:fade={{ delay: 1000, duration: 1000 }}
 			>
-				<ScrollDownIndicator {progress} class="w-4/5 2xl:w-1/2 mx-auto" />
+				<ScrollDownIndicator {progress} class="mx-auto w-4/5 2xl:w-1/2" />
 			</div>
 		</div>
 	</ProgressiveFadeIn>

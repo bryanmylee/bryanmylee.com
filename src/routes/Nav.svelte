@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import { afterNavigate } from '$app/navigation';
 	import Logo from '$lib/icons/Logo.svelte';
 	import { useJsEnabled } from '$lib/utils/accessibility';
@@ -12,8 +13,8 @@
 
 	const jsEnabled = useJsEnabled();
 	let showDropdown = false;
-	
-	export let showBlogLink = false;
+
+	$: showBlogLink = $page.route.id === '/blog/[slug]';
 
 	afterNavigate(function closeDropdown() {
 		showDropdown = false;
@@ -26,11 +27,11 @@
 	style:--bgRGB={bgRGB.join(',')}
 	style:--textRGB={textRGB.join(',')}
 >
-	<div class="flex justify-between items-start mx-auto tw-container h-12">
-		<ul class="flex pointer-events-auto translate-y-2">
+	<div class="tw-container mx-auto flex h-12 items-start justify-between">
+		<ul class="pointer-events-auto flex translate-y-2">
 			<li>
 				<a href="/#" class="flex gap-4 font-semibold hover:opacity-50">
-					<Logo class="wh-12 -mx-3 -translate-y-1" /> Bryan Lee
+					<Logo class="-mx-3 -translate-y-1 wh-12" /> Bryan Lee
 				</a>
 			</li>
 			{#if showBlogLink}
@@ -38,9 +39,7 @@
 					<span class="w-2" />
 					/
 					<span class="w-2" />
-					<a href="/blog" class="flex gap-4 hover:opacity-50">
-						Blog
-					</a>
+					<a href="/blog" class="flex gap-4 hover:opacity-50"> Blog </a>
 				</li>
 			{/if}
 		</ul>
@@ -48,7 +47,7 @@
 			<input
 				id="dropdown-trigger"
 				type="checkbox"
-				class="md:hidden peer pointer-events-auto"
+				class="peer pointer-events-auto md:hidden"
 				bind:checked={showDropdown}
 			/>
 			<ul

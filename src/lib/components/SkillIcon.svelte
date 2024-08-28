@@ -10,6 +10,6 @@
 	<img
 		src="/skills/{skill}.svg"
 		alt={name}
-		class="wh-6 group-hover:scale-125 transition-transform"
+		class="transition-transform wh-6 group-hover:scale-125"
 	/>
 </Labelled>

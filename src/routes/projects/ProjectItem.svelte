@@ -19,7 +19,7 @@
 </script>
 
 <!-- Applying max-w constraints here instead of /projects/+page.svelte for more dynamic layouts -->
-<div class="flex flex-col items-center gap-4 mx-auto lg:flex-row lg:justify-start">
+<div class="mx-auto flex flex-col items-center gap-4 lg:flex-row lg:justify-start">
 	<ProjectCard {html} {metadata} class="lg:shadow-lg" />
 	{#if metadata.images !== undefined}
 		<ImageLayout images={metadata.images} class="-lg:max-w-[calc(65ch-4rem)] {insetLeftMargin}" />

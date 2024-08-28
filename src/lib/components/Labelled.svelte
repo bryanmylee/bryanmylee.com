@@ -3,7 +3,7 @@
 	export let as = 'span';
 </script>
 
-<svelte:element this={as} class="relative group" {...$$restProps}>
+<svelte:element this={as} class="group relative" {...$$restProps}>
 	<slot />
 	<span class="label">
 		{label}

@@ -4,17 +4,21 @@
 
 	type Variant = 'primary' | 'secondary' | 'white';
 	type Size = 'base' | 'sm';
-	
+
 	type BaseProps = {
 		variant?: Variant;
 		size?: Size;
 	};
 
-	type $$Props = BaseProps & ({
-		href: string
-	} & HTMLAnchorAttributes | {
-		href?: undefined
-	} & HTMLButtonAttributes);
+	type $$Props = BaseProps &
+		(
+			| ({
+					href: string;
+			  } & HTMLAnchorAttributes)
+			| ({
+					href?: undefined;
+			  } & HTMLButtonAttributes)
+		);
 
 	let className: string | undefined | null = '';
 	export { className as class };

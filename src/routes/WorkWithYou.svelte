@@ -17,14 +17,14 @@
 		<div class="absolute inset-0 bottom-[45vh] flex flex-col items-center justify-end gap-8">
 			<h1
 				id="contact"
-				class="font-bold leading-tight text-center text-dyn-6 drop-shadow-2xl scroll-mt-40"
+				class="scroll-mt-40 text-center font-bold leading-tight drop-shadow-2xl text-dyn-6"
 			>
 				And I'd like to work with you.
 			</h1>
 			<Button href="mailto:bryanmylee@gmail.com" target="_blank" rel="noopener noreferrer">
 				bryanmylee@gmail.com
 			</Button>
-			<div class="flex gap-4 items-center">
+			<div class="flex items-center gap-4">
 				<Labelled
 					label="GitHub"
 					as="a"
@@ -32,7 +32,7 @@
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<GitHub class="wh-6 group-hover:scale-125 transition-transform" />
+					<GitHub class="transition-transform wh-6 group-hover:scale-125" />
 				</Labelled>
 				<Labelled
 					label="LinkedIn"
@@ -41,7 +41,7 @@
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<LinkedIn class="wh-6 group-hover:scale-125 transition-transform" />
+					<LinkedIn class="transition-transform wh-6 group-hover:scale-125" />
 				</Labelled>
 			</div>
 		</div>

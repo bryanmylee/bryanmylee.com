@@ -8,10 +8,17 @@
 	const jsEnabled = useJsEnabled();
 </script>
 
-<ScrollProgress scrollDistance={75} topInset={100} topPadding={100} let:topProgress let:outProgress let:progress>
+<ScrollProgress
+	scrollDistance={75}
+	topInset={100}
+	topPadding={100}
+	let:topProgress
+	let:outProgress
+	let:progress
+>
 	{@const tIn = $jsEnabled ? cubicOut(topProgress) : 1}
 	{@const tOut = cubicIn(outProgress)}
-	<div class="sticky top-0 flex items-center justify-center h-screen">
+	<div class="sticky top-0 flex h-screen items-center justify-center">
 		{#if !$jsEnabled || topProgress > 0.25}
 			<figure
 				role="group"
@@ -89,7 +96,7 @@
 			</figure>
 		{/if}
 		<p
-			class="font-bold leading-tight text-center text-white text-dyn-8 drop-shadow-xl"
+			class="text-center font-bold leading-tight text-white drop-shadow-xl text-dyn-8"
 			style:opacity={tIn * clamp(1 - tOut * 2)}
 		>
 			And still manage<br />to make free time.

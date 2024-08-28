@@ -10,11 +10,11 @@
 	syncBackgroundWhite(white);
 </script>
 
-<section class="mx-auto p-4 h-[calc(100vh-7rem)] flex justify-center items-center">
+<section class="mx-auto flex h-[calc(100vh-7rem)] items-center justify-center p-4">
 	<div class="space-y-4">
-		<p class="text-7xl font-mono font-semibold tabular-nums">{$page.status}</p>
+		<p class="font-mono text-7xl font-semibold tabular-nums">{$page.status}</p>
 		<h1 class="text-xl">There's nothing here!</h1>
-		<Button variant="primary" href="/#" class="inline-flex justify-center items-center gap-2">
+		<Button variant="primary" href="/#" class="inline-flex items-center justify-center gap-2">
 			Take me back <ArrowRight class="wh-5" />
 		</Button>
 	</div>

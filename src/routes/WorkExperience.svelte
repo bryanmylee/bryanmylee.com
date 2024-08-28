@@ -9,17 +9,17 @@
 </script>
 
 <section class="relative mt-[-40vh] {$jsEnabled ? '' : 'bg-gray-50'} z-10">
-	<h1 id="work" class="text-3xl font-bold text-center my-8 scroll-mt-28">Work Experience</h1>
-	<div class="grid gap-4 p-4 mx-auto tw-container md:grid-cols-2 xl:grid-cols-3">
+	<h1 id="work" class="my-8 scroll-mt-28 text-center text-3xl font-bold">Work Experience</h1>
+	<div class="tw-container mx-auto grid gap-4 p-4 md:grid-cols-2 xl:grid-cols-3">
 		{#each WORK_EXPERIENCE as experience}
 			<WorkCard {...experience} />
 		{/each}
-		<div class="flex justify-center items-center w-full md:col-span-2 xl:col-span-1 min-wh-40">
-			<div class="w-min flex flex-col gap-4 items-stretch mx-auto">
-				<Button variant="secondary" href="/projects" class="flex justify-center items-center gap-2">
+		<div class="flex w-full items-center justify-center min-wh-40 md:col-span-2 xl:col-span-1">
+			<div class="mx-auto flex w-min flex-col items-stretch gap-4">
+				<Button variant="secondary" href="/projects" class="flex items-center justify-center gap-2">
 					Projects <ArrowRight class="wh-5" />
 				</Button>
-				<Button variant="primary" href="/blog" class="flex justify-center items-center gap-2">
+				<Button variant="primary" href="/blog" class="flex items-center justify-center gap-2">
 					Blog <ArrowRight class="wh-5" />
 				</Button>
 			</div>
