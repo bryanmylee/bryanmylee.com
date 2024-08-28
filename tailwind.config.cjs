@@ -1,10 +1,19 @@
+const SHADES = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
+
 /** @type {import('tailwindcss').Config} */
 const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	darkMode: 'class',
 	theme: {
 		extend: {
-			colors: {},
+			colors: {
+				paper: Object.fromEntries(
+					SHADES.map((shade) => [shade, `rgb(var(--paper-${shade}) / <alpha-value>)`]),
+				),
+				ink: Object.fromEntries(
+					SHADES.map((shade) => [shade, `rgb(var(--ink-${shade}) / <alpha-value>)`]),
+				),
+			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
 			},
