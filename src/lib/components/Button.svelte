@@ -46,10 +46,10 @@
 		@apply rounded-lg p-4 font-medium;
 		@apply transition-all;
 		&.primary {
-			@apply bg-cyan-200 text-cyan-800 hover:bg-cyan-100 active:bg-cyan-200/30;
+			@apply bg-cyan-200 text-cyan-800 hover:bg-cyan-100 active:bg-cyan-300;
 		}
 		&.secondary {
-			@apply bg-green-200 text-green-800 hover:bg-green-100 active:bg-green-200/30;
+			@apply bg-green-200 text-green-800 hover:bg-green-100 active:bg-green-300;
 		}
 		&.base {
 			@apply p-4;
