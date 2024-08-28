@@ -7,7 +7,7 @@
 	import '../hljs.css';
 	import '../hljs';
 	import { provideLogger, provideBgPaperRatio } from './context';
-	import Nav from './Nav.svelte';
+	import Nav from './components/Nav';
 	import { onMount } from 'svelte';
 	import type { LayoutData } from './$types';
 	import { useDarkMode } from '$lib/utils/darkMode';
