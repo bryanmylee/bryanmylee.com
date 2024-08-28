@@ -38,6 +38,9 @@ export const toss = (
 	};
 };
 
-export const tossCss = ({ x, y, rotate }: TossParams, t: number) => `
-	transform: translate(calc(${1 - t} * ${x}), calc(${1 - t} * ${y})) rotate(calc(${1 - t} * ${rotate}));
-	opacity: ${t};`;
+export const tossCss = ({ x, y, rotate }: TossParams, t: number) =>
+	// prettier-ignore
+	`
+		transform: translate(calc(${1 - t} * ${x}), calc(${1 - t} * ${y})) rotate(calc(${1 - t} * ${rotate}));
+		opacity: ${t};
+	`;

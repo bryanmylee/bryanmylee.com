@@ -15,9 +15,9 @@ export const WORK_EXPERIENCE: Work[] = [
 		to: 'present',
 		title: 'Software Engineer',
 		details: [
-			"Built a client-side application data layer for instant read/write performance, automated tracking and committing of local changes to the server, and reactive updates that drive UI efficiently with support for highly relational data. This standardized the most common data access patterns in our codebase and enabled the development of significantly more powerful features including version control",
+			'Built a client-side application data layer for instant read/write performance, automated tracking and committing of local changes to the server, and reactive updates that drive UI efficiently with support for highly relational data. This standardized the most common data access patterns in our codebase and enabled the development of significantly more powerful features including version control',
 			'Designed and built a powerful diagramming tool for model-based systems engineering (MBSE) that supports customizable interface edge paths and an arbitrary number of nested sub-flows of systems to support our system- of-systems systems engineering paradigm',
-			"Set up E2E testing within CI pipelines using Playwright and Webdriver to reduce regressions in functionality",
+			'Set up E2E testing within CI pipelines using Playwright and Webdriver to reduce regressions in functionality',
 			'Led and designed a data migration from MongoDB to PostgreSQL to enable highly connected data models',
 			'Implemented a library of flexible and accessible React UI components aligned with our design system, improving the consistency of our UI and reducing wasted effort between our design and engineering team',
 		],
