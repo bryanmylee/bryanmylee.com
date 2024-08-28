@@ -8,8 +8,8 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write ."
 	},
 	"devDependencies": {
 		"@notionhq/client": "^2.2.3",
@@ -34,7 +34,7 @@
 		"oxide.ts": "^1.1.0",
 		"postcss": "^8.4.21",
 		"postcss-load-config": "^3.1.4",
-		"prettier": "^3.0.3",
+		"prettier": "^3.3.3",
 		"prettier-plugin-svelte": "^3.0.3",
 		"prettier-plugin-tailwindcss": "^0.6.6",
 		"svelte": "^4.2.0",
