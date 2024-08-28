@@ -17,18 +17,15 @@
 	});
 </script>
 
-<div class="prose mx-auto max-w-[65ch] px-4 prose-h1:text-3xl">
-	<article class="-mt-24 bg-white px-4 py-32">
+<div class="prose mx-auto max-w-[65ch] px-4 dark:prose-invert prose-h1:text-3xl">
+	<article class="bg-paper-raised -mt-24 px-4 py-32">
 		<p>
-			<sub class="text-sm font-medium text-gray-500">{formattedDate}</sub>
+			<sub class="text-sm font-medium text-ink-500">{formattedDate}</sub>
 		</p>
-
-		<h1>{title}</h1>
-
+		<h1 class="text-ink">{title}</h1>
 		<p class="-mt-4 leading-none">
-			<sub class="text-base text-gray-700">{subtitle}</sub>
+			<sub class="text-base text-ink-700">{subtitle}</sub>
 		</p>
-
 		<NotionContent {content} />
 	</article>
 </div>
@@ -36,8 +33,8 @@
 <style lang="postcss">
 	article {
 		:global(p a) {
-			@apply text-cyan-500 underline underline-offset-1;
-			@apply hover:text-cyan-400;
+			@apply gdark:text-cyan-200 text-cyan-500 underline underline-offset-1;
+			@apply gdark:hover:text-cyan-100 hover:text-cyan-400;
 		}
 
 		:global(figure img) {

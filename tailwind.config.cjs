@@ -31,6 +31,7 @@ const config = {
 		require('./tailwindcss/size.cjs'),
 		require('./tailwindcss/dynamicText.cjs'),
 		require('@tailwindcss/typography'),
+		require('tailwindcss-global-dark'),
 	],
 };
 

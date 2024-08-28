@@ -100,6 +100,9 @@ devDependencies:
   tailwindcss:
     specifier: ^3.3.1
     version: 3.3.1(postcss@8.4.21)
+  tailwindcss-global-dark:
+    specifier: ^1.0.1
+    version: 1.0.1(tailwindcss@3.3.1)
   three:
     specifier: ^0.141.0
     version: 0.141.0
@@ -3233,6 +3236,14 @@ packages:
 
   /tailwind-merge@1.12.0:
     resolution: {integrity: sha512-Y17eDp7FtN1+JJ4OY0Bqv9OA41O+MS8c1Iyr3T6JFLnOgLg3EvcyMKZAnQ8AGyvB5Nxm3t9Xb5Mhe139m8QT/g==}
+    dev: true
+
+  /tailwindcss-global-dark@1.0.1(tailwindcss@3.3.1):
+    resolution: {integrity: sha512-AeldGktCAOjdVnZI5Fm1anf/TQzzN03ER1UcRVfnfjDstMV32OJjR6MGB+CEkwavSzPBDWtgBCP/d8xO+fsGJQ==}
+    peerDependencies:
+      tailwindcss: x
+    dependencies:
+      tailwindcss: 3.3.1(postcss@8.4.21)
     dev: true
 
   /tailwindcss@3.3.1(postcss@8.4.21):

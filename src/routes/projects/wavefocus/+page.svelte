@@ -8,10 +8,10 @@
 	syncBgInkRatio(isDark, bgInkRatio);
 </script>
 
-<div class="fixed inset-0 z-[-1] bg-gray-50" />
+<div class="bg-paper fixed inset-0 z-[-1]" />
 
 <article class="mx-auto max-w-[65ch] px-4">
-	<div class="prose -my-24 rounded-xl bg-white px-4 py-32">
+	<div class="bg-paper-raised prose -my-24 rounded-xl px-4 py-32 dark:prose-invert">
 		<div class="flex items-center gap-4">
 			<img
 				src="/projects/wavefocus/icon.webp"
@@ -62,8 +62,8 @@
 </article>
 
 <style lang="postcss">
-	article :global(p a) {
-		@apply text-cyan-500 underline underline-offset-1;
-		@apply hover:text-cyan-400;
+	:global(p a) {
+		@apply gdark:text-cyan-200 text-cyan-500 underline underline-offset-1;
+		@apply gdark:hover:text-cyan-100 hover:text-cyan-400;
 	}
 </style>
