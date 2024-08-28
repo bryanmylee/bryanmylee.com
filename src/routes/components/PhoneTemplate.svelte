@@ -1,8 +1,9 @@
 <script>
-	import { cubicIn } from 'svelte/easing';
+	import { quadIn } from 'svelte/easing';
 	import chroma from 'chroma-js';
 	import { lerp, clamp } from '$lib/utils/math';
 	import { range } from '$lib/utils/range';
+	import { useIsDark } from '../context';
 
 	const ICON_SIZE = 235;
 	const ICON_GAP = 60;
@@ -10,17 +11,21 @@
 	const TOP_MARGIN = 100;
 
 	export let progress = 0;
-	$: easedProgress = cubicIn(clamp((progress - 0.2) * 1.25));
+	$: easedProgress = quadIn(clamp((progress - 0.2) * 1.25));
 
 	let innerWidth = 1000;
 	let innerHeight = 1000;
 	$: targetSize = Math.max(innerWidth, innerHeight) * 5;
 
+	const isDark = useIsDark();
+	$: isDarkBrightenFactor = $isDark ? -3 : 3;
 	$: fromColor = chroma('#85D8FF')
-		.brighten(easedProgress * 3)
+		.brighten(easedProgress * isDarkBrightenFactor)
+		.desaturate(easedProgress)
 		.hex();
 	$: toColor = chroma('#6392EC')
-		.brighten(easedProgress * 3)
+		.brighten(easedProgress * isDarkBrightenFactor)
+		.desaturate(easedProgress)
 		.hex();
 </script>
 

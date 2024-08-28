@@ -11,7 +11,7 @@
 	import { onMount } from 'svelte';
 	import type { LayoutData } from './$types';
 	import { useDarkMode } from '$lib/utils/darkMode';
-	import { getInkCssVars } from '$lib/utils/color';
+	import { getPaperInkCssVars } from '$lib/utils/color';
 	import { stringifyStyleObject } from '$lib/utils/style';
 
 	export let data: LayoutData;
@@ -21,7 +21,7 @@
 
 	const isDark = useDarkMode(theme);
 	provideIsDark(isDark);
-	$: inkCssVars = getInkCssVars($isDark);
+	$: inkCssVars = getPaperInkCssVars($isDark);
 
 	/**
 	 * The background ink ratio determines how much the background should be

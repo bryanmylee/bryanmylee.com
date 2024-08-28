@@ -13,11 +13,11 @@
 
 <ScrollProgress scrollDistance={40} topPadding={130} topInset={120} bind:topProgress>
 	<div class="sticky top-0 h-screen" style:opacity={$jsEnabled ? topProgress : 1}>
-		<div class="absolute inset-0 bg-gray-50" />
+		<div class="bg-paper absolute inset-0" />
 		<div class="absolute inset-0 bottom-[45vh] flex flex-col items-center justify-end gap-8">
 			<h1
 				id="contact"
-				class="scroll-mt-40 text-center font-bold leading-tight drop-shadow-2xl text-dyn-6"
+				class="text-ink scroll-mt-40 text-center font-bold leading-tight drop-shadow-2xl text-dyn-6"
 			>
 				And I'd like to work with you.
 			</h1>
@@ -32,7 +32,7 @@
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<GitHub class="transition-transform wh-6 group-hover:scale-125" />
+					<GitHub class="text-ink transition-transform wh-6 group-hover:scale-125" />
 				</Labelled>
 				<Labelled
 					label="LinkedIn"
@@ -41,7 +41,7 @@
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<LinkedIn class="transition-transform wh-6 group-hover:scale-125" />
+					<LinkedIn class="text-ink transition-transform wh-6 group-hover:scale-125" />
 				</Labelled>
 			</div>
 		</div>

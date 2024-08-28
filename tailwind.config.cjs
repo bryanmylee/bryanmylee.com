@@ -1,4 +1,5 @@
-const SHADES = [0, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950, 1000];
+const INK_SHADES = ['DEFAULT', '900', '800', '700', '600', '500'];
+const PAPER_SHADES = ['DEFAULT', 'raised'];
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -8,7 +9,10 @@ const config = {
 		extend: {
 			colors: {
 				ink: Object.fromEntries(
-					SHADES.map((shade) => [shade, `rgb(var(--ink-${shade}) / <alpha-value>)`]),
+					INK_SHADES.map((shade) => [shade, `rgb(var(--ink-${shade}) / <alpha-value>)`]),
+				),
+				paper: Object.fromEntries(
+					PAPER_SHADES.map((shade) => [shade, `rgb(var(--paper-${shade}) / <alpha-value>)`]),
 				),
 			},
 			fontFamily: {

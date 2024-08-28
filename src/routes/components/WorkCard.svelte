@@ -13,7 +13,7 @@
 	export let wideLayout: boolean | undefined = false;
 </script>
 
-<div class="rounded-xl bg-white p-8 text-gray-800 {wideLayout ? 'md:col-span-2' : ''}">
+<div class="bg-paper-raised text-ink rounded-xl p-8 {wideLayout ? 'md:col-span-2' : ''}">
 	<h2 class="flex items-center justify-between text-xl font-bold tracking-tight">
 		<span>{companyName}</span>
 		{#if homepage !== undefined}
@@ -22,7 +22,7 @@
 			</a>
 		{/if}
 	</h2>
-	<sub class="text-sm">{from} &mdash; {to}</sub>
+	<sub class="text-sm text-ink-600">{from} &mdash; {to}</sub>
 	<hr class="mt-4" />
 	<h3 class="mt-4 font-semibold">{title}</h3>
 	<ul class="ml-4 mt-2 list-disc space-y-4 leading-7">
