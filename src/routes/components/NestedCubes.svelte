@@ -8,7 +8,7 @@
 	import * as SC from 'svelte-cubed';
 	import * as THREE from 'three';
 	import { range } from '$lib/utils/range';
-	import { clamp } from '$lib/utils/math';
+	import { clamp, type Vec3 } from '$lib/utils/math';
 	import { useJsEnabled } from '$lib/utils/accessibility';
 	import { frameTime } from '$lib/utils/frame';
 
@@ -17,7 +17,7 @@
 	$: $size = Math.min(innerWidth, innerHeight);
 	export let progress = 0;
 
-	let spin: [number, number, number] = [0, 0, 0];
+	let spin: Vec3 = [0, 0, 0];
 
 	const [time] = frameTime();
 	$: $time, onFrame();

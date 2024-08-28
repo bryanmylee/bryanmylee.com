@@ -1,3 +1,3 @@
-export type RGB = [number, number, number];
+import type { Vec3 } from './math';
 
-export const GRAY_50: RGB = [249, 250, 251];
+export const GRAY_50: Vec3 = [249, 250, 251];
