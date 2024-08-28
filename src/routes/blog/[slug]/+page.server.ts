@@ -16,18 +16,21 @@ export const load: PageServerLoad = async ({ params }) => {
 	const pageResponse = await notion.databases.query({
 		database_id: NOTION_DATABASE_ID,
 		filter: {
-			property: "Slug",
-			rich_text: { equals: slug }
-		}
+			property: 'Slug',
+			rich_text: { equals: slug },
+		},
 	});
 	if (pageResponse.results.length === 0) {
-		throw error(404, "Page not found");
+		throw error(404, 'Page not found');
 	}
-	
+
 	const pageId = pageResponse.results[0].id;
 
 	const pageData = await asyncTryResult(() => {
-		return Promise.all([notion.pages.retrieve({ page_id: pageId }), loadAllBlockResults(notion, pageId)]);
+		return Promise.all([
+			notion.pages.retrieve({ page_id: pageId }),
+			loadAllBlockResults(notion, pageId),
+		]);
 	});
 
 	if (pageData.isErr()) {

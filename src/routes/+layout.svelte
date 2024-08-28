@@ -1,29 +1,36 @@
 <script lang="ts">
-	import { writable } from 'svelte/store';
-	import { page } from '$app/stores';
-	import { syncBackgroundWhite } from '$lib/utils/background';
-	import { initializeFirebase, initializeLogger, type Logger } from '$lib/analytics';
-	import '../app.css';
-	import '../hljs.css';
-	import '../hljs';
-	import { provideLogger, provideWhite } from './context';
-	import Nav from './Nav.svelte';
-	import { onMount } from 'svelte';
+import { writable } from 'svelte/store';
+import { page } from '$app/stores';
+import { syncBackgroundWhite } from '$lib/utils/background';
+import { initializeFirebase, initializeLogger, type Logger } from '$lib/analytics';
+import '../app.css';
+import '../hljs.css';
+import '../hljs';
+import { provideLogger, provideWhite } from './context';
+import Nav from './Nav.svelte';
+import { onMount } from 'svelte';
+import type { LayoutData } from './$types';
+import { useDarkMode } from '$lib/utils/darkMode';
 
-	const white = writable<number>(0);
-	provideWhite(white);
-	syncBackgroundWhite(white);
+export let data: LayoutData;
+const theme = writable(data.initialTheme);
+const dark = useDarkMode(theme);
+$: console.log({ $dark, $theme });
 
-	$: isFullscreen = $page.url.pathname === '/';
-	$: isBlogPost = $page.route.id === "/blog/[slug]"
+const white = writable<number>(0);
+provideWhite(white);
+syncBackgroundWhite(white);
 
-	const loggerStore = writable<Logger | undefined>(undefined);
-	provideLogger(loggerStore);
-	onMount(function setLoggerContext() {
-		const app = initializeFirebase();
-		const logger = initializeLogger(app);
-		loggerStore.set(logger);
-	});
+$: isFullscreen = $page.url.pathname === '/';
+$: isBlogPost = $page.route.id === '/blog/[slug]';
+
+const loggerStore = writable<Logger | undefined>(undefined);
+provideLogger(loggerStore);
+onMount(function setLoggerContext() {
+	const app = initializeFirebase();
+	const logger = initializeLogger(app);
+	loggerStore.set(logger);
+});
 </script>
 
 <svelte:head>
