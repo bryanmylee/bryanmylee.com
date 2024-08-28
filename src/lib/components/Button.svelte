@@ -2,7 +2,7 @@
 	import { twMerge } from 'tailwind-merge';
 	import type { HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
 
-	type Variant = 'primary' | 'secondary' | 'white';
+	type Variant = 'primary' | 'secondary';
 	type Size = 'base' | 'sm';
 
 	type BaseProps = {
@@ -50,9 +50,6 @@
 		}
 		&.secondary {
 			@apply bg-green-200 text-green-800 hover:bg-green-100 active:bg-green-200/30;
-		}
-		&.white {
-			@apply bg-transparent text-white ring-2 ring-white hover:ring-4 active:opacity-50;
 		}
 		&.base {
 			@apply p-4;
