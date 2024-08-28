@@ -2,12 +2,12 @@
 	import { page } from '$app/stores';
 	import Button from '$lib/components/Button.svelte';
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
-	import { syncBackgroundWhite } from '$lib/utils/background';
+	import { syncBgPaperRatio } from '$lib/utils/background';
 	import { useBgPaperRatio } from './context';
 
-	const white = useBgPaperRatio();
-	white.set(1);
-	syncBackgroundWhite(white);
+	const bgPaperRatio = useBgPaperRatio();
+	bgPaperRatio.set(1);
+	syncBgPaperRatio(bgPaperRatio);
 </script>
 
 <section class="mx-auto flex h-[calc(100vh-7rem)] items-center justify-center p-4">

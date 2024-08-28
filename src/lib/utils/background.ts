@@ -1,14 +1,11 @@
 import { onMount } from 'svelte';
-import type { Writable } from 'svelte/store';
+import type { Readable } from 'svelte/store';
 import { GRAY_50 } from './color';
 
-export const syncBackgroundWhite = (
-	white: Writable<number>,
-	levels: [number, number, number] = GRAY_50,
-) => {
+export const syncBgPaperRatio = (bgPaperRatio: Readable<number>) => {
 	onMount(() => {
-		return white.subscribe(($white) => {
-			document.body.style.backgroundColor = `rgb(${levels.map((l) => l * $white).join(',')})`;
+		return bgPaperRatio.subscribe(($ratio) => {
+			document.body.style.backgroundColor = `rgb(${GRAY_50.map((l) => l * $ratio).join(',')})`;
 		});
 	});
 };

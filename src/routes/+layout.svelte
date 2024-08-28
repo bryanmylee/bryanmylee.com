@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { writable } from 'svelte/store';
 	import { page } from '$app/stores';
-	import { syncBackgroundWhite } from '$lib/utils/background';
+	import { syncBgPaperRatio } from '$lib/utils/background';
 	import { initializeFirebase, initializeLogger, type Logger } from '$lib/analytics';
 	import '../app.css';
 	import '../hljs.css';
@@ -22,7 +22,7 @@
 
 	const bgPaperRatio = writable<number>($page.route.id === '/' ? 0 : 1);
 	provideBgPaperRatio(bgPaperRatio);
-	syncBackgroundWhite(bgPaperRatio);
+	syncBgPaperRatio(bgPaperRatio);
 
 	$: isFullscreen = $page.url.pathname === '/';
 
