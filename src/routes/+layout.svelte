@@ -6,7 +6,7 @@
 	import '../app.css';
 	import '../hljs.css';
 	import '../hljs';
-	import { provideLogger, provideBgPaperRatio, provideTheme } from './context';
+	import { provideLogger, provideBgPaperRatio, provideTheme, provideIsDark } from './context';
 	import Nav from './components/Nav';
 	import { onMount } from 'svelte';
 	import type { LayoutData } from './$types';
@@ -17,8 +17,8 @@
 	const theme = writable(data.initialTheme);
 	provideTheme(theme);
 
-	const dark = useDarkMode(theme);
-	$: console.log({ $dark, $theme });
+	const isDark = useDarkMode(theme);
+	provideIsDark(isDark);
 
 	const bgPaperRatio = writable<number>($page.route.id === '/' ? 0 : 1);
 	provideBgPaperRatio(bgPaperRatio);

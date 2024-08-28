@@ -4,8 +4,8 @@
 	import { useJsEnabled } from '$lib/utils/accessibility';
 	import { GRAY_50 } from '$lib/utils/color';
 	import { useBgPaperRatio } from '../../context';
-	import NavLinks from './NavLinks.svelte';
-	import ThemeMenu from './ThemeMenu.svelte';
+	import NavLinksMenu from './NavLinksMenu.svelte';
+	import NavThemeMenu from './NavThemeMenu.svelte';
 
 	const bgPaperRatio = useBgPaperRatio();
 	$: bg_rgb = GRAY_50.map((l) => l * $bgPaperRatio);
@@ -42,8 +42,8 @@
 			{/if}
 		</ul>
 		<div class="flex gap-4">
-			<NavLinks />
-			<ThemeMenu />
+			<NavLinksMenu />
+			<NavThemeMenu />
 		</div>
 	</div>
 </nav>
