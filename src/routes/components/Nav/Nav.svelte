@@ -5,7 +5,7 @@
 	import { getPaper } from '$lib/utils/color';
 	import { useBgInkRatio, useIsDark } from '../../context';
 	import NavLinksMenu from './NavLinksMenu.svelte';
-	import NavThemeMenu from './NavThemeMenu.svelte';
+	import NavThemeToggle from './NavThemeToggle.svelte';
 
 	const isDark = useIsDark();
 	const bgInkRatio = useBgInkRatio();
@@ -44,7 +44,7 @@
 		</ul>
 		<div class="flex gap-4">
 			<NavLinksMenu />
-			<NavThemeMenu />
+			<NavThemeToggle />
 		</div>
 	</div>
 </nav>

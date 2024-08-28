@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { parseTheme, type Theme } from '$lib/utils/theme';
+	import { parseTheme } from '$lib/utils/theme';
 	import { useTheme } from '../../context';
 	import { enhance } from '$app/forms';
 	import { interactOutside } from '$lib/utils/pointer';
