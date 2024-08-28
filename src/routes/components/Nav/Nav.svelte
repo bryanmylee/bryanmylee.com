@@ -13,7 +13,7 @@
 
 	const jsEnabled = useJsEnabled();
 
-	$: useGradientBg = $page.route.id !== '/';
+	$: useGradientBg = $jsEnabled || $page.route.id !== '/';
 	$: useDifferenceBg = !$jsEnabled && $page.route.id === '/';
 	$: showBlogLink = $page.route.id === '/blog/[slug]';
 </script>
