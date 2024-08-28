@@ -40,7 +40,9 @@
 	<meta name="description" content={$page.data.subtitle ?? 'Meet your next creative developer.'} />
 </svelte:head>
 
-<Nav />
-<main class="relative z-0" class:mt-24={!isFullscreen}>
-	<slot />
-</main>
+<div class:dark={$isDark} class="contents">
+	<Nav />
+	<main class="relative z-0" class:mt-24={!isFullscreen}>
+		<slot />
+	</main>
+</div>

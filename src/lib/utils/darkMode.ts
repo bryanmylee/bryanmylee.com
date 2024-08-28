@@ -6,24 +6,12 @@ const IS_DARK_MEDIA_QUERY = '(prefers-color-scheme: dark)';
 
 export const useDarkMode = (theme: Readable<Theme>): Readable<boolean> => {
 	return writable(false, (set) => {
-		const setWithEffects = (isDark: boolean) => {
-			set(isDark);
-			if (typeof document === 'undefined') {
-				return;
-			}
-			if (isDark) {
-				document.documentElement.classList.add('dark');
-			} else {
-				document.documentElement.classList.remove('dark');
-			}
-		};
-
 		const unsubscribeTheme = theme.subscribe(($theme) => {
 			if ($theme === 'auto') {
 				attachMediaListener();
 			} else {
 				detachMediaListener();
-				setWithEffects($theme === 'dark');
+				set($theme === 'dark');
 			}
 		});
 
@@ -31,7 +19,7 @@ export const useDarkMode = (theme: Readable<Theme>): Readable<boolean> => {
 			if (typeof window === 'undefined') {
 				return;
 			}
-			setWithEffects(window.matchMedia(IS_DARK_MEDIA_QUERY).matches);
+			set(window.matchMedia(IS_DARK_MEDIA_QUERY).matches);
 			window.matchMedia(IS_DARK_MEDIA_QUERY).addEventListener('change', changeHandler);
 		}
 
@@ -43,7 +31,7 @@ export const useDarkMode = (theme: Readable<Theme>): Readable<boolean> => {
 		}
 
 		function changeHandler(event: MediaQueryListEvent) {
-			setWithEffects(event.matches);
+			set(event.matches);
 		}
 
 		return () => {
