@@ -10,6 +10,8 @@ import type {
 	PartialBlockObjectResponse,
 } from '@notionhq/client/build/src/api-endpoints';
 
+export const prerender = 'auto';
+
 export const load: PageServerLoad = async ({ params }) => {
 	const slug = params.slug;
 	const notion = new Client({ auth: NOTION_API_KEY });
