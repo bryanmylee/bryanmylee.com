@@ -6,12 +6,10 @@
 	import { useJsEnabled } from '$lib/utils/accessibility';
 	import LinkedIn from '$lib/icons/LinkedIn.svelte';
 
-	let topProgress = 0;
-
 	const jsEnabled = useJsEnabled();
 </script>
 
-<ScrollProgress scrollDistance={40} topPadding={130} topInset={120} bind:topProgress>
+<ScrollProgress scrollDistance={40} topPadding={90} topInset={100} let:topProgress disableUnmount>
 	<div class="sticky top-0 h-screen" style:opacity={$jsEnabled ? topProgress : 1}>
 		<div class="absolute inset-0 bg-paper" />
 		<div class="absolute inset-0 bottom-[45vh] flex flex-col items-center justify-end gap-8">

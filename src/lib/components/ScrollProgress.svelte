@@ -16,6 +16,7 @@
 	let className = '';
 	export { className as class };
 
+	export let disableUnmount = false;
 	export let scrollDistance = 200;
 	export let topPadding = 0;
 	export let bottomPadding = 0;
@@ -112,7 +113,7 @@
 	class={twMerge('relative z-auto', className)}
 	use:intersection={visible}
 >
-	{#if $visible}
+	{#if $visible || disableUnmount}
 		<slot
 			{progress}
 			{inProgress}
