@@ -12,7 +12,7 @@ links:
   - label: Privacy Policy
     href: /projects/wavefocus
   - label: Read about its cloud architecture
-    href: /blog/serverless-scheduled-push-notifications-with-163ece2f7f2c42edbcbfac027c15dabf
+    href: /blog/serverless-scheduled-push-notifications
 images:
   - src: /projects/wavefocus/android_feature.webp
     alt: a banner with multiple android phones using my pomodor app
