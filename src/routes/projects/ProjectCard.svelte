@@ -16,7 +16,7 @@
 
 <div
 	class={twMerge(
-		'bg-paper-raised text-ink w-full min-w-0 max-w-[calc(65ch-4rem)] rounded-xl p-4',
+		'w-full min-w-0 max-w-[calc(65ch-4rem)] rounded-xl bg-paper-raised p-4 text-ink',
 		className,
 	)}
 >

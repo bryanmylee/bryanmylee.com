@@ -8,9 +8,9 @@
 
 <a
 	href="/blog/{slug}"
-	class="bg-paper-raised prose block rounded-xl p-4 transition-shadow hover:shadow-lg prose-h2:text-xl"
+	class="prose block rounded-xl bg-paper-raised p-4 transition-shadow hover:shadow-lg prose-h2:text-xl"
 >
-	<h2 class="text-ink !text-lg">{title}</h2>
+	<h2 class="!text-lg text-ink">{title}</h2>
 	<p class="-mt-4 leading-none">
 		<sub class="text-sm text-ink-700">{subtitle}</sub>
 	</p>

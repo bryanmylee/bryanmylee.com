@@ -18,7 +18,7 @@
 </script>
 
 <div class="prose mx-auto max-w-[65ch] px-4 dark:prose-invert prose-h1:text-3xl">
-	<article class="bg-paper-raised -mt-24 px-4 py-32">
+	<article class="-mt-24 bg-paper-raised px-4 py-32">
 		<p>
 			<sub class="text-sm font-medium text-ink-500">{formattedDate}</sub>
 		</p>
@@ -33,8 +33,8 @@
 <style lang="postcss">
 	article {
 		:global(p a) {
-			@apply gdark:text-cyan-200 text-cyan-500 underline underline-offset-1;
-			@apply gdark:hover:text-cyan-100 hover:text-cyan-400;
+			@apply text-cyan-500 underline underline-offset-1 gdark:text-cyan-200;
+			@apply hover:text-cyan-400 gdark:hover:text-cyan-100;
 		}
 
 		:global(figure img) {

@@ -8,5 +8,5 @@
 	syncBgInkRatio(isDark, bgInkRatio);
 </script>
 
-<div class="bg-paper fixed inset-0 z-[-1]" />
+<div class="fixed inset-0 z-[-1] bg-paper" />
 <slot />

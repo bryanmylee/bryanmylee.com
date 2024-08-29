@@ -13,7 +13,7 @@
 	export let wideLayout: boolean | undefined = false;
 </script>
 
-<div class="bg-paper-raised text-ink rounded-xl p-8 {wideLayout ? 'md:col-span-2' : ''}">
+<div class="rounded-xl bg-paper-raised p-8 text-ink {wideLayout ? 'md:col-span-2' : ''}">
 	<h2 class="flex items-center justify-between text-xl font-bold tracking-tight">
 		<span>{companyName}</span>
 		{#if homepage !== undefined}

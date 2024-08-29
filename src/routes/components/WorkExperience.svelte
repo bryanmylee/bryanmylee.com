@@ -9,7 +9,7 @@
 </script>
 
 <section class="relative mt-[-40vh] {$jsEnabled ? '' : 'bg-paper'} z-10">
-	<h1 id="work" class="text-ink my-8 scroll-mt-28 text-center text-3xl font-bold">
+	<h1 id="work" class="my-8 scroll-mt-28 text-center text-3xl font-bold text-ink">
 		Work Experience
 	</h1>
 	<div class="tw-container mx-auto grid gap-4 p-4 md:grid-cols-2 xl:grid-cols-3">

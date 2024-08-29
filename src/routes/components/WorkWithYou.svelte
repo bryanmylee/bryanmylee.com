@@ -13,11 +13,11 @@
 
 <ScrollProgress scrollDistance={40} topPadding={130} topInset={120} bind:topProgress>
 	<div class="sticky top-0 h-screen" style:opacity={$jsEnabled ? topProgress : 1}>
-		<div class="bg-paper absolute inset-0" />
+		<div class="absolute inset-0 bg-paper" />
 		<div class="absolute inset-0 bottom-[45vh] flex flex-col items-center justify-end gap-8">
 			<h1
 				id="contact"
-				class="text-ink scroll-mt-40 text-center font-bold leading-tight drop-shadow-2xl text-dyn-6"
+				class="scroll-mt-40 text-center font-bold leading-tight text-ink drop-shadow-2xl text-dyn-6"
 			>
 				And I'd like to work with you.
 			</h1>
