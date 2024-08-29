@@ -56,7 +56,7 @@
 <style lang="postcss">
 	.content {
 		:global(a) {
-			@apply text-cyan-500 underline underline-offset-1;
+			@apply text-cyan-500 underline underline-offset-1 gdark:text-cyan-200;
 			@apply hover:text-cyan-400;
 		}
 	}

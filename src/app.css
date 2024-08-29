@@ -5,6 +5,25 @@
 
 :root {
 	--user-font-scale: 1rem - 16px;
+	--ink-500: 107 114 128;
+	--ink-600: 75 85 99;
+	--ink-700: 55 65 81;
+	--ink-800: 31 41 55;
+	--ink-900: 17 24 39;
+	--ink-DEFAULT: 10 10 10;
+	--paper-raised: 255 255 255;
+	--paper-DEFAULT: 249 250 251;
+}
+
+:root.dark {
+	--ink-500: 115 115 115;
+	--ink-600: 163 163 163;
+	--ink-700: 212 212 212;
+	--ink-800: 229 229 229;
+	--ink-900: 245 245 245;
+	--ink-DEFAULT: 255 255 255;
+	--paper-raised: 23 23 23;
+	--paper-DEFAULT: 18 18 18;
 }
 
 body,

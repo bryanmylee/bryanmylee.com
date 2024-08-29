@@ -33,16 +33,3 @@ export const PAPER_DARK: Record<PaperShade, Vec3> = {
 	raised: [23, 23, 23],
 };
 export const getPaper = (isDark: boolean) => (isDark ? PAPER_DARK : PAPER_LIGHT);
-
-export const getPaperInkCssVars = (isDark: boolean): Record<string, string> => {
-	const vars: Record<string, string> = {};
-	const ink = getInk(isDark);
-	for (const shade of INK_SHADES) {
-		vars[`--ink-${shade}`] = ink[shade].join(' ');
-	}
-	const paper = getPaper(isDark);
-	for (const shade of PAPER_SHADES) {
-		vars[`--paper-${shade}`] = paper[shade].join(' ');
-	}
-	return vars;
-};

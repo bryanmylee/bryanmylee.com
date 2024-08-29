@@ -1,18 +1,29 @@
 import { writable } from 'svelte/store';
 import type { Updater, Writable } from 'svelte/store';
 
-export const useCookie = <T extends string>(name: string, initValue: T): Writable<T> => {
-	const value = writable<T>(initValue);
-	const update = (fn: Updater<T>) => {
-		value.update(($value) => {
-			const newValue = fn($value);
-			// setCookie(undefined, name, newValue, { path: '/' });
+export const useCookie = (
+	name: string,
+	initialValue: string | null = null,
+): Writable<string | null> => {
+	const store = writable(initialValue);
+	const setCookie = (value: string | null) => {
+		if (typeof document === 'undefined') return;
+		if (value === null) {
+			document.cookie = `${name}=;path=/;samesite=lax;max-age=0`;
+		} else {
+			document.cookie = `${name}=${value};path=/;samesite=lax`;
+		}
+	};
+	const set = (value: string | null) => {
+		store.set(value);
+		setCookie(value);
+	};
+	const update = (updater: Updater<string | null>) => {
+		store.update((value) => {
+			const newValue = updater(value);
+			setCookie(newValue);
 			return newValue;
 		});
 	};
-	return {
-		subscribe: value.subscribe,
-		update,
-		set: (newValue) => update(() => newValue),
-	};
+	return { subscribe: store.subscribe, set, update };
 };

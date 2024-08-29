@@ -9,19 +9,20 @@
 	import { provideLogger, provideBgInkRatio, provideTheme, provideIsDark } from './context';
 	import Nav from './components/Nav';
 	import { onMount } from 'svelte';
-	import type { LayoutData } from './$types';
 	import { useDarkMode } from '$lib/utils/darkMode';
-	import { getPaperInkCssVars } from '$lib/utils/color';
-	import { stringifyStyleObject } from '$lib/utils/style';
+	import { transformed } from '$lib/utils/store';
+	import { useLocalStorage } from '$lib/utils/storage';
+	import { parseTheme } from '$lib/utils/theme';
 
-	export let data: LayoutData;
-
-	const theme = writable(data.initialTheme);
+	const theme = transformed(
+		useLocalStorage('theme'),
+		(input) => parseTheme(input) ?? 'auto',
+		(output) => output,
+	);
 	provideTheme(theme);
 
 	const isDark = useDarkMode(theme);
 	provideIsDark(isDark);
-	$: inkCssVars = getPaperInkCssVars($isDark);
 
 	/**
 	 * The background ink ratio determines how much the background should be
@@ -45,9 +46,22 @@
 <svelte:head>
 	<title>{$page.data.title ? $page.data.title + ' | ' : ''}Bryan Lee</title>
 	<meta name="description" content={$page.data.subtitle ?? 'Meet your next creative developer.'} />
+	<script>
+		(function () {
+			try {
+				const theme = localStorage.getItem('theme');
+				const dark =
+					theme === 'dark' ||
+					(theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+				if (dark) {
+					document.documentElement.classList.add('dark');
+				}
+			} catch (e) {}
+		})();
+	</script>
 </svelte:head>
 
-<div class:dark={$isDark} class="contents" style={stringifyStyleObject(inkCssVars)}>
+<div class="contents">
 	<Nav />
 	<main class="relative z-0" class:mt-24={!isFullscreen}>
 		<slot />

@@ -6,12 +6,22 @@ const IS_DARK_MEDIA_QUERY = '(prefers-color-scheme: dark)';
 
 export const useDarkMode = (theme: Readable<Theme>): Readable<boolean> => {
 	return writable(false, (set) => {
+		const setWithEffect = (isDark: boolean) => {
+			set(isDark);
+			if (typeof document !== 'undefined') {
+				if (isDark) {
+					document.documentElement.classList.add('dark');
+				} else {
+					document.documentElement.classList.remove('dark');
+				}
+			}
+		};
 		const unsubscribeTheme = theme.subscribe(($theme) => {
 			if ($theme === 'auto') {
 				attachMediaListener();
 			} else {
 				detachMediaListener();
-				set($theme === 'dark');
+				setWithEffect($theme === 'dark');
 			}
 		});
 
@@ -19,7 +29,7 @@ export const useDarkMode = (theme: Readable<Theme>): Readable<boolean> => {
 			if (typeof window === 'undefined') {
 				return;
 			}
-			set(window.matchMedia(IS_DARK_MEDIA_QUERY).matches);
+			setWithEffect(window.matchMedia(IS_DARK_MEDIA_QUERY).matches);
 			window.matchMedia(IS_DARK_MEDIA_QUERY).addEventListener('change', changeHandler);
 		}
 
@@ -31,7 +41,7 @@ export const useDarkMode = (theme: Readable<Theme>): Readable<boolean> => {
 		}
 
 		function changeHandler(event: MediaQueryListEvent) {
-			set(event.matches);
+			setWithEffect(event.matches);
 		}
 
 		return () => {
