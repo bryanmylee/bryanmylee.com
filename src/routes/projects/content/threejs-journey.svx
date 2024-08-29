@@ -1,6 +1,9 @@
 ---
 title: ThreeJS Journey
 subtitle: Learning WebGL and 3D rendering on the web 
+links:
+  - label: Visit demo
+    href: https://threejs-basics-bryanmylee.vercel.app
 images:
   - src: /projects/threejs-journey.webp
     alt: A screenshot of my ThreeJS Journey project
