@@ -27,7 +27,7 @@
 	style:--text-rgb={text_rgb.join(',')}
 >
 	<div class="tw-container mx-auto flex h-12 items-start justify-between">
-		<ul class="pointer-events-auto flex translate-y-2">
+		<ul class="pointer-events-auto flex translate-y-1">
 			<li>
 				<a href="/#" class="flex gap-4 font-semibold hover:opacity-50">
 					<Logo class="-mx-3 -translate-y-1 wh-12" /> Bryan Lee
