@@ -18,7 +18,10 @@
 >
 	{@const tIn = $jsEnabled ? cubicOut(topProgress) : 1}
 	{@const tOut = cubicIn(outProgress)}
-	<div class="sticky top-0 flex h-screen items-center justify-center">
+	<div
+		class="sticky top-0 flex h-screen items-center justify-center"
+		style={`--progress: ${progress}`}
+	>
 		{#if !$jsEnabled || topProgress > 0.25}
 			<figure
 				role="group"
@@ -32,7 +35,6 @@
 						rotate="-30deg"
 						dx="-80vw"
 						dy="-80vh"
-						{progress}
 					/>
 				</div>
 				<div style:transform="rotate(7deg)" class="order-2">
@@ -42,7 +44,6 @@
 						rotate="20deg"
 						dx="0vw"
 						dy="-80vh"
-						{progress}
 					/>
 				</div>
 				<div style:transform="rotate(-8deg)" class="order-3">
@@ -52,7 +53,6 @@
 						rotate="-20deg"
 						dx="-100vw"
 						dy="20vh"
-						{progress}
 					/>
 				</div>
 				<div style:transform="rotate(15deg)" class="order-4 w-full md:order-2">
@@ -63,7 +63,6 @@
 						rotate="20deg"
 						dx="80vw"
 						dy="-40vh"
-						{progress}
 					/>
 				</div>
 				<div style:transform="rotate(-8deg) translate(0, -30px)" class="order-5">
@@ -74,7 +73,6 @@
 						rotate="-20deg"
 						dx="-80vw"
 						dy="80vh"
-						{progress}
 					/>
 				</div>
 				<div style:transform="rotate(10deg)" class="order-6">
@@ -84,7 +82,6 @@
 						rotate="-20deg"
 						dx="80vw"
 						dy="80vh"
-						{progress}
 					/>
 				</div>
 			</figure>
