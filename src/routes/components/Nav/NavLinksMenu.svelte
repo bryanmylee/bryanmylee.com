@@ -54,7 +54,7 @@
 	}
 
 	.dropdown a {
-		@apply inline-block rounded-lg px-3 py-1 hover:bg-gray-300/20;
+		@apply inline-block rounded-lg px-3.5 py-2 hover:bg-gray-300/20 md:px-3 md:py-1;
 	}
 
 	.dropdown--trigger {
