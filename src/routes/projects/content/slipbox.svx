@@ -4,11 +4,11 @@ subtitle: Never forget video ideas you find.
 images:
   - src: /projects/slipbox/slipbox-home.webp
     alt: a screenshot of the homescreen of the Slipbox app
-    width: 501 
+    width: 501
     height: 1085
   - src: /projects/slipbox/slipbox-saving.webp
     alt: a screenshot of saving an idea to Slipbox
-    width: 501 
+    width: 501
     height: 1085
 ---
 

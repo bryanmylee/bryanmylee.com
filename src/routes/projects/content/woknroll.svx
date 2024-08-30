@@ -8,16 +8,16 @@ links:
 images:
   - src: /projects/cs206-woknroll--add-review.webp
     alt: the add review page of Wok N Roll
-    width: 373 
-    height: 724 
+    width: 373
+    height: 724
   - src: /projects/cs206-woknroll--home.webp
     alt: the home page of Wok N Roll
-    width: 373 
-    height: 724 
+    width: 373
+    height: 724
   - src: /projects/cs206-woknroll--review.webp
     alt: the review page of Wok N Roll
-    width: 373 
-    height: 724 
+    width: 373
+    height: 724
 ---
 
 We conducted market research and discovered an unfulfilled niche for a comprehensive database and search engine for hawker food in Singapore.

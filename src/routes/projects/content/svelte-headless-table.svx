@@ -10,7 +10,7 @@ images:
   - src: /projects/svelte-headless-table/svelte-headless-table.webp
     alt: a screenshot of the documentation page for Svelte Headless Table
     width: 1221
-    height:  714
+    height: 714
 ---
 
 Build and design powerful datagrid experiences while retaining 100% control over styles and markup.
