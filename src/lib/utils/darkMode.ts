@@ -1,12 +1,12 @@
-import { writable } from 'svelte/store';
+import { readable } from 'svelte/store';
 import type { Readable } from 'svelte/store';
 import type { Theme } from './theme';
 
 const IS_DARK_MEDIA_QUERY = '(prefers-color-scheme: dark)';
 
 export const useDarkMode = (theme: Readable<Theme>): Readable<boolean> => {
-	return writable(false, (set) => {
-		const setWithEffect = (isDark: boolean) => {
+	return readable(false, (set) => {
+		const setIsDark = (isDark: boolean) => {
 			set(isDark);
 			if (typeof document !== 'undefined') {
 				if (isDark) {
@@ -16,36 +16,34 @@ export const useDarkMode = (theme: Readable<Theme>): Readable<boolean> => {
 				}
 			}
 		};
+
+		const handleMediaChange = (ev: MediaQueryListEvent) => {
+			setIsDark(ev.matches);
+		};
+
+		const attachMediaListener = () => {
+			if (typeof window === 'undefined') return;
+			setIsDark(window.matchMedia(IS_DARK_MEDIA_QUERY).matches);
+			window.matchMedia(IS_DARK_MEDIA_QUERY).addEventListener('change', handleMediaChange);
+		};
+
+		const detachMediaListener = () => {
+			if (typeof window === 'undefined') return;
+			window.matchMedia(IS_DARK_MEDIA_QUERY).removeEventListener('change', handleMediaChange);
+		};
+
 		const unsubscribeTheme = theme.subscribe(($theme) => {
 			if ($theme === 'auto') {
 				attachMediaListener();
 			} else {
 				detachMediaListener();
-				setWithEffect($theme === 'dark');
+				setIsDark($theme === 'dark');
 			}
 		});
 
-		function attachMediaListener() {
-			if (typeof window === 'undefined') {
-				return;
-			}
-			setWithEffect(window.matchMedia(IS_DARK_MEDIA_QUERY).matches);
-			window.matchMedia(IS_DARK_MEDIA_QUERY).addEventListener('change', changeHandler);
-		}
-
-		function detachMediaListener() {
-			if (typeof window === 'undefined') {
-				return;
-			}
-			window.matchMedia(IS_DARK_MEDIA_QUERY).removeEventListener('change', changeHandler);
-		}
-
-		function changeHandler(event: MediaQueryListEvent) {
-			setWithEffect(event.matches);
-		}
-
 		return () => {
 			unsubscribeTheme();
+			detachMediaListener();
 		};
 	});
 };

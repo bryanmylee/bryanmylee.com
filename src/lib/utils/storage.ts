@@ -14,6 +14,7 @@ export const useLocalStorage = (
 		window.addEventListener('storage', handler);
 		return () => window.removeEventListener('storage', handler);
 	});
+
 	const setLocalStorage = (value: string | null) => {
 		if (typeof localStorage === 'undefined') return;
 		if (value === null) {
@@ -22,10 +23,12 @@ export const useLocalStorage = (
 			localStorage.setItem(key, value);
 		}
 	};
+
 	const set = (value: string | null) => {
 		store.set(value);
 		setLocalStorage(value);
 	};
+
 	const update = (updater: Updater<string | null>) => {
 		store.update((value) => {
 			const newValue = updater(value);
@@ -33,5 +36,6 @@ export const useLocalStorage = (
 			return newValue;
 		});
 	};
+
 	return { subscribe: store.subscribe, set, update };
 };
