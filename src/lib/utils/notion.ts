@@ -6,13 +6,13 @@ export const getPlainText = (richText: RichTextItemResponse[]) => {
 
 /**
  * Caption-embedded properties are annotated as a code block in the caption
- * starting with `p=`. Each property is delimited by `;` and has the format
- * `name:value`
+ * starting with `p:`. Each property is delimited by `;` and has the format
+ * `name=value`
  *
- * e.g. `p=size:480x320;type:webp`A regular caption.
+ * e.g. `p:size=480x320;type=webp`A regular caption.
  */
 const isCaptionProperty = (text: RichTextItemResponse) =>
-	text.annotations.code && text.plain_text.startsWith('p=');
+	text.annotations.code && text.plain_text.startsWith('p:');
 
 interface CaptionProperties {
 	caption: RichTextItemResponse[];
@@ -28,7 +28,7 @@ export const splitCaptionProperties = (
 		rawProperties
 			.slice(2)
 			.split(';')
-			.map((token) => token.split(':')),
+			.map((token) => token.split('=')),
 	) as Record<string, string>;
 	return { caption, properties };
 };
