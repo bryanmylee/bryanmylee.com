@@ -13,6 +13,6 @@
 	{src}
 	{alt}
 	class={twMerge('rounded-xl shadow-md ring-1 ring-paper-raised', className)}
-	{width}
-	{height}
+	width={parseFloat(width)}
+	height={parseFloat(height)}
 />
