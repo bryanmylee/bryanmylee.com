@@ -1,6 +1,6 @@
 ---
 title: Microcontroller Pomodoro Timer
-subtitle: A hardware pomodoro timer built on the ESP32 Development Board
+subtitle: A hardware pomodoro timer built on the ESP32 Development Board.
 skills: [cpp]
 links:
   - label: GitHub

@@ -1,0 +1,17 @@
+---
+title: Multiplayer Matchmaking System
+subtitle: Cross-platform authentication and matchmaking.
+skills: [rust, godot]
+links:
+  - label: GitHub
+    href: https://github.com/bryanmylee/godot-multiplayer
+images:
+  - src: /projects/rust-multiplayer/server_authoritative_multiplayer.gif
+    alt: a recording of a multiplayer testing session
+    width: 960
+    height: 649
+---
+
+A cross-platform authentication and matchmaking service written in Rust, tailored for the Godot game engine.
+
+The project is configured to work with Steam, Apple Game Center, Google Play Games Services, and OAuth 2.0.

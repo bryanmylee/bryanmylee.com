@@ -10,6 +10,7 @@ export const SKILL_ID_TO_LABEL = {
 	firebase: 'Firebase',
 	flask: 'Flask',
 	gcp: 'Google Cloud Platform',
+	godot: 'Godot',
 	graphql: 'GraphQL',
 	java: 'Java',
 	javascript: 'JavaScript',

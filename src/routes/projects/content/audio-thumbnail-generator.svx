@@ -1,7 +1,7 @@
 ---
 title: Audio Thumbnail Generator
 subtitle: CS424 Image Perception
-skills: [nextjs, flask, tensorflow]
+skills: [typescript, python, nextjs, flask, tensorflow]
 links:
   - label: Demo app
     href: https://audio-diffusion.vercel.app
@@ -20,6 +20,6 @@ images:
     height: 803
 ---
 
-As part of our final project, we built a prototype application to generate image content from audio files using generative artificial intelligence.
+We built a prototype application that uses stable diffusion models combined with traditional classification models to solve new problems to generate image content from audio files.
 
 This is a preliminary step in improving audio file management by automating the process of creating file preview thumbnails. Users would have an easier time visually identifying their content, reducing time and effort required for file management.

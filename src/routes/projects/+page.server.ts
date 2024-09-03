@@ -28,15 +28,16 @@ export interface Image {
 
 const CONTENT_NAMES = [
 	'svelte-headless-table',
-	'rust-leptos-llama',
 	'audio-thumbnail-generator',
+	'rust-multiplayer',
 	'perfect-clear',
-	'slipbox',
-	'threejs-journey',
 	'iot-timer',
 	'wavefocus',
 	'meetwhen',
 	'helloworld',
+	'rust-leptos-llama',
+	'slipbox',
+	'threejs-journey',
 	'techtris',
 	'ally-ui',
 	'svelte-popperjs',
@@ -72,7 +73,7 @@ export const load: PageServerLoad = async () => {
 	return {
 		title: 'Projects',
 		subtitle:
-			'A list of my technical projects ranging from applications, open source tooling, and experiments in University.',
+			'A list of my technical projects ranging from applications, open source tooling, and experiments.',
 		content: contentItems,
 	};
 };

@@ -1,6 +1,6 @@
 ---
 title: ThreeJS Journey
-subtitle: Learning WebGL and 3D rendering on the web 
+subtitle: Learning WebGL and 3D rendering on the web.
 links:
   - label: Visit demo
     href: https://threejs-basics-bryanmylee.vercel.app
