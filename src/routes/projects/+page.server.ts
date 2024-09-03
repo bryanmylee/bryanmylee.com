@@ -29,6 +29,7 @@ export interface Image {
 const CONTENT_NAMES = [
 	'svelte-headless-table',
 	'audio-thumbnail-generator',
+	'sere',
 	'rust-multiplayer',
 	'perfect-clear',
 	'iot-timer',
