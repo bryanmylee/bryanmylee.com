@@ -1,5 +1,5 @@
 ---
-title: Leptos Llama
+title: Llama Chatbot
 subtitle: A generative AI chatbot built with server-side and front-end Rust.
 skills: [rust]
 links:
