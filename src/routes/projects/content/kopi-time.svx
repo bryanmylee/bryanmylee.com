@@ -3,8 +3,6 @@ title: Kopi Time, Microservice Orchestration
 subtitle: CS302 IT Solution Lifecycle Management
 skills: [typescript, python, reactjs, nextjs, tailwindcss, nodejs, flask, graphql, rest, rabbitmq, mysql, nginx, docker]
 links:
-  - label: GitHub
-    href: https://github.com/TeamTechtris/smu-cs302-saga-engine
   - label: Read our report
     href: /projects/cs302-final-report.pdf
 images:
