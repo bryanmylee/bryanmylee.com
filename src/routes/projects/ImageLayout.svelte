@@ -10,7 +10,7 @@
 </script>
 
 <div
-	class={twMerge('z-[-1] grid w-full flex-1 gap-4', className)}
+	class={twMerge('z-[-1] grid w-full flex-1 justify-center gap-4 lg:justify-end', className)}
 	class:grid-cols-2={images.length >= 2}
 	class:lg:grid-cols-3={images.length >= 3}
 >

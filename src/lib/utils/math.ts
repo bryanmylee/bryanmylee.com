@@ -18,3 +18,7 @@ export const interpolate = (from: number[], to: number[], alpha: number) => {
 	const progress = (alpha - fromStart) / (fromEnd - fromStart);
 	return progress * (toEnd - toStart) + toStart;
 };
+
+export const sum = (values: number[]): number => values.reduce((a, b) => a + b, 0);
+export const max = (values: number[]): number =>
+	values.reduce((a, b) => (a > b ? a : b), values[0]);
