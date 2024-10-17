@@ -6,7 +6,7 @@
 	export let headings: HeadingBlockObjectResponse[];
 </script>
 
-<div class="sticky top-24 h-0 w-full">
+<div class="sticky top-32 z-10 h-0 w-full">
 	<div
 		class="toc-trigger group relative opacity-0 transition-opacity hover:opacity-100 xl:opacity-100"
 	>
@@ -14,7 +14,7 @@
 			class="pointer-events-none absolute bottom-2 left-2 top-0 w-72 group-hover:pointer-events-auto xl:pointer-events-auto xl:left-full xl:-translate-x-full"
 		>
 			<aside
-				class="border-ink-200 mb-4 h-full max-h-fit max-w-prose overflow-auto rounded-lg border bg-paper-raised shadow-md xl:border-0 xl:shadow-none"
+				class="mb-4 h-full max-h-fit max-w-prose overflow-auto rounded-lg border border-ink-200 bg-paper-raised shadow-md xl:border-0 xl:shadow-none"
 			>
 				<ul class="flex flex-col p-2">
 					{#each headings as heading}
@@ -38,6 +38,6 @@
 <style lang="postcss">
 	.toc-trigger {
 		width: max(calc((100vw - 65ch) / 2), 1rem);
-		height: calc(100vh - theme(height.24));
+		height: calc(100vh - theme(height.32));
 	}
 </style>
