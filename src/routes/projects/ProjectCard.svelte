@@ -20,7 +20,7 @@
 		className,
 	)}
 >
-	<LinkedHeading depth={2} text={metadata.title} class="text-xl font-bold" />
+	<LinkedHeading depth={1} text={metadata.title} class="text-xl font-bold" />
 	<sub class="text-sm text-ink-700">{metadata.subtitle}</sub>
 	<hr class="my-4" />
 	{#if metadata.skills !== undefined}

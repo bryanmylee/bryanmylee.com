@@ -2,15 +2,17 @@
 	import { page } from '$app/stores';
 	import Logo from '$lib/icons/Logo.svelte';
 	import { useJsEnabled } from '$lib/utils/accessibility';
-	import { getPaper } from '$lib/utils/color';
-	import { useBgInkRatio, useIsDark } from '../../context';
+	import { getInk, getPaper } from '$lib/utils/color';
+	import { lerp } from 'three/src/math/MathUtils';
+	import { useBgFillRatio, useIsDark } from '../../context';
 	import NavLinksMenu from './NavLinksMenu.svelte';
 	import NavThemeToggle from './NavThemeToggle.svelte';
 
 	const isDark = useIsDark();
-	const bgInkRatio = useBgInkRatio();
-	$: bgScrollRgb = getPaper($isDark).DEFAULT.map((l) => l * $bgInkRatio);
-	$: textScrollRgb = bgScrollRgb.map((l) => 255 - l);
+	const bgFillRatio = useBgFillRatio();
+	$: bgScrollRgb = getPaper($isDark).raised.map((l) => lerp(0, l, $bgFillRatio));
+	$: textScrollRgb = getInk($isDark).DEFAULT.map((l) => lerp(255, l, $bgFillRatio));
+	$: borderScrollRgb = getInk($isDark)['200'].map((l) => lerp(38, l, $bgFillRatio));
 
 	const jsEnabled = useJsEnabled();
 
@@ -25,6 +27,7 @@
 	class="pointer-events-none fixed inset-0 bottom-auto z-10 h-28 px-8 pt-9 text-xl tracking-tight"
 	style:--bg-scroll={useDynamicColors ? bgScrollRgb.join(' ') : ''}
 	style:--text-scroll={useDynamicColors ? textScrollRgb.join(' ') : ''}
+	style:--border-scroll={useDynamicColors ? borderScrollRgb.join(' ') : ''}
 >
 	<div class="tw-container mx-auto flex h-12 items-start justify-between">
 		<ul class="pointer-events-auto flex translate-y-1">
@@ -51,8 +54,9 @@
 
 <style lang="postcss">
 	nav {
-		--bg-nav: var(--bg-scroll, var(--paper-DEFAULT));
+		--bg-nav: var(--bg-scroll, var(--paper-raised));
 		--text-nav: var(--text-scroll, var(--ink-DEFAULT));
+		--border-nav: var(--border-scroll, var(--ink-200));
 		color: rgb(var(--text-nav));
 	}
 

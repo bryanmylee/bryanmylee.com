@@ -25,7 +25,7 @@
 		class="dropdown--trigger peer"
 	/>
 	<ul
-		class="dropdown"
+		class="pointer-events-none -m-2 flex flex-col gap-x-2 rounded-xl border border-[rgb(var(--border-nav))] bg-[rgb(var(--bg-nav))] p-3 text-base opacity-0 shadow-xl transition-opacity peer-checked:pointer-events-auto peer-checked:opacity-100 md:pointer-events-auto md:m-0 md:flex-row md:border-0 md:bg-transparent md:p-0 md:text-lg md:opacity-100 md:shadow-none"
 		use:interactOutside={(ev) => {
 			if (ev.target instanceof HTMLElement && ev.target === trigger) {
 				return;
@@ -34,29 +34,16 @@
 		}}
 	>
 		{#each links as { href, name }}
-			<li><a {href}>{name}</a></li>
+			<li>
+				<a {href} class="block rounded-lg px-3.5 py-2 hover:bg-gray-400/10 md:px-3 md:py-1">
+					{name}
+				</a>
+			</li>
 		{/each}
 	</ul>
 </div>
 
 <style lang="postcss">
-	.dropdown {
-		@apply flex flex-col gap-x-2 md:flex-row;
-		@apply -m-2 rounded-xl p-3 text-base shadow-xl;
-		@apply md:m-0 md:p-0 md:text-lg md:shadow-none;
-		@apply opacity-0 peer-checked:opacity-100 md:opacity-100;
-		@apply pointer-events-none peer-checked:pointer-events-auto md:pointer-events-auto;
-		@apply transition-opacity;
-		background: rgb(var(--bg-nav));
-		@media screen(md) {
-			background: transparent;
-		}
-	}
-
-	.dropdown a {
-		@apply inline-block rounded-lg px-3.5 py-2 hover:bg-gray-300/20 md:px-3 md:py-1;
-	}
-
 	.dropdown--trigger {
 		@apply relative m-0 cursor-pointer appearance-none wh-8;
 		@apply pointer-events-auto md:hidden;

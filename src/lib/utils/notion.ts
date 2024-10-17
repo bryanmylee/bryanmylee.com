@@ -1,4 +1,11 @@
-import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
+import type {
+	BlockObjectResponse,
+	Heading1BlockObjectResponse,
+	Heading2BlockObjectResponse,
+	Heading3BlockObjectResponse,
+	RichTextItemResponse,
+} from '@notionhq/client/build/src/api-endpoints';
+import { isNonNullable } from './predicates';
 
 export const getPlainText = (richText: RichTextItemResponse[]) => {
 	return richText.map((text) => text.plain_text).reduce((a, b) => a + b);
@@ -31,4 +38,42 @@ export const splitCaptionProperties = (
 			.map((token) => token.split('=')),
 	) as Record<string, string>;
 	return { caption, properties };
+};
+
+export type HeadingBlockObjectResponse = (
+	| Heading1BlockObjectResponse
+	| Heading2BlockObjectResponse
+	| Heading3BlockObjectResponse
+) & {
+	heading: Heading1BlockObjectResponse['heading_1'];
+	depth: 1 | 2 | 3;
+};
+
+export const getHeadingBlocks = (blocks: BlockObjectResponse[]): HeadingBlockObjectResponse[] => {
+	return blocks
+		.map((block) => {
+			if (block.type === 'heading_1') {
+				return {
+					...block,
+					depth: 1 as const,
+					heading: block.heading_1,
+				};
+			}
+			if (block.type === 'heading_2') {
+				return {
+					...block,
+					depth: 2 as const,
+					heading: block.heading_2,
+				};
+			}
+			if (block.type === 'heading_3') {
+				return {
+					...block,
+					depth: 3 as const,
+					heading: block.heading_3,
+				};
+			}
+			return null;
+		})
+		.filter(isNonNullable);
 };

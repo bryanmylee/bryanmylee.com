@@ -2,13 +2,13 @@
 	import { page } from '$app/stores';
 	import Button from '$lib/components/Button.svelte';
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
-	import { syncBgInkRatio } from '$lib/utils/background';
-	import { useBgInkRatio, useIsDark } from './context';
+	import { syncBgFillRatio } from '$lib/utils/background';
+	import { useBgFillRatio, useIsDark } from './context';
 
 	const isDark = useIsDark();
-	const bgInkRatio = useBgInkRatio();
-	bgInkRatio.set(1);
-	syncBgInkRatio(isDark, bgInkRatio);
+	const bgFillRatio = useBgFillRatio();
+	bgFillRatio.set(1);
+	syncBgFillRatio(isDark, bgFillRatio);
 </script>
 
 <section

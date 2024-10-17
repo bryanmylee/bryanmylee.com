@@ -5,5 +5,9 @@ import type { Readable, Writable } from 'svelte/store';
 
 export const [useTheme, provideTheme] = paired<Writable<Theme>>();
 export const [useIsDark, provideIsDark] = paired<Readable<boolean>>();
-export const [useBgInkRatio, provideBgInkRatio] = paired<Writable<number>>();
+/**
+ * The background fill ratio determines how much the background should be
+ * filled. This is set to 0 for the landing page's black UI.
+ */
+export const [useBgFillRatio, provideBgFillRatio] = paired<Writable<number>>();
 export const [useLogger, provideLogger] = paired<Readable<Logger | undefined>>();

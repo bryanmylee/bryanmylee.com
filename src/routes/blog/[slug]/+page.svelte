@@ -3,11 +3,14 @@
 	import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 	import { useLogger } from '../../context';
 	import type { PageData } from './$types';
+	import { getHeadingBlocks } from '$lib/utils/notion';
+	import AsideTableOfContents from './AsideTableOfContents.svelte';
 
 	export let data: PageData;
 
 	const { pageId, slug, title, subtitle, formattedDate } = data;
 	const content = data.content.filter((block) => 'type' in block) as BlockObjectResponse[];
+	const headings = getHeadingBlocks(content);
 
 	const logger = useLogger();
 	$: $logger?.log('blog_view', {
@@ -17,15 +20,12 @@
 	});
 </script>
 
+<AsideTableOfContents {headings} />
 <div class="prose mx-auto max-w-[65ch] px-4 dark:prose-invert prose-h1:text-3xl">
 	<article class="-mt-24 bg-paper-raised px-4 py-32">
-		<p>
-			<sub class="text-sm font-medium text-ink-500">{formattedDate}</sub>
-		</p>
+		<p class="text-sm font-medium text-ink-500">{formattedDate}</p>
 		<h1 class="text-ink">{title}</h1>
-		<p class="-mt-4 leading-none">
-			<sub class="text-base text-ink-700">{subtitle}</sub>
-		</p>
+		<p class="-mt-4 text-base leading-none text-ink-700">{subtitle}</p>
 		<NotionContent {content} />
 	</article>
 </div>

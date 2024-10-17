@@ -15,9 +15,9 @@
 		| Heading3BlockObjectResponse;
 
 	const DEPTHS = {
-		heading_1: 2,
-		heading_2: 3,
-		heading_3: 4,
+		heading_1: 1,
+		heading_2: 2,
+		heading_3: 3,
 	} as const;
 
 	const depth = DEPTHS[block.type];

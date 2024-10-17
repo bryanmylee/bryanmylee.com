@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { writable } from 'svelte/store';
 	import { page } from '$app/stores';
-	import { syncBgInkRatio } from '$lib/utils/background';
+	import { syncBgFillRatio } from '$lib/utils/background';
 	import { initializeFirebase, initializeLogger, type Logger } from '$lib/analytics';
 	import '../app.css';
 	import '../hljs.css';
 	import '../hljs';
-	import { provideLogger, provideBgInkRatio, provideTheme, provideIsDark } from './context';
+	import { provideLogger, provideBgFillRatio, provideTheme, provideIsDark } from './context';
 	import Nav from './components/Nav';
 	import { onMount } from 'svelte';
 	import { useDarkMode } from '$lib/utils/darkMode';
@@ -25,12 +25,12 @@
 	provideIsDark(isDark);
 
 	/**
-	 * The background ink ratio determines how much the background should be
-	 * filled by the ink color. This is set to 0 for the landing page's black UI.
+	 * The background fill ratio determines how much the background should be
+	 * filled. This is set to 0 for the landing page's black UI.
 	 */
-	const bgInkRatio = writable<number>($page.route.id === '/' ? 0 : 1);
-	provideBgInkRatio(bgInkRatio);
-	syncBgInkRatio(isDark, bgInkRatio);
+	const bgFillRatio = writable<number>($page.route.id === '/' ? 0 : 1);
+	provideBgFillRatio(bgFillRatio);
+	syncBgFillRatio(isDark, bgFillRatio);
 
 	$: isFullscreen = $page.url.pathname === '/';
 
