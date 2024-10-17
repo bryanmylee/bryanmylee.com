@@ -16,6 +16,9 @@
 	--ink-DEFAULT: 10 10 10;
 	--paper-raised: 255 255 255;
 	--paper-DEFAULT: 249 250 251;
+
+	scrollbar-width: theme(width.3);
+	scrollbar-color: theme(colors.ink.200) theme(colors.transparent);
 }
 
 :root.dark {
@@ -44,75 +47,43 @@ pre {
 
 @layer utilities {
 	.tw-container {
-		width: 100%;
-	}
-	@media (min-width: 640px) {
-		.tw-container {
-			max-width: 640px;
+		width: theme(width.full);
+
+		@media screen(sm) {
+			& {
+				max-width: theme(screens.sm);
+			}
 		}
-	}
-	@media (min-width: 768px) {
-		.tw-container {
-			max-width: 768px;
+		@media screen(md) {
+			& {
+				max-width: theme(screens.md);
+			}
 		}
-	}
-	@media (min-width: 1024px) {
-		.tw-container {
-			max-width: 1024px;
+		@media screen(lg) {
+			& {
+				max-width: theme(screens.lg);
+			}
 		}
-	}
-	@media (min-width: 1280px) {
-		.tw-container {
-			max-width: 1280px;
+		@media screen(xl) {
+			& {
+				max-width: theme(screens.xl);
+			}
 		}
-	}
-	@media (min-width: 1536px) {
-		.tw-container {
-			max-width: 1536px;
+		@media screen(2xl) {
+			& {
+				max-width: theme(screens.2xl);
+			}
 		}
 	}
 
-	.no-scrollbar {
+	.scrollbar-hidden {
 		&::-webkit-scrollbar {
 			display: none; /* Chrome, Safari, Opera */
 		}
 		-ms-overflow-style: none; /* IE, Edge */
-		scrollbar-width: none; /* Firefox */
+		scrollbar-width: none;
 	}
 
-	.overflow-x-clip {
-		@supports not (overflow: clip) {
-			overflow: hidden;
-		}
-		@supports (overflow: clip) {
-			overflow-x: clip;
-		}
+	.scrollbar-trackless {
 	}
-}
-
-@keyframes move-background {
-	0% {
-		background-position: 100% 0%;
-	}
-	25% {
-		background-position: 0% 0%;
-	}
-	50% {
-		background-position: 0% 100%;
-	}
-	75% {
-		background-position: 100% 100%;
-	}
-	100% {
-		background-position: 100% 0%;
-	}
-}
-
-@keyframes flash {
-	50% {
-		opacity: 0.25;
-	}
-}
-.animate-flash {
-	animation: flash 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

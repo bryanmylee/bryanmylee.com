@@ -47,4 +47,22 @@
 			linear-gradient(0deg, var(--first), var(--first) 100%);
 		animation: move-background 4s infinite;
 	}
+
+	@keyframes move-background {
+		0% {
+			background-position: 100% 0%;
+		}
+		25% {
+			background-position: 0% 0%;
+		}
+		50% {
+			background-position: 0% 100%;
+		}
+		75% {
+			background-position: 100% 100%;
+		}
+		100% {
+			background-position: 100% 0%;
+		}
+	}
 </style>
