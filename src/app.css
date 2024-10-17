@@ -17,8 +17,23 @@
 	--paper-raised: 255 255 255;
 	--paper-DEFAULT: 249 250 251;
 
+	scrollbar-gutter: stable;
 	scrollbar-width: theme(width.3);
 	scrollbar-color: theme(colors.ink.200) theme(colors.transparent);
+}
+
+* {
+	&::-webkit-scrollbar {
+		width: theme(width.3);
+	}
+	&::-webkit-scrollbar-track {
+		background-color: theme(colors.transparent);
+		border-radius: theme(borderRadius.full);
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: theme(colors.ink.200);
+		border-radius: theme(borderRadius.full);
+	}
 }
 
 :root.dark {
