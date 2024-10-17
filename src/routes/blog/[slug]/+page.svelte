@@ -21,8 +21,9 @@
 </script>
 
 <AsideTableOfContents {headings} />
-<div class="prose mx-auto max-w-[65ch] px-4 dark:prose-invert prose-h1:text-3xl">
-	<article class="-mt-24 bg-paper-raised px-4 py-32">
+
+<div class="prose mx-auto max-w-[65ch] px-8 py-32 dark:prose-invert">
+	<article class="relative -mt-24">
 		<h1 class="text-ink">
 			{title}
 		</h1>

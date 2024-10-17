@@ -10,8 +10,8 @@
 
 <div class="fixed inset-0 z-[-1] bg-paper" />
 
-<article class="mx-auto max-w-[65ch] px-4">
-	<div class="prose -my-24 rounded-xl bg-paper-raised px-4 py-32 dark:prose-invert">
+<article class="mx-auto max-w-[65ch] px-8 py-32">
+	<div class="prose -my-24 dark:prose-invert">
 		<div class="flex items-center gap-4">
 			<img
 				src="/projects/wavefocus/icon.webp"
