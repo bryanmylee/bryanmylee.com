@@ -5,12 +5,14 @@
 	import NotionHeading from './NotionHeading.svelte';
 	import NotionImageBlock from './NotionImageBlock.svelte';
 	import NotionRichTextArray from './NotionRichTextArray.svelte';
+	import { getHeadingBlockOrNull } from '$lib/utils/notion';
 
 	export let block: BlockObjectResponse;
+	$: headingBlock = getHeadingBlockOrNull(block);
 </script>
 
-{#if block.type === 'heading_1' || block.type === 'heading_2' || block.type === 'heading_3'}
-	<NotionHeading {block} />
+{#if headingBlock}
+	<NotionHeading heading={headingBlock} />
 {:else if block.type === 'paragraph'}
 	<p>
 		<NotionRichTextArray richText={block.paragraph.rich_text} />

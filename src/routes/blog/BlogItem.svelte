@@ -8,7 +8,7 @@
 
 <a
 	href="/blog/{slug}"
-	class="prose block rounded-xl bg-paper-raised p-4 transition-shadow hover:shadow-lg prose-h2:text-xl"
+	class="border-ink-200 prose block rounded-xl border bg-paper-raised p-4 transition-shadow hover:shadow-lg prose-h2:text-xl"
 >
 	<h2 class="!text-lg text-ink">{title}</h2>
 	<p class="-mt-4 leading-none">

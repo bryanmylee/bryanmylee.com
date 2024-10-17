@@ -16,13 +16,13 @@
 
 <div
 	class={twMerge(
-		'w-full min-w-0 max-w-[calc(65ch-4rem)] rounded-xl bg-paper-raised p-4 text-ink',
+		'border-ink-200 w-full min-w-0 max-w-[calc(65ch-4rem)] rounded-xl border bg-paper-raised p-4 text-ink',
 		className,
 	)}
 >
 	<LinkedHeading depth={1} text={metadata.title} class="text-xl font-bold" />
 	<sub class="text-sm text-ink-700">{metadata.subtitle}</sub>
-	<hr class="my-4" />
+	<hr class="border-ink-300 my-4" />
 	{#if metadata.skills !== undefined}
 		<ul class="my-4 flex gap-2">
 			{#each metadata.skills as skill}

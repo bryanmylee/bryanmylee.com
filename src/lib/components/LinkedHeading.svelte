@@ -3,7 +3,7 @@
 	import { getHeadingId } from '$lib/utils/heading';
 
 	export let depth: 1 | 2 | 3;
-	const tag = `h${depth}`;
+	const tag = `h${depth + 1}`;
 
 	export let text: string;
 	const id = getHeadingId(text);

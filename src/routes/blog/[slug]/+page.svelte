@@ -23,9 +23,9 @@
 <AsideTableOfContents {headings} />
 <div class="prose mx-auto max-w-[65ch] px-4 dark:prose-invert prose-h1:text-3xl">
 	<article class="-mt-24 bg-paper-raised px-4 py-32">
-		<p class="text-sm font-medium text-ink-500">{formattedDate}</p>
+		<p class="text-xs font-medium text-ink-500">{formattedDate}</p>
 		<h1 class="text-ink">{title}</h1>
-		<p class="-mt-4 text-base leading-none text-ink-700">{subtitle}</p>
+		<p class=" -mt-4 mb-8 text-sm leading-none text-ink-700">{subtitle}</p>
 		<NotionContent {content} />
 	</article>
 </div>

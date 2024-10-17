@@ -49,31 +49,33 @@ export type HeadingBlockObjectResponse = (
 	depth: 1 | 2 | 3;
 };
 
+export const getHeadingBlockOrNull = (
+	block: BlockObjectResponse,
+): HeadingBlockObjectResponse | null => {
+	if (block.type === 'heading_1') {
+		return {
+			...block,
+			depth: 1 as const,
+			heading: block.heading_1,
+		};
+	}
+	if (block.type === 'heading_2') {
+		return {
+			...block,
+			depth: 2 as const,
+			heading: block.heading_2,
+		};
+	}
+	if (block.type === 'heading_3') {
+		return {
+			...block,
+			depth: 3 as const,
+			heading: block.heading_3,
+		};
+	}
+	return null;
+};
+
 export const getHeadingBlocks = (blocks: BlockObjectResponse[]): HeadingBlockObjectResponse[] => {
-	return blocks
-		.map((block) => {
-			if (block.type === 'heading_1') {
-				return {
-					...block,
-					depth: 1 as const,
-					heading: block.heading_1,
-				};
-			}
-			if (block.type === 'heading_2') {
-				return {
-					...block,
-					depth: 2 as const,
-					heading: block.heading_2,
-				};
-			}
-			if (block.type === 'heading_3') {
-				return {
-					...block,
-					depth: 3 as const,
-					heading: block.heading_3,
-				};
-			}
-			return null;
-		})
-		.filter(isNonNullable);
+	return blocks.map(getHeadingBlockOrNull).filter(isNonNullable);
 };
