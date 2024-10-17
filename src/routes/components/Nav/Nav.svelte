@@ -3,7 +3,7 @@
 	import Logo from '$lib/icons/Logo.svelte';
 	import { useJsEnabled } from '$lib/utils/accessibility';
 	import { getInk, getPaper } from '$lib/utils/color';
-	import { lerp } from 'three/src/math/MathUtils';
+	import { lerp } from '$lib/utils/math';
 	import { useBgFillRatio, useIsDark } from '../../context';
 	import NavLinksMenu from './NavLinksMenu.svelte';
 	import NavThemeToggle from './NavThemeToggle.svelte';
