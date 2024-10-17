@@ -11,10 +11,10 @@
 		class="toc-trigger group relative opacity-0 transition-opacity hover:opacity-100 xl:opacity-100"
 	>
 		<div
-			class="pointer-events-none absolute bottom-2 left-2 top-0 w-72 group-hover:pointer-events-auto xl:pointer-events-auto xl:left-full xl:-translate-x-full"
+			class="pointer-events-none absolute bottom-2 left-2 top-0 w-72 group-hover:pointer-events-auto xl:pointer-events-auto xl:left-full xl:translate-x-[calc(-100%-1rem)]"
 		>
 			<aside
-				class="mb-4 h-full max-h-fit max-w-prose overflow-auto rounded-lg border border-ink-200 bg-paper-raised shadow-md xl:border-0 xl:shadow-none"
+				class="mb-4 h-full max-h-fit max-w-prose overflow-auto rounded-lg border border-ink-200 bg-paper-raised shadow-md xl:border-transparent xl:shadow-none"
 			>
 				<ul class="flex flex-col p-2">
 					{#each headings as heading}
