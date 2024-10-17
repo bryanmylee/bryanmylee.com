@@ -26,12 +26,18 @@
 			</a>
 		{/if}
 	</h2>
-	<sub class="text-sm text-ink-600">{from} &mdash; {to}</sub>
+	<p class="mt-1 text-sm text-ink-600">{from} &mdash; {to}</p>
 	<hr class="border-ink-300 mt-4" />
 	<h3 class="mt-4 font-semibold">{title}</h3>
 	<ul class="ml-4 mt-2 list-disc space-y-4 leading-7">
 		{#each details as detail}
-			<li>{detail}</li>
+			<li>{@html detail}</li>
 		{/each}
 	</ul>
 </div>
+
+<style lang="postcss">
+	li :global(strong) {
+		font-weight: theme(fontWeight.semibold);
+	}
+</style>

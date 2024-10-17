@@ -21,7 +21,7 @@
 	)}
 >
 	<LinkedHeading depth={1} text={metadata.title} class="text-xl font-bold" />
-	<sub class="text-sm text-ink-700">{metadata.subtitle}</sub>
+	<p class="mt-1 text-sm text-ink-700">{metadata.subtitle}</p>
 	<hr class="border-ink-300 my-4" />
 	{#if metadata.skills !== undefined}
 		<ul class="my-4 flex gap-2">
