@@ -13,6 +13,7 @@
 	import { transformed } from '$lib/utils/store';
 	import { useLocalStorage } from '$lib/utils/storage';
 	import { parseTheme } from '$lib/utils/theme';
+	import { onNavigate } from '$app/navigation';
 
 	const theme = transformed(
 		useLocalStorage('theme'),
@@ -41,11 +42,27 @@
 		const logger = initializeLogger(app);
 		loggerStore.set(logger);
 	});
+
+	/**
+	 * Global view transition.
+	 */
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return;
+
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
 </script>
 
 <svelte:head>
 	<title>{$page.data.title ? $page.data.title + ' | ' : ''}Bryan Lee</title>
 	<meta name="description" content={$page.data.subtitle ?? 'Meet your next creative developer.'} />
+	<!-- configure dark mode before first render -->
+	<!-- configure dark mode before first render -->
 	<script>
 		(function () {
 			try {

@@ -22,6 +22,14 @@
 	scrollbar-color: theme(colors.ink.200) theme(colors.transparent);
 }
 
+@media (prefers-reduced-motion) {
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation: none !important;
+	}
+}
+
 * {
 	&::-webkit-scrollbar {
 		width: theme(width.3);
