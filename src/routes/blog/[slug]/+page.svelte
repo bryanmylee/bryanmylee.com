@@ -24,7 +24,7 @@
 <div class="prose mx-auto max-w-[65ch] px-4 dark:prose-invert prose-h1:text-3xl">
 	<article class="-mt-24 bg-paper-raised px-4 py-32">
 		<h1 class="text-ink">{title}</h1>
-		<p class="-mt-2 text-sm leading-none text-ink-700">{subtitle}</p>
+		<p class="-mt-2 text-sm text-ink-700">{subtitle}</p>
 		<p class="-mt-0 text-xs font-medium leading-none text-ink-500">{formattedDate}</p>
 		<NotionContent {content} />
 	</article>
