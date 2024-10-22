@@ -61,9 +61,8 @@
 <svelte:head>
 	<title>{$page.data.title ? $page.data.title + ' | ' : ''}Bryan Lee</title>
 	<meta name="description" content={$page.data.subtitle ?? 'Meet your next creative developer.'} />
-	<!-- configure dark mode before first render -->
-	<!-- configure dark mode before first render -->
 	<script>
+		// configure dark mode before first render
 		(function () {
 			try {
 				const theme = localStorage.getItem('theme');

@@ -42,6 +42,17 @@
 		background-color: theme(colors.ink.200);
 		border-radius: theme(borderRadius.full);
 	}
+
+	&:focus-visible {
+		outline-style: solid;
+		outline-width: 2px;
+
+		.dark & {
+			outline-color: theme(colors.blue.300);
+		}
+	}
+
+	border-radius: theme(borderRadius.sm);
 }
 
 :root.dark {
