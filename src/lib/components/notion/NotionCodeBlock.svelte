@@ -12,4 +12,4 @@
 </script>
 
 <!-- prettier-ignore -->
-<pre class="text-xs"><code>{#if hljsResult.isOk()}{@html hljsResult.unwrap().value}{:else}{plainCode}{/if}</code></pre>
+<pre class="text-xs bg-gray-800 dark:bg-neutral-900"><code>{#if hljsResult.isOk()}{@html hljsResult.unwrap().value}{:else}{plainCode}{/if}</code></pre>

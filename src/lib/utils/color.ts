@@ -1,7 +1,7 @@
 import type { Vec3 } from './math';
 
 const INK_SHADES = ['DEFAULT', '900', '800', '700', '600', '500', '400', '300', '200'] as const;
-const PAPER_SHADES = ['DEFAULT', 'raised'] as const;
+const PAPER_SHADES = ['DEFAULT', 'raised', 'raised-high'] as const;
 
 export type InkShade = (typeof INK_SHADES)[number];
 export type PaperShade = (typeof PAPER_SHADES)[number];
@@ -33,9 +33,11 @@ export const getInk = (isDark: boolean) => (isDark ? INK_DARK : INK_LIGHT);
 export const PAPER_LIGHT: Record<PaperShade, Vec3> = {
 	DEFAULT: [249, 250, 251],
 	raised: [255, 255, 255],
+	'raised-high': [255, 255, 255],
 };
 export const PAPER_DARK: Record<PaperShade, Vec3> = {
 	DEFAULT: [18, 18, 18],
 	raised: [23, 23, 23],
+	'raised-high': [32, 32, 32],
 };
 export const getPaper = (isDark: boolean) => (isDark ? PAPER_DARK : PAPER_LIGHT);
