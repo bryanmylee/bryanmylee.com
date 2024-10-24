@@ -1,0 +1,14 @@
+---
+title: Natural Light
+subtitle: Beautiful screen lighting for video calls.
+links:
+  - label: GitHub
+    href: https://github.com/bryanmylee/natural-light
+  - label: Try it out
+    href: https://natural-light.bryanmylee.com
+images:
+  - src: ./natural-light.png
+    alt: a screenshot of the natural light application
+---
+
+A frontend project to build the **most intuitive and beautiful** experience possible for the simple task of using a computer screen to simulate natural lighting.

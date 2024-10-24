@@ -19,6 +19,7 @@ export interface ProjectImage {
 }
 
 export const SORTED_PROJECT_CONTENT_NAMES = [
+	'natural-light',
 	'svelte-headless-table',
 	'audio-thumbnail-generator',
 	'rust-multiplayer',
