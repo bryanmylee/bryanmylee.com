@@ -24,7 +24,7 @@
 	<p class="mt-1 text-sm text-ink-700">{metadata.subtitle}</p>
 	<hr class="my-4 border-ink-300" />
 	{#if metadata.skills !== undefined}
-		<ul class="my-4 flex gap-2">
+		<ul class="my-4 flex flex-wrap gap-2">
 			{#each metadata.skills as skill}
 				<li><SkillIcon {skill} /></li>
 			{/each}
