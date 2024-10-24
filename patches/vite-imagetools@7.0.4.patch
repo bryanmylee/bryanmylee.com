@@ -1,0 +1,49 @@
+diff --git a/dist/index.js b/dist/index.js
+index 812b53d4e401879101313a8e5197315faab1e354..ef82b5fd9ca8abfe33307ac0ce6650a93f7724d7 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -62,7 +62,7 @@ function imagetools(userOptions = {}) {
+             const lazyLoadImage = () => {
+                 if (lazyImg)
+                     return lazyImg;
+-                return (lazyImg = sharp(pathname));
++                return (lazyImg = sharp(pathname, { animated: true }));
+             };
+             let lazyMetadata;
+             const lazyLoadMetadata = async () => {
+@@ -102,7 +102,7 @@ function imagetools(userOptions = {}) {
+                 warn: (msg) => this.warn(msg),
+                 error: (msg) => this.error(msg)
+             };
+-            const imageBuffer = await img.clone().toBuffer();
++            const imageBuffer = await img.clone().toBuffer().catch(() => readFile(pathname));
+             const imageHash = hash([imageBuffer]);
+             for (const config of imageConfigs) {
+                 const id = generateImageID(config, imageHash);
+@@ -121,7 +121,7 @@ function imagetools(userOptions = {}) {
+                     const res = await applyTransforms(transforms, img, pluginOptions.removeMetadata);
+                     metadata = res.metadata;
+                     if (cacheOptions.enabled) {
+-                        await writeFile(`${cacheOptions.dir}/${id}`, await res.image.toBuffer());
++                        await writeFile(`${cacheOptions.dir}/${id}`, await res.image.toBuffer().catch(() => readFile(pathname)));
+                     }
+                     else {
+                         image = res.image;
+@@ -130,7 +130,7 @@ function imagetools(userOptions = {}) {
+                 generatedImages.set(id, { image, metadata });
+                 if (directives.has('inline')) {
+                     metadata.src = `data:image/${metadata.format};base64,${(image
+-                        ? await image.toBuffer()
++                        ? await image.toBuffer().catch(() => readFile(pathname))
+                         : await readFile(`${cacheOptions.dir}/${id}`)).toString('base64')}`;
+                 }
+                 else if (viteConfig.command === 'serve') {
+@@ -139,7 +139,7 @@ function imagetools(userOptions = {}) {
+                 else {
+                     const fileHandle = this.emitFile({
+                         name: basename(pathname, extname(pathname)) + `.${metadata.format}`,
+-                        source: image ? await image.toBuffer() : await readFile(`${cacheOptions.dir}/${id}`),
++                        source: image ? await image.toBuffer().catch(() => readFile(pathname)) : await readFile(`${cacheOptions.dir}/${id}`),
+                         type: 'asset'
+                     });
+                     metadata.src = `__VITE_ASSET__${fileHandle}__`;

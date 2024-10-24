@@ -1,5 +1,10 @@
 lockfileVersion: '6.0'
 
+patchedDependencies:
+  vite-imagetools@7.0.4:
+    hash: l6tloq4hagh33cfxd5btvs4mye
+    path: patches/vite-imagetools@7.0.4.patch
+
 devDependencies:
   '@notionhq/client':
     specifier: ^2.2.3
@@ -1335,7 +1340,7 @@ packages:
       svelte: 4.2.0
       svelte-parse-markup: 0.1.5(svelte@4.2.0)
       vite: 5.4.2
-      vite-imagetools: 7.0.4
+      vite-imagetools: 7.0.4(patch_hash=l6tloq4hagh33cfxd5btvs4mye)
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -3728,7 +3733,7 @@ packages:
       unist-util-stringify-position: 2.0.3
     dev: true
 
-  /vite-imagetools@7.0.4:
+  /vite-imagetools@7.0.4(patch_hash=l6tloq4hagh33cfxd5btvs4mye):
     resolution: {integrity: sha512-C9C7b2p/8/TCN2g26tE9haoer2i8K4x0v2RXUiHsIjiz221vQuKItCQ+VyiVCsUMPXfJC/tlZsmCZVBz5jh7uA==}
     engines: {node: '>=18.0.0'}
     dependencies:
@@ -3738,6 +3743,7 @@ packages:
     transitivePeerDependencies:
       - rollup
     dev: true
+    patched: true
 
   /vite@5.4.2:
     resolution: {integrity: sha512-dDrQTRHp5C1fTFzcSaMxjk6vdpKvT+2/mIdE07Gw2ykehT49O0z/VHS3zZ8iV/Gh8BJJKHWOe5RjaNrW5xf/GA==}
