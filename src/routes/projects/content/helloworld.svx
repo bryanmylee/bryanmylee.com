@@ -6,14 +6,10 @@ links:
   - label: Read about us
     href: https://news.smu.edu.sg/news/2021/07/02/smus-computing-and-information-systems-team-emerged-champions-dsta-hackathon
 images:
-  - src: /projects/helloworld/ar_portrait.webp
+  - src: ./helloworld-ar.webp
     alt: a screenshot of an augmented reality application I built called HelloWorld
-    width: 828
-    height: 1792
-  - src: /projects/helloworld/map.webp
+  - src: ./helloworld-map.webp
     alt: a screenshot of the discover page, which includes a map, for an augmented reality application I built called HelloWorld
-    width: 828
-    height: 1792
 ---
 
 ### **CODE_EXP 2021** · 1st Place

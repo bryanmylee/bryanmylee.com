@@ -5,8 +5,6 @@ links:
   - label: Visit demo
     href: https://threejs-basics-bryanmylee.vercel.app
 images:
-  - src: /projects/threejs-journey.webp
+  - src: ./threejs-journey.webp
     alt: A screenshot of my ThreeJS Journey project
-    width: 1116
-    height: 885
 ---

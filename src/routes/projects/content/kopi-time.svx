@@ -6,10 +6,8 @@ links:
   - label: Read our report
     href: /projects/cs302-final-report.pdf
 images:
-  - src: /projects/cs302-kopi-time--profile.webp
+  - src: ./kopi-time-profile.png
     alt: a screenshot of the profile screen on Kopi Time
-    width: 937
-    height: 560
 ---
 
 Kopi Time is a digital marketplace for coffee-related art and collectables.

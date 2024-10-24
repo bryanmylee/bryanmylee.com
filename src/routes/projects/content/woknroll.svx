@@ -6,18 +6,12 @@ links:
   - label: View our slides
     href: /projects/cs206-final-pres.pdf
 images:
-  - src: /projects/cs206-woknroll--add-review.webp
+  - src: ./woknroll-add-review.png
     alt: the add review page of Wok N Roll
-    width: 373
-    height: 724
-  - src: /projects/cs206-woknroll--home.webp
+  - src: ./woknroll-home.png
     alt: the home page of Wok N Roll
-    width: 373
-    height: 724
-  - src: /projects/cs206-woknroll--review.webp
+  - src: ./woknroll-review.png
     alt: the review page of Wok N Roll
-    width: 373
-    height: 724
 ---
 
 We conducted market research and discovered an unfulfilled niche for a comprehensive database and search engine for hawker food in Singapore.

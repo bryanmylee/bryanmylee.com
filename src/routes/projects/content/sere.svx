@@ -3,10 +3,8 @@ title: Sere
 subtitle: A cross-platform movement shooter.
 skills: [godot]
 images:
-  - src: /projects/sere/demo.gif
+  - src: ./sere-demo.gif
     alt: a recording of a third person shooter game
-    width: 726
-    height: 448
 ---
 
 An experimental movement shooter that runs natively on desktop Windows and macOS, on mobile iOS and Android, and on browsers as a WebGL game.

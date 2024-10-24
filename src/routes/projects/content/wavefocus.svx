@@ -14,10 +14,8 @@ links:
   - label: Read about its cloud architecture
     href: /blog/serverless-scheduled-push-notifications
 images:
-  - src: /projects/wavefocus/android_feature.webp
+  - src: ./wavefocus.webp
     alt: a banner with multiple android phones using my pomodor app
-    width: 2040
-    height: 1000
 ---
 
 **Wave** is a simple pomodoro timer to help you stay focused while working. It alternates between a 25 minute focus mode and a 5 minute break mode while displaying beautiful animations.

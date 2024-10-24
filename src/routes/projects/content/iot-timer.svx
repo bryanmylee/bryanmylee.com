@@ -6,10 +6,8 @@ links:
   - label: GitHub
     href: https://github.com/bryanmylee/wavefocus/tree/main/iot
 images:
-  - src: /projects/wavefocus/iot-timer.webp
+  - src: ./iot-timer.webp
     alt: a photo of the microcontroller with the current timer time.
-    width: 1008
-    height: 756
 ---
 
 A self-led experiment with microcontroller development using the Arduino framework on an ESP32.

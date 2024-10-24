@@ -6,10 +6,8 @@ links:
   - label: GitHub
     href: https://github.com/bryanmylee/godot-multiplayer
 images:
-  - src: /projects/rust-multiplayer/server_authoritative_multiplayer.gif
+  - src: ./rust-multiplayer-demo.gif
     alt: a recording of a multiplayer testing session
-    width: 960
-    height: 649
 ---
 
 A cross-platform authentication and matchmaking service written in Rust, tailored for the Godot game engine.

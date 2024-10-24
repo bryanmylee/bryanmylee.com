@@ -6,10 +6,8 @@ links:
   - label: GitHub
     href: https://github.com/bryanmylee/rust-leptos-llama
 images:
-  - src: /projects/rust-leptos-llama/leptos.webp
+  - src: ./rust-leptos-llama.webp
     alt: a screenshot of a chat with the chatbot
-    width: 1334
-    height: 972
 ---
 
 I explored building a full-stack application purely in Rust.

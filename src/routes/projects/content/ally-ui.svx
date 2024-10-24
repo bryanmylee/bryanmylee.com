@@ -7,8 +7,6 @@ links:
   - label: GitHub
     href: https://github.com/ally-ui/ally-ui
 images:
-  - src: /projects/ally-ui/ally-ui-dark.webp
+  - src: ./ally-ui-dark.webp
     alt: a screenshot of the documentation page for Ally UI
-    width: 1221
-    height: 755
 ---

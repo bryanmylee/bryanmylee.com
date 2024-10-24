@@ -2,14 +2,10 @@
 title: Slipbox
 subtitle: Never forget video ideas you find.
 images:
-  - src: /projects/slipbox/slipbox-home.webp
+  - src: ./slipbox-home.webp
     alt: a screenshot of the homescreen of the Slipbox app
-    width: 501
-    height: 1085
-  - src: /projects/slipbox/slipbox-saving.webp
+  - src: ./slipbox-saving.webp
     alt: a screenshot of saving an idea to Slipbox
-    width: 501
-    height: 1085
 ---
 
 Slipbox is a cross-platform organizing tool for the modern short-form video-focused Internet user. It was a venture to build a platform that saves videos seamlessly, searches videos quickly, and reminds users of their saved videos effectively.

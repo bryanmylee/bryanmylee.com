@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
-	import type { Image } from './+page.server';
 	import ExampleImage from './ExampleImage.svelte';
+	import type { ProjectImage } from './content';
 
-	export let images: Image[];
+	export let images: ProjectImage[];
 
 	let className = '';
 	export { className as class };

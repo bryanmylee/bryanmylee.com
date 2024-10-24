@@ -8,16 +8,12 @@ links:
   - label: GitHub
     href: https://github.com/bryanmylee/audio-diffusion
   - label: View our slides
-    href: /projects/audio-thumbnail-generator/cs424-final-presentation.pdf
+    href: /projects/cs424-final-presentation.pdf
 images:
-  - src: /projects/audio-thumbnail-generator/siren_big.webp
+  - src: ./audio-thumbnail-generator-siren.webp
     alt: a screenshot of a generated thumbnail for an audio clip of a siren
-    width: 913
-    height: 803
-  - src: /projects/audio-thumbnail-generator/jackhammer_big.webp
+  - src: ./audio-thumbnail-generator-jackhammer.webp
     alt: a screenshot of a generated thumbnail for an audio clip of a jackhammer
-    width: 913
-    height: 803
 ---
 
 We built a prototype application that uses stable diffusion models combined with traditional classification models to solve new problems to generate image content from audio files.

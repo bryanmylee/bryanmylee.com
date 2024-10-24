@@ -7,10 +7,8 @@ links:
   - label: GitHub
     href: https://github.com/bryanmylee/svelte-headless-table
 images:
-  - src: /projects/svelte-headless-table/svelte-headless-table.webp
+  - src: ./svelte-headless-table.png
     alt: a screenshot of the documentation page for Svelte Headless Table
-    width: 1221
-    height: 714
 ---
 
 Build and design powerful datagrid experiences while retaining 100% control over styles and markup.

@@ -7,10 +7,8 @@ links:
   - label: Read our report
     href: /projects/cs426-final-report.pdf
 images:
-  - src: /projects/voting/voting.webp
+  - src: ./voting.png
     alt: a screenshot of the simulation environment
-    width: 1964
-    height: 1232
 ---
 
 We modelled various gerrymandering and Group Representation Constituency allocation strategies using an agent-based simulation to explore the impacts of voter flexibility and distribution on the fairness of representation.
