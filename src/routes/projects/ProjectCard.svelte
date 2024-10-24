@@ -1,14 +1,14 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
 	import LinkedHeading from '$lib/components/LinkedHeading.svelte';
-	import SkillIcon from '$lib/components/SkillIcon.svelte';
+	import SkillIcon from '$lib/components/SkillIcon/SkillIcon.svelte';
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
 	import { twMerge } from 'tailwind-merge';
-	import type { Metadata } from './+page.server';
+	import type { ProjectMetadata } from './content';
 
 	export let html: string;
 
-	export let metadata: Metadata;
+	export let metadata: ProjectMetadata;
 
 	let className = '';
 	export { className as class };
@@ -16,13 +16,13 @@
 
 <div
 	class={twMerge(
-		'border-ink-200 w-full min-w-0 max-w-[calc(65ch-4rem)] rounded-xl border bg-paper-raised p-4 text-ink',
+		'w-full min-w-0 max-w-[calc(65ch-4rem)] rounded-xl border border-ink-200 bg-paper-raised p-4 text-ink',
 		className,
 	)}
 >
 	<LinkedHeading depth={1} text={metadata.title} class="text-xl font-bold" />
 	<p class="mt-1 text-sm text-ink-700">{metadata.subtitle}</p>
-	<hr class="border-ink-300 my-4" />
+	<hr class="my-4 border-ink-300" />
 	{#if metadata.skills !== undefined}
 		<ul class="my-4 flex gap-2">
 			{#each metadata.skills as skill}

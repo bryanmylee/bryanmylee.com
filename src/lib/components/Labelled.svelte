@@ -5,17 +5,9 @@
 
 <svelte:element this={as} class="group relative" {...$$restProps}>
 	<slot />
-	<span class="label">
+	<span
+		class="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 scale-0 whitespace-nowrap rounded-lg bg-paper-raised-high p-2 text-xs font-semibold text-ink shadow transition-transform group-hover:block group-hover:scale-100"
+	>
 		{label}
 	</span>
 </svelte:element>
-
-<style lang="postcss">
-	.label {
-		@apply z-10 rounded-lg bg-paper p-2 text-xs font-semibold text-ink shadow;
-		@apply absolute bottom-full left-1/2 mb-2 -translate-x-1/2 scale-0;
-		@apply group-hover:block group-hover:scale-100;
-		@apply pointer-events-none whitespace-nowrap;
-		@apply transition-transform;
-	}
-</style>

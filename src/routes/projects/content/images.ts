@@ -3,20 +3,19 @@ export const PROJECT_CONTENT_IMAGES = import.meta.glob(
 	{
 		eager: true,
 		query: { enhanced: true },
+		import: 'default',
 	},
-) satisfies Record<string, ImageModule>;
+) satisfies Record<string, Image>;
 
-export type ImageModule = {
-	default: {
-		sources: {
-			avif: string;
-			webp: string;
-			png: string;
-		};
-		img: {
-			src: string;
-			w: number;
-			h: number;
-		};
+type Image = {
+	sources: {
+		avif: string;
+		webp: string;
+		png: string;
+	};
+	img: {
+		src: string;
+		w: number;
+		h: number;
 	};
 };

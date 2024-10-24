@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ProjectCard from './ProjectCard.svelte';
 	import ProjectImageLayout from './ProjectImageLayout.svelte';
-	import { max, sum } from '$lib/utils/math';
+	import { sum } from '$lib/utils/math';
 	import { PROJECT_CONTENT_IMAGES } from './content/images';
 	import type { ProjectMetadata } from './content';
 
@@ -13,8 +13,8 @@
 		images === undefined
 			? []
 			: images.map((image) => {
-					const imageModule = PROJECT_CONTENT_IMAGES[image.src];
-					return imageModule.default.img.w / imageModule.default.img.h;
+					const imageData = PROJECT_CONTENT_IMAGES[image.src];
+					return imageData.img.w / imageData.img.h;
 				});
 	$: imagesTotalRatio = sum(imageRatios);
 	$: insetLeftMargin =

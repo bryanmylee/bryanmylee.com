@@ -1,4 +1,4 @@
-<svg width="346" height="346" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+<svg viewBox="0 0 346 346" width="346" height="346" xmlns="http://www.w3.org/2000/svg">
  <g>
   <title>Layer 1</title>
   <g stroke="null" id="svg_1">
@@ -12,5 +12,4 @@
    <path stroke="null" id="svg_9" fill="#5382A1" d="m143.84543,326.41466c55.60584,3.55947 140.99491,-1.9749 143.01725,-28.28604c0,0 -3.88738,9.97434 -45.95524,17.89557c-47.46075,8.93155 -105.99689,7.88876 -140.71529,2.16464c0.00083,-0.00083 7.10729,5.88225 43.65327,8.22582"/>
   </g>
  </g>
-
 </svg>
