@@ -42,12 +42,12 @@
 	{#if $jsEnabled}
 		{#each sections as { progress, stage }, index}
 			{#if index === 0}
-				<div class="absolute left-0 right-0 h-[200vh]">
+				<div class="absolute left-0 right-0 h-[200lvh]">
 					<WebProjects />
 				</div>
 			{:else if index === 1}
 				<div
-					class="absolute left-0 right-0 h-[200vh]"
+					class="absolute left-0 right-0 h-[200lvh]"
 					style:opacity={stage === 'active' ? interpolate([0, 0.2, 1], [0, 1, 1], progress) : 0}
 				>
 					<MobileProjects {progress} />
@@ -77,10 +77,10 @@
 			</div>
 		{/if}
 	{:else}
-		<div class="relative h-[125vh]">
+		<div class="relative h-[125lvh]">
 			<WebProjects />
 		</div>
-		<div class="relative h-[200vh]">
+		<div class="relative h-[200lvh]">
 			<MobileProjects />
 		</div>
 		<div class="absolute inset-0">

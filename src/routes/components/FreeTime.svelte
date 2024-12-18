@@ -33,8 +33,8 @@
 						src="/free-time/nature.webp"
 						alt="my partner in a nature reserve"
 						rotate="-30deg"
-						dx="-80vw"
-						dy="-80vh"
+						dx="-80lvw"
+						dy="-80lvh"
 					/>
 				</div>
 				<div style:transform="rotate(7deg)" class="order-2">
@@ -42,8 +42,8 @@
 						src="/free-time/concert.webp"
 						alt="a side profile silhouette of an artist holding a microphone in a concert"
 						rotate="20deg"
-						dx="0vw"
-						dy="-80vh"
+						dx="0lvw"
+						dy="-80lvh"
 					/>
 				</div>
 				<div style:transform="rotate(-8deg)" class="order-3">
@@ -51,8 +51,8 @@
 						src="/free-time/climb.webp"
 						alt="me bouldering a cliff feature"
 						rotate="-20deg"
-						dx="-100vw"
-						dy="20vh"
+						dx="-100lvw"
+						dy="20lvh"
 					/>
 				</div>
 				<div style:transform="rotate(15deg)" class="order-4 w-full md:order-2">
@@ -61,8 +61,8 @@
 						alt="my beagle and dachshund staring at the camera"
 						aspect="1/1"
 						rotate="20deg"
-						dx="80vw"
-						dy="-40vh"
+						dx="80lvw"
+						dy="-40lvh"
 					/>
 				</div>
 				<div style:transform="rotate(-8deg) translate(0, -30px)" class="order-5">
@@ -71,8 +71,8 @@
 						alt="my partner and I in the mirror of a diner"
 						aspect="1/1"
 						rotate="-20deg"
-						dx="-80vw"
-						dy="80vh"
+						dx="-80lvw"
+						dy="80lvh"
 					/>
 				</div>
 				<div style:transform="rotate(10deg)" class="order-6">
@@ -80,8 +80,8 @@
 						src="/free-time/ocean.webp"
 						alt="my partner walking along a rock feature alongside the ocean"
 						rotate="-20deg"
-						dx="80vw"
-						dy="80vh"
+						dx="80lvw"
+						dy="80lvh"
 					/>
 				</div>
 			</figure>

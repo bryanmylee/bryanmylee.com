@@ -12,7 +12,7 @@
 </script>
 
 <section
-	class="mx-auto flex h-[calc(100vh-7rem)] w-[65ch] flex-col items-start justify-center p-4 text-ink"
+	class="mx-auto flex h-[calc(100lvh-7rem)] w-[65ch] flex-col items-start justify-center p-4 text-ink"
 >
 	<div class="flex flex-col gap-4">
 		<p class="font-mono text-7xl font-semibold tabular-nums">{$page.status}</p>

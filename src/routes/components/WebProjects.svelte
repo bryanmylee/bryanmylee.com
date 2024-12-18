@@ -54,7 +54,7 @@
 <style lang="postcss">
 	img {
 		@apply absolute bottom-0 brightness-75 drop-shadow-2xl;
-		border-radius: min(1vw, 10px);
+		border-radius: min(1lvw, 10px);
 		&.wide {
 			width: min(40%, 700px);
 		}

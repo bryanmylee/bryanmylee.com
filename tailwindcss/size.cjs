@@ -12,8 +12,8 @@ const sizePlugin = plugin(({ addUtilities, theme, e }) => {
 	addUtilities(Object.fromEntries(utilityEntries));
 	addUtilities({
 		'.wh-screen': {
-			width: '100vw',
-			height: '100vh',
+			width: '100lvw',
+			height: '100lvh',
 		},
 	});
 });

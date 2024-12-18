@@ -31,7 +31,7 @@
 				</p>
 			</div>
 			<div
-				class="absolute top-[50vh] h-screen w-full translate-y-[16vw]"
+				class="absolute top-[50lvh] h-screen w-full translate-y-[16lvw]"
 				in:fade={{ delay: 1000, duration: 1000 }}
 			>
 				<ScrollDownIndicator {progress} class="mx-auto w-4/5 2xl:w-1/2" />

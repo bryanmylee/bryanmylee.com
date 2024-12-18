@@ -21,13 +21,13 @@
 			<NestedCubes {progress} />
 		</div>
 	{:else}
-		<div class="h-[200vh]">
+		<div class="h-[200lvh]">
 			<NestedCubes />
 		</div>
 	{/if}
 	<div
 		class="absolute inset-0 flex items-center justify-center"
-		style:transform={$jsEnabled ? '' : 'translateY(-50vh)'}
+		style:transform={$jsEnabled ? '' : 'translateY(-50lvh)'}
 	>
 		<p class="text-center font-bold leading-tight text-white drop-shadow-xl text-dyn-8">
 			I build

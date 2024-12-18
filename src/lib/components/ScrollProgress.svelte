@@ -108,8 +108,8 @@
 <section
 	bind:this={scrollElement}
 	bind:clientHeight={totalDistancePx}
-	style:height="{scrollDistance + topPadding + bottomPadding}vh"
-	style:margin-top="{-topInset}vh"
+	style:height="{scrollDistance + topPadding + bottomPadding}lvh"
+	style:margin-top="{-topInset}lvh"
 	class={twMerge('relative z-auto', className)}
 	use:intersection={visible}
 >

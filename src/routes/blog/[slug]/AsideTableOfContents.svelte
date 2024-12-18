@@ -37,7 +37,7 @@
 
 <style lang="postcss">
 	.toc-trigger {
-		width: max(calc((100vw - 65ch) / 2), 1rem);
-		height: calc(100vh - theme(height.32));
+		width: max(calc((100lvw - 65ch) / 2), 1rem);
+		height: calc(100lvh - theme(height.32));
 	}
 </style>
