@@ -21,7 +21,7 @@ export const WORK_EXPERIENCE: Work[] = [
 			'Key contributor as both a programmer and technical lead for many core systems on our flagship product: a diagram-based navigation tool, a reactive in-database spreadsheet, an attribute-based access control system, and much more.',
 		],
 		homepage: 'https://charter.space/',
-		wideLayout: true,
+		// wideLayout: true,
 	},
 	{
 		companyName: 'Meta',

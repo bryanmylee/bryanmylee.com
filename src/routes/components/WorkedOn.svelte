@@ -61,7 +61,7 @@
 					style:opacity={1 - fadeOutProgress}
 				>
 					<p class="text-center font-bold leading-tight text-white drop-shadow-xl text-dyn-8">
-						I worked on
+						I work on
 						{#key word}
 							<span
 								class="inline-block w-[6ch] whitespace-nowrap text-left"
@@ -86,7 +86,7 @@
 		<div class="absolute inset-0">
 			<div class="sticky top-0 flex h-screen items-center justify-center">
 				<p class="text-center font-bold leading-tight text-white text-dyn-8">
-					I worked on<br />
+					I work on<br />
 					<GradientSpan color={CONTENT[0].color}>{CONTENT[0].word}</GradientSpan><br />
 					&
 					<GradientSpan color={CONTENT[1].color}>{CONTENT[1].word}</GradientSpan><br />

@@ -12,7 +12,10 @@
 	<h1 id="work" class="my-8 scroll-mt-28 text-center text-3xl font-bold text-ink">
 		Work Experience
 	</h1>
-	<div class="tw-container mx-auto grid gap-4 p-4 md:grid-cols-2 xl:grid-cols-3">
+	<p class="text-balance my-8 px-8 text-center italic text-ink-600">
+		Proud generalist with years of experience bringing products to life.
+	</p>
+	<div class="tw-container mx-auto grid gap-4 p-4 lg:grid-cols-2 2xl:grid-cols-3">
 		{#each WORK_EXPERIENCE as experience}
 			<WorkCard {...experience} />
 		{/each}
