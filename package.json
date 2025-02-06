@@ -61,5 +61,6 @@
 		"patchedDependencies": {
 			"vite-imagetools@7.0.4": "patches/vite-imagetools@7.0.4.patch"
 		}
-	}
+	},
+	"packageManager": "pnpm@8.1.1+sha512.5cbcdc7383bc62ba9f435faa8cfb4718315c7547a7a36664fa4bae49cf426a022263ccb8ba19ea43607b8d6f2d8304033667a17b0199baaac0a2c9200a46d39f"
 }
