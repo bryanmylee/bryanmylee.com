@@ -17,7 +17,7 @@
 				id="contact"
 				class="scroll-mt-40 text-center font-bold leading-tight text-ink drop-shadow-2xl text-dyn-6"
 			>
-				And I'd like to work with you.
+				and I'd like to work with you.
 			</h1>
 			<Button href="mailto:bryanmylee@gmail.com" target="_blank" rel="noopener noreferrer">
 				bryanmylee@gmail.com

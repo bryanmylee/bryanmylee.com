@@ -90,7 +90,7 @@
 			class="text-center font-bold leading-tight text-white drop-shadow-xl text-dyn-8"
 			style:opacity={tIn * clamp(1 - tOut * 2)}
 		>
-			And still manage<br />to make free time.
+			while living<br />a full life.
 		</p>
 	</div>
 </ScrollProgress>
