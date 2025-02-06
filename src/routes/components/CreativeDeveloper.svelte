@@ -29,7 +29,7 @@
 						</span>
 					{/each}
 				</p>
-				<p class="text-balance text-dyn-3 my-8 px-8 text-center italic text-ink-600">
+				<p class="text-balance my-8 px-8 text-center italic text-gray-500 text-dyn-3">
 					Proud generalist with years of experience bringing products to life.
 				</p>
 			</div>
