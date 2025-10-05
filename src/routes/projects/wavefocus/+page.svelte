@@ -13,15 +13,11 @@
 <article class="mx-auto max-w-[65ch] px-8 py-32">
 	<div class="prose -my-24 dark:prose-invert">
 		<div class="flex items-center gap-4">
-			<img
-				src="/projects/wavefocus/icon.webp"
-				alt="WaveFocus icon"
-				class="!m-0 rounded-2xl wh-16"
-			/>
+			<img src="/projects/wavefocus/icon.webp" alt="App icon" class="!m-0 rounded-2xl wh-16" />
 			<h1 class="!mb-0">Wave</h1>
 		</div>
 		<h2 id="privacy" class="scroll-mt-28">Privacy Policy</h2>
-		<p>This policy is effective as of 13 Oct 2022.</p>
+		<p class="italic text-ink-400">Last Modified: 13 Oct 2022.</p>
 		<h3>Collection and storage</h3>
 		<p>
 			Wave provides an optional function to sync timers across devices. This requires storage of the
