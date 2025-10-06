@@ -141,6 +141,11 @@
 				We retain your information for as long as your account remains active. You may delete your
 				account at any time; upon deletion, we will remove your personal data from our systems.
 			</p>
+			<p>
+				For more details on how to delete your account, view the <a
+					href="/projects/dough/delete-account">account deletion guide</a
+				>.
+			</p>
 		</section>
 
 		<section>
