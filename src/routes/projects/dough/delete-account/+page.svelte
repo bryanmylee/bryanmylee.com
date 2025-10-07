@@ -27,11 +27,11 @@
 
 		<section>
 			<p>
-				To delete your account, log into Dough and visit the <a
+				To delete your account, visit the <a
 					href="https://dough.now/settings/profile/delete"
 					target="_blank"
-					rel="noopener noreferrer">delete account</a
-				> page.
+					rel="noopener noreferrer">account deletion</a
+				> page on Dough.
 			</p>
 
 			<img
