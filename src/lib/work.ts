@@ -20,6 +20,8 @@ export const WORK_EXPERIENCE: Work[] = [
 			'Optimized the performance of Golang services, <em><u>improving p90 response latency by 15ms for billions of monthly active users</u></em>.',
 			'Designed and built data pipelines for large-scale online data collection to feed ranking algorithms.',
 		],
+		homepage: "https://www.bytedance.com/en/",
+		// wideLayout: true,
 	},
 	{
 		companyName: 'Charter Space',
@@ -33,7 +35,6 @@ export const WORK_EXPERIENCE: Work[] = [
 			'Key contributor as both a programmer and technical lead for many core systems on our flagship product: a diagram-based navigation tool, a reactive in-database spreadsheet, an attribute-based access control system, and much more.',
 		],
 		homepage: 'https://charter.space/',
-		// wideLayout: true,
 	},
 	{
 		companyName: 'Meta',
