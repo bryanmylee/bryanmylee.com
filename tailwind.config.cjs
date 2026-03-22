@@ -1,4 +1,4 @@
-const INK_SHADES = ['DEFAULT', '900', '800', '700', '600', '500', '400', '300', '200'];
+const INK_SHADES = ['DEFAULT', '900', '800', '700', '600', '500', '400', '300', '200', '100'];
 const PAPER_SHADES = ['DEFAULT', 'raised', 'raised-high'];
 
 /** @type {import('tailwindcss').Config} */

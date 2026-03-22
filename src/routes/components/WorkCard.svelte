@@ -14,7 +14,7 @@
 </script>
 
 <div
-	class="border-ink-200 rounded-xl border bg-paper-raised p-8 text-ink {wideLayout
+	class="border-ink-100 rounded-3xl border bg-paper-raised p-6 text-ink {wideLayout
 		? 'md:col-span-2'
 		: ''}"
 >
@@ -27,7 +27,7 @@
 		{/if}
 	</h2>
 	<p class="mt-1 text-sm text-ink-600">{from} &mdash; {to}</p>
-	<hr class="border-ink-300 mt-4" />
+	<hr class="mt-4 border-ink-300" />
 	<h3 class="mt-4 font-semibold">{title}</h3>
 	<ul class="ml-4 mt-2 list-disc space-y-4 leading-7">
 		{#each details as detail}

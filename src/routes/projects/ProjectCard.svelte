@@ -16,7 +16,7 @@
 
 <div
 	class={twMerge(
-		'w-full min-w-0 max-w-[calc(65ch-4rem)] rounded-xl border border-ink-200 bg-paper-raised p-4 text-ink',
+		'border-ink-100 w-full min-w-0 max-w-[calc(65ch-4rem)] rounded-3xl border bg-paper-raised p-6 text-ink',
 		className,
 	)}
 >
@@ -34,7 +34,7 @@
 		{@html html}
 	</div>
 	{#if metadata.links !== undefined}
-		<ul class="mt-4 flex flex-wrap gap-4">
+		<ul class="-m-2 mt-4 flex flex-wrap gap-3">
 			{#each metadata.links as { href, label }}
 				<li>
 					<Button

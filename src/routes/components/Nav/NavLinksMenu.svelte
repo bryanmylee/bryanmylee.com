@@ -25,7 +25,7 @@
 		class="dropdown--trigger peer"
 	/>
 	<ul
-		class="pointer-events-none -m-2 flex flex-col gap-x-2 rounded-xl border border-[rgb(var(--border-nav))] bg-[rgb(var(--bg-nav))] p-3 text-base opacity-0 shadow-xl transition-opacity peer-checked:pointer-events-auto peer-checked:opacity-100 md:pointer-events-auto md:m-0 md:flex-row md:border-0 md:bg-transparent md:p-0 md:text-lg md:opacity-100 md:shadow-none"
+		class="pointer-events-none -m-2 flex flex-col gap-x-2 rounded-3xl border border-[rgb(var(--border-nav))] bg-[rgb(var(--bg-nav))] p-2 text-base opacity-0 shadow-xl transition-opacity peer-checked:pointer-events-auto peer-checked:opacity-100 md:pointer-events-auto md:m-0 md:flex-row md:border-0 md:bg-transparent md:p-0 md:text-lg md:opacity-100 md:shadow-none"
 		use:interactOutside={(ev) => {
 			if (ev.target instanceof HTMLElement && ev.target === trigger) {
 				return;
@@ -35,7 +35,7 @@
 	>
 		{#each links as { href, name }}
 			<li>
-				<a {href} class="block rounded-lg px-3.5 py-2 hover:bg-gray-400/10 md:px-3 md:py-1">
+				<a {href} class="block rounded-full px-3.5 py-2 hover:bg-gray-400/10 md:px-3 md:py-1">
 					{name}
 				</a>
 			</li>

@@ -43,7 +43,7 @@
 
 <style lang="postcss">
 	.button {
-		@apply rounded-lg p-4 font-medium;
+		@apply rounded-full px-4 py-3 font-medium;
 		@apply transition-all;
 		&.primary {
 			@apply bg-cyan-200 text-cyan-800 hover:bg-cyan-100 active:bg-cyan-300;
@@ -52,10 +52,10 @@
 			@apply bg-green-200 text-green-800 hover:bg-green-100 active:bg-green-300;
 		}
 		&.base {
-			@apply p-4;
+			@apply px-4 py-3;
 		}
 		&.sm {
-			@apply px-4 py-2 text-sm;
+			@apply px-3 py-2 text-sm;
 		}
 	}
 </style>
