@@ -10,9 +10,21 @@ export interface Work {
 
 export const WORK_EXPERIENCE: Work[] = [
 	{
+		companyName: 'ByteDance',
+		from: 'Apr 2025',
+		to: 'present',
+		title: 'Research & Development',
+		details: [
+			'Worked with project managers, data analysts, and many other teams to expand TikTok’s market share in the local services search business, focusing on content coverage and quality for hotels, food & beverage, and travel.',
+			'Developed multi-modal LLM content understanding features that <em><u>improved CTR by +3.9% across millions of daily searches</u></em>.',
+			'Optimized the performance of Golang services, <em><u>improving p90 response latency by 15ms for billions of monthly active users</u></em>.',
+			'Designed and built data pipelines for large-scale online data collection to feed ranking algorithms.',
+		],
+	},
+	{
 		companyName: 'Charter Space',
 		from: 'Feb 2023',
-		to: 'present',
+		to: 'Apr 2025',
 		title: 'Software Engineer',
 		details: [
 			'Technical lead on a team of four engineers, regularly providing guidance on product and technical decisions to deliver scalable, maintainable, and high-performance systems.',
